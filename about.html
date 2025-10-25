@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <meta property="og:title" content="About — New Financial World"/>
+  <meta property="og:description" content="We demystify cryptocurrency, blockchain, and Web3 with plain‑English education and consulting."/>
   <style>
     :root{--brand:#111827;--accent:#06b6d4}
     html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
@@ -16,83 +18,179 @@
     p,li{line-height:1.7}
     .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
   </style>
-  <meta property="og:title" content="About — New Financial World"/>
-  <meta property="og:description" content="Mission, values, and story behind New Financial World."/>
 </head>
-<body class="relative text-slate-800 bg-slate-50">
+<body class="relative text-slate-800">
+  <!-- Background -->
+  <div class="fixed inset-0 -z-10 pointer-events-none">
+    <div class="absolute inset-0" style="background:
+      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
+      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
+      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
+      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
+    "></div>
+    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="0.8"/>
+        </filter>
+      </defs>
+      <g filter="url(#f)" font-family="Inter, system-ui, sans-serif" font-size="24" fill="white">
+        <text x="8%" y="18%">₿</text>
+        <text x="22%" y="35%">Ξ</text>
+        <text x="38%" y="12%">◎</text>
+        <text x="55%" y="28%">✕</text>
+        <text x="72%" y="18%">Ξ</text>
+        <text x="85%" y="40%">₿</text>
+        <text x="12%" y="70%">✕</text>
+        <text x="33%" y="82%">Ξ</text>
+        <text x="60%" y="75%">◎</text>
+        <text x="80%" y="66%">₿</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Header -->
   <header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
     <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
+      <a href="/" class="flex items-center gap-3">
         <div class="h-9 w-9 rounded-2xl bg-slate-900 text-white grid place-items-center text-sm font-bold">BK</div>
-        <a href="index.html" class="font-semibold tracking-tight">New Financial World</a>
-      </div>
+        <span class="font-semibold tracking-tight">New Financial World</span>
+      </a>
       <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="index.html#about" class="hover:text-slate-950">Home</a>
-        <a href="index.html#mission" class="hover:text-slate-950">Mission</a>
-        <a href="index.html#buy" class="hover:text-slate-950">Buy</a>
-        <a href="index.html#faq" class="hover:text-slate-950">FAQ</a>
+        <a href="/" class="hover:text-slate-950">Home</a>
+        <a href="/consulting.html" class="hover:text-slate-950">Consulting</a>
+        <a href="/book.html" class="hover:text-slate-950">Book</a>
+        <a href="/about.html" class="text-slate-950 font-semibold">About</a>
       </nav>
-      <a href="index.html#buy" class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 text-white px-4 py-2 text-sm font-semibold shadow hover:shadow-md">Get the Book</a>
+      <a href="/book.html" class="inline-flex items-center gap-2 rounded-2xl bg-slate-900 text-white px-4 py-2 text-sm font-semibold shadow hover:shadow-md">Get the Book</a>
     </div>
   </header>
 
-  <main class="mx-auto max-w-6xl px-4 py-12">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="md:col-span-2 rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-200"
-           style="background:
-             radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
-             radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
-             radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
-             linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);">
-        <h1 class="text-3xl font-extrabold leading-tight text-white">About New Financial World</h1>
-        <p class="mt-4 text-lg text-slate-200">We make digital finance understandable and usable for everyone—without jargon or hype. Our goal is to give people the tools and confidence to thrive as money moves at internet speed.</p>
-
-        <h2 class="mt-8 text-2xl font-bold text-white">Our Mission</h2>
-        <p class="mt-3 text-base text-slate-200">
-          At <span class="font-semibold">New Financial World</span>, our mission is to
-          <span class="font-semibold">demystify digital finance</span> and
-          <span class="font-semibold">empower people everywhere</span> to participate in the evolving financial system
-          with <span class="font-semibold">confidence, clarity, and security</span>.
-        </p>
-      
-    <section id="about-visual" class="mt-8 grid md:grid-cols-2 gap-6">
-      <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-        <h2 class="text-xl font-semibold">Our Story</h2>
-        <p class="mt-2 text-slate-700">Founded to bridge the gap between traditional finance and blockchain, New Financial World focuses on practical education, security, and real-world adoption—so anyone can participate with confidence.</p>
-        <p class="mt-4 text-slate-700">Author: <span class="font-medium">Zakir Sadiki</span> — R3 Corda for Business Professionals Certificate; Blockchain Council: Certified Cryptocurrency Expert.</p>
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-4 pt-14 pb-10 grid md:grid-cols-2 gap-10 items-center">
+    <div class="rounded-3xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-100">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-white">About New Financial World</h1>
+      <p class="mt-4 text-lg text-slate-200">We demystify cryptocurrency, blockchain, and Web3 so people and organizations can navigate the financial internet with clarity, confidence, and integrity.</p>
+      <div class="mt-6 flex flex-wrap items-center gap-3">
+        <a href="/consulting.html" class="rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold shadow hover:shadow-lg">Explore Consulting</a>
+        <a href="/book.html" class="rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10">Read the Book</a>
       </div>
-      <div class="rounded-2xl bg-white p-4 shadow ring-1 ring-slate-900/5">
-        <img src="book-cover.png" alt="Introduction to The New Financial World — Book cover" class="w-full rounded-xl object-cover bg-slate-100 aspect-[3/4]" onerror="this.parentElement.innerHTML='<div class=&quot;p-6 text-slate-600&quot;>Book cover preview coming soon.</div>'" />
-      </div>
-    </section>
-    
-
-      <aside class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-        <h3 class="font-semibold">Core Values</h3>
-        <ul class="mt-3 space-y-2 text-base text-slate-700">
-          <li>• <span class="font-medium">Innovation</span> — Embrace crypto, blockchains, and Web3 to shape the future of money.</li>
-          <li>• <span class="font-medium">Education & Clarity</span> — Explain complex ideas in plain English.</li>
-          <li>• <span class="font-medium">Empowerment & Financial Freedom</span> — Put people in control of their wealth.</li>
-          <li>• <span class="font-medium">Reliability & Security</span> — Uphold global standards and best practices.</li>
-          <li>• <span class="font-medium">Community & Accessibility</span> — Open the door for everyone to thrive.</li>
-        </ul>
-      </aside>
     </div>
+    <div class="rounded-3xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5">
+      <div class="grid gap-3 text-sm text-slate-700">
+        <div class="flex items-center justify-between">
+          <span class="font-medium">Founded</span>
+          <span>To bridge TradFi and Web3</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-medium">Focus</span>
+          <span>Education • Consulting • Literacy</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-medium">Ethos</span>
+          <span>Plain‑English • Practical • Ethical</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="mt-12 rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-      <h2 class="text-xl font-semibold">Contact</h2>
-      <p class="mt-2 text-slate-700">Questions? Email us at
-        <a class="underline" href="mailto:Nfwfla@outlook.com">Nfwfla@outlook.com</a>.
-      </p>
-    </section>
-  </main>
+  <!-- Mission & What We Do -->
+  <section class="mx-auto max-w-6xl px-4 py-12 grid lg:grid-cols-3 gap-8 items-start">
+    <div class="lg:col-span-2 rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-200">
+      <h2 class="text-2xl font-bold text-white">Mission</h2>
+      <p class="mt-3">Our mission is to make the future of finance understandable and usable for everyone. We translate complex topics like wallets, keys, custody, DeFi, and standards into clear, actionable guidance—so you can participate safely and strategically.</p>
+      <h3 class="mt-6 text-xl font-semibold text-white">What we do</h3>
+      <ul class="mt-3 grid gap-3 list-disc pl-5 text-slate-200">
+        <li>Plain‑English education on crypto, blockchains, and Web3</li>
+        <li>One‑on‑one and group consulting for individuals, teams, and small businesses</li>
+        <li>Risk‑aware navigation of wallets, custody, and on‑chain activity</li>
+        <li>Neutral overviews of standards & compliance (ISO 20022, SOC 2, ISO 27001)</li>
+      </ul>
+    </div>
+    <aside class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
+      <h3 class="font-semibold">Who we help</h3>
+      <ul class="mt-3 space-y-2 text-slate-700">
+        <li>• Beginners seeking a safe, guided on‑ramp</li>
+        <li>• Professionals exploring Web3 use cases</li>
+        <li>• Small businesses testing blockchain‑enabled workflows</li>
+        <li>• Readers of <em>Introduction to The New Financial World</em></li>
+      </ul>
+    </aside>
+  </section>
 
+  <!-- Founder -->
+  <section class="mx-auto max-w-6xl px-4 py-12">
+    <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
+      <div class="flex flex-col md:flex-row items-start gap-6">
+        <div class="h-14 w-14 shrink-0 rounded-2xl bg-slate-900 text-white grid place-items-center font-bold">ZS</div>
+        <div>
+          <h3 class="font-semibold text-slate-900">Founder: Zakir Sadiki</h3>
+          <p class="mt-2 text-base text-slate-700">Zakir brings certified blockchain expertise and a practical, ethical approach to digital finance. His work focuses on education first—equipping people to make informed decisions in the crypto and Web3 economy.</p>
+          <div class="mt-4">
+            <h4 class="text-sm font-semibold text-slate-900">Credentials</h4>
+            <ul class="mt-2 grid gap-1 text-sm text-slate-700">
+              <li>• Certified Cryptocurrency Expert</li>
+              <li>• DeFi Expert</li>
+              <li>• Ethereum Expert</li>
+              <li>• R3 Corda for Business Professionals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach & Values -->
+  <section class="mx-auto max-w-6xl px-4 pb-12 grid md:grid-cols-2 gap-8 items-start">
+    <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
+      <h3 class="font-semibold">Our approach</h3>
+      <ul class="mt-3 space-y-2 text-slate-700 text-base">
+        <li>• Education over speculation</li>
+        <li>• Security first: wallets, custody, and hygiene</li>
+        <li>• Neutral, standards‑aware guidance</li>
+        <li>• Plain‑English, practical next steps</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
+      <h3 class="font-semibold">Core values</h3>
+      <ul class="mt-3 space-y-2 text-slate-700 text-base">
+        <li>• Clarity</li>
+        <li>• Integrity</li>
+        <li>• Safety</li>
+        <li>• Empowerment</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="mx-auto max-w-6xl px-4 pb-12">
+    <div class="rounded-3xl bg-slate-900 text-white p-8 md:p-10 shadow-xl grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="text-3xl font-extrabold">Ready to learn or launch?</h2>
+        <p class="mt-2 text-slate-300">Book a consulting session or start with the book to build a strong foundation in digital finance.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <a href="/consulting.html" class="w-full text-center rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100">Consulting</a>
+        <a href="/book.html" class="w-full text-center rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100">Get the Book</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="mx-auto max-w-6xl px-4 pb-6">
+    <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
+      <h3 class="font-semibold">Disclaimer</h3>
+      <p class="mt-2 text-base text-slate-700">We are not financial advisors. All content and consultations are for educational and informational purposes only. Always do your own research and consult a licensed professional.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500">
     <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 pt-6">
       <p>© <span id="year"></span> New Financial World. All rights reserved.</p>
       <div class="flex items-center gap-4">
-        <a href="privacy.html" class="hover:text-slate-800">Privacy</a>
-        <a href="terms.html" class="hover:text-slate-800">Terms</a>
+        <a href="/privacy.html" class="hover:text-slate-800">Privacy</a>
+        <a href="/terms.html" class="hover:text-slate-800">Terms</a>
       </div>
     </div>
   </footer>
