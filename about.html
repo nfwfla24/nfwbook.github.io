@@ -152,57 +152,59 @@
   </section>
 
 <!--Alternate Values Section-->
-  <!-- Tabs Section -->
-<section class="py-16 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-center">About Us</h2>
+  <!-- Alternate Values & Mission Tabs -->
+<section class="mx-auto max-w-6xl px-4 py-12">
+  <div class="rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-100">
+    <h2 class="text-3xl font-semibold mb-8 text-center">About Us</h2>
 
     <!-- Tabs -->
-    <div class="flex justify-center space-x-4 border-b border-gray-300 mb-8">
-      <button class="tab-button px-6 py-3 font-semibold text-gray-900 border-b-2 border-transparent hover:border-gray-400" data-tab="values">Our Values</button>
-      <button class="tab-button px-6 py-3 font-semibold text-gray-900 border-b-2 border-transparent hover:border-gray-400" data-tab="mission">Mission</button>
+    <div class="flex justify-center space-x-4 border-b border-white/30 mb-8">
+      <button class="tab-button px-6 py-3 font-semibold border-b-2 border-transparent hover:border-white" data-tab="Do">What we do</button>
+      <button class="tab-button px-6 py-3 font-semibold border-b-2 border-transparent hover:border-white" data-tab="Help">Who we help</button>
     </div>
 
     <!-- Tab Contents -->
-    <div class="tab-content" id="values" style="display: none;">
-      <div class="space-y-4">
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <h3 class="font-semibold text-gray-900">Value 1</h3>
-          <p class="mt-2 text-gray-700">Description of Value 1</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <h3 class="font-semibold text-gray-900">Value 2</h3>
-          <p class="mt-2 text-gray-700">Description of Value 2</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <h3 class="font-semibold text-gray-900">Value 3</h3>
-          <p class="mt-2 text-gray-700">Description of Value 3</p>
-        </div>
+    <div class="tab-content space-y-4" id="values" style="display: none;">
+      <div class="bg-white/10 rounded-xl p-6 ring-1 ring-white/20">
+        <h3 class="font-semibold text-white">1</h3>
+        <p class="mt-2 text-slate-200">Beginners seeking a safe, guided on‑ramp</p>
+      </div>
+      <div class="bg-white/10 rounded-xl p-6 ring-1 ring-white/20">
+        <h3 class="font-semibold text-white">2</h3>
+        <p class="mt-2 text-slate-200">Professionals exploring Web3 use cases</p>
+      </div>
+      <div class="bg-white/10 rounded-xl p-6 ring-1 ring-white/20">
+        <h3 class="font-semibold text-white">3</h3>
+        <p class="mt-2 text-slate-200">Small businesses testing blockchain‑enabled workflows</p>
+      </div>
+       <div class="bg-white/10 rounded-xl p-6 ring-1 ring-white/20">
+        <h3 class="font-semibold text-white">4</h3>
+        <p class="mt-2 text-slate-200">Readers of <em>Introduction to The New Financial World</em></p>
       </div>
     </div>
 
-    <div class="tab-content" id="mission" style="display: none;">
-      <div class="space-y-4">
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <h3 class="font-semibold text-gray-900">Mission Point 1</h3>
-          <p class="mt-2 text-gray-700">Description of Mission Point 1</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <h3 class="font-semibold text-gray-900">Mission Point 2</h3>
-          <p class="mt-2 text-gray-700">Description of Mission Point 2</p>
-        </div>
-        <div class="bg-white rounded-xl shadow-md p-6">
-          <h3 class="font-semibold text-gray-900">Mission Point 3</h3>
-          <p class="mt-2 text-gray-700">Description of Mission Point 3</p>
-        </div>
+    <div class="tab-content space-y-4" id="mission" style="display: none;">
+      <div class="bg-white/10 rounded-xl p-6 ring-1 ring-white/20">
+        <h3 class="font-semibold text-white">1</h3>
+        <p class="mt-2 text-slate-200">Plain‑English education on crypto, blockchains, and Web3</p>
+      </div>
+      <div class="bg-white/10 rounded-xl p-6 ring-1 ring-white/20">
+        <h3 class="font-semibold text-white">2</h3>
+        <p class="mt-2 text-slate-200">One‑on‑one and group consulting for individuals, teams, and small businesses</p>
+      </div>
+      <div class="bg-white/10 rounded-xl p-6 ring-1 ring-white/20">
+        <h3 class="font-semibold text-white">3</h3>
+        <p class="mt-2 text-slate-200">Risk‑aware navigation of wallets, custody, and on‑chain activity</p>
+      </div>
+       <div class="bg-white/10 rounded-xl p-6 ring-1 ring-white/20">
+        <h3 class="font-semibold text-white">4</h3>
+        <p class="mt-2 text-slate-200">Neutral overviews of standards & compliance (ISO 20022, SOC 2, ISO 27001)</p>
       </div>
     </div>
-
   </div>
 </section>
 
 <script>
-  // Tabs functionality
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabContents = document.querySelectorAll('.tab-content');
 
@@ -214,7 +216,7 @@
       tabContents.forEach(content => content.style.display = 'none');
 
       // Remove active border from all buttons
-      tabButtons.forEach(btn => btn.classList.remove('border-gray-900'));
+      tabButtons.forEach(btn => btn.classList.remove('border-white'));
       tabButtons.forEach(btn => btn.classList.add('border-transparent'));
 
       // Show selected tab
@@ -222,13 +224,15 @@
 
       // Add active border
       button.classList.remove('border-transparent');
-      button.classList.add('border-gray-900');
+      button.classList.add('border-white');
     });
   });
 
-  // Optionally, open the first tab by default
+  // Open first tab by default
   tabButtons[0].click();
 </script>
+
+  
   <!-- Founder -->
   <section class="mx-auto max-w-6xl px-4 py-12">
     <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
