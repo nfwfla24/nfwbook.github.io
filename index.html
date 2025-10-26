@@ -156,13 +156,46 @@
     
 
 
-    <!-- Left bottom video  -->
-    <div class="flex justify-center md:justify-start">
-      <video autoplay muted loop playsinline class="rounded-3x2 shadow-lg w-80 md:mt-[-40px] object-cover">
-        <source src="homepagevideodesktop.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
+     <!-- Video -->
+  <div class="w-full max-w-6xl">
+    <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg">
+      <source src="homepagevideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  
+</section>
+
+<!-- Responsive Behavior -->
+<style>
+  .hero-video {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* desktop max height */
+    object-fit: contain;
+  }
+
+  /* Mobile portrait */
+  @media (max-width: 767px) and (orientation: portrait) {
+    .hero-video {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+  }
+
+  /* Mobile landscape */
+  @media (max-width: 767px) and (orientation: landscape) {
+    .hero-video {
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+  }
+</style>
     
     <!-- Center text -->
     <div class="text-center">
@@ -175,15 +208,6 @@
     </div>
 
    
-    <!-- Right bottom video -->
-    <div class="flex justify-center md:justify-end">
-      <video autoplay muted loop playsinline class="rounded-3x2 shadow-lg w-80 md:mb-[-40px] object-cover">
-        <source src="financialgrowth.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-     
   </div>
 </section>
   <section id="altabout" class="mx-auto max-w-6xl px-4 py-12">
