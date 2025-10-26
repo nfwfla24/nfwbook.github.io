@@ -147,47 +147,67 @@
   </section>
 
 
-<!-- CONSULTATION REQUEST SECTION -->
-<section id="consultation" class="relative w-full bg-black py-16 px-4 flex flex-col items-center justify-center">
-  <div class="max-w-4xl w-full text-center">
-    
-    <!-- Heading -->
-    <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">
-      Request a Consultation
-    </h2>
+<!-- Consultation Request Form -->
+<section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
+  <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">Request a Consultation</h2>
 
-    <!-- Description -->
-    <p class="text-white-300 text-lg mb-10">
-      Please fill out the form below and we will reach out soon to schedule your consultation.
-    </p>
-
-    <!-- Form Container -->
-    <div class="w-full bg-slate/10 backdrop-blur-sm rounded-2xl shadow-lg ring-1 ring-slate/10 p-6">
-      
-      <!-- 🔗 Replace the src link below with your Google Form embed link -->
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfq54ZVRiUprMF9n7ngOzVE7BDv2q_MqVClzniqyT9RoduECw/viewform?embedded=true" width="640" height="1165" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-
+  <form id="consultation-form" class="space-y-6 bg-white/10 p-8 rounded-2xl shadow-lg backdrop-blur">
+    <!-- Name -->
+    <div>
+      <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
+      <input type="text" id="name" name="name" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your name">
     </div>
 
-  </div>
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
+      <input type="email" id="email" name="email" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="your@email.com">
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <label for="phone" class="block text-sm font-semibold mb-2">Phone Number</label>
+      <input type="tel" id="phone" name="phone" class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="(555) 123-4567">
+    </div>
+
+    <!-- Consultation Type -->
+    <div>
+      <label for="type" class="block text-sm font-semibold mb-2">Consultation Type</label>
+      <select id="type" name="type" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+        <option value="" disabled selected>Select an option</option>
+        <option>Crypto Strategy</option>
+        <option>Financial Education</option>
+        <option>Portfolio Guidance</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Message -->
+    <div>
+      <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
+      <textarea id="message" name="message" rows="5" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Tell us what you’d like to discuss..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="submit" class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
+        Submit Request
+      </button>
+    </div>
+  </form>
+
+  <!-- Success Message -->
+  <p id="form-success" class="hidden text-green-400 text-center mt-4">✅ Thank you! Your request has been submitted.</p>
 </section>
 
-<!-- Responsive styling -->
-<style>
-  #consultation iframe {
-    max-width: 100%;
-  }
-
-  @media (max-width: 768px) {
-    #consultation {
-      padding: 3rem 1rem;
-    }
-    #consultation iframe {
-      height: 1100px; /* Taller for mobile scrolling */
-    }
-  }
-</style>
-
+<script>
+document.getElementById('consultation-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Simulate form submission
+  document.getElementById('form-success').classList.remove('hidden');
+  this.reset();
+});
+</script>
   
   <!-- Mission & Core Values 
   <section id="mission" class="mx-auto max-w-6xl px-4 py-12">
