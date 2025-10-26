@@ -195,18 +195,25 @@
     </div>
   </form>
 
-  <!-- Success Message -->
+  <!-- Success / Error Messages -->
   <p id="form-success" class="hidden text-green-400 text-center mt-4">✅ Thank you! Your request has been submitted.</p>
+  <p id="form-error" class="hidden text-red-400 text-center mt-4">❌ Something went wrong. Please try again.</p>
 </section>
 
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
+  // Initialize EmailJS
   emailjs.init("Hz9mazCp4SU2MTcN6"); // Replace with your EmailJS public key
 
   document.getElementById('consultation-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
+    // Hide previous messages
+    document.getElementById('form-success').classList.add('hidden');
+    document.getElementById('form-error').classList.add('hidden');
+
+    // Collect form data
     const templateParams = {
       user_name: document.getElementById('name').value,
       user_email: document.getElementById('email').value,
@@ -215,13 +222,16 @@
       user_message: document.getElementById('message').value
     };
 
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-      .then(() => {
+    console.log("Sending form data:", templateParams);
+
+    emailjs.send('service_jz3xwdv', 'template_cgrg12b', templateParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
         document.getElementById('form-success').classList.remove('hidden');
-        this.reset();
-      }, (err) => {
-        alert('Oops! Something went wrong. Please try again later.');
-        console.error('EmailJS error:', err);
+        document.getElementById('consultation-form').reset();
+      }, function(error) {
+        console.error('FAILED...', error);
+        document.getElementById('form-error').classList.remove('hidden');
       });
   });
 </script>
