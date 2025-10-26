@@ -92,24 +92,25 @@
 </script>
      
   </header>
-<!-- Hero Section with Responsive Video -->
+<!-- Hero Section with Responsive Fullscreen Video -->
 <section id="home" class="relative w-full h-screen flex items-center justify-center overflow-hidden text-center bg-black">
+
   <!-- Background video -->
-  <video autoplay muted loop playsinline 
-         class="absolute inset-0 w-full h-full object-contain bg-black">
+  <video autoplay muted loop playsinline
+    class="absolute top-0 left-0 w-[100vw] h-[100vh] object-cover object-center z-0">
     <source src="homepagevideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
   <!--Overlay (optional for readability) -->
-  <div class="absolute inset-0 bg-black/30"></div>
+  <div class="absolute inset-0 bg-black/30 z-5"></div>
 
   <!-- Gradient fade at bottom
   <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white"></div>-->
 
- <!-- Foreground content -->
-  <div class="relative z-10 max-w-3xl px-4 text-slate-100">
-    <h1 class="text-4xl md:text-7xl font-extrabold leading-tight text-white">Navigate the Future</h1>
+  <!-- Foreground text -->
+  <div class="relative z-10 px-4">
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white">Navigate the Future</h1>
   </div>
   </section>
 
