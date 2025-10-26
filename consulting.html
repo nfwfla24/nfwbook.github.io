@@ -154,25 +154,32 @@
     <!-- Name -->
     <div>
       <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
-      <input type="text" id="name" name="user_name" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your name">
+      <input type="text" id="name" name="user_name" required
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+        placeholder="Your name">
     </div>
 
     <!-- Email -->
     <div>
       <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
-      <input type="email" id="email" name="user_email" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="your@email.com">
+      <input type="email" id="email" name="user_email" required
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+        placeholder="your@email.com">
     </div>
 
     <!-- Phone -->
     <div>
       <label for="phone" class="block text-sm font-semibold mb-2">Phone Number</label>
-      <input type="tel" id="phone" name="user_phone" class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="(555) 123-4567">
+      <input type="tel" id="phone" name="user_phone"
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+        placeholder="(555) 123-4567">
     </div>
 
     <!-- Consultation Type -->
     <div>
       <label for="type" class="block text-sm font-semibold mb-2">Consultation Type</label>
-      <select id="type" name="consultation_type" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+      <select id="type" name="consultation_type" required
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
         <option value="" disabled selected>Select an option</option>
         <option>Crypto Strategy</option>
         <option>DeFi Strategy</option>
@@ -184,58 +191,66 @@
     <!-- Message -->
     <div>
       <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
-      <textarea id="message" name="user_message" rows="5" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Tell us what you’d like to discuss..."></textarea>
+      <textarea id="message" name="user_message" rows="5" required
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
+        placeholder="Tell us what you’d like to discuss..."></textarea>
     </div>
 
     <!-- Submit Button -->
     <div class="text-center">
-      <button type="submit" class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
+      <button type="submit"
+        class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
         Submit Request
       </button>
     </div>
   </form>
 
-  <!-- Success / Error Messages -->
-  <p id="form-success" class="hidden text-green-400 text-center mt-4">✅ Thank you! Your request has been submitted.</p>
-  <p id="form-error" class="hidden text-red-400 text-center mt-4">❌ Something went wrong. Please try again.</p>
+  <!-- Success Message -->
+  <p id="form-success" class="hidden text-green-400 text-center mt-4">
+    ✅ Thank you! Your request has been submitted.
+  </p>
 </section>
 
-<!-- EmailJS -->
+<!-- EmailJS Integration -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  // Initialize EmailJS
-  emailjs.init("Hz9mazCp4SU2MTcN6"); // Replace with your EmailJS public key
+  (function() {
+    emailjs.init("Hz9mazCp4SU2MTcN6"); // Your public key
+  })();
 
-  document.getElementById('consultation-form').addEventListener('submit', function(e) {
+  const form = document.getElementById('consultation-form');
+  const successMsg = document.getElementById('form-success');
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Hide previous messages
-    document.getElementById('form-success').classList.add('hidden');
-    document.getElementById('form-error').classList.add('hidden');
-
-    // Collect form data
-    const templateParams = {
-      user_name: document.getElementById('name').value,
-      user_email: document.getElementById('email').value,
-      user_phone: document.getElementById('phone').value,
-      consultation_type: document.getElementById('type').value,
-      user_message: document.getElementById('message').value
+    const formData = {
+      user_name: form.user_name.value,
+      user_email: form.user_email.value,
+      user_phone: form.user_phone.value,
+      consultation_type: form.consultation_type.value,
+      user_message: form.user_message.value
     };
 
-    console.log("Sending form data:", templateParams);
-
-    emailjs.send('service_jz3xwdv', 'template_cgrg12b', templateParams)
-      .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        document.getElementById('form-success').classList.remove('hidden');
-        document.getElementById('consultation-form').reset();
-      }, function(error) {
-        console.error('FAILED...', error);
-        document.getElementById('form-error').classList.remove('hidden');
+    // Send email to you (your template ID)
+    emailjs.send('service_jz3xwdv', 'template_l6bio7c', formData)
+      .then(() => {
+        // Optional: send auto-reply to customer
+        emailjs.send('service_jz3xwdv', 'template_cgrg12b', formData)
+          .then(() => {
+            successMsg.classList.remove('hidden');
+            form.reset();
+          }, (err) => {
+            console.error('Auto-reply failed:', err);
+            successMsg.classList.remove('hidden');
+            form.reset();
+          });
+      }, (err) => {
+        console.error('Submission failed:', err);
+        alert('Something went wrong. Please try again.');
       });
   });
 </script>
-
   
 <!-- Consultation Request Form -->
 <section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
