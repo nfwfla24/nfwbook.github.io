@@ -152,72 +152,83 @@
   </section>
 
 <!--Alternate Values Section-->
-  <!-- Our Values & What Matters Accordion -->
+  <!-- Tabs Section -->
 <section class="py-16 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4">
-    <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-center">Our Values & What Matters</h2>
+    <h2 class="text-3xl font-semibold text-gray-900 mb-8 text-center">About Us</h2>
 
-    <div class="space-y-4">
-
-      <!-- Value 1 -->
-      <div class="bg-white rounded-xl shadow-md">
-        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-gray-900 hover:bg-gray-100 transition" onclick="toggleAccordion(this)">
-          Value 1
-          <span class="transform transition-transform duration-300">+</span>
-        </button>
-        <div class="px-6 py-4 text-gray-700 hidden">
-          Description of Value 1.
-        </div>
-      </div>
-
-      <!-- Value 2 -->
-      <div class="bg-white rounded-xl shadow-md">
-        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-gray-900 hover:bg-gray-100 transition" onclick="toggleAccordion(this)">
-          Value 2
-          <span class="transform transition-transform duration-300">+</span>
-        </button>
-        <div class="px-6 py-4 text-gray-700 hidden">
-          Description of Value 2.
-        </div>
-      </div>
-
-      <!-- Value 3 -->
-      <div class="bg-white rounded-xl shadow-md">
-        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-gray-900 hover:bg-gray-100 transition" onclick="toggleAccordion(this)">
-          Value 3
-          <span class="transform transition-transform duration-300">+</span>
-        </button>
-        <div class="px-6 py-4 text-gray-700 hidden">
-          Description of Value 3.
-        </div>
-      </div>
-
-      <!-- What Matters to Us -->
-      <div class="bg-white rounded-xl shadow-md">
-        <button class="w-full px-6 py-4 text-left flex justify-between items-center font-semibold text-gray-900 hover:bg-gray-100 transition" onclick="toggleAccordion(this)">
-          What Matters to Us
-          <span class="transform transition-transform duration-300">+</span>
-        </button>
-        <div class="px-6 py-4 text-gray-700 hidden">
-          • Commitment to Excellence<br>
-          • Sustainability Initiatives<br>
-          • Customer-Centric Approach
-        </div>
-      </div>
-
+    <!-- Tabs -->
+    <div class="flex justify-center space-x-4 border-b border-gray-300 mb-8">
+      <button class="tab-button px-6 py-3 font-semibold text-gray-900 border-b-2 border-transparent hover:border-gray-400" data-tab="values">Our Values</button>
+      <button class="tab-button px-6 py-3 font-semibold text-gray-900 border-b-2 border-transparent hover:border-gray-400" data-tab="mission">Mission</button>
     </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content" id="values" style="display: none;">
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="font-semibold text-gray-900">Value 1</h3>
+          <p class="mt-2 text-gray-700">Description of Value 1</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="font-semibold text-gray-900">Value 2</h3>
+          <p class="mt-2 text-gray-700">Description of Value 2</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="font-semibold text-gray-900">Value 3</h3>
+          <p class="mt-2 text-gray-700">Description of Value 3</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="mission" style="display: none;">
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="font-semibold text-gray-900">Mission Point 1</h3>
+          <p class="mt-2 text-gray-700">Description of Mission Point 1</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="font-semibold text-gray-900">Mission Point 2</h3>
+          <p class="mt-2 text-gray-700">Description of Mission Point 2</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="font-semibold text-gray-900">Mission Point 3</h3>
+          <p class="mt-2 text-gray-700">Description of Mission Point 3</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <script>
-  function toggleAccordion(button) {
-    const content = button.nextElementSibling;
-    const icon = button.querySelector('span');
-    content.classList.toggle('hidden');
-    icon.textContent = content.classList.contains('hidden') ? '+' : '−';
-  }
+  // Tabs functionality
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const tab = button.getAttribute('data-tab');
+
+      // Hide all contents
+      tabContents.forEach(content => content.style.display = 'none');
+
+      // Remove active border from all buttons
+      tabButtons.forEach(btn => btn.classList.remove('border-gray-900'));
+      tabButtons.forEach(btn => btn.classList.add('border-transparent'));
+
+      // Show selected tab
+      document.getElementById(tab).style.display = 'block';
+
+      // Add active border
+      button.classList.remove('border-transparent');
+      button.classList.add('border-gray-900');
+    });
+  });
+
+  // Optionally, open the first tab by default
+  tabButtons[0].click();
 </script>
-  
   <!-- Founder -->
   <section class="mx-auto max-w-6xl px-4 py-12">
     <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
