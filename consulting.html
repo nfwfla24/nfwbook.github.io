@@ -146,7 +146,87 @@
     </div>
   </section>
 
+<!-- Consultation Request Form -->
+<section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
+  <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">Request a Consultation</h2>
 
+  <form id="consultation-form" class="space-y-6 bg-white/10 p-8 rounded-2xl shadow-lg backdrop-blur">
+    <!-- Name -->
+    <div>
+      <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
+      <input type="text" id="name" name="user_name" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your name">
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
+      <input type="email" id="email" name="user_email" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="your@email.com">
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <label for="phone" class="block text-sm font-semibold mb-2">Phone Number</label>
+      <input type="tel" id="phone" name="user_phone" class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="(555) 123-4567">
+    </div>
+
+    <!-- Consultation Type -->
+    <div>
+      <label for="type" class="block text-sm font-semibold mb-2">Consultation Type</label>
+      <select id="type" name="consultation_type" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+        <option value="" disabled selected>Select an option</option>
+        <option>Crypto Strategy</option>
+        <option>DeFi Strategy</option>
+        <option>Blockchain Use Cases</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <!-- Message -->
+    <div>
+      <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
+      <textarea id="message" name="user_message" rows="5" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Tell us what you’d like to discuss..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="submit" class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
+        Submit Request
+      </button>
+    </div>
+  </form>
+
+  <!-- Success Message -->
+  <p id="form-success" class="hidden text-green-400 text-center mt-4">✅ Thank you! Your request has been submitted.</p>
+</section>
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("Hz9mazCp4SU2MTcN6"); // Replace with your EmailJS public key
+
+  document.getElementById('consultation-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const templateParams = {
+      user_name: document.getElementById('name').value,
+      user_email: document.getElementById('email').value,
+      user_phone: document.getElementById('phone').value,
+      consultation_type: document.getElementById('type').value,
+      user_message: document.getElementById('message').value
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+      .then(() => {
+        document.getElementById('form-success').classList.remove('hidden');
+        this.reset();
+      }, (err) => {
+        alert('Oops! Something went wrong. Please try again later.');
+        console.error('EmailJS error:', err);
+      });
+  });
+</script>
+
+  
 <!-- Consultation Request Form -->
 <section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
   <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">Request a Consultation</h2>
