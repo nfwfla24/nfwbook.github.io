@@ -102,11 +102,16 @@
 <!-- Hero Section -->
 <section id="home" class="relative w-full h-screen flex items-center justify-center text-center bg-black overflow-hidden">
 
-  <!-- Background video -->
- <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-  <source src="homepagevideodesktop.mp4" type="video/mp4" media="(min-width: 640px)">
-  <source src="homepagevideomobile.mp4" type="video/mp4" media="(max-width: 639px)">
-</video>
+ <!-- Background video -->
+<div class="absolute inset-0 w-full h-full overflow-hidden">
+  <video autoplay muted loop playsinline class="w-full h-full object-cover">
+    <!-- Desktop version -->
+    <source src="homepagevideodesktop.mp4" type="video/mp4" media="(min-width: 768px)">
+    <!-- Mobile version -->
+    <source src="homepagevideomobile.mp4" type="video/mp4" media="(max-width: 767px)">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
   <!-- Optional overlay -->
   <div class="absolute inset-0 bg-black/30 z-10"></div>
