@@ -100,9 +100,9 @@
   </header>
   
 <!-- Hero Section -->
-<section id="home" class="w-full bg-black">
+<section id="home" class="w-full bg-black flex flex-col items-center"">
   <!-- Video -->
-  <div class="w-full flex justify-center">
+  <div class="w-full max-w-6xl">
     <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg">
       <source src="Logovideo.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -116,8 +116,9 @@
 <style>
   .hero-video {
     width: 100%;
-    max-height: 800px; /* desktop max height */
-    object-fit: cover;
+    height: auto;
+    max-height: 600px; /* desktop max height */
+    object-fit: contain;
   }
 
   /* Mobile portrait */
@@ -175,7 +176,7 @@
 
    
     <!-- Right bottom video -->
-    <div class="flex justify-center md:justify-start">
+    <div class="flex justify-center md:justify-end">
       <video autoplay muted loop playsinline class="rounded-3x2 shadow-lg w-80 md:mb-[-40px] object-cover">
         <source src="financialgrowth.mp4" type="video/mp4">
         Your browser does not support the video tag.
