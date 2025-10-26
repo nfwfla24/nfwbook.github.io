@@ -92,17 +92,17 @@
 </script>
      
   </header>
-<!-- Hero Section with Responsive Fullscreen Video -->
+<!-- Hero Section with Responsive Contained Video -->
 <section id="home" class="relative w-full h-screen flex items-center justify-center overflow-hidden text-center bg-black">
 
   <!-- Background video -->
   <video autoplay muted loop playsinline
-    class="absolute top-0 left-0 w-[100vw] h-[100vh] object-cover object-center z-0">
+    class="absolute top-0 left-0 w-[100vw] h-[100vh] object-contain md:object-cover object-center z-0 bg-black">
     <source src="homepagevideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-   <!-- Optional dark overlay for contrast -->
+ <!-- Subtle overlay for contrast -->
   <div class="absolute inset-0 bg-black/30 z-[1]"></div>
 
 
@@ -110,7 +110,7 @@
   <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white"></div>-->
 
   <!-- Foreground text -->
-   <div class="relative z-[2] px-4">
+  <div class="relative z-[2] px-4">
     <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white">Navigate the Future</h1>
   </div>
   </section>
