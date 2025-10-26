@@ -100,45 +100,42 @@
   </header>
   
 <!-- Hero Section -->
-<section id="home" class="relative w-full bg-black">
-  <!-- Background video -->
-  <div class="absolute inset-0 flex items-center justify-center bg-black">
-    <video autoplay muted loop playsinline class="hero-video">
+<section id="home" class="w-full bg-black">
+  <!-- Video -->
+  <div class="w-full flex justify-center">
+    <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg">
       <source src="Logovideo.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-
-    <!-- Optional overlay -->
-    <div class="absolute inset-0 bg-black/30"></div>
   </div>
 
   <!-- Foreground text below video -->
-  <div class="mt-[100%] md:mt-0 px-4 relative z-10">
-    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white text-center">Navigate the Future</h1>
+  <div class="mt-6 px-4 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white">
+      Navigate the Future
+    </h1>
   </div>
 </section>
 
 <!-- Responsive Behavior -->
 <style>
-  /* Default (desktop + tablets) */
   .hero-video {
     width: 100%;
-    max-height: 600px; /* Limit height on desktop */
+    max-height: 500px; /* desktop max height */
     object-fit: cover;
   }
 
-  /* Portrait mobile: keep full video visible inside screen */
+  /* Mobile portrait */
   @media (max-width: 767px) and (orientation: portrait) {
     .hero-video {
       object-fit: contain;
       width: 100%;
       height: auto;
-      background-color: black;
       max-height: none;
     }
   }
 
-  /* Landscape mobile: fill screen height but preserve width ratio */
+  /* Mobile landscape */
   @media (max-width: 767px) and (orientation: landscape) {
     .hero-video {
       object-fit: cover;
