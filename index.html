@@ -100,7 +100,7 @@
   </header>
   
 <!-- Hero Section -->
-<section id="home" class="relative w-full bg
+<section id="home" class="relative w-full bg-black">
   <!-- Background video -->
   <div class="absolute inset-0 flex items-center justify-center bg-black">
     <video autoplay muted loop playsinline class="hero-video">
@@ -112,10 +112,10 @@
     <div class="absolute inset-0 bg-black/30"></div>
   </div>
 
-  <!-- Foreground text below video
-  <div class="mt-6 px-4">
-    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white">Navigate the Future</h1>
-  </div>-->
+  <!-- Foreground text below video -->
+  <div class="mt-[100%] md:mt-0 px-4 relative z-10">
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white text-center">Navigate the Future</h1>
+  </div>
 </section>
 
 <!-- Responsive Behavior -->
@@ -123,7 +123,7 @@
   /* Default (desktop + tablets) */
   .hero-video {
     width: 100%;
-    height: auto;
+    max-height: 600px; /* Limit height on desktop */
     object-fit: cover;
   }
 
@@ -134,6 +134,7 @@
       width: 100%;
       height: auto;
       background-color: black;
+      max-height: none;
     }
   }
 
@@ -143,6 +144,7 @@
       object-fit: cover;
       width: 100%;
       height: auto;
+      max-height: none;
     }
   }
 </style>
