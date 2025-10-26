@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>New Financial World</title>
+  <title>The New Financial World</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     p,li{line-height:1.7}
     .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
   </style>
-  <meta property="og:title" content="New Financial World"/>
+  <meta property="og:title" content="The New Financial World"/>
   <meta property="og:description" content="A plain‑English guide to cryptocurrency, blockchain technology, and the 5th Industrial Revolution."/>
   <meta property="og:image" content="Book cover.png"/>
 </head>
@@ -102,17 +102,21 @@
 <!-- Hero Section -->
 <section id="home" class="relative w-full h-screen flex items-center justify-center text-center bg-black overflow-hidden">
 
- <!-- Background video -->
+<!-- Background video -->
 <div class="absolute inset-0 w-full h-full overflow-hidden">
   <video autoplay muted loop playsinline class="w-full h-full object-cover">
-    <!-- Desktop version -->
+    <!-- Desktop (tablet and up) -->
     <source src="homepagevideodesktop.mp4" type="video/mp4" media="(min-width: 768px)">
-    <!-- Mobile version -->
-    <source src="homepagevideomobile.mp4" type="video/mp4" media="(max-width: 767px)">
+    
+    <!-- Mobile Landscape -->
+    <source src="homepagevideomobilelandscape.mp4" type="video/mp4" media="(max-width: 767px) and (orientation: landscape)">
+    
+    <!-- Mobile Portrait -->
+    <source src="homepagevideomobileportrait.mp4" type="video/mp4" media="(max-width: 767px) and (orientation: portrait)">
+    
     Your browser does not support the video tag.
   </video>
 </div>
-
   <!-- Optional overlay -->
   <div class="absolute inset-0 bg-black/30 z-10"></div>
 
