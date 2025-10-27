@@ -146,125 +146,12 @@
     </div>
   </section>
 
-<!--Consultation Request Form -->
- <section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
-  <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">Request a Consultation</h2>
-
-  <form id="consultation-form" class="space-y-6 bg-white/10 p-8 rounded-2xl shadow-lg backdrop-blur">
-
-    <!-- Name -->
-    <div>
-      <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
-      <input type="text" id="name" name="user_name" required
-        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400
-        focus:outline-none focus:ring-2 focus:ring-white/50"
-        placeholder="Your name">
-    </div>
-
-    <!-- Email -->
-    <div>
-      <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
-      <input type="email" id="email" name="user_email" required
-        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400
-        focus:outline-none focus:ring-2 focus:ring-white/50"
-        placeholder="your@email.com">
-    </div>
-
-    <!-- Phone -->
-    <div>
-      <label for="phone" class="block text-sm font-semibold mb-2">Phone Number</label>
-      <input type="tel" id="phone" name="user_phone"
-        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400
-        focus:outline-none focus:ring-2 focus:ring-white/50"
-        placeholder="(555) 123-4567">
-    </div>
-    
-<!--Consultation Type-->
-    <div>
-  <label for="consultationType" class="block text-left text-gray-200 mb-2">Consultation Type</label>
-  <select id="consultationType" name="consultationType" required
-    class="w-full p-3 rounded-xl bg-black/40 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none">
-    <option value="" disabled selected>Select a consultation type</option>
-    <option value="Crypto Strategy">Crypto Strategy</option>
-    <option value="DeFi Strategy">DeFi Strategy</option>
-    <option value="Blockchain Use Cases">Blockchain Use Cases</option>
-    <option value="Other">Other</option>
-  </select>
-</div>
-
-    <!-- Message -->
-    <div>
-      <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
-      <textarea id="message" name="user_message" rows="5" required
-        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400
-        focus:outline-none focus:ring-2 focus:ring-white/50"
-        placeholder="Tell us what you’d like to discuss..."></textarea>
-    </div>
-
-    <!-- Submit Button -->
-    <div class="text-center">
-      <button type="submit"
-        class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
-        Submit Request
-      </button>
-    </div>
-  </form>
-
-  <!-- Success & Error Messages -->
-  <p id="form-success" class="hidden text-green-400 text-center mt-4">✅ Thank you! Your request has been submitted.</p>
-  <p id="form-error" class="hidden text-red-400 text-center mt-4">❌ Oops! Something went wrong. Please try again.</p>
-</section>
-
-<!-- EmailJS Script -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  (function () {
-    emailjs.init("Hz9mazCp4SU2MTcN6"); // ✅ Your EmailJS public key
-  })();
-
-  document.getElementById('consultation-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Collect form data
-    const formData = {
-      user_name: form.user_name.value,
-      user_email: form.user_email.value,
-      user_phone: form.user_phone.value,
-      consultation_type: form.consultation_type.value,
-      user_message: form.user_message.value
-    };
-
-    // Send email to YOU
-    emailjs.send('service_jz3xwdv', 'template_l6bio7c', formData)
-      .then(() => {
-        // Optional: send auto-reply to customer
-        emailjs.send('service_jz3xwdv', 'template_cgrg12b', formData)
-          .then(() => {
-            successMsg.classList.remove('hidden');
-            errorMsg.classList.add('hidden');
-            form.reset();
-          })
-          .catch(err => {
-            console.error('Auto-reply error:', err);
-          });
-      })
-      .catch(function (error) {
-        console.error("❌ Email sending failed:", error);
-        alert("Something went wrong. Please try again later.");
-      });
-  });
-</script>
-
   
-
-  
-<!-- Alt Consultation Request Form -->
 <!-- Consultation Request Form -->
 <section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
   <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">Request a Consultation</h2>
 
   <form id="consultation-form" class="space-y-6 bg-white/10 p-8 rounded-2xl shadow-lg backdrop-blur">
-    <!-- Name -->
     <div>
       <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
       <input type="text" id="name" name="user_name" required
@@ -272,7 +159,6 @@
         placeholder="Your name">
     </div>
 
-    <!-- Email -->
     <div>
       <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
       <input type="email" id="email" name="user_email" required
@@ -280,7 +166,6 @@
         placeholder="your@email.com">
     </div>
 
-    <!-- Phone -->
     <div>
       <label for="phone" class="block text-sm font-semibold mb-2">Phone Number</label>
       <input type="tel" id="phone" name="user_phone"
@@ -288,7 +173,6 @@
         placeholder="(555) 123-4567">
     </div>
 
-    <!-- Consultation Type Dropdown -->
     <div>
       <label for="consultationType" class="block text-sm font-semibold mb-2">Consultation Type</label>
       <select id="consultationType" name="consultation_type" required
@@ -301,7 +185,6 @@
       </select>
     </div>
 
-    <!-- Message -->
     <div>
       <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
       <textarea id="message" name="user_message" rows="5" required
@@ -309,7 +192,6 @@
         placeholder="Tell us what you’d like to discuss..."></textarea>
     </div>
 
-    <!-- Submit Button -->
     <div class="text-center">
       <button type="submit" class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
         Submit Request
@@ -317,11 +199,9 @@
     </div>
   </form>
 
-  <!-- Success & Error Messages -->
   <p id="form-success" class="hidden text-green-400 text-center mt-6 text-lg">✅ Thank you! Please schedule your consultation below.</p>
   <p id="form-error" class="hidden text-red-400 text-center mt-6">❌ Something went wrong. Please try again.</p>
 
-  <!-- Calendly Embed (initially hidden) -->
   <div id="calendly-container" class="hidden mt-10 rounded-2xl overflow-hidden">
     <div class="calendly-inline-widget"
       data-url="https://calendly.com/nfwfla/30min"
@@ -335,7 +215,7 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <script>
-  // Initialize EmailJS
+document.addEventListener('DOMContentLoaded', function() {
   emailjs.init("Hz9mazCp4SU2MTcN6");
 
   const form = document.getElementById('consultation-form');
@@ -354,17 +234,14 @@
       user_message: form.user_message.value
     };
 
-    // Send main email
     emailjs.send('service_jz3xwdv', 'template_l6bio7c', formData)
       .then(() => {
-        // Auto-reply to customer
         emailjs.send('service_jz3xwdv', 'template_cgrg12b', formData)
           .then(() => {
             successMsg.classList.remove('hidden');
             errorMsg.classList.add('hidden');
-            calendlyContainer.classList.remove('hidden'); // Show Calendly
+            calendlyContainer.classList.remove('hidden');
             form.reset();
-            // Smooth scroll to Calendly section
             calendlyContainer.scrollIntoView({ behavior: 'smooth' });
           })
           .catch(err => console.error('Auto-reply error:', err));
@@ -375,7 +252,9 @@
         errorMsg.classList.remove('hidden');
       });
   });
+});
 </script>
+
   
   <!-- Mission & Core Values 
   <section id="mission" class="mx-auto max-w-6xl px-4 py-12">
