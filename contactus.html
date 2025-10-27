@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--brand:#111827;--accent:#06b6d4}
+    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    html{font-size:17px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+    @media (min-width:1024px){html{font-size:18px}}
+    p,li{line-height:1.7}
+    .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
+  </style>
+  <meta property="og:title" content="Contact Us"/>
+  </head>
+<body class="relative text-slate-800">
+  <div class="fixed inset-0 -z-10 pointer-events-none">
+    <div class="absolute inset-0" style="background:
+      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
+      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
+      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
+      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
+    "></div>
+    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="0.8"/>
+        </filter>
+      </defs>
+      <g filter="url(#f)" font-family="Inter, system-ui, sans-serif" font-size="24" fill="white">
+        <text x="8%" y="18%">₿</text>
+        <text x="22%" y="35%">Ξ</text>
+        <text x="38%" y="12%">◎</text>
+        <text x="55%" y="28%">✕</text>
+        <text x="72%" y="18%">Ξ</text>
+        <text x="85%" y="40%">₿</text>
+        <text x="12%" y="70%">✕</text>
+        <text x="33%" y="82%">Ξ</text>
+        <text x="60%" y="75%">◎</text>
+        <text x="80%" y="66%">₿</text>
+      </g>
+    </svg>
+  </div>
+
+ <!-- Top header -->
+<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
+  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+
+    <!-- Logo + Site Name -->
+    <a href="/" class="flex items-center gap-3">
+      <!-- Logo image -->
+      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
+
+      <!-- Site name -->
+      <span class="font-semibold tracking-tight text-slate-900">The New Financial World</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+      <a href="index.html" class="hover:text-slate-950">Home</a>
+      <a href="about.html" class="hover:text-slate-950">About Us</a>
+      <a href="consulting.html" class="hover:text-slate-950">Schedule a Consultation</a>
+      <a href="book.html" class="hover:text-slate-950">Buy the Book</a>
+      <a href="#contact" class="hover:text-slate-950">Contact Us</a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
+      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
+    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
+    <a href="about.html" class="block text-left hover:text-slate-950">About Us</a>
+    <a href="consulting.html" class="block text-left hover:text-slate-950">Schedule a Consultation</a>
+    <a href="book.html" class="block text-left hover:text-slate-950">Buy the Book</a>
+    <a href="#contact" class="block text-left hover:text-slate-950">Contact Us</a>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+     
+  </header>
+
+<!--Contact Us Form-->
+  
+ 
+<section id="contact us" class="max-w-3xl mx-auto px-4 py-16 text-white">
+  <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">Contact Us</h2>
+
+  <form id="contact us-form" class="space-y-6 bg-white/10 p-8 rounded-2xl shadow-lg backdrop-blur">
+
+    <!-- Name -->
+    <div>
+      <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
+      <input type="text" id="name" name="user_name" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your name">
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
+      <input type="email" id="email" name="user_email" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="your@email.com">
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <label for="phone" class="block text-sm font-semibold mb-2">Phone Number</label>
+      <input type="tel" id="phone" name="user_phone" class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="(555) 123-4567">
+    </div>
+
+    
+    <!-- Message -->
+    <div>
+      <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
+      <textarea id="message" name="user_message" rows="5" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Tell us what you’d like to discuss..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="submit" class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
+        Submit Request
+      </button>
+    </div>
+  </form>
+
+  <!-- Success & Error Messages -->
+  <p id="form-success" class="hidden text-green-400 text-center mt-4">✅ Thank you! Your request has been submitted.</p>
+  <p id="form-error" class="hidden text-red-400 text-center mt-4">❌ Oops! Something went wrong. Please try again.</p>
+</section>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("Hz9mazCp4SU2MTcN6"); // Your public key
+
+  const form = document.getElementById('consultation-form');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Collect form data
+    const formData = {
+      user_name: form.user_name.value,
+      user_email: form.user_email.value,
+      user_phone: form.user_phone.value,
+      user_message: form.user_message.value
+    };
+
+    // Send email to YOU
+    emailjs.send('service_jz3xwdv', 'template_l6bio7c', formData)
+      .then(() => {
+        // Optional: send auto-reply to customer
+        emailjs.send('service_jz3xwdv', 'template_cgrg12b', formData)
+          .then(() => {
+            successMsg.classList.remove('hidden');
+            errorMsg.classList.add('hidden');
+            form.reset();
+          })
+          .catch(err => {
+            console.error('Auto-reply error:', err);
+          });
+      })
+      .catch(err => {
+        console.error('EmailJS error:', err);
+        successMsg.classList.add('hidden');
+        errorMsg.classList.remove('hidden');
+      });
+  });
+</script>
+  
+    <footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500">
+    <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 pt-6">
+      <p>© <span id="tos-year"></span> New Financial World. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="privacy.html" class="hover:text-slate-800">Privacy</a>
+        <a href="terms.html" class="hover:text-slate-800">Terms</a>
+      </div>
+    </div>
+    <p class="mt-4 text-center text-xs text-slate-400 italic">Disclaimer: I am not a financial advisor. All information provided is for educational purposes only. The goal of New Financial World is to demystify crypto and blockchain technology through knowledge and clarity.</p>
+  </footer>
+
+  </body>
+</html>
