@@ -146,8 +146,8 @@
     </div>
   </section>
 
-<!-- Consultation Request Form -->
-<section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
+<!--Consultation Request Form -->
+ <section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
   <h2 class="text-3xl md:text-5xl font-extrabold text-center mb-8">Request a Consultation</h2>
 
   <form id="consultation-form" class="space-y-6 bg-white/10 p-8 rounded-2xl shadow-lg backdrop-blur">
@@ -155,42 +155,56 @@
     <!-- Name -->
     <div>
       <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
-      <input type="text" id="name" name="user_name" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Your name">
+      <input type="text" id="name" name="user_name" required
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400
+        focus:outline-none focus:ring-2 focus:ring-white/50"
+        placeholder="Your name">
     </div>
 
     <!-- Email -->
     <div>
       <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
-      <input type="email" id="email" name="user_email" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="your@email.com">
+      <input type="email" id="email" name="user_email" required
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400
+        focus:outline-none focus:ring-2 focus:ring-white/50"
+        placeholder="your@email.com">
     </div>
 
     <!-- Phone -->
     <div>
       <label for="phone" class="block text-sm font-semibold mb-2">Phone Number</label>
-      <input type="tel" id="phone" name="user_phone" class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="(555) 123-4567">
+      <input type="tel" id="phone" name="user_phone"
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400
+        focus:outline-none focus:ring-2 focus:ring-white/50"
+        placeholder="(555) 123-4567">
     </div>
-
-    <!-- Consultation Type -->
+    
+<!--Consultation Type-->
     <div>
-      <label for="type" class="block text-sm font-semibold mb-2">Consultation Type</label>
-      <select id="type" name="consultation_type" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
-        <option value="" disabled selected>Select an option</option>
-        <option>Crypto Strategy</option>
-        <option>DeFi Strategy</option>
-        <option>Blockchain Use Cases</option>
-        <option>Other</option>
-      </select>
-    </div>
+  <label for="consultationType" class="block text-left text-gray-200 mb-2">Consultation Type</label>
+  <select id="consultationType" name="consultationType" required
+    class="w-full p-3 rounded-xl bg-black/40 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none">
+    <option value="" disabled selected>Select a consultation type</option>
+    <option value="Crypto Strategy">Crypto Strategy</option>
+    <option value="DeFi Strategy">DeFi Strategy</option>
+    <option value="Blockchain Use Cases">Blockchain Use Cases</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
 
     <!-- Message -->
     <div>
       <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
-      <textarea id="message" name="user_message" rows="5" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="Tell us what you’d like to discuss..."></textarea>
+      <textarea id="message" name="user_message" rows="5" required
+        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400
+        focus:outline-none focus:ring-2 focus:ring-white/50"
+        placeholder="Tell us what you’d like to discuss..."></textarea>
     </div>
 
     <!-- Submit Button -->
     <div class="text-center">
-      <button type="submit" class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
+      <button type="submit"
+        class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
         Submit Request
       </button>
     </div>
@@ -204,13 +218,11 @@
 <!-- EmailJS Script -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-  emailjs.init("Hz9mazCp4SU2MTcN6"); // Your public key
+  (function () {
+    emailjs.init("Hz9mazCp4SU2MTcN6"); // ✅ Your EmailJS public key
+  })();
 
-  const form = document.getElementById('consultation-form');
-  const successMsg = document.getElementById('form-success');
-  const errorMsg = document.getElementById('form-error');
-
-  form.addEventListener('submit', function(e) {
+  document.getElementById('consultation-form').addEventListener('submit', function (e) {
     e.preventDefault();
 
     // Collect form data
@@ -236,10 +248,105 @@
             console.error('Auto-reply error:', err);
           });
       })
-      .catch(err => {
-        console.error('EmailJS error:', err);
-        successMsg.classList.add('hidden');
-        errorMsg.classList.remove('hidden');
+      .catch(function (error) {
+        console.error("❌ Email sending failed:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+  });
+</script>
+
+  
+
+  
+<!-- Alt Consultation Request Form -->
+<section id="consultation" class="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-16">
+  <div class="max-w-3xl w-full text-center mb-10">
+    <h2 class="text-4xl font-bold mb-4">Request a Consultation</h2>
+    <p class="text-gray-300">Fill out the form below and our team will get in touch to schedule your personalized consultation.</p>
+  </div>
+
+  <!-- Consultation Form -->
+  <form id="consultationForm" class="bg-white/10 backdrop-blur-lg p-8 rounded-3xl shadow-xl w-full max-w-lg space-y-6">
+    <div>
+      <label for="name" class="block text-left text-gray-200 mb-2">Full Name</label>
+      <input type="text" id="name" name="name" required
+        class="w-full p-3 rounded-xl bg-black/40 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none">
+    </div>
+
+    <div>
+      <label for="email" class="block text-left text-gray-200 mb-2">Email Address</label>
+      <input type="email" id="email" name="email" required
+        class="w-full p-3 rounded-xl bg-black/40 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none">
+    </div>
+
+    <div>
+      <label for="phone" class="block text-left text-gray-200 mb-2">Phone Number</label>
+      <input type="tel" id="phone" name="phone"
+        class="w-full p-3 rounded-xl bg-black/40 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none">
+    </div>
+
+    <div>
+  <label for="consultationType" class="block text-left text-gray-200 mb-2">Consultation Type</label>
+  <select id="consultationType" name="consultationType" required
+    class="w-full p-3 rounded-xl bg-black/40 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none">
+    <option value="" disabled selected>Select a consultation type</option>
+    <option value="Crypto Strategy">Crypto Strategy</option>
+    <option value="DeFi Strategy">DeFi Strategy</option>
+    <option value="Blockchain Use Cases">Blockchain Use Cases</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+
+    <div>
+      <label for="message" class="block text-left text-gray-200 mb-2">Additional Information</label>
+      <textarea id="message" name="message" rows="4"
+        class="w-full p-3 rounded-xl bg-black/40 border border-gray-600 text-white focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+    </div>
+
+    <button type="submit"
+      class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition-all duration-200">Submit Request</button>
+  </form>
+
+  <!-- Calendly Popup -->
+  <div id="calendly-container" class="hidden mt-10 rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur-lg p-6 shadow-xl w-full max-w-3xl">
+    <div class="calendly-inline-widget"
+      data-url="https://calendly.com/nfwfla/30min"
+      style="min-width:320px;height:700px;">
+    </div>
+  </div>
+</section>
+
+<!-- EmailJS + Calendly Script -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("Hz9mazCp4SU2MTcN6"); // your EmailJS Public Key
+  })();
+
+  document.getElementById("consultationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const serviceID = "service_jz3xwdv";
+    const templateID_owner = "template_l6bio7c"; // Email to you
+    const templateID_customer = "template_cgrg12b"; // Auto-reply to customer
+    const form = event.target;
+
+    // Send email to you
+    emailjs.sendForm(serviceID, templateID_owner, form)
+      .then(() => {
+        // Send auto-reply to customer
+        emailjs.sendForm(serviceID, templateID_customer, form)
+          .then(() => {
+            form.reset();
+            document.getElementById("consultationForm").classList.add("hidden");
+            document.getElementById("calendly-container").classList.remove("hidden");
+          })
+          .catch((err) => {
+            console.error("Error sending auto-reply:", err);
+          });
+      })
+      .catch((err) => {
+        console.error("Error sending form:", err);
       });
   });
 </script>
