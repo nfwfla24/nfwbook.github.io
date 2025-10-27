@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terms of Service - The New Financial World</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="relative text-slate-800">
+  <div class="fixed inset-0 -z-10 pointer-events-none">
+    <div class="absolute inset-0" style="background:
+      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
+      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
+      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
+      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
+    "></div>
+  </div>
+
+  <!-- Top header -->
+<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
+  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+
+    <!-- Logo + Site Name -->
+    <a href="/" class="flex items-center gap-3">
+      <!-- Logo image -->
+      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
+
+      <!-- Site name -->
+      <span class="font-semibold tracking-tight text-slate-900">The New Financial World</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+      <a href="index.html" class="hover:text-slate-950">Home</a>
+      <a href="about.html" class="hover:text-slate-950">About Us</a>
+      <a href="consulting.html" class="hover:text-slate-950">Schedule a Consultation</a>
+      <a href="book.html" class="hover:text-slate-950">Buy the Book</a>
+      <a href="#contact" class="hover:text-slate-950">Contact Us</a>
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
+      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
+    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
+    <a href="about.html" class="block text-left hover:text-slate-950">About Us</a>
+    <a href="consulting.html" class="block text-left hover:text-slate-950">Schedule a Consultation</a>
+    <a href="book.html" class="block text-left hover:text-slate-950">Buy the Book</a>
+    <a href="#contact" class="block text-left hover:text-slate-950">Contact Us</a>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+     
+  </header>
+
+  
+  <main class="mx-auto max-w-4xl px-4 py-12">
+    <div class="rounded-3xl bg-white p-8 shadow-xl ring-1 ring-slate-900/10">
+      <h1 class="text-3xl font-extrabold">Terms of Service</h1>
+      <p class="mt-2 text-slate-600 text-sm">Last updated: <span id="tos-date">October 23, 2025</span></p>
+      <section class="mt-6 space-y-4 text-slate-700">
+        <h2 class="text-xl font-semibold">1. Agreement to Terms</h2>
+        <p>By accessing this website, purchasing resources, or engaging our consulting and educational services, you agree to these Terms.</p>
+        <h2 class="text-xl font-semibold">2. Educational Content; No Financial Advice</h2>
+        <p>All content and services are for educational and informational purposes only. We do not provide financial, investment, legal, or tax advice.</p>
+        <h2 class="text-xl font-semibold">3. Accounts and Eligibility</h2>
+        <p>You represent that you are at least the age of majority in your jurisdiction and have the authority to enter into these Terms.</p>
+        <h2 class="text-xl font-semibold">4. Purchases; Third‑Party Payments</h2>
+        <p>Purchases may be processed by third‑party providers (e.g., Stripe, PayPal, Coinbase Commerce, or your crypto wallet). We do not collect or store payment card numbers or wallet private‑key information.</p>
+        <h2 class="text-xl font-semibold">5. Intellectual Property</h2>
+        <p>The website, book, resources, and other content are protected by intellectual property laws.</p>
+        <h2 class="text-xl font-semibold">6. License for Personal Use</h2>
+        <p>We grant you a limited, non‑exclusive, non‑transferable license to access and use the site and purchased resources for personal or internal business purposes.</p>
+        <h2 class="text-xl font-semibold">7. Prohibited Conduct</h2>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Interfering with site security or functionality;</li>
+          <li>Reverse engineering or scraping the site or content;</li>
+          <li>Using the services for unlawful purposes or to violate third‑party rights.</li>
+        </ul>
+        <h2 class="text-xl font-semibold">8. Disclaimers</h2>
+        <p>THE SITE AND SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE.”</p>
+        <h2 class="text-xl font-semibold">9. Limitation of Liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE WILL NOT BE LIABLE FOR INDIRECT OR CONSEQUENTIAL DAMAGES.</p>
+        <h2 class="text-xl font-semibold">10. Indemnification</h2>
+        <p>You agree to indemnify and hold harmless New Financial World and its principals from any claims arising from your use of the site or services.</p>
+        <h2 class="text-xl font-semibold">11. Termination</h2>
+        <p>We may suspend or terminate access to the site or services at any time.</p>
+        <h2 class="text-xl font-semibold">12. Governing Law; Dispute Resolution</h2>
+        <p>These Terms are governed by the laws of our principal place of business.</p>
+        <h2 class="text-xl font-semibold">13. Changes to Terms</h2>
+        <p>We may update these Terms from time to time.</p>
+        <h2 class="text-xl font-semibold">14. Users Under 18</h2>
+        <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from anyone under 18 years old.</p>
+        <h2 class="text-xl font-semibold">15. Contact</h2>
+        <p>Questions? Email <a class="text-sky-700 underline" href="mailto:nfwfla@gmail.com">nfwfla@gmail.com</a> </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500">
+    <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 pt-6">
+      <p>© <span id="tos-year"></span> New Financial World. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="privacy.html" class="hover:text-slate-800">Privacy</a>
+        <a href="terms.html" class="hover:text-slate-800">Terms</a>
+      </div>
+    </div>
+    <p class="mt-4 text-center text-xs text-slate-400 italic">Disclaimer: I am not a financial advisor. All information provided is for educational purposes only. The goal of New Financial World is to demystify crypto and blockchain technology through knowledge and clarity.</p>
+  </footer>
+
+  <script>
+    const dT=new Date();
+    document.getElementById('tos-year').textContent=dT.getFullYear();
+    const btnT=document.getElementById('menuBtnT');
+    const panelT=document.getElementById('mobileNavT');
+    btnT && btnT.addEventListener('click',()=>{
+      const isOpen=!panelT.classList.contains('hidden');
+      panelT.classList.toggle('hidden');
+      btnT.setAttribute('aria-expanded', String(!isOpen));
+    });
+  </script>
+</body>
+</html>
+
+
+
