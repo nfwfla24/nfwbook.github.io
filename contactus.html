@@ -123,7 +123,18 @@
       <input type="tel" id="phone" name="user_phone" class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50" placeholder="(555) 123-4567">
     </div>
 
-    
+     <!-- Consultation Type -->
+    <div>
+      <label for="type" class="block text-sm font-semibold mb-2">Consultation Type</label>
+      <select id="type" name="consultation_type" required class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-white/50">
+        <option value="" disabled selected>Select an option</option>
+        <option>Crypto Strategy</option>
+        <option>DeFi Strategy</option>
+        <option>Blockchain Use Cases</option>
+        <option>Other</option>
+      </select>
+    </div>
+
     <!-- Message -->
     <div>
       <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
@@ -160,6 +171,7 @@
       user_name: form.user_name.value,
       user_email: form.user_email.value,
       user_phone: form.user_phone.value,
+      consultation_type: form.consultation_type.value,
       user_message: form.user_message.value
     };
 
@@ -197,4 +209,5 @@
   </footer>
 
   </body>
+
 </html>
