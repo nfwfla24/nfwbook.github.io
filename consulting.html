@@ -174,17 +174,16 @@
         placeholder="(555) 123-4567">
     </div>
 
-    <div>
-      <label for="consultationType" class="block text-sm font-semibold mb-2">Consultation Type</label>
-      <select id="consultationType" name="consultation_type" required
-        class="w-full p-3 rounded-xl bg-white/5 border border-white/30 text-slate focus:outline-none focus:ring-2 focus:ring-white/50">
-        <option value="" disabled selected>Select a consultation type</option>
-        <option value="Crypto Strategy">Crypto Strategy</option>
-        <option value="DeFi Strategy">DeFi Strategy</option>
-        <option value="Blockchain Use Cases">Blockchain Use Cases</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
+   <div>
+  <select id="consultationType" name="consultation_type" required
+  class="w-full p-3 rounded-xl bg-white/5 border border-white/30 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-white/50">
+  <option value="" disabled selected class="text-white">Select a consultation type</option>
+  <option value="Crypto Strategy" class="text-black">Crypto Strategy</option>
+  <option value="DeFi Strategy" class="text-black">DeFi Strategy</option>
+  <option value="Blockchain Use Cases" class="text-black">Blockchain Use Cases</option>
+  <option value="Other" class="text-black">Other</option>
+</select>
+</div>
 
     <div>
       <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
