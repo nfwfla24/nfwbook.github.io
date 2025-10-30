@@ -119,7 +119,7 @@
     </div>
   </main>
 
- <!-- Footer -->
+<!-- Footer -->
 <footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
   <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
     <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
@@ -179,22 +179,26 @@
   </p>
 </footer>
 
+<!-- Scripts -->
 <script>
+  // Auto-update footer year
   document.getElementById("tos-year").textContent = new Date().getFullYear();
-</script>
 
-  
-    const d=new Date();
-    document.getElementById('pp-year').textContent=d.getFullYear();
-    document.getElementById('pp-date') && (document.getElementById('pp-date').textContent="October 23, 2025");
-    const btn=document.getElementById('menuBtn');
-    const panel=document.getElementById('mobileNav');
-    btn && btn.addEventListener('click',()=>{
-      const isOpen=!panel.classList.contains('hidden');
-      panel.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', String(!isOpen));
+  // Auto-update Privacy Policy last updated date
+  const ppDate = document.getElementById("pp-date");
+  if (ppDate) {
+    ppDate.textContent = "October 23, 2025";
+  }
+
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
-  </script>
+  }
+</script>
 </body>
 </html>
 
