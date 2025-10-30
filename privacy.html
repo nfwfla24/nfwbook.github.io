@@ -147,22 +147,29 @@
     </svg>
   </a>
 
-  <!-- Instagram (slightly taller for camera) -->
-  <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
-     class="transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6 align-bottom">
-      <defs>
-        <linearGradient id="instaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#feda75"/>
-          <stop offset="25%" stop-color="#fa7e1e"/>
-          <stop offset="50%" stop-color="#d62976"/>
-          <stop offset="75%" stop-color="#962fbf"/>
-          <stop offset="100%" stop-color="#4f5bd5"/>
-        </linearGradient>
-      </defs>
-      <path fill="url(#instaGradient)" d="M224,214a42,42,0,1,0,42,42A42,42,0,0,0,224,214Zm124.7-49a48.5,48.5,0,0,0-27.5-27.5c-19.1-7.4-64.5-5.7-86.3-5.7s-67.2-1.7-86.3,5.7a48.5,48.5,0,0,0-27.5,27.5c-7.4,19.1-5.7,64.5-5.7,86.3s-1.7,67.2,5.7,86.3a48.5,48.5,0,0,0,27.5,27.5c19.1,7.4,64.5,5.7,86.3,5.7s67.2,1.7,86.3-5.7a48.5,48.5,0,0,0,27.5-27.5c7.4-19.1,5.7-64.5,5.7-86.3S356.1,184,348.7,165Zm-124.7,124a72,72,0,1,1,72-72A72,72,0,0,1,224,289Zm85-140a16,16,0,1,1,16-16A16,16,0,0,1,309,149Z"/>
-    </svg>
-  </a>
+  <!-- Instagram realistic camera icon -->
+<a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
+   class="transform transition-transform duration-300 hover:scale-125">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-7 h-7">
+    <!-- Background square with rounded corners -->
+    <defs>
+      <linearGradient id="igGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f58529"/>
+        <stop offset="30%" stop-color="#dd2a7b"/>
+        <stop offset="60%" stop-color="#8134af"/>
+        <stop offset="100%" stop-color="#515bd4"/>
+      </linearGradient>
+    </defs>
+    <rect x="16" y="16" width="480" height="480" rx="100" ry="100" fill="url(#igGradient)" />
+    <!-- Outer lens ring -->
+    <circle cx="256" cy="256" r="90" fill="none" stroke="white" stroke-width="32"/>
+    <!-- Inner lens -->
+    <circle cx="256" cy="256" r="50" fill="white"/>
+    <!-- Flash / small circle -->
+    <circle cx="384" cy="128" r="16" fill="white"/>
+  </svg>
+</a>
+
 
   <!-- X (white) -->
   <a href="https://x.com/" target="_blank" aria-label="X"
@@ -197,6 +204,7 @@
 
 </body>
 </html>
+
 
 
 
