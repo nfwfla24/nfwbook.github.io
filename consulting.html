@@ -178,10 +178,13 @@
  <div>
   <label for="consultationType" class="block text-sm font-semibold mb-2">Consultation Type</label>
   
+  <div>
+  <label for="consultationType" class="block text-sm font-semibold mb-2">Consultation Type</label>
+
   <div class="relative">
     <select id="consultationType" name="consultation_type" required
       class="w-full p-3 rounded-xl bg-white/5 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50 appearance-none">
-      <option value="" disabled selected class="text-gray-400">Select a consultation type</option>
+      <option value="" disabled selected hidden class="text-gray-400">Select a consultation type</option>
       <option value="Crypto Strategy">Crypto Strategy</option>
       <option value="DeFi Strategy">DeFi Strategy</option>
       <option value="Blockchain Use Cases">Blockchain Use Cases</option>
@@ -190,7 +193,8 @@
 
     <!-- Centered custom arrow -->
     <div class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
-      <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
     </div>
@@ -198,14 +202,14 @@
 </div>
 
 <style>
-  /* Dropdown list options (when open) */
+  /* Style for dropdown list options (when open) */
   select option {
     color: black;
     background-color: white;
   }
 
-  /* Placeholder (disabled option) */
-  select option:disabled {
+  /* Style the placeholder (disabled option) */
+  select:invalid {
     color: #9ca3af; /* gray-400 */
   }
 </style>
