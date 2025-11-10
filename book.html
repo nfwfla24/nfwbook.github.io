@@ -114,6 +114,51 @@
         <div>Free updates for life</div>
       </div>
     </div>
+
+    
+ <!-- Right: Video -->
+    <div class="flex justify-center md:justify-end">
+      <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg w-full max-w-lg">
+        <source src="bookvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+</section>
+
+<!-- Responsive Behavior -->
+<style>
+.hero-video {
+  width: 100%;
+  height: auto;
+  max-height: 500px; /* limit on desktop */
+  object-fit: contain;
+}
+
+/* Mobile portrait */
+@media (max-width: 767px) and (orientation: portrait) {
+  .hero-video {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 767px) and (orientation: landscape) {
+  .hero-video {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+</style>
+</section>
+
+    
     <div class="relative">
       <div class="absolute -inset-4 -z-10 bg-gradient-to-tr from-cyan-200 to-sky-200 rounded-3xl blur-2xl"></div>
       <div class="rounded-3xl bg-white p-5 shadow-xl ring-1 ring-slate-900/5">
