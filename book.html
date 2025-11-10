@@ -98,8 +98,61 @@
 </script>
      
   </header>
-<p class="text-center text-4xl font-semibold leading-tight text-white">Book Coming Soon!</p>
-  <p class="text-center text-3xl font-semibold leading-tight text-white">Releasing 2025</p>
+<!-- Hero Section -->
+<section id="home" class="w-full bg-black flex flex-col items-center"">
+  <!-- Video -->
+  <div class="w-full max-w-6xl">
+    <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg">
+      <source src="Bookvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  
+</section>
+
+<!-- Responsive Behavior -->
+<style>
+  .hero-video {
+    width: 100%;
+    height: auto;
+    max-height: 600px; /* desktop max height */
+    object-fit: contain;
+  }
+
+  /* Mobile portrait */
+  @media (max-width: 767px) and (orientation: portrait) {
+    .hero-video {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+  }
+
+  /* Mobile landscape */
+  @media (max-width: 767px) and (orientation: landscape) {
+    .hero-video {
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+  }
+</style>
+</section>
+
+  <!--Navigate the Future Section-->
+<div class="w-full flex flex-col justify-center items-center mt-6 px-4 text-center">
+  <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white text-center">Book Coming Soon!</h1>
+  <p class="text-2xl sm:text-2xl md:text-2xl font-semibold text-white/80 leading-tight mt-2">Releasing 2025</p>
+</div>
+  
+ 
+
+  <br>
+  <br>
+  <br>
   <section class="mx-auto max-w-6xl px-4 pt-14 pb-10 grid md:grid-cols-2 gap-10 items-center">
     <div class="rounded-3xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-100">
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-white">Introduction to The New Financial World</h1>
@@ -114,51 +167,6 @@
         <div>Free updates for life</div>
       </div>
     </div>
-
-    
- <!-- Right: Video -->
-    <div class="flex justify-center md:justify-end">
-      <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg w-full max-w-lg">
-        <source src="bookvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-  </div>
-</section>
-
-<!-- Responsive Behavior -->
-<style>
-.hero-video {
-  width: 100%;
-  height: auto;
-  max-height: 500px; /* limit on desktop */
-  object-fit: contain;
-}
-
-/* Mobile portrait */
-@media (max-width: 767px) and (orientation: portrait) {
-  .hero-video {
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    max-height: none;
-  }
-}
-
-/* Mobile landscape */
-@media (max-width: 767px) and (orientation: landscape) {
-  .hero-video {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-    max-height: none;
-  }
-}
-</style>
-</section>
-
-    
     <div class="relative">
       <div class="absolute -inset-4 -z-10 bg-gradient-to-tr from-cyan-200 to-sky-200 rounded-3xl blur-2xl"></div>
       <div class="rounded-3xl bg-white p-5 shadow-xl ring-1 ring-slate-900/5">
