@@ -108,7 +108,7 @@
       <p class="mt-3 text-sm text-slate-400 italic">Disclaimer: I am not a financial advisor. The goal is to demystify crypto and blockchain technology through education and clear guidance.</p>
       <div class="mt-6 flex flex-wrap items-center gap-3">
         <a href="#consultation" class="rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10">Schedule a Consultation</a>
-        <a href="book.html" class="rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10">Explore the Book</a>
+        <a href="#consultation" class="rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10">Join a Class</a>
       </div>
     </div>
     
@@ -151,7 +151,7 @@
 <section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
   <form id="consultation-form" class="space-y-6 bg-white/10 p-8 rounded-2xl shadow-lg backdrop-blur">
     <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-8">Need 
-      More Information or <br>Ready to Get Started</h2>
+      More Information or <br>Ready to Join a Class</h2>
 
     <div>
       <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
@@ -175,14 +175,17 @@
     </div>
   
   <div>
-  <label for="consultationType" class="block text-sm font-semibold mb-2">Consultation Type</label>
+  <label for="consultationType" class="block text-sm font-semibold mb-2">Request Type</label>
 
   <div class="relative">
     <select id="consultationType" name="consultation_type" required
       class="w-full p-3 rounded-xl bg-white/5 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-white/50 appearance-none">
-      <option value="" disabled selected hidden class="text-gray-400">Select a consultation type</option>
+      <option value="" disabled selected hidden class="text-gray-400">Make a Selection</option>
+      <option value="Blockchain Use Cases">Blockchain Use Cases</option>
       <option value="Crypto Strategy">Crypto Strategy</option>
       <option value="DeFi Strategy">DeFi Strategy</option>
+      <option value="Join a Class for Beginners">Join a Class for Beginners</option>
+      <option value="Join a Class for Intermediates">Join a Class for Intermediates</option>
       <option value="Blockchain Use Cases">Blockchain Use Cases</option>
       <option value="Other">Other</option>
     </select>
