@@ -274,7 +274,20 @@
               <label for="qty" class="text-sm text-slate-300">Quantity</label>
               <input id="qty" type="number" min="1" value="1" class="w-20 rounded-xl bg-white/10 border border-white/20 px-3 py-2" />
             </div>
-            <fieldset class="space-y-2">
+            
+              <!--<p class="text-xs text-slate-300">e‑Book: Instant download. Paperback: We will follow up by email for shipping details. Signed copies add production & handling time.</p>
+            </fieldset>-->
+          </div>
+          <p class="mt-4 text-slate-200 text-sm">Total: <span id="total" class="font-semibold">$14.99</span> <span id="perUnit" class="text-slate-400">($14.99 per unit)</span></p>
+        </div>
+       <!-- <div class="space-y-3">
+          <button data-coin="eth" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with ETH</button>
+          <button data-coin="sol" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with SOL</button>
+          <button data-coin="btc" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with BTC</button>
+          <button data-coin="usdc" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with USDC</button>
+          <div class="h-px bg-white/10 my-4"></div>-->
+        
+           <fieldset class="space-y-2">
               <legend class="text-sm text-slate-300">Format</legend>
               <div class="flex flex-wrap gap-3 text-slate-900">
                 <label class="inline-flex items-center gap-2 bg-white/90 rounded-xl px-3 py-2 cursor-pointer">
@@ -288,20 +301,9 @@
               </div>
               <label class="mt-2 inline-flex items-center gap-2 text-sm">
                 <input id="signed" type="checkbox" class="accent-slate-900" disabled />
-                <span>Signed copy <span class="opacity-80">(+ $40.00)</span></span>
+                <!--<span>Signed copy <span class="opacity-80">(+ $40.00)</span></span>-->
               </label>
-              <!--<p class="text-xs text-slate-300">e‑Book: Instant download. Paperback: We will follow up by email for shipping details. Signed copies add production & handling time.</p>
-            </fieldset>-->
-          </div>
-          <p class="mt-4 text-slate-200 text-sm">Total: <span id="total" class="font-semibold">$14.99</span> <span id="perUnit" class="text-slate-400">($14.99 per unit)</span></p>
-        </div>
-       <!-- <div class="space-y-3">
-          <button data-coin="eth" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with ETH</button>
-          <button data-coin="sol" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with SOL</button>
-          <button data-coin="btc" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with BTC</button>
-          <button data-coin="usdc" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with USDC</button>
-          <div class="h-px bg-white/10 my-4"></div>-->
-          
+             
           <button data-coin="Amazon" class="w-full rounded-2xl bg-[#FFC439] text-slate-900 px-5 py-3 font-semibold hover:opacity-90 flex items-center justify-center gap-2">Buy the Book</button>
           <p class="text-center text-xs text-slate-300">Payments handled by your provider. Secure & instant. No card data is processed on this site.</p>
         </div>
