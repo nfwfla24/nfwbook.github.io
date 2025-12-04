@@ -113,31 +113,99 @@
     </div>
   </main>
 
-   <!--Footer-->
-   <footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500">
-    <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 pt-6">
-      <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-      <div class="flex items-center gap-4">
-        <a href="privacy.html" class="hover:text-slate-800">Privacy</a>
-        <a href="terms.html" class="hover:text-slate-800">Terms</a>
-      </div>
+  <!-- Footer -->
+<footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
+    <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
+    <div class="flex items-center gap-4">
+      <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
+      <a href="terms.html" class="hover:text-slate-200">Terms</a>
     </div>
-    <p class="mt-4 text-center text-xs text-slate-400 italic">Disclaimer: I am not a financial advisor. All information provided is for educational purposes only. The goal of New Financial World is to demystify crypto and blockchain technology through knowledge and clarity.</p>
-  </footer>
+  </div>
 
-  <script>
-    const dT=new Date();
-    document.getElementById('tos-year').textContent=dT.getFullYear();
-    const btnT=document.getElementById('menuBtnT');
-    const panelT=document.getElementById('mobileNavT');
-    btnT && btnT.addEventListener('click',()=>{
-      const isOpen=!panelT.classList.contains('hidden');
-      panelT.classList.toggle('hidden');
-      btnT.setAttribute('aria-expanded', String(!isOpen));
-    });
-  </script>
+ <!-- Social Media Links -->
+<div class="flex justify-center mt-6 space-x-6">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/the-new-financial-world-nfw-782039397/" target="_blank" aria-label="LinkedIn"
+     class="transform transition-transform duration-300 hover:scale-125">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="#0A66C2" viewBox="0 0 24 24" class="w-5 h-5 align-bottom">
+      <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
+    </svg>
+  </a>
+
+  <!-- Facebook -->
+  <!--<a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"
+     class="transform transition-transform duration-300 hover:scale-125">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="#1877F2" viewBox="0 0 24 24" class="w-4 h-4 align-bottom">
+      <path d="M22.7 0H1.3C.6 0 0 .6 0 1.3v21.3C0 23.4.6 24 1.3 24h11.5v-9.3H9.7v-3.6h3.1V8.4c0-3.1 1.9-4.8 4.7-4.8 1.3 0 2.4.1 2.7.1v3.1h-1.9c-1.5 0-1.8.7-1.8 1.8v2.4h3.6l-.5 3.6h-3.1V24h6.1c.7 0 1.3-.6 1.3-1.3V1.3C24 .6 23.4 0 22.7 0"/>
+    </svg>
+  </a> -->
+
+ <!-- Instagram realistic camera icon (visually balanced with others) -->
+<!-- <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"
+   class="transform transition-transform duration-300 hover:scale-125">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">-->
+    <!-- Background square with rounded corners -->
+    <!--<defs>
+      <linearGradient id="igGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f58529"/>
+        <stop offset="30%" stop-color="#dd2a7b"/>
+        <stop offset="60%" stop-color="#8134af"/>
+        <stop offset="100%" stop-color="#515bd4"/>
+      </linearGradient>
+    </defs>
+    <rect x="40" y="40" width="432" height="432" rx="80" ry="80" fill="url(#igGradient)" />-->
+    <!-- Outer lens ring -->
+    <!-- <circle cx="256" cy="256" r="80" fill="none" stroke="white" stroke-width="24"/>-->
+    <!-- Inner lens -->
+   <!-- <circle cx="256" cy="256" r="44" fill="white"/>-->
+    <!-- Flash / small circle -->
+   <!-- <circle cx="368" cy="144" r="12" fill="white"/>
+  </svg>
+</a> -->
+
+
+
+<!-- X (Official) -->
+<a href="https://x.com/nfwfla" target="_blank" aria-label="X"
+   class="transform transition-transform duration-300 hover:scale-125">
+  <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain">
+</a>
+
+
+
+
+<!-- Discord (Official PNG) -->
+<a href="https://discord.gg/AqxQfa6d" 
+   target="_blank" 
+   aria-label="Discord"
+   class="transform transition-transform duration-300 hover:scale-125">
+    <img src="Discord-Symbol-Blurple.png" 
+         alt="Discord" 
+         class="w-6 h-6 object-contain align-middle">
+</a>
+
+</div>
+
+
+
+
+
+  <!-- Disclaimer -->
+  <p class="mt-6 max-w-2xl mx-auto text-center text-xs text-slate-400 italic">
+    Disclaimer: This is not financial advice. All information provided is for educational purposes only. 
+    The goal of The New Financial World LLC is to demystify crypto and blockchain technology through knowledge and clarity.
+  </p>
+</footer>
+
+<script>
+  document.getElementById("tos-year").textContent = new Date().getFullYear();
+</script>
+
+  
 </body>
 </html>
+
 
 
 
