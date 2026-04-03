@@ -1,9 +1,9 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The New Financial World LLC</title>
+  <title>NFW Insights</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,9 +16,6 @@
     p,li{line-height:1.7}
     .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
   </style>
-  <meta property="og:title" content="The New Financial World LLC"/>
-  <meta property="og:description" content="A plain‑English guide to cryptocurrency, blockchain technology, and the 5th Industrial Revolution."/>
-  <meta property="og:image" content="Book cover.png"/>
 </head>
 <body class="relative text-slate-800">
   <div class="fixed inset-0 -z-10 pointer-events-none">
@@ -49,202 +46,235 @@
     </svg>
   </div>
 
- <!-- Top header -->
-<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
-  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+  <!-- Top header -->
+  <header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
+        <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
+      </a>
 
-    <!-- Logo + Site Name -->
-    <a href="/" class="flex items-center gap-3">
-      <!-- Logo image -->
-      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="hover:text-slate-950">Home</a>
+        <a href="about.html" class="hover:text-slate-950">About</a>
+        <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
+        <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
+        <a href="homepage.html" class="hover:text-slate-950">Media</a>
+        <a href="insights.html" class="text-cyan-700">Insights</a>
+        <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
+      </nav>
 
-      <!-- Site name -->
-      <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
-    </a>
+      <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600" aria-label="Open menu">
+        <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+        </svg>
+      </button>
+    </div>
 
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-      <a href="index.html" class="hover:text-slate-950">Home</a>
-      <a href="about.html" class="hover:text-slate-950">About</a>
-      <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
-      <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
-      <a href="homepage.html" class="hover:text-slate-950">Media</a>
-      <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
-      
+    <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
+      <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
+      <a href="about.html" class="block text-left hover:text-slate-950">About</a>
+      <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
+      <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
+      <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
+      <a href="insights.html" class="block text-left text-cyan-700">Insights</a>
+      <a href="contactus.html" class="block text-left hover:text-slate-950">Work With Us</a>
     </nav>
-
-    <!-- Mobile hamburger -->
-    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
-      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile menu -->
-  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
-    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
-    <a href="about.html" class="block text-left hover:text-slate-950">About</a>
-    <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
-    <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
-    <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
-    <a href="contactus.html" class="block text-left hover:text-slate-950">Work With Us</a>
-    
-  </nav>
-</header>
-
-<script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-     
   </header>
-  <section class="hero">
-    <div class="container">
-      <div class="eyebrow">NFW Insight</div>
-      <h1>Insert Your Headline Here</h1>
-      <div class="sub">A sharp one to two sentence summary that explains the core idea of this piece.</div>
-      <div class="meta">April 2026 • 6 min read • Category</div>
-    </div>
-  </section>
 
-  <section>
-    <div class="container content">
-      <p><strong>Opening:</strong> Start with a strong framing statement. One idea. Clear and direct.</p>
+  <main>
+    <section class="px-4 pt-16 pb-10">
+      <div class="mx-auto max-w-6xl text-center">
+        <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-4">NFW Insights</p>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight">
+          Where digital finance, energy, and infrastructure meet.
+        </h1>
+        <p class="mt-6 max-w-3xl mx-auto text-base md:text-lg text-slate-300">
+          Research, commentary, and weekly perspective from The New Financial World. Use this page as your living archive for newsletter issues, podcast companion pieces, and core ideas.
+        </p>
+      </div>
+    </section>
 
-      <p>Build your narrative. Keep paragraphs tight and purposeful. Focus on insight, not explanation.</p>
+    <section class="px-4 pb-8">
+      <div class="mx-auto max-w-6xl grid gap-6 lg:grid-cols-[1.5fr_.9fr]">
+        <article class="rounded-3xl border border-slate-700/70 bg-slate-900/70 p-8 shadow-2xl shadow-black/20">
+          <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-3">Featured Insight</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">AI Is Digital. Its Bottlenecks Are Not.</h2>
+          <p class="text-slate-300 text-lg mb-6 max-w-3xl">
+            The real constraint on AI isn’t just compute. It’s electricity, transmission, interconnection, cooling, and the physical systems required to scale.
+          </p>
+          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-400 mb-8">
+            <span>April 2026</span>
+            <span>•</span>
+            <span>6 min read</span>
+            <span>•</span>
+            <span>AI Infrastructure</span>
+          </div>
+          <a href="/insights/ai-is-digital-its-bottlenecks-are-not.html" class="inline-flex items-center rounded-full bg-cyan-500 px-5 py-3 font-semibold text-slate-950 hover:bg-cyan-400 transition">
+            Read Full Insight
+          </a>
+        </article>
 
-      <div class="quote">
-        "Use a strong quote or key takeaway to reinforce the core idea."
+        <aside class="rounded-3xl border border-slate-700/70 bg-slate-900/60 p-8 shadow-2xl shadow-black/20">
+          <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-3">How to Use This Page</p>
+          <h3 class="text-2xl font-bold tracking-tight text-white mb-4">One core idea. Multiple assets.</h3>
+          <p class="text-slate-300 mb-6">
+            Each week, publish one written insight here, pair it with a podcast episode when relevant, and use that same idea for your newsletter and social posts.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1 text-xs text-slate-200">AI & Power</span>
+            <span class="rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1 text-xs text-slate-200">Stablecoins</span>
+            <span class="rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1 text-xs text-slate-200">Tokenization</span>
+            <span class="rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1 text-xs text-slate-200">Energy Markets</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="px-4 py-8">
+      <div class="mx-auto max-w-6xl flex flex-wrap items-end justify-between gap-4 mb-6">
+        <div>
+          <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-2">Latest from NFW</p>
+          <h2 class="text-3xl font-bold tracking-tight text-white">Recent insights</h2>
+        </div>
+        <p class="max-w-2xl text-slate-300">
+          Duplicate one card each week, update the headline, summary, date, and link, and your archive grows over time.
+        </p>
       </div>
 
-      <h2>What’s Actually Happening</h2>
-      <p>Break down the real dynamic behind the topic. Tie it to infrastructure, markets, or systems.</p>
+      <div class="mx-auto max-w-6xl grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <article class="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-6 text-white transition hover:-translate-y-1 hover:border-cyan-500/40">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Energy</p>
+          <h3 class="text-2xl font-bold tracking-tight mb-3">Why Energy Is Becoming the Strategic Asset of the Economy</h3>
+          <p class="text-slate-300 mb-5">Power access is increasingly becoming a competitive advantage for digital growth, industrial buildout, and long-term infrastructure planning.</p>
+          <div class="flex items-center justify-between text-sm text-slate-400">
+            <span>March 2026</span>
+            <a href="#" class="text-cyan-300 font-semibold">Read →</a>
+          </div>
+        </article>
 
-      <h2>Why It Matters</h2>
-      <p>Explain implications. Think forward-looking. Position the reader ahead of the trend.</p>
+        <article class="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-6 text-white transition hover:-translate-y-1 hover:border-cyan-500/40">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Stablecoins</p>
+          <h3 class="text-2xl font-bold tracking-tight mb-3">Stablecoins Are Becoming Operational Rails</h3>
+          <p class="text-slate-300 mb-5">This is not just a crypto story. It is a shift in settlement, treasury workflows, payroll, and always-on financial infrastructure.</p>
+          <div class="flex items-center justify-between text-sm text-slate-400">
+            <span>March 2026</span>
+            <a href="#" class="text-cyan-300 font-semibold">Read →</a>
+          </div>
+        </article>
 
-      <h2>The NFW View</h2>
-      <p>End with your perspective. This is where your brand voice comes through clearly.</p>
+        <article class="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-6 text-white transition hover:-translate-y-1 hover:border-cyan-500/40">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">AI Infrastructure</p>
+          <h3 class="text-2xl font-bold tracking-tight mb-3">The Physical Limits of AI Growth</h3>
+          <p class="text-slate-300 mb-5">AI may be digital, but its next phase depends on generation, transmission, interconnection, and real-world systems that do not move at software speed.</p>
+          <div class="flex items-center justify-between text-sm text-slate-400">
+            <span>March 2026</span>
+            <a href="#" class="text-cyan-300 font-semibold">Read →</a>
+          </div>
+        </article>
 
-      <div class="cta">
-        <h3>Stay ahead of the shift</h3>
-        <p>Get weekly insights on digital finance, energy, and infrastructure.</p>
-        <a href="/insights.html" class="btn">Explore More Insights</a>
+        <article class="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-6 text-white transition hover:-translate-y-1 hover:border-cyan-500/40">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Tokenization</p>
+          <h3 class="text-2xl font-bold tracking-tight mb-3">Tokenization Is Moving from Narrative to Infrastructure</h3>
+          <p class="text-slate-300 mb-5">Ownership, settlement, and reporting layers are beginning to move on-chain in ways that look more like system upgrades than market hype.</p>
+          <div class="flex items-center justify-between text-sm text-slate-400">
+            <span>March 2026</span>
+            <a href="#" class="text-cyan-300 font-semibold">Read →</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-6 text-white transition hover:-translate-y-1 hover:border-cyan-500/40">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Podcast</p>
+          <h3 class="text-2xl font-bold tracking-tight mb-3">Why Microreactors Are Back in the Conversation</h3>
+          <p class="text-slate-300 mb-5">A short companion piece can tie your written perspective directly to an episode and turn the podcast into a stronger strategic asset.</p>
+          <div class="flex items-center justify-between text-sm text-slate-400">
+            <span>Podcast Brief</span>
+            <a href="#" class="text-cyan-300 font-semibold">Watch →</a>
+          </div>
+        </article>
+
+        <article class="rounded-2xl border border-slate-700/70 bg-slate-900/60 p-6 text-white transition hover:-translate-y-1 hover:border-cyan-500/40">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Evergreen</p>
+          <h3 class="text-2xl font-bold tracking-tight mb-3">Where Digital Capital Meets Physical Constraints</h3>
+          <p class="text-slate-300 mb-5">Use one evergreen article to anchor the broader NFW thesis and give readers a fast way to understand your point of view.</p>
+          <div class="flex items-center justify-between text-sm text-slate-400">
+            <span>Core Thesis</span>
+            <a href="#" class="text-cyan-300 font-semibold">Read →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="px-4 pt-6 pb-16">
+      <div class="mx-auto max-w-6xl rounded-3xl border border-slate-700/70 bg-slate-900/70 p-8 md:p-10 text-white shadow-2xl shadow-black/20">
+        <div class="max-w-3xl">
+          <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-3">Newsletter</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Turn each insight into a repeatable content engine.</h2>
+          <p class="text-slate-300 text-lg mb-6">
+            Publish the written insight here, send a tighter version by email, and pair it with a podcast episode when the topic deserves more depth.
+          </p>
+          <a href="contactus.html" class="inline-flex items-center rounded-full bg-cyan-500 px-5 py-3 font-semibold text-slate-950 hover:bg-cyan-400 transition">
+            Work With Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
+    <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
+      <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
+        <a href="terms.html" class="hover:text-slate-200">Terms</a>
       </div>
     </div>
-  </section>
 
- <!-- Footer -->
-<footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
-  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
-    <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-    <div class="flex items-center gap-4">
-      <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
-      <a href="terms.html" class="hover:text-slate-200">Terms</a>
+    <div class="flex justify-center items-center mt-6 space-x-6">
+      <a href="https://www.linkedin.com/in/nfwfla" target="_blank" aria-label="LinkedIn" class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#0A66C2" viewBox="0 0 24 24" class="w-5 h-5 block">
+          <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
+        </svg>
+      </a>
+
+      <a href="https://x.com/nfwfla" target="_blank" aria-label="X" class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+        <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
+      </a>
+
+      <a href="https://www.youtube.com/@NFWFLA" target="_blank" aria-label="YouTube" class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 block">
+          <path fill="#FF0000" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
+          <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
+        </svg>
+      </a>
+
+      <a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer" target="_blank" aria-label="Spotify" class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 block">
+          <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
+          <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
+            <path fill="#FFFFFF" d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
+            <path fill="#FFFFFF" d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
+            <path fill="#FFFFFF" d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
+          </g>
+        </svg>
+      </a>
     </div>
-  </div>
 
-<!-- Social Media Links -->
-<div class="flex justify-center items-center mt-6 space-x-6">
+    <p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
+      The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
+    </p>
+  </footer>
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/nfwfla"
-     target="_blank"
-     aria-label="LinkedIn"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="https://www.linkedin.com/in/the-new-financial-world-782039397/"
-         fill="#0A66C2"
-         viewBox="0 0 24 24"
-         class="w-5 h-5 block">
-      <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
-    </svg>
-  </a>
-
-  <!-- X -->
-  <a href="https://x.com/nfwfla"
-     target="_blank"
-     aria-label="X"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
-  </a>
-
-  <!-- Discord - Hidden for Now -->
-  <!--<a href="https://discord.gg/AqxQfa6d"
-     target="_blank"
-     aria-label="Discord"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="Discord-Symbol-Blurple.png"
-         alt="Discord"
-         class="w-6 h-6 object-contain block">
-  </a>-->
-
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@NFWFLA"
-     target="_blank"
-     aria-label="YouTube"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 24 24"
-         class="w-6 h-6 block">
-      <path fill="#FF0000"
-        d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
-      <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
-    </svg>
-  </a>
-
-<!-- Spotify -->
-<a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer"
-   target="_blank"
-   aria-label="Spotify"
-   class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-  <svg xmlns="http://www.w3.org/2000/svg"
-       viewBox="0 0 24 24"
-       class="w-6 h-6 block">
-
-    <!-- Green circle -->
-    <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
-
-    <!-- White waves scaled down + optically centered -->
-    <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
-      <path fill="#FFFFFF"
-        d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
-      <path fill="#FFFFFF"
-        d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
-      <path fill="#FFFFFF"
-        d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
-    </g>
-
-  </svg>
-</a>
-
-
-</div>
-
-
-
-
-<p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
-    The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
-  </p>
-
-
-
-  <!-- Disclaimer -->
-  <!--<p class="mt-6 max-w-2xl mx-auto text-center text-xs text-slate-400 italic">
-    Disclaimer: This is not financial advice. All information provided is for educational purposes only. 
-    The goal of The New Financial World LLC is to demystify crypto and blockchain technology through knowledge and clarity.
-  </p>-->
-</footer>
-
-<script>
-  document.getElementById("tos-year").textContent = new Date().getFullYear();
-</script>
-  
-  
-  
+  <script>
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) {
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+    document.getElementById('tos-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
