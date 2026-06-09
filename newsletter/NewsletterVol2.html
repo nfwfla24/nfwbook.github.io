@@ -223,9 +223,9 @@
     .bar-chart {
       display: flex;
       align-items: flex-end;
-      height: 140px;
+      height: 160px;
       padding: 10px 0;
-      gap: 12px;
+      gap: 10px;
     }
 
     .bar-group {
@@ -238,11 +238,10 @@
     }
 
     .bar {
-      width: 40px;
+      width: 35px;
       background: linear-gradient(180deg, #06b6d4, #0891b2);
       border-radius: 6px 6px 0 0;
       min-height: 8px;
-      transition: height 0.3s;
     }
 
     .bar.energy {
@@ -269,33 +268,6 @@
       font-size: 11px;
       font-weight: 600;
       margin-bottom: 4px;
-    }
-
-    /* Line chart simulation */
-    .line-chart {
-      height: 120px;
-      position: relative;
-      margin: 15px 0;
-    }
-
-    .line-path {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .trend-line {
-      stroke: #7debf7;
-      stroke-width: 3;
-      fill: none;
-    }
-
-    .trend-point {
-      fill: #7debf7;
-      stroke: #ffffff;
-      stroke-width: 2;
     }
 
     /* Stats grid */
@@ -382,6 +354,36 @@
       margin: 10px 0;
     }
 
+    /* Company grid */
+    .company-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .company-card {
+      background: #0f1828;
+      border: 1px solid #23314b;
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .company-name {
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0 0 6px;
+    }
+
+    .company-focus {
+      color: #92a7c3;
+      font-size: 11px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
     @media screen and (max-width: 640px) {
       .hero,
       .content,
@@ -406,12 +408,16 @@
         grid-template-columns: 1fr;
       }
 
+      .company-grid {
+        grid-template-columns: 1fr;
+      }
+
       .bar-chart {
-        height: 120px;
+        height: 130px;
       }
 
       .bar {
-        width: 32px;
+        width: 28px;
       }
     }
   </style>
@@ -430,7 +436,7 @@
                   June 2026 • Episode 12
                 </p>
                 <p class="subhead">
-                  This week: Energy demands surge for AI data centers, Zebec launches streaming payroll SuperApp, tokenization hits $50B, and AI infrastructure reshapes global power grids.
+                  This week: Nuclear energy surges for AI data centers, CLARITY Act advances in Senate, RWA tokenization hits $29B, and streaming payments go mainstream.
                 </p>
               </td>
             </tr>
@@ -454,15 +460,148 @@
                 <div class="topic-section">
                   <div class="topic-header">
                     <div class="topic-icon energy-icon">⚡</div>
-                    <h3 class="topic-title">Energy: AI's Power Crisis</h3>
+                    <h3 class="topic-title">Energy: Nuclear Surges for AI</h3>
                   </div>
 
                   <p class="text">
-                    AI data centers are driving electricity demand to unprecedented levels. The Department of Energy estimates data centers accounted for <strong>4.4% of total U.S. electricity consumption in 2023</strong>, expected to reach <strong>6.7–12% by 2028</strong> [web:5][web:9].
+                    Nuclear energy is picking up dramatically alongside natural gas. After a weak 2025, the nuclear rebound is sharp: <strong>around 15 reactors expected to come online in 2026, adding 12 gigawatts of new capacity</strong> [web:23].
                   </p>
 
                   <div class="chart-container">
-                    <p class="chart-title">U.S. Data Center Power Demand (% of Total Electricity)</p>
+                    <p class="chart-title">Nuclear Energy Growth Through 2030</p>
+                    <div class="bar-chart">
+                      <div class="bar-group">
+                        <div class="bar-value">Record</div>
+                        <div class="bar energy" style="height: 80px;"></div>
+                        <div class="bar-label">2025</div>
+                      </div>
+                      <div class="bar-group">
+                        <div class="bar-value">+12 GW</div>
+                        <div class="bar energy" style="height: 100px;"></div>
+                        <div class="bar-label">2026</div>
+                      </div>
+                      <div class="bar-group">
+                        <div class="bar-value">+70 GW</div>
+                        <div class="bar energy" style="height: 140px;"></div>
+                        <div class="bar-label">Under Bldg</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="stats-grid">
+                    <div class="stat-card">
+                      <p class="stat-value">2.8%</p>
+                      <p class="stat-label">Annual nuclear growth through 2030</p>
+                      <p class="stat-change positive">2x previous rate [web:23]</p>
+                    </div>
+                    <div class="stat-card">
+                      <p class="stat-value">70+ GW</p>
+                      <p class="stat-label">New nuclear capacity under construction</p>
+                      <p class="stat-change positive">Highest in 30 years [web:23]</p>
+                    </div>
+                  </div>
+
+                  <p class="text">
+                    The forces driving nuclear's resurgence are compounding: <strong>surging electricity demand from AI data centers</strong>, energy security imperatives, net-zero commitments, and limitations of weather-dependent generation [web:23].
+                  </p>
+
+                  <p class="text">
+                    Natural gas still leads current generation at <strong>40% of U.S. electricity in 2025</strong>, but nuclear is the fastest-growing zero-emission source for 24/7 AI workloads [web:27].
+                  </p>
+
+                  <div class="highlight-box">
+                    <p class="highlight-text">
+                      "Nuclear generation set a new record in 2025 and is forecast to grow at 2.8% annually through 2030, more than double the 1.3% growth rate of the preceding five years." [web:23]
+                    </p>
+                  </div>
+
+                  <p style="text-align:center;">
+                    <a href="https://youtu.be/djM31JE9QqM?si=t6RixG3oSpF7OzkB" class="btn-secondary">Watch: Where AI Will Actually Live →</a>
+                  </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- CRYPTO SECTION -->
+                <div class="topic-section">
+                  <div class="topic-header">
+                    <div class="topic-icon crypto-icon">₿</div>
+                    <h3 class="topic-title">Crypto: CLARITY Act Advances</h3>
+                  </div>
+
+                  <p class="text">
+                    The <strong>CLARITY Act (H.R. 3633)</strong> is the first major U.S. law defining which crypto assets are commodities (CFTC) vs. securities (SEC). House passed it July 2025; <strong>Senate vote expected mid-2026</strong> [web:24][web:28].
+                  </p>
+
+                  <div class="chart-container">
+                    <p class="chart-title">CLARITY Act Classification Framework</p>
+                    <table role="presentation" cellspacing="0" cellpadding="0" style="width: 100%; margin: 10px 0;">
+                      <tr style="background: #0b1423;">
+                        <th style="padding: 10px; text-align: left; color: #7debf7; font-size: 12px; border: 1px solid #23314b;">Category</th>
+                        <th style="padding: 10px; text-align: left; color: #7debf7; font-size: 12px; border: 1px solid #23314b;">Regulator</th>
+                        <th style="padding: 10px; text-align: left; color: #7debf7; font-size: 12px; border: 1px solid #23314b;">Examples</th>
+                      </tr>
+                      <tr>
+                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">Digital Commodities</td>
+                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">CFTC</td>
+                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">Bitcoin, Ethereum</td>
+                      </tr>
+                      <tr style="background: #0d1a2e;">
+                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">Investment Contracts</td>
+                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">SEC + CFTC</td>
+                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">ICO tokens, presales</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">Payment Stablecoins</td>
+                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">Banking Regs</td>
+                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">USDC, USDT</td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div class="stats-grid">
+                    <div class="stat-card">
+                      <p class="stat-value">294-134</p>
+                      <p class="stat-label">House vote (bipartisan)</p>
+                      <p class="stat-change positive">July 2025 [web:28]</p>
+                    </div>
+                    <div class="stat-card">
+                      <p class="stat-value">2027</p>
+                      <p class="stat-label">Full implementation</p>
+                      <p class="stat-change">18-month grace period [web:24]</p>
+                    </div>
+                  </div>
+
+                  <p class="text">
+                    The act creates a <strong>"mature blockchain test"</strong> allowing tokens to move from SEC to CFTC oversight once sufficiently decentralized. Truly decentralized protocols may be largely exempt [web:28].
+                  </p>
+
+                  <div class="highlight-box">
+                    <p class="highlight-text">
+                      "For US crypto businesses, the CLARITY Act promises clear registration paths, legal cover for DeFi developers, and reduced risk for banks offering custody." [web:24]
+                    </p>
+                  </div>
+
+                  <p style="text-align:center;">
+                    <a href="https://youtu.be/8KdhApELy1I" class="btn-primary">Watch Episode: Ethereum's Economic Zone →</a>
+                  </p>
+                </div>
+
+                <div class="divider"></div>
+
+                <!-- AI SECTION -->
+                <div class="topic-section">
+                  <div class="topic-header">
+                    <div class="topic-icon ai-icon">🤖</div>
+                    <h3 class="topic-title">AI: Data Center Power Crisis</h3>
+                  </div>
+
+                  <p class="text">
+                    AI data centers are driving electricity demand to unprecedented levels. Data centers accounted for <strong>4.4% of total U.S. electricity in 2023</strong>, expected to reach <strong>6.7–12% by 2028</strong> [web:5][web:9].
+                  </p>
+
+                  <div class="chart-container">
+                    <p class="chart-title">U.S. Data Center Power Demand (% of Total)</p>
                     <div class="bar-chart">
                       <div class="bar-group">
                         <div class="bar-value">4.4%</div>
@@ -489,306 +628,16 @@
 
                   <div class="stats-grid">
                     <div class="stat-card">
-                      <p class="stat-value">50 GW</p>
-                      <p class="stat-label">New electric capacity needed by 2028</p>
-                      <p class="stat-change positive">+AI sector requirement [web:9]</p>
-                    </div>
-                    <div class="stat-card">
-                      <p class="stat-value">165%</p>
-                      <p class="stat-label">Power demand increase by 2030</p>
-                      <p class="stat-change positive">From 2023 levels [web:3]</p>
-                    </div>
-                  </div>
-
-                  <p class="text">
-                    Natural gas is returning as a priority. The 2026 approval of massive natural gas projects in Texas and Pennsylvania shows utilities prioritizing <strong>grid reliability for 24/7 AI workloads</strong> over carbon-free targets [web:5].
-                  </p>
-
-                  <div class="highlight-box">
-                    <p class="highlight-text">
-                      "Grid-power demand from data centers is expected to nearly triple by 2030. The largest next-generation campuses will demand 20 times the electricity of a typical data center." [web:5][web:9]
-                    </p>
-                  </div>
-
-                  <p style="text-align:center;">
-                    <a href="https://youtu.be/djM31JE9QqM?si=t6RixG3oSpF7OzkB" class="btn-secondary">Watch: Where AI Will Actually Live →</a>
-                  </p>
-                </div>
-
-                <div class="divider"></div>
-
-                <!-- CRYPTO SECTION -->
-                <div class="topic-section">
-                  <div class="topic-header">
-                    <div class="topic-icon crypto-icon">₿</div>
-                    <h3 class="topic-title">Crypto: Continuous Payments Live</h3>
-                  </div>
-
-                  <p class="text">
-                    <strong>Zebec (ZBCN)</strong> is gearing up for its Q2 2026 SuperApp launch, highlighting RLUSD payroll pilots and the potential of streaming wages [web:2]. This is continuous money in action.
-                  </p>
-
-                  <div class="chart-container">
-                    <p class="chart-title">Payment Settlement Time Evolution</p>
-                    <div class="bar-chart">
-                      <div class="bar-group">
-                        <div class="bar-value">24h</div>
-                        <div class="bar crypto" style="height: 140px; background: linear-gradient(180deg, #9ca3af, #6b7280);"></div>
-                        <div class="bar-label">Traditional</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">1h</div>
-                        <div class="bar crypto" style="height: 15px; background: linear-gradient(180deg, #60a5fa, #3b82f6);"></div>
-                        <div class="bar-label">Near Real-Time</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">0s</div>
-                        <div class="bar crypto" style="height: 3px; background: linear-gradient(180deg, #7debf7, #06b6d4);"></div>
-                        <div class="bar-label">Streaming</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="stats-grid">
-                    <div class="stat-card">
-                      <p class="stat-value">Q2 2026</p>
-                      <p class="stat-label">SuperApp mobile launch</p>
-                      <p class="stat-change positive">Final testing now [web:2]</p>
-                    </div>
-                    <div class="stat-card">
-                      <p class="stat-value">Base</p>
-                      <p class="stat-label">2026 blockchain expansion</p>
-                      <p class="stat-change positive">Multi-chain payroll [web:2]</p>
-                    </div>
-                  </div>
-
-                  <p class="text">
-                    The mobile SuperApp integrates payroll, cards, and staking. Zebec Card has achieved <strong>global acceptance with thousands of clients</strong> and transactions poised to reach millions in purchases worldwide [web:10].
-                  </p>
-
-                  <p class="text">
-                    Mid-2026 brings Tiered Rewards, linking ZBCN holdings to enhanced cashback. This blends real-world payroll with on-chain rails—<strong>PayFi as an RWA lane</strong> [web:2].
-                  </p>
-
-                  <div class="highlight-box">
-                    <p class="highlight-text">
-                      "Zebec Network is pushing forward with its PayFi vision, blending real-world payroll with on-chain rails as its mobile SuperApp nears launch." [web:2]
-                    </p>
-                  </div>
-
-                  <p style="text-align:center;">
-                    <a href="https://youtu.be/8KdhApELy1I" class="btn-primary">Watch Episode: Ethereum's Economic Zone →</a>
-                  </p>
-                </div>
-
-                <div class="divider"></div>
-
-                <!-- AI SECTION -->
-                <div class="topic-section">
-                  <div class="topic-header">
-                    <div class="topic-icon ai-icon">🤖</div>
-                    <h3 class="topic-title">AI: Data Center Revolution</h3>
-                  </div>
-
-                  <p class="text">
-                    Global power demand from data centers will increase <strong>50% by 2027 and as much as 165% by the end of the decade</strong>, fundamentally altering the industry landscape [web:3].
-                  </p>
-
-                  <div class="chart-container">
-                    <p class="chart-title">Global AI Data Center Energy (TWh)</p>
-                    <div style="height: 120px; position: relative; padding: 10px 0;">
-                      <svg width="100%" height="120" viewBox="0 0 500 120" preserveAspectRatio="none">
-                        <!-- Grid lines -->
-                        <line x1="0" y1="100" x2="500" y2="100" stroke="#23314b" stroke-width="1"/>
-                        <line x1="0" y1="70" x2="500" y2="70" stroke="#23314b" stroke-width="1"/>
-                        <line x1="0" y1="40" x2="500" y2="40" stroke="#23314b" stroke-width="1"/>
-                        <line x1="0" y1="10" x2="500" y2="10" stroke="#23314b" stroke-width="1"/>
-                        
-                        <!-- Trend line -->
-                        <polyline 
-                          points="50,95 150,75 280,35 450,10" 
-                          class="trend-line"
-                          stroke="#06b6d4"
-                          stroke-width="3"
-                          fill="none"
-                        />
-                        
-                        <!-- Points -->
-                        <circle cx="50" cy="95" r="5" class="trend-point"/>
-                        <circle cx="150" cy="75" r="5" class="trend-point"/>
-                        <circle cx="280" cy="35" r="5" class="trend-point"/>
-                        <circle cx="450" cy="10" r="5" class="trend-point"/>
-                      </svg>
-                      <div style="position: absolute; bottom: 0; left: 0; width: 100%; display: flex; justify-content: space-around;">
-                        <span style="color:#92a7c3; font-size:11px;">2024</span>
-                        <span style="color:#92a7c3; font-size:11px;">2026</span>
-                        <span style="color:#92a7c3; font-size:11px;">2030</span>
-                        <span style="color:#92a7c3; font-size:11px;">2035</span>
-                      </div>
-                      <div style="position: absolute; top: 5px; right: 10px; color:#ffffff; font-size:11px;">350 → 1200 TWh</div>
-                    </div>
-                  </div>
-
-                  <div class="stats-grid">
-                    <div class="stat-card">
                       <p class="stat-value">1,050 TWh</p>
                       <p class="stat-label">Data center consumption by 2026</p>
-                      <p class="stat-change">= Country-scale energy [web:9]</p>
+                      <p class="stat-change">= Country-scale [web:9]</p>
                     </div>
                     <div class="stat-card">
                       <p class="stat-value">190 GW</p>
                       <p class="stat-label">Hyperscale capacity announced</p>
-                      <p class="stat-change positive">As of early 2026 [web:19]</p>
+                      <p class="stat-change positive">Early 2026 [web:19]</p>
                     </div>
                   </div>
 
                   <p class="text">
-                    The IEA projects electricity consumption from AI servers will grow <strong>30% annually</strong>, accounting for almost half of the net increase in global data center consumption between 2024-2030 [web:9].
-                  </p>
-
-                  <p class="text">
-                    Infrastructure and political issues are slowing build-out. There's <strong>mounting opposition from rural/suburban communities</strong> where new data centers are proposed [web:7].
-                  </p>
-
-                  <div class="highlight-box">
-                    <p class="highlight-text">
-                      "A typical data center can consume as much electricity as 100,000 households. The largest next-generation campuses will demand 20 times that amount." [web:9]
-                    </p>
-                  </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <!-- CAPITAL/TOKENIZATION SECTION -->
-                <div class="topic-section">
-                  <div class="topic-header">
-                    <div class="topic-icon capital-icon">💎</div>
-                    <h3 class="topic-title">Capital: RWA Tokenization Explodes</h3>
-                  </div>
-
-                  <p class="text">
-                    Real World Assets (RWA) tokenization is hitting critical mass. The market is projected to grow from <strong>$10B in 2024 to $2T+ by 2030</strong>, with Zebec's payroll pilots positioning it as a key RWA lane [web:2].
-                  </p>
-
-                  <div class="chart-container">
-                    <p class="chart-title">RWA Tokenization Market Growth ($B)</p>
-                    <div class="bar-chart">
-                      <div class="bar-group">
-                        <div class="bar-value">$10B</div>
-                        <div class="bar capital" style="height: 20px;"></div>
-                        <div class="bar-label">2024</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">$25B</div>
-                        <div class="bar capital" style="height: 50px;"></div>
-                        <div class="bar-label">2025</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">$50B</div>
-                        <div class="bar capital" style="height: 100px;"></div>
-                        <div class="bar-label">2026</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">$500B</div>
-                        <div class="bar capital" style="height: 1000px; transform: scaleY(0.5); height: 50px;"></div>
-                        <div class="bar-label">2028</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">$2T</div>
-                        <div class="bar capital" style="height: 200px; transform: scaleY(0.5); height: 100px;"></div>
-                        <div class="bar-label">2030</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="stats-grid">
-                    <div class="stat-card">
-                      <p class="stat-value">$50B</p>
-                      <p class="stat-label">Estimated 2026 market size</p>
-                      <p class="stat-change positive">5x from 2024</p>
-                    </div>
-                    <div class="stat-card">
-                      <p class="stat-value">200x</p>
-                      <p class="stat-label">Growth by 2030</p>
-                      <p class="stat-change positive">$10B → $2T</p>
-                    </div>
-                  </div>
-
-                  <p class="text">
-                    Blockchain enables decentralized ledgers for transactions across peer-to-peer networks, allowing participants to confirm transactions <strong>without central clearing authority</strong> [web:15].
-                  </p>
-
-                  <p class="text">
-                    Tokenization applications include enterprise blockchain, sustainability, fund transfers, supply chain tracking, and <strong>real-world payroll on-chain rails</strong> [web:15].
-                  </p>
-
-                  <div class="highlight-box">
-                    <p class="highlight-text">
-                      "Payroll Crypto as an RWA Lane—Zebec gears up for Q2 SuperApp launch, highlighting RLUSD payroll pilots and the potential of streaming wages." [web:2]
-                    </p>
-                  </div>
-
-                  <div class="note-card">
-                    <h3 class="note-title">The New Financial World LLC Perspective</h3>
-                    <p class="text" style="margin: 0;">
-                      Infrastructure is moving continuously.<br>
-                      Money is beginning to follow.<br>
-                      Tokenization is the bridge.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <p class="kicker">The New Financial World LLC Signal</p>
-                <h2 class="section-title">Speed to power is becoming strategic</h2>
-
-                <p class="text">
-                  Access to power is now a competitive advantage. Data centers and infrastructure developers are prioritizing sites with existing grid access and faster interconnection timelines.
-                </p>
-
-                <p class="text">
-                  The infrastructure is already moving. Money is beginning to follow.
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="footer">
-                <p class="footer-text">
-                  You are receiving this email because you subscribed to updates from The New Financial World LLC.
-                </p>
-                <p class="footer-text">
-                  Educational content only. Nothing in this email should be considered financial, legal, investment, or tax advice.
-                </p>
-                <p class="footer-text footer-links" style="text-align:center;">
-                  <a href="https://www.newfinancialworld.com">Website</a>
-                  <a href="mailto:unsubscribe@newfinancialworld.com">Unsubscribe</a>
-                </p>
-
-                <div style="text-align:center; margin-top:12px;">
-                  <a href="https://www.linkedin.com/in/nfwfla" target="_blank" style="display:inline-block; margin:0 6px;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" height="20" style="display:block; border:0;" alt="LinkedIn">
-                  </a>
-
-                  <a href="https://www.youtube.com/@NFWFLA" target="_blank" style="display:inline-block; margin:0 6px;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="20" height="20" style="display:block; border:0;" alt="YouTube">
-                  </a>
-
-                  <a href="https://x.com/nfwfla" target="_blank" style="display:inline-block; margin:0 6px;">
-                    <img src="https://www.newfinancialworld.com/x-logo.png"
-                         width="20"
-                         height="20"
-                         style="display:block; border:0;"
-                         alt="X">
-                  </a>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-  </div>
-</body>
-</html>
+                    Global power demand from data centers will increase <strong>50% by 2027 and 165% by 2030</strong>, fundamentally altering the industry [web:3]. AI servers will account for <strong>almost half the 
