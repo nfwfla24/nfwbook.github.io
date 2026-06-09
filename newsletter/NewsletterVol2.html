@@ -1,1021 +1,376 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The New Financial World LLC Newsletter - June 2026</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #09111d;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #e6eef8;
-    }
-
-    table {
-      border-spacing: 0;
-      border-collapse: collapse;
-    }
-
-    .wrapper {
-      width: 100%;
-      background-color: #09111d;
-      padding: 24px 12px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 680px;
-      margin: 0 auto;
-      background: #0f1828;
-      border: 1px solid #1f2b43;
-      border-radius: 18px;
-      overflow: hidden;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #08111f 0%, #0d1f31 55%, #0c4b5c 100%);
-      padding: 44px 40px 30px;
-    }
-
-    .eyebrow {
-      color: #7debf7;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      margin: 0 0 14px;
-    }
-
-    .headline {
-      color: #ffffff;
-      font-size: 34px;
-      line-height: 1.12;
-      font-weight: 700;
-      margin: 0 0 14px;
-    }
-
-    .subhead {
-      color: #d1dceb;
-      font-size: 16px;
-      line-height: 1.65;
-      margin: 0;
-      max-width: 560px;
-    }
-
-    .issue-date {
-      color: #9fb2ca;
-      font-size: 13px;
-      margin: 8px 0 12px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .content {
-      padding: 34px 40px 20px;
-    }
-
-    .kicker {
-      color: #7debf7;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin: 0 0 10px;
-    }
-
-    .section-title {
-      color: #ffffff;
-      font-size: 24px;
-      line-height: 1.3;
-      font-weight: 700;
-      margin: 0 0 16px;
-    }
-
-    .text {
-      color: #d1dceb;
-      font-size: 16px;
-      line-height: 1.8;
-      margin: 0 0 18px;
-    }
-
-    .divider {
-      height: 1px;
-      background: #23314b;
-      margin: 26px 0;
-    }
-
-    .quote-box {
-      background: #0b1423;
-      border-left: 4px solid #06b6d4;
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin: 24px 0;
-    }
-
-    .quote {
-      color: #ffffff;
-      font-size: 18px;
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    .note-card {
-      background: #0b1423;
-      border: 1px solid #22314b;
-      border-radius: 14px;
-      padding: 20px;
-      margin: 22px 0 0;
-    }
-
-    .note-title {
-      color: #ffffff;
-      font-size: 18px;
-      font-weight: 700;
-      margin: 0 0 10px;
-    }
-
-    .footer {
-      padding: 24px 40px 38px;
-      background: #0a1220;
-      border-top: 1px solid #1f2b43;
-    }
-
-    .footer-text {
-      color: #92a7c3;
-      font-size: 13px;
-      line-height: 1.7;
-      margin: 0 0 10px;
-    }
-
-    .footer-links a {
-      color: #7debf7;
-      text-decoration: none;
-      margin-right: 14px;
-      font-size: 13px;
-    }
-
-    /* New section styles */
-    .topic-section {
-      background: #0b1423;
-      border-radius: 14px;
-      padding: 24px;
-      margin: 24px 0;
-      border: 1px solid #22314b;
-    }
-
-    .topic-header {
-      display: flex;
-      align-items: center;
-      margin: 0 0 16px;
-    }
-
-    .topic-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      margin-right: 14px;
-      font-weight: 700;
-    }
-
-    .energy-icon {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      color: #ffffff;
-    }
-
-    .crypto-icon {
-      background: linear-gradient(135deg, #7debf7, #06b6d4);
-      color: #09111d;
-    }
-
-    .ai-icon {
-      background: linear-gradient(135deg, #06b6d4, #0891b2);
-      color: #ffffff;
-    }
-
-    .capital-icon {
-      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-      color: #ffffff;
-    }
-
-    .topic-title {
-      color: #ffffff;
-      font-size: 20px;
-      font-weight: 700;
-      margin: 0;
-    }
-
-    /* Sophisticated Chart styles */
-    .chart-container {
-      background: #0f1828;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 18px 0;
-      border: 1px solid #23314b;
-    }
-
-    .chart-title {
-      color: #7debf7;
-      font-size: 13px;
-      font-weight: 600;
-      margin: 0 0 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    /* Advanced bar chart with gradients and shadows */
-    .bar-chart {
-      display: flex;
-      align-items: flex-end;
-      height: 180px;
-      padding: 15px 0;
-      gap: 14px;
-      position: relative;
-    }
-
-    .chart-grid {
-      position: absolute;
-      top: 15px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      pointer-events: none;
-    }
-
-    .grid-line {
-      height: 1px;
-      background: linear-gradient(90deg, #23314b, transparent);
-      width: 100%;
-    }
-
-    .bar-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-      justify-content: flex-end;
-      flex: 1;
-      position: relative;
-    }
-
-    .bar {
-      width: 38px;
-      background: linear-gradient(180deg, #06b6d4 0%, #0891b2 50%, #0e7490 100%);
-      border-radius: 8px 8px 0 0;
-      min-height: 8px;
-      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
-      position: relative;
-    }
-
-    .bar::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 50%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
-      border-radius: 8px 8px 0 0;
-    }
-
-    .bar.energy {
-      background: linear-gradient(180deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
-      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
-    }
-
-    .bar.energy::before {
-      background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, transparent 100%);
-    }
-
-    .bar.crypto {
-      background: linear-gradient(180deg, #7debf7 0%, #06b6d4 50%, #0891b2 100%);
-      box-shadow: 0 4px 12px rgba(125, 235, 247, 0.3);
-    }
-
-    .bar.capital {
-      background: linear-gradient(180deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
-      box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-    }
-
-    .bar-label {
-      color: #92a7c3;
-      font-size: 11px;
-      margin-top: 10px;
-      text-align: center;
-      font-weight: 600;
-    }
-
-    .bar-value {
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    }
-
-    /* Stats grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 16px 0;
-    }
-
-    .stat-card {
-      background: #0f1828;
-      border: 1px solid #23314b;
-      border-radius: 10px;
-      padding: 16px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #06b6d4, #7debf7);
-    }
-
-    .stat-value {
-      color: #ffffff;
-      font-size: 26px;
-      font-weight: 700;
-      margin: 0 0 6px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .stat-label {
-      color: #92a7c3;
-      font-size: 12px;
-      margin: 0;
-      line-height: 1.4;
-    }
-
-    .stat-change {
-      color: #7debf7;
-      font-size: 11px;
-      font-weight: 600;
-      margin-top: 6px;
-    }
-
-    .stat-change.positive {
-      color: #10b981;
-    }
-
-    /* Highlight box */
-    .highlight-box {
-      background: linear-gradient(135deg, #0b1423, #0d1a2e);
-      border: 1px solid #23314b;
-      border-radius: 12px;
-      padding: 18px;
-      margin: 16px 0;
-      position: relative;
-    }
-
-    .highlight-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, #06b6d4, #7debf7);
-    }
-
-    .highlight-text {
-      color: #ffffff;
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* Button styles */
-    .btn-primary {
-      display: inline-block;
-      padding: 12px 24px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: #ffffff;
-      text-decoration: none;
-      background: linear-gradient(135deg, #06b6d4, #0891b2);
-      border-radius: 999px;
-      margin: 12px 0;
-      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
-    }
-
-    .btn-secondary {
-      display: inline-block;
-      padding: 10px 20px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      color: #ffffff;
-      text-decoration: none;
-      border: 1px solid #ffffff;
-      border-radius: 999px;
-      margin: 10px 0;
-    }
-
-    /* Company grid */
-    .company-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 12px;
-      margin: 16px 0;
-    }
-
-    .company-card {
-      background: #0f1828;
-      border: 1px solid #23314b;
-      border-radius: 10px;
-      padding: 14px;
-      text-align: center;
-    }
-
-    .company-name {
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 700;
-      margin: 0 0 6px;
-    }
-
-    .company-focus {
-      color: #92a7c3;
-      font-size: 11px;
-      margin: 0;
-      line-height: 1.4;
-    }
-
-    /* Importance box */
-    .importance-box {
-      background: linear-gradient(135deg, #1a1f3a, #0d1a2e);
-      border: 2px solid #7debf7;
-      border-radius: 14px;
-      padding: 20px;
-      margin: 18px 0;
-    }
-
-    .importance-title {
-      color: #7debf7;
-      font-size: 14px;
-      font-weight: 700;
-      margin: 0 0 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .importance-text {
-      color: #ffffff;
-      font-size: 14px;
-      line-height: 1.7;
-      margin: 0 0 12px;
-    }
-
-    @media screen and (max-width: 640px) {
-      .hero,
-      .content,
-      .footer {
-        padding-left: 22px !important;
-        padding-right: 22px !important;
-      }
-
-      .headline {
-        font-size: 28px !important;
-      }
-
-      .section-title {
-        font-size: 21px !important;
-      }
-
-      .topic-section {
-        padding: 18px;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .company-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .bar-chart {
-        height: 140px;
-      }
-
-      .bar {
-        width: 30px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="wrapper">
-    <table role="presentation" width="100%">
-      <tr>
-        <td align="center">
-          <table role="presentation" class="container" width="100%">
-            <tr>
-              <td class="hero">
-                <p class="eyebrow">The New Financial World LLC</p>
-                <h1 class="headline">Continuous Money, Continuous Power, Continuous AI</h1>
-                <p class="issue-date">
-                  Monthly Newsletter • June 2026
-                </p>
-                <p class="subhead">
-                  This month: Nuclear energy surges with 15 reactors coming online, CLARITY Act faces June deadline for 2026 enactment with critical regulatory clarity, RWA tokenization hits $29B with ONDO leading tokenized Treasuries, Zebec launches SuperApp with 65,000 workers, and streaming payments go mainstream.
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="content">
-                <p class="kicker">Monthly Perspective</p>
-                <h2 class="section-title">The infrastructure revolution is accelerating</h2>
-
-                <p class="text">
-                  The systems we build operate continuously. Energy flows without pause. AI computes without pause. Infrastructure does not wait.
-                </p>
-
-                <p class="text">
-                  Finance is finally catching up—with continuous money leading the transformation.
-                </p>
-
-                <div class="divider"></div>
-
-                <!-- ENERGY SECTION -->
-                <div class="topic-section">
-                  <div class="topic-header">
-                    <div class="topic-icon energy-icon">⚡</div>
-                    <h3 class="topic-title">Energy: Nuclear Surges for AI</h3>
-                  </div>
-
-                  <p class="text">
-                    Nuclear energy is picking up dramatically alongside natural gas. After setting a new record in 2025, <strong>around 15 reactors are expected to come online in 2026, adding 12 gigawatts of new capacity</strong>. The rebound is sharp.
-                  </p>
-
-                  <div class="chart-container">
-                    <p class="chart-title">Nuclear Energy Capacity Growth (GW)</p>
-                    <div class="chart-grid">
-                      <div class="grid-line"></div>
-                      <div class="grid-line"></div>
-                      <div class="grid-line"></div>
-                      <div class="grid-line"></div>
-                    </div>
-                    <div class="bar-chart">
-                      <div class="bar-group">
-                        <div class="bar-value">Record</div>
-                        <div class="bar energy" style="height: 90px;"></div>
-                        <div class="bar-label">2025</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">+12 GW</div>
-                        <div class="bar energy" style="height: 115px;"></div>
-                        <div class="bar-label">2026</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">70+ GW</div>
-                        <div class="bar energy" style="height: 160px;"></div>
-                        <div class="bar-label">Under Construction</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="stats-grid">
-                    <div class="stat-card">
-                      <p class="stat-value">2.8%</p>
-                      <p class="stat-label">Annual nuclear growth through 2030</p>
-                      <p class="stat-change positive">2× previous rate</p>
-                    </div>
-                    <div class="stat-card">
-                      <p class="stat-value">70+ GW</p>
-                      <p class="stat-label">New nuclear capacity under construction</p>
-                      <p class="stat-change positive">Highest in 30 years </p>
-                    </div>
-                  </div>
-
-                  <p class="text">
-                    The forces driving nuclear's resurgence are compounding: <strong>surging electricity demand from AI data centers</strong>, energy security imperatives, net-zero commitments, and limitations of weather-dependent generation.
-                  </p>
-
-                  <p class="text">
-                    Natural gas still leads current generation at <strong>40% of U.S. electricity in 2025</strong>, but nuclear is the fastest-growing zero-emission source specifically for 24/7 AI workloads that can't tolerate interruptions.
-                  </p>
-
-                  <div class="highlight-box">
-                    <p class="highlight-text">
-                      "Nuclear generation set a new record in 2025 and is forecast to grow at 2.8% annually through 2030, more than double the 1.3% growth rate of the preceding five years."
-                    </p>
-                  </div>
-
-                  <p style="text-align:center;">
-                    <a href="https://youtu.be/djM31JE9QqM?si=t6RixG3oSpF7OzkB" class="btn-secondary">Watch: Where AI Will Actually Live →</a>
-                  </p>
-                </div>
-
-                <div class="divider"></div>
-
-                <!-- CRYPTO SECTION -->
-                <div class="topic-section">
-                  <div class="topic-header">
-                    <div class="topic-icon crypto-icon">₿</div>
-                    <h3 class="topic-title">Crypto: CLARITY Act Faces Critical June Deadline</h3>
-                  </div>
-
-                  <p class="text">
-                    The <strong>CLARITY Act</strong> cleared the Senate Banking Committee on May 14, 2026, in a 15-9 vote with two Democratic Senators supporting. But the clock is ticking: <strong>the Senate has only 18 working weeks left in 2026</strong>, and the bill hasn't completed its first remaining step with the Agriculture Committee.
-                  </p>
-
-                  <div class="importance-box">
-                    <p class="importance-title">⚠️ Why This Deadline Matters: 5 Critical Reasons</p>
-                    <p class="importance-text">
-                      <strong>1. Regulatory Uncertainty Costs Billions:</strong> Since Bitcoin's inception, the SEC and CFTC have jostled for control over crypto regulation. This "bureaucratic tug-of-war" has created enforcement chaos, with companies facing surprise actions and unable to plan. The CLARITY Act ends this.
-                    </p>
-                    <p class="importance-text">
-                      <strong>2. Innovation Stalled Without Rules:</strong> Major crypto firms including Coinbase have lobbied for years for this framework. Without clear rules, businesses can't comply safely, face >$1B in enforcement costs, and investors lack protections. The Act provides "easier compliance, less risk of surprise enforcement, and more room to innovate".
-                    </p>
-                    <p class="importance-text">
-                      <strong>3. 2026 Election Year Pressure:</strong> Passing by July 2026 is critical because "preferably June" is the deadline for 2026 enactment. Every week lost at Step 1 (Banking Committee) cannot be recovered at Steps 2-5. After Easter recess (March 30) and before midterm campaign recess (October 5), there are only 18 working weeks.
-                    </p>
-                    <p class="importance-text">
-                      <strong>4. Stablecoin Yield Battle Unresolved:</strong> The central dispute—whether crypto platforms can pay yield on stablecoin holdings—remains unresolved after the White House's March 1 deadline expired without compromise. This affects billions in USDC/USDT holdings and DeFi protocols.
-                    </p>
-                    <p class="importance-text">
-                      <strong>5. First Domino Must Fall:</strong> The late-March Banking Committee markup was "the first domino." If it doesn't fall before March 30, the next window opens April 13. Now that Banking passed it (May 14), the Agriculture Committee must act. If either step fails, the entire bill collapses before reaching the President.
-                    </p>
-                  </div>
-
-                  <div class="chart-container">
-                    <p class="chart-title">CLARITY Act Timeline & Remaining Steps</p>
-                    <table role="presentation" cellspacing="0" cellpadding="0" style="width: 100%; margin: 10px 0;">
-                      <tr style="background: #0b1423;">
-                        <th style="padding: 10px; text-align: left; color: #7debf7; font-size: 12px; border: 1px solid #23314b;">Step</th>
-                        <th style="padding: 10px; text-align: left; color: #7debf7; font-size: 12px; border: 1px solid #23314b;">Status</th>
-                        <th style="padding: 10px; text-align: left; color: #7debf7; font-size: 12px; border: 1px solid #23314b;">Date</th>
-                      </tr>
-                      <tr>
-                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">1. House Passage</td>
-                        <td style="padding: 10px; color: #10b981; font-size: 13px; border: 1px solid #23314b;">✓ Passed</td>
-                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">July 17, 2025 </td>
-                      </tr>
-                      <tr style="background: #0d1a2e;">
-                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">2. Senate Ag Committee</td>
-                        <td style="padding: 10px; color: #10b981; font-size: 13px; border: 1px solid #23314b;">✓ Passed</td>
-                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">Jan 29, 2026 </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">3. Senate Banking Committee</td>
-                        <td style="padding: 10px; color: #10b981; font-size: 13px; border: 1px solid #23314b;">✓ Passed 15-9</td>
-                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">May 14, 2026 </td>
-                      </tr>
-                      <tr style="background: #0d1a2e;">
-                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">4. Senate Floor Vote</td>
-                        <td style="padding: 10px; color: #f59e0b; font-size: 13px; border: 1px solid #23314b;">⏳ NEXT STEP</td>
-                        <td style="padding: 10px; color: #f59e0b; font-size: 13px; border: 1px solid #23314b;">June 2026 </td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">5. Reconcile Both Versions</td>
-                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">Pending</td>
-                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">After floor vote </td>
-                      </tr>
-                      <tr style="background: #0d1a2e;">
-                        <td style="padding: 10px; color: #ffffff; font-size: 13px; border: 1px solid #23314b;">6. President Signature</td>
-                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">Pending</td>
-                        <td style="padding: 10px; color: #92a7c3; font-size: 13px; border: 1px solid #23314b;">2027 implementation </td>
-                      </tr>
-                    </table>
-                  </div>
-
-                  <div class="stats-grid">
-                    <div class="stat-card">
-                      <p class="stat-value">18 weeks</p>
-                      <p class="stat-label">Working Senate time left in 2026</p>
-                      <p class="stat-change">Between recesses</p>
-                    </div>
-                    <div class="stat-card">
-                      <p class="stat-value">294-134</p>
-                      <p class="stat-label">Bipartisan House vote</p>
-                      <p class="stat-change positive">July 2025 </p>
-                    </div>
-                  </div>
-
-                  <p class="text">
-                    The Act creates three regulatory categories that will define the industry: <strong>Digital Commodities (CFTC)</strong> including Bitcoin and Ethereum, <strong>Investment Contracts (SEC + CFTC)</strong> for ICO tokens and capital raising, and <strong>Payment Stablecoins (Banking Regulators)</strong> like USDC and USDT.
-                  </p>
-
-                  <p class="text">
-                    A key provision creates a <strong>"mature blockchain test"</strong> allowing tokens to move from SEC to CFTC oversight once sufficiently decentralized. DeFi developers get safe harbors exempt from securities laws if engaged solely in infrastructure activity.
-                  </p>
-
-                  <div class="highlight-box">
-                    <p class="highlight-text">
-                      "After months of negotiation, outreach and delay, the CLARITY Act finally passing out of the Senate Banking Committee is an important step toward a long-awaited US regulatory framework for digital assets."
-                    </p>
-                  </div>
-
-                  <p style="text-align:center;">
-                    <a href="https://youtu.be/8KdhApELy1I" class="btn-primary">Watch Episode: Ethereum's Economic Zone →</a>
-                  </p>
-                </div>
-
-                <div class="divider"></div>
-
-                <!-- AI SECTION -->
-                <div class="topic-section">
-                  <div class="topic-header">
-                    <div class="topic-icon ai-icon">🤖</div>
-                    <h3 class="topic-title">AI: Data Center Power Crisis</h3>
-                  </div>
-
-                  <p class="text">
-                    AI data centers are driving electricity demand to unprecedented levels. Data centers accounted for <strong>4.4% of total U.S. electricity in 2023</strong>, expected to reach <strong>6.7–12% by 2028</strong>.
-                  </p>
-
-                  <div class="chart-container">
-                    <p class="chart-title">U.S. Data Center Power Demand (% of Total)</p>
-                    <div class="bar-chart">
-                      <div class="chart-grid">
-                        <div class="grid-line"></div>
-                        <div class="grid-line"></div>
-                        <div class="grid-line"></div>
-                        <div class="grid-line"></div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">4.4%</div>
-                        <div class="bar energy" style="height: 66px;"></div>
-                        <div class="bar-label">2023</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">6.0%</div>
-                        <div class="bar energy" style="height: 90px;"></div>
-                        <div class="bar-label">2025</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">8.5%</div>
-                        <div class="bar energy" style="height: 127px;"></div>
-                        <div class="bar-label">2027</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">12%</div>
-                        <div class="bar energy" style="height: 180px;"></div>
-                        <div class="bar-label">2030</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="stats-grid">
-                    <div class="stat-card">
-                      <p class="stat-value">1,050 TWh</p>
-                      <p class="stat-label">Data center consumption by 2026</p>
-                      <p class="stat-change">= Country-scale energy </p>
-                    </div>
-                    <div class="stat-card">
-                      <p class="stat-value">190 GW</p>
-                      <p class="stat-label">Hyperscale capacity announced</p>
-                      <p class="stat-change positive">As of early 2026 </p>
-                    </div>
-                  </div>
-
-                  <p class="text">
-                    Global power demand from data centers will increase <strong>50% by 2027 and 165% by 2030</strong>, fundamentally altering the industry. AI servers will account for <strong>almost half the net increase</strong> in global data center consumption 2024-2030.
-                  </p>
-
-                  <p class="text">
-                    Infrastructure issues are slowing build-out, with <strong>mounting opposition from rural communities</strong> where new data centers are proposed.
-                  </p>
-
-                  <div class="highlight-box">
-                    <p class="highlight-text">
-                      "A typical data center can consume as much electricity as 100,000 households. The largest next-generation campuses will demand 20 times that amount."
-                    </p>
-                  </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <!-- CAPITAL/TOKENIZATION SECTION -->
-                <div class="topic-section">
-                  <div class="topic-header">
-                    <div class="topic-icon capital-icon">💎</div>
-                    <h3 class="topic-title">Capital: RWA Tokenization Hits $29B — ONDO Leads</h3>
-                  </div>
-
-                  <p class="text">
-                    The tokenized RWA market (excluding stablecoins) grew <strong>30% in Q1 2026, reaching approximately $29 billion</strong>—a 263% increase from $7.9B in 2024. Tokenized Treasuries alone reached <strong>$25.71 billion by late February 2026</strong>, with ONDO dominating this segment.
-                  </p>
-
-                  <div class="chart-container">
-                    <p class="chart-title">RWA Tokenization Market Growth ($Billion)</p>
-                    <div class="chart-grid">
-                      <div class="grid-line"></div>
-                      <div class="grid-line"></div>
-                      <div class="grid-line"></div>
-                      <div class="grid-line"></div>
-                      <div class="grid-line"></div>
-                      <div class="grid-line"></div>
-                    </div>
-                    <div class="bar-chart">
-                      <div class="bar-group">
-                        <div class="bar-value">$8B</div>
-                        <div class="bar capital" style="height: 35px;"></div>
-                        <div class="bar-label">2024</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">$20B</div>
-                        <div class="bar capital" style="height: 75px;"></div>
-                        <div class="bar-label">2025</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">$29B</div>
-                        <div class="bar capital" style="height: 85px;"></div>
-                        <div class="bar-label">2026*</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">$250B</div>
-                        <div class="bar capital" style="height: 110px;"></div>
-                        <div class="bar-label">2028</div>
-                      </div>
-                      <div class="bar-group">
-                        <div class="bar-value">$2T</div>
-                        <div class="bar capital" style="height: 175px;"></div>
-                        <div class="bar-label">2030</div>
-                      </div>
-                    </div>
-                    <p style="text-align: center; color: #92a7c3; font-size: 11px; margin-top: 12px;">
-                      *Q1 2026 actual data | Projections for 2028-2030
-                    </p>
-                  </div>
-
-                  <div class="stats-grid">
-                    <div class="stat-card">
-                      <p class="stat-value">263%</p>
-                      <p class="stat-label">Growth 2024-2026</p>
-                      <p class="stat-change positive">$8B → $29B</p>
-                    </div>
-                    <div class="stat-card">
-                      <p class="stat-value">$25.7B</p>
-                      <p class="stat-label">Tokenized Treasuries alone</p>
-                      <p class="stat-change positive">ONDO dominates </p>
-                    </div>
-                  </div>
-
-                  <p class="text">
-                    <strong>Top RWA projects to watch in 2026:</strong> The sector has four main models represented by key players:
-                  </p>
-
-                  <div class="company-grid">
-                    <div class="company-card">
-                      <p class="company-name">ONDO</p>
-                      <p class="company-focus">Tokenized Treasuries leader; institutional-grade U.S. government bonds</p>
-                    </div>
-                    <div class="company-card">
-                      <p class="company-name">Stellar (XLM)</p>
-                      <p class="company-focus">Network asset scale; regulatory clarity + institutional funds</p>
-                    </div>
-                    <div class="company-card">
-                      <p class="company-name">Zebec (ZBCN)</p>
-                      <p class="company-focus">Streaming payment protocol; PayFi as RWA lane</p>
-                    </div>
-                    <div class="company-card">
-                      <div class="company-name">Quant (QNT)</div>
-                      <p class="company-focus">Bank-grade software; infrastructure-layer integration</p>
-                    </div>
-                  </div>
-
-                  <p class="text" style="margin-top: 18px;">
-                    These represent the sector's models: <strong>tokenized traditional finance</strong> (ONDO with Treasuries), <strong>compliance-driven public chains</strong> (Stellar), <strong>protocol-level payment applications</strong> (Zebec), and <strong>infrastructure integration</strong> (Quant).
-                  </p>
-
-                  <!-- Zebec Articles Section - Spaced out with content between -->
-                  <div class="highlight-box" style="margin-top: 24px;">
-                    <p class="highlight-text" style="color: #7debf7; font-size: 14px; margin-bottom: 12px;">
-                      🎯 Zebec Network Spotlight: Stellar Partnership
-                    </p>
-                    <p class="highlight-text">
-                      "Zebec Network (ZBCN) has partnered with Stellar (XLM) to launch a global stablecoin payroll solution, enabling businesses to pay employees and contractors in real-time using USDC. The deployment will allow Stellar to offer real-time cross-border payments and integrate Zebec's stablecoin payroll infrastructure globally, expanding access to 50M+ MoneyGram users."
-                    </p>
-                    <p style="color: #92a7c3; font-size: 11px; margin-top: 10px;">— March 20, 2026 </p>
-                  </div>
-
-                  <p class="text" style="margin-top: 20px;">
-                    ONDO Finance similarly focuses on bringing institutional-grade assets on-chain, but with U.S. Treasury bonds rather than payroll. As of late February 2026, tokenized Treasuries reached $25.71 billion, making ONDO the largest player in the RWA space by asset value.
-                  </p>
-
-                  <div class="highlight-box" style="margin-top: 20px;">
-                    <p class="highlight-text" style="color: #7debf7; font-size: 14px; margin-bottom: 12px;">
-                      🎯 Zebec: What Makes It Different
-                    </p>
-                    <p class="highlight-text">
-                      "Zebec is a decentralized, real-time payment streaming protocol that enables continuous, automated transfers of cryptocurrency second by second. Think of it as a programmable money pipeline that allows salaries, royalties, or any type of payment to flow smoothly and instantly without waiting for traditional pay cycles or manual invoicing. Built on Solana's fast and low-cost blockchain, Zebec supports seamless payroll for companies and DAOs, micro-payments for freelancers, and streaming income for content creators."
-                    </p>
-                    <p style="color: #92a7c3; font-size: 11px; margin-top: 10px;">— July 3, 2025 </p>
-                  </div>
-
-                  <p class="text" style="margin-top: 20px;">
-                    While ONDO tokenizes bonds and treasuries, Zebec tokenizes the payment itself—making it unique as "PayFi as an RWA lane." This means Zebec brings real-world payroll infrastructure on-chain, not just static assets.
-                  </p>
-
-                  <div class="highlight-box" style="margin-top: 20px;">
-                    <p class="highlight-text" style="color: #7debf7; font-size: 14px; margin-bottom: 12px;">
-                      🎯 Zebec Employee Adoption Goes Live
-                    </p>
-                    <p class="highlight-text">
-                      "As of May 2026, 65,000 workers are currently receiving their actual paychecks through Zebec's streaming payroll infrastructure on USD1. Every dollar streamed generates protocol revenue. 50% of that revenue goes directly to the treasury, specifically to fuel revenue-driven buybacks."
-                    </p>
-                    <p style="color: #92a7c3; font-size: 11px; margin-top: 10px;">— May 17, 2026 </p>
-                  </div>
-
-                  <p class="text" style="margin-top: 20px;">
-                    MetaMask recently launched tokenized RWAs via Ondo Global Markets, showing major wallet integration. This means retail users can now access tokenized Treasuries directly through their crypto wallets, bridging traditional finance and DeFi.
-                  </p>
-
-                  <div class="highlight-box" style="margin-top: 20px;">
-                    <p class="highlight-text" style="color: #7debf7; font-size: 14px; margin-bottom: 12px;">
-                      🎯 Zebec Whale Activity Surges
-                    </p>
-                    <p class="highlight-text">
-                      "As of March 31, 2026: Whale holdings in Zebec Network increased by 3.52% over the past 30 days, with the token price rising approximately 14%. Zebec Network is the biggest 30-day gainer in the RWA trio, making it one of the more bullish RWA coins to watch."
-                    </p>
-                    <p style="color: #92a7c3; font-size: 11px; margin-top: 10px;">— March 30, 2026 </p>
-                  </div>
-
-                  <div class="note-card">
-                    <h3 class="note-title">The New Financial World LLC Perspective</h3>
-                    <p class="text" style="margin: 0;">
-                      Nuclear + natural gas power AI.<br>
-                      CLARITY Act's 18-week deadline could enable crypto regulation.<br>
-                      ONDO dominates $25.7B tokenized Treasuries.<br>
-                      65,000 workers now earn via streaming payroll.<br>
-                      Money is beginning to follow infrastructure.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="divider"></div>
-
-                <p class="kicker">The New Financial World LLC Signal</p>
-                <h2 class="section-title">Speed to power is becoming strategic</h2>
-
-                <p class="text">
-                  Access to power is now a competitive advantage. Data centers prioritize sites with existing grid access and faster interconnection. Nuclear is the fastest-growing zero-emission solution for 24/7 AI workloads.
-                </p>
-
-                <p class="text">
-                  The infrastructure is already moving. Money is beginning to follow.
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td class="footer">
-                <p class="footer-text">
-                  You are receiving this email because you subscribed to monthly updates from The New Financial World LLC.
-                </p>
-                <p class="footer-text">
-                  Educational content only. Nothing in this email should be considered financial, legal, investment, or tax advice.
-                </p>
-                <p class="footer-text footer-links" style="text-align:center;">
-                  <a href="https://www.newfinancialworld.com">Website</a>
-                  <a href="mailto:unsubscribe@newfinancialworld.com">Unsubscribe</a>
-                </p>
-
-                <div style="text-align:center; margin-top:12px;">
-                  <a href="https://www.linkedin.com/in/nfwfla" target="_blank" style="display:inline-block; margin:0 6px;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" height="20" style="display:block; border:0;" alt="LinkedIn">
-                  </a>
-
-                  <a href="https://www.youtube.com/@NFWFLA" target="_blank" style="display:inline-block; margin:0 6px;">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" width="20" height="20" style="display:block; border:0;" alt="YouTube">
-                  </a>
-
-                  <a href="https://x.com/nfwfla" target="_blank" style="display:inline-block; margin:0 6px;">
-                    <img src="https://www.newfinancialworld.com/x-logo.png"
-                         width="20"
-                         height="20"
-                         style="display:block; border:0;"
-                         alt="X">
-                  </a>
-                </div>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+<!-- HERO -->
+
+<tr>
+  <td class="hero">
+    <p class="eyebrow">The New Financial World LLC</p>
+
+    <h1 class="headline">
+      Continuous Money, Continuous Power, Continuous AI
+    </h1>
+
+    <p class="issue-date">
+      June 2026 Intelligence Briefing
+    </p>
+
+    <p class="subhead">
+      The systems shaping the next decade have one thing in common:
+      electricity never stops, data never stops, and increasingly,
+      money won't either.
+    </p>
+  </td>
+</tr>
+
+<tr>
+  <td class="content">
+
+    <p class="kicker">Monthly Perspective</p>
+
+    <h2 class="section-title">
+      Infrastructure Is Becoming The Story
+    </h2>
+
+    <p class="text">
+      Artificial intelligence, energy systems, digital assets, and
+      capital markets are often discussed separately.
+    </p>
+
+    <p class="text">
+      In reality, they are becoming increasingly interconnected.
+      AI requires power. Digital assets require settlement rails.
+      Tokenized markets require infrastructure.
+    </p>
+
+    <p class="text">
+      This month's briefing examines where those systems are beginning
+      to converge.
+    </p>
+
+  </td>
+</tr>
+
+.metric-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin-top:20px;
+}
+
+.metric-card{
+  background:#0b1423;
+  border:1px solid #22314b;
+  border-radius:14px;
+  padding:18px;
+}
+
+.metric-value{
+  color:#ffffff;
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.metric-label{
+  color:#92a7c3;
+  font-size:13px;
+  line-height:1.5;
+}
+<div class="topic-section">
+
+  <div class="topic-header">
+    <div class="topic-icon energy-icon">⚡</div>
+    <h3 class="topic-title">
+      Energy: AI's New Bottleneck
+    </h3>
   </div>
-</body>
-</html>
+
+  <p class="text">
+    The AI boom is creating a new bottleneck:
+    electricity.
+  </p>
+
+  <p class="text">
+    Every new hyperscale data center requires
+    reliable power that operates twenty-four
+    hours a day.
+  </p>
+
+  <p class="text">
+    That reality is driving renewed investment
+    in both natural gas and nuclear generation.
+  </p>
+
+  <div class="metric-grid">
+
+    <div class="metric-card">
+      <div class="metric-value">15</div>
+      <div class="metric-label">
+        Reactors expected online in 2026
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-value">12 GW</div>
+      <div class="metric-label">
+        New capacity expected this year
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-value">70+ GW</div>
+      <div class="metric-label">
+        Nuclear capacity under construction
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-value">2.8%</div>
+      <div class="metric-label">
+        Annual growth through 2030
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight-box">
+
+    <p class="highlight-text">
+      AI may be digital, but its constraints are
+      physical. Electricity, transmission,
+      cooling, and interconnection are becoming
+      strategic resources.
+    </p>
+
+  </div>
+
+  <p style="text-align:center;">
+    <a href="YOUR_NUCLEAR_VIDEO_URL"
+       class="btn-secondary">
+       Watch: Where AI Will Actually Live →
+    </a>
+  </p>
+
+</div>
+
+<div class="topic-section">
+
+  <div class="topic-header">
+    <div class="topic-icon crypto-icon">₿</div>
+
+    <h3 class="topic-title">
+      Crypto: Why Regulatory Clarity Matters
+    </h3>
+  </div>
+
+  <p class="text">
+    For years, digital asset companies have
+    operated under overlapping and often
+    conflicting regulatory frameworks.
+  </p>
+
+  <p class="text">
+    The CLARITY Act aims to establish clearer
+    boundaries between securities regulation,
+    commodity regulation, and payment assets.
+  </p>
+
+  <p class="text">
+    While legislation rarely generates headlines,
+    clear rules may ultimately prove more important
+    than market cycles.
+  </p>
+
+  <div class="importance-box">
+
+    <p class="importance-title">
+      Potential Impact
+    </p>
+
+    <p class="importance-text">
+      ✓ Greater regulatory certainty
+    </p>
+
+    <p class="importance-text">
+      ✓ Easier institutional participation
+    </p>
+
+    <p class="importance-text">
+      ✓ Reduced compliance risk
+    </p>
+
+    <p class="importance-text">
+      ✓ Clearer stablecoin frameworks
+    </p>
+
+    <p class="importance-text">
+      ✓ Faster tokenization adoption
+    </p>
+
+  </div>
+
+  <div class="highlight-box">
+
+    <p class="highlight-text">
+      Infrastructure scales faster when
+      participants understand the rules.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<div class="topic-section">
+
+  <div class="topic-header">
+    <div class="topic-icon capital-icon">💸</div>
+
+    <h3 class="topic-title">
+      Continuous Money Is No Longer A Theory
+    </h3>
+  </div>
+
+  <p class="text">
+    For more than a century, payroll has operated
+    in batches.
+  </p>
+
+  <p class="text">
+    Employees work. Payroll is processed.
+    Funds settle days later.
+  </p>
+
+  <p class="text">
+    Zebec is challenging that model through
+    streaming payments that move value
+    continuously rather than waiting for
+    scheduled pay cycles.
+  </p>
+
+  <p class="text">
+    Through its partnership with Stellar,
+    Zebec is expanding stablecoin payroll
+    infrastructure designed for real-world
+    businesses and global workforces.
+  </p>
+
+  <div class="metric-grid">
+
+    <div class="metric-card">
+      <div class="metric-value">65,000+</div>
+      <div class="metric-label">
+        Workers using Zebec-powered payroll
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-value">24/7</div>
+      <div class="metric-label">
+        Continuous payment capability
+      </div>
+    </div>
+
+  </div>
+
+  <div class="highlight-box">
+
+    <p class="highlight-text">
+      The innovation is not simply digital money.
+      It is transforming money from an event
+      into a continuous process.
+    </p>
+
+  </div>
+
+</div>
+
+
+<div class="topic-section">
+
+  <div class="topic-header">
+    <div class="topic-icon capital-icon">🏛</div>
+
+    <h3 class="topic-title">
+      Tokenization Moves Beyond Theory
+    </h3>
+  </div>
+
+  <p class="text">
+    Tokenization is increasingly moving from
+    concept to implementation.
+  </p>
+
+  <p class="text">
+    Tokenized Treasury products now represent
+    one of the fastest-growing segments of
+    digital finance.
+  </p>
+
+  <p class="text">
+    Projects such as ONDO are building the
+    infrastructure required to bring traditional
+    assets onto blockchain networks while
+    maintaining institutional standards.
+  </p>
+
+  <div class="metric-grid">
+
+    <div class="metric-card">
+      <div class="metric-value">$29B</div>
+      <div class="metric-label">
+        Tokenized RWA market
+      </div>
+    </div>
+
+    <div class="metric-card">
+      <div class="metric-value">$25.7B</div>
+      <div class="metric-label">
+        Tokenized Treasuries
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="divider"></div>
+
+<p class="kicker">
+  The New Financial World Signal
+</p>
+
+<h2 class="section-title">
+  Convergence Is The Real Story
+</h2>
+
+<p class="text">
+  AI needs electricity.
+</p>
+
+<p class="text">
+  Digital assets need regulation.
+</p>
+
+<p class="text">
+  Tokenized markets need infrastructure.
+</p>
+
+<p class="text">
+  None of these developments exist in isolation.
+  The systems being built today are becoming
+  increasingly interconnected.
+</p>
+
+<p class="text">
+  The next decade will be shaped less by
+  individual technologies and more by the
+  convergence of energy, compute, payments,
+  and capital.
+</p>
+
+<p class="text">
+  That convergence is where we focus.
+</p>
+
+<tr>               <td class="footer">                 <p class="footer-text">                   You are receiving this email because you subscribed to monthly updates from The New Financial World LLC.                 </p>                 <p class="footer-text">                   Educational content only. Nothing in this email should be considered financial, legal, investment, or tax advice.                 </p>                 <p class="footer-text footer-links" style="text-align:center;">                   <a href=[https://www.newfinancialworld.com](https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.newfinancialworld.com%2F&data=05%7C02%7CDMValdez%40tecoenergy.com%7Ced99a8203eb34ac4a21208dec67feb7a%7Cfa8c194af8e243c5bc39b637579e39e0%7C0%7C0%7C639166449879223066%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=9%2BatP6ZdycY%2BgEjZTmVoIQIpg52PEaFqD2acATNQz7Q%3D&reserved=0)>Website</a>                   <a href=mailto:unsubscribe@newfinancialworld.com>Unsubscribe</a>                 </p>                   <div style="text-align:center; margin-top:12px;">                   <a href=[https://www.linkedin.com/in/nfwfla](https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fnfwfla&data=05%7C02%7CDMValdez%40tecoenergy.com%7Ced99a8203eb34ac4a21208dec67feb7a%7Cfa8c194af8e243c5bc39b637579e39e0%7C0%7C0%7C639166449879258204%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=Hs551W2Vx3oKax7GYT9BH%2Bq9xjcd6NJLxbE%2FQ2yd7rU%3D&reserved=0) target="_blank" style="display:inline-block; margin:0 6px;">                     <img src=[https://cdn-icons-png.flaticon.com/512/174/174857.png](https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F174%2F174857.png&data=05%7C02%7CDMValdez%40tecoenergy.com%7Ced99a8203eb34ac4a21208dec67feb7a%7Cfa8c194af8e243c5bc39b637579e39e0%7C0%7C0%7C639166449879290959%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=S8mqZhaWClhREUCTmBNI7pRZgakiKsOnipKmXCb2K2Q%3D&reserved=0) width="20" height="20" style="display:block; border:0;" alt="LinkedIn">                   </a>                     <a href=[https://www.youtube.com/@NFWFLA](https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2F%40NFWFLA&data=05%7C02%7CDMValdez%40tecoenergy.com%7Ced99a8203eb34ac4a21208dec67feb7a%7Cfa8c194af8e243c5bc39b637579e39e0%7C0%7C0%7C639166449879327902%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=tPHq7cWwjVsG1t4p%2F2%2BWRkMdH77adOP4b2b%2BUTsshrQ%3D&reserved=0) target="_blank" style="display:inline-block; margin:0 6px;">                     <img src=[https://cdn-icons-png.flaticon.com/512/1384/1384060.png](https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F1384%2F1384060.png&data=05%7C02%7CDMValdez%40tecoenergy.com%7Ced99a8203eb34ac4a21208dec67feb7a%7Cfa8c194af8e243c5bc39b637579e39e0%7C0%7C0%7C639166449879365153%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=TZQolX1USUMwA9SHf44Y5k4goel4n72NzYhbZN7TCbo%3D&reserved=0) width="20" height="20" style="display:block; border:0;" alt="YouTube">                   </a>                     <a href=[https://x.com/nfwfla](https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fx.com%2Fnfwfla&data=05%7C02%7CDMValdez%40tecoenergy.com%7Ced99a8203eb34ac4a21208dec67feb7a%7Cfa8c194af8e243c5bc39b637579e39e0%7C0%7C0%7C639166449879406431%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=m7cdgCHCftEYbPD%2F47eoDHKQMKrQ1Kq0lpNlavgTZmY%3D&reserved=0) target="_blank" style="display:inline-block; margin:0 6px;">                     <img src=[https://www.newfinancialworld.com/x-logo.png](https://nam11.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.newfinancialworld.com%2Fx-logo.png&data=05%7C02%7CDMValdez%40tecoenergy.com%7Ced99a8203eb34ac4a21208dec67feb7a%7Cfa8c194af8e243c5bc39b637579e39e0%7C0%7C0%7C639166449879451791%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=%2BUTkw37bcnVCi4SQUyCTpTIyzw4rcuw1HCiDazAf0SU%3D&reserved=0)                          width="20"                          height="20"                          style="display:block; border:0;"                          alt="X">                   </a>                 </div>               </td>             </tr>           </table>         </td>       </tr>     </table>   </div> </body> </html>
