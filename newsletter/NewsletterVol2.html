@@ -6,9 +6,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NFW Intelligence Brief | June 2026</title>
+<title>NFW Intelligence Brief</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -18,179 +18,328 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-background:#060b14;
-color:#e8eef9;
+
 font-family:'Inter',sans-serif;
-line-height:1.8;
+color:#ffffff;
+
+background:
+radial-gradient(circle at top right,
+rgba(0,153,255,.15),
+transparent 35%),
+
+radial-gradient(circle at bottom left,
+rgba(0,102,255,.12),
+transparent 40%),
+
+linear-gradient(
+180deg,
+#050b14 0%,
+#07111f 40%,
+#09182b 100%
+);
+
+overflow-x:hidden;
+}
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background-image:
+
+linear-gradient(
+rgba(255,255,255,.03) 1px,
+transparent 1px),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.03) 1px,
+transparent 1px);
+
+background-size:50px 50px;
+
+pointer-events:none;
+
+z-index:-1;
 }
 
 .container{
+
 width:100%;
-max-width:1200px;
+max-width:1400px;
+
 margin:auto;
-padding:0 24px;
+
+padding:0 40px;
 }
 
 section{
-padding:90px 0;
+
+padding:100px 0;
 }
 
-h1,h2,h3{
-font-weight:700;
-line-height:1.2;
-}
+.hero{
 
-p{
-color:#b8c4d9;
-font-size:18px;
-}
+min-height:100vh;
 
-a{
-text-decoration:none;
-}
-
-.btn{
-display:inline-block;
-padding:16px 30px;
-background:#3b82f6;
-color:white;
-border-radius:10px;
-font-weight:600;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-}
-
-.section-title{
-font-size:42px;
-margin-bottom:25px;
-color:white;
-}
-
-.section-subtitle{
-color:#7ea6ff;
-font-size:14px;
-letter-spacing:2px;
-text-transform:uppercase;
-margin-bottom:15px;
-}
-
-.card{
-background:#0d1627;
-border:1px solid #1f304a;
-border-radius:18px;
-padding:30px;
-}
-
-.highlight{
-background:#12213d;
-border-left:4px solid #4f8cff;
-padding:25px;
-margin-top:30px;
-border-radius:10px;
-}
-
-.metric-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-margin-top:40px;
-}
-
-.metric{
-background:#0d1627;
-padding:25px;
-border-radius:16px;
-border:1px solid #1f304a;
-}
-
-.metric-number{
-font-size:34px;
-font-weight:700;
-color:white;
-}
-
-.metric-label{
-font-size:14px;
-color:#8fa5c6;
-margin-top:8px;
-}
-
-.article{
-max-width:850px;
-}
-
-.divider{
-height:1px;
-background:#1f304a;
-margin:80px 0;
-}
-
-footer{
-background:#04070d;
-padding:60px 0;
-text-align:center;
-}
-
-footer p{
-font-size:14px;
-color:#74839d;
-}
-
-.hero-graphic{
-margin-top:50px;
-height:420px;
-background:linear-gradient(
-135deg,
-#12213d,
-#09111f
-);
-border-radius:22px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:24px;
-color:#7ea6ff;
-border:1px solid #243754;
 }
 
-.flow-diagram{
-margin-top:40px;
+.hero-content{
+
+max-width:900px;
+
+text-align:center;
+}
+
+.eyebrow{
+
+color:#58a6ff;
+
+font-size:14px;
+
+text-transform:uppercase;
+
+letter-spacing:3px;
+
+margin-bottom:20px;
+}
+
+.hero h1{
+
+font-size:72px;
+
+font-weight:900;
+
+line-height:1.05;
+
+margin-bottom:30px;
+}
+
+.hero-sub{
+
+font-size:24px;
+
+line-height:1.7;
+
+color:#c4d3e7;
+
+max-width:850px;
+
+margin:auto;
+}
+
+.hero-buttons{
+
+margin-top:50px;
+
 display:flex;
+
 justify-content:center;
-gap:25px;
+
+gap:20px;
+
 flex-wrap:wrap;
 }
 
-.flow-box{
-background:#0d1627;
-padding:20px 28px;
-border-radius:14px;
-border:1px solid #1f304a;
-font-weight:600;
+.btn{
+
+padding:16px 32px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
 }
 
-@media(max-width:900px){
+.btn-primary{
 
-.metric-grid{
-grid-template-columns:1fr 1fr;
+background:#1f6fff;
+
+color:white;
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+
+border:1px solid rgba(255,255,255,.15);
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(10px);
+
+color:white;
+}
+
+.metrics{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+margin-top:80px;
+}
+
+.metric-card{
+
+width:260px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:20px;
+
+padding:30px;
+}
+
+.metric-number{
+
+font-size:42px;
+
+font-weight:800;
+
+color:#58a6ff;
+}
+
+.metric-label{
+
+margin-top:10px;
+
+color:#b7c8de;
+
+line-height:1.6;
 }
 
 .section-title{
-font-size:34px;
+
+font-size:52px;
+
+font-weight:800;
+
+margin-bottom:30px;
 }
 
+.section-sub{
+
+font-size:20px;
+
+line-height:1.8;
+
+color:#b7c8de;
+
+max-width:900px;
 }
 
-@media(max-width:600px){
+.two-column{
 
-.metric-grid{
-grid-template-columns:1fr;
+display:grid;
+
+grid-template-columns:70% 30%;
+
+gap:50px;
+
+align-items:start;
 }
 
+.glass-card{
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:24px;
+
+padding:35px;
+}
+
+.article-text{
+
+font-size:19px;
+
+line-height:1.9;
+
+color:#d3dfef;
+
+margin-bottom:25px;
+}
+
+.quote-box{
+
+border-left:4px solid #58a6ff;
+
+padding-left:25px;
+
+margin:40px 0;
+
+font-size:26px;
+
+font-weight:600;
+
+line-height:1.6;
+}
+
+.sidebar-title{
+
+font-size:20px;
+
+font-weight:700;
+
+margin-bottom:25px;
+}
+
+.signal{
+
+padding:18px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.signal:last-child{
+
+border:none;
+}
+
+.signal h4{
+
+margin-bottom:8px;
+}
+
+.signal p{
+
+color:#b7c8de;
+
+line-height:1.6;
 }
 
 </style>
@@ -199,476 +348,84 @@ grid-template-columns:1fr;
 
 <body>
 
-
-
-
-    <section>
+<section class="hero">
 
 <div class="container">
 
-<p class="section-subtitle">
-THE NEW FINANCIAL WORLD
-</p>
+<div class="hero-content">
 
-<h1 style="
-font-size:72px;
-max-width:900px;
-margin-bottom:25px;
-">
+<div class="eyebrow">
+The New Financial World LLC
+</div>
 
-Continuous Money.
-Continuous Power.
+<h1>
+Continuous Money.<br>
+Continuous Power.<br>
 Continuous AI.
-
 </h1>
 
-<p style="
-max-width:850px;
-font-size:24px;
-">
+<p class="hero-sub">
 
-The systems shaping the next decade have one thing in common:
-electricity never stops, data never stops, and increasingly,
-money won't either.
+The systems shaping the next decade have one thing in common.
+Electricity never stops. Data never stops.
+Increasingly, money won't either.
 
 </p>
 
-<div style="margin-top:40px;">
+<div class="hero-buttons">
 
-<a href="#" class="btn">
-Read June Intelligence Brief
+<a href="#energy" class="btn btn-primary">
+Read Briefing
+</a>
+
+<a href="#" class="btn btn-secondary">
+Watch Latest Episode
 </a>
 
 </div>
 
-<div class="hero-graphic">
+<div class="metrics">
 
-AI • ENERGY • PAYMENTS • DIGITAL INFRASTRUCTURE
+<div class="metric-card">
 
+<div class="metric-number">
+70+ GW
 </div>
 
-</div>
-
-</section>
-
-
-
-    <section>
-
-<div class="container">
-
-<p class="section-subtitle">
-FEATURE ONE
-</p>
-
-<h2 class="section-title">
-⚡ AI's Power Problem
-</h2>
-
-<div class="article">
-
-<p>
-
-Artificial intelligence may appear to be a software story,
-but underneath every model, chatbot, and data center sits a
-physical requirement that cannot be virtualized: electricity.
-
-</p>
-
-<br>
-
-<p>
-
-As hyperscale AI infrastructure expands across the globe,
-energy availability is rapidly becoming one of the most
-important constraints on future growth.
-
-</p>
-
-<br>
-
-<p>
-
-Major technology firms are investing billions into data
-center construction, while utilities and governments are
-scrambling to secure enough generation capacity to support
-future demand.
-
-</p>
-
-<br>
-
-<p>
-
-This is why nuclear power has re-entered the conversation.
-
-Unlike intermittent renewable sources, nuclear facilities
-provide stable baseload generation capable of operating
-continuously around the clock.
-
-</p>
-
-</div>
-
-<div class="metric-grid">
-
-<div class="metric">
-<div class="metric-number">15</div>
 <div class="metric-label">
-Reactors expected online in 2026
-</div>
+Nuclear Capacity Under Construction
 </div>
 
-<div class="metric">
-<div class="metric-number">12 GW</div>
+</div>
+
+<div class="metric-card">
+
+<div class="metric-number">
+$29B
+</div>
+
 <div class="metric-label">
-New capacity expected this year
-</div>
+Tokenized Real-World Assets
 </div>
 
-<div class="metric">
-<div class="metric-number">70+ GW</div>
+</div>
+
+<div class="metric-card">
+
+<div class="metric-number">
+65,000+
+</div>
+
 <div class="metric-label">
-Global nuclear capacity under construction
-</div>
-</div>
-
-<div class="metric">
-<div class="metric-number">2.8%</div>
-<div class="metric-label">
-Annual growth forecast
-</div>
+Workers Using Streaming Payroll
 </div>
 
 </div>
 
-<div class="hero-graphic">
-
-INSERT AI + NUCLEAR INFOGRAPHIC HERE
-
 </div>
-
-<div class="highlight">
-
-AI may be digital, but its limitations are physical.
-Electricity, cooling, transmission, and generation are
-becoming strategic assets.
-
-</div>
-
-<br><br>
-
-<a href="#" class="btn">
-▶ Watch The AI Energy Episode
-</a>
-
-</div>
-
-</section>
-
-
-
-
-    <section>
-
-<div class="container">
-
-<p class="section-subtitle">
-FEATURE TWO
-</p>
-
-<h2 class="section-title">
-💸 Continuous Money
-</h2>
-
-<div class="article">
-
-<p>
-
-For more than a century payroll has operated through
-batches.
-
-Employees work for days or weeks before receiving access
-to earnings through scheduled pay cycles.
-
-</p>
-
-<br>
-
-<p>
-
-Companies like Zebec are challenging that assumption by
-building infrastructure designed for real-time value
-movement.
-
-</p>
-
-<br>
-
-<p>
-
-The concept is simple but powerful:
-if data can move continuously,
-why can't money?
-
-</p>
-
-<br>
-
-<p>
-
-Rather than treating compensation as a delayed event,
-streaming payment systems allow value to flow continuously.
-
-This creates a dramatically different model for workers,
-contractors, and businesses.
-
-</p>
-
-<br>
-
-<p>
-
-While Zebec began within the Solana ecosystem,
-the broader significance extends far beyond any single
-blockchain.
-
-The innovation is continuous settlement itself.
-
-</p>
-
-</div>
-
-<div class="flow-diagram">
-
-<div class="flow-box">
-Work Performed
-</div>
-
-<div class="flow-box">
-Value Streams
-</div>
-
-<div class="flow-box">
-Instant Settlement
-</div>
-
-<div class="flow-box">
-24/7 Access
-</div>
-
-</div>
-
-<div class="hero-graphic">
-
-INSERT ZEBEC + CONTINUOUS PAYROLL GRAPHIC
-
-</div>
-
-<div class="highlight">
-
-The innovation is not digital money.
-
-The innovation is transforming money from an event
-into a continuous process.
-
-</div>
-
-<br><br>
-
-<a href="#" class="btn">
-▶ Watch Continuous Money Episode
-</a>
-
-</div>
-
-</section>
-
-
-
-
-    <section>
-
-<div class="container">
-
-<p class="section-subtitle">
-FEATURE THREE
-</p>
-
-<h2 class="section-title">
-🏛 Infrastructure Requires Rules
-</h2>
-
-<div class="article">
-
-<p>
-
-Much of the discussion surrounding digital assets focuses
-on prices.
-
-Yet the more important story may be regulatory structure.
-
-</p>
-
-<br>
-
-<p>
-
-Market participants generally do not deploy substantial
-capital into systems where the rules remain uncertain.
-
-</p>
-
-<br>
-
-<p>
-
-Current debates surrounding market structure legislation,
-including the CLARITY Act, are fundamentally discussions
-about infrastructure.
-
-</p>
-
-<br>
-
-<p>
-
-The question is not whether digital assets exist.
-
-The question is how they integrate into mainstream
-financial architecture.
-
-</p>
-
-<br>
-
-<p>
-
-Clear rules reduce uncertainty, encourage participation,
-and accelerate infrastructure development.
-
-</p>
-
-</div>
-
-<div class="highlight">
-
-Infrastructure scales faster when participants
-understand the rules.
 
 </div>
 
 </div>
 
 </section>
-
-
-
-
-    <section>
-
-<div class="container">
-
-<div class="divider"></div>
-
-<p class="section-subtitle">
-NFW SIGNAL
-</p>
-
-<h2 class="section-title">
-Convergence Is The Real Story
-</h2>
-
-<div class="article">
-
-<p>
-
-Artificial intelligence requires power.
-
-</p>
-
-<br>
-
-<p>
-
-Digital finance requires settlement.
-
-</p>
-
-<br>
-
-<p>
-
-Capital markets require trust.
-
-</p>
-
-<br>
-
-<p>
-
-These systems are no longer evolving independently.
-
-</p>
-
-<br>
-
-<p>
-
-The defining investment theme of the next decade may not
-be a single technology.
-
-It may be the convergence of energy, compute,
-payments, and capital.
-
-</p>
-
-<br>
-
-<p>
-
-That convergence is where we focus.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-    <footer>
-
-<div class="container">
-
-<h3 style="
-font-size:26px;
-margin-bottom:20px;
-">
-
-The New Financial World
-
-</h3>
-
-<p>
-
-Energy • Compute • Payments • Capital
-
-</p>
-
-<br>
-
-<p>
-
-© 2026 The New Financial World LLC
-
-</p>
-
-</div>
-
-</footer>
-
-</body>
-</html>
