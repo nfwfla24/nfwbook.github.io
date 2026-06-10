@@ -167,10 +167,128 @@
             color: #94a3b8;
             text-decoration: none;
         }
+        .footer-links {
+            margin-top: 16px;
+        }
+        .footer-links a {
+            display: inline-block;
+            margin: 0 12px;
+        }
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+        .unsubscribe-link {
+            color: #64748b;
+            font-size: 13px;
+            text-decoration: underline;
+            margin-top: 12px;
+        }
+        /* Chart styles */
+        .chart-container {
+            background: #1e2937;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 28px 0;
+            border: 1px solid #334155;
+        }
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            height: 200px;
+            padding: 15px 0;
+            gap: 20px;
+            position: relative;
+        }
+        .chart-grid {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+        .grid-line {
+            height: 1px;
+            background: linear-gradient(90deg, #334155, transparent);
+            width: 100%;
+        }
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            justify-content: flex-end;
+            flex: 1;
+            position: relative;
+        }
+        .bar {
+            width: 45px;
+            background: linear-gradient(180deg, #22d3ee 0%, #22b8cf 50%, #1e88e5 100%);
+            border-radius: 8px 8px 0 0;
+            min-height: 8px;
+            box-shadow: 0 4px 12px rgba(34, 211, 238, 0.3);
+            position: relative;
+        }
+        .bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+            border-radius: 8px 8px 0 0;
+        }
+        .bar-label {
+            color: #94a3b8;
+            font-size: 12px;
+            margin-top: 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .bar-value {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        /* Company grid */
+        .company-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .company-card {
+            background: #1e2937;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+        }
+        .company-name {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0 0 6px;
+        }
+        .company-focus {
+            color: #94a3b8;
+            font-size: 11px;
+            margin: 0;
+            line-height: 1.4;
+        }
         @media only screen and (max-width: 600px) {
             .container { width: 100% !important; }
             .content { padding: 30px 20px !important; }
             .headline { font-size: 28px !important; }
+            .company-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -182,7 +300,7 @@
                 <p class="logo">THE NEW FINANCIAL WORLD</p>
                 <p class="issue-date">JUNE 2026 INTELLIGENCE BRIEFING</p>
                 <h1 class="headline">Continuous Money,<br>Continuous Power,<br>Continuous AI</h1>
-                <p class="subhead">The systems shaping the next decade have one thing in common: electricity never stops, data never stops, and increasingly, money won’t either.</p>
+                <p class="subhead">The systems shaping the next decade have one thing in common: electricity never stops, data never stops, and increasingly, money won't either.</p>
             </td>
         </tr>
 
@@ -193,38 +311,47 @@
                 <h2 class="section-title">Infrastructure Is Becoming The Story</h2>
                 <p class="text">Artificial intelligence, energy systems, digital assets, and capital markets are often discussed separately.</p>
                 <p class="text">In reality, they are becoming increasingly interconnected. AI requires power. Digital assets require settlement rails. Tokenized markets require infrastructure.</p>
-                <p class="text">This month’s briefing examines where those systems are beginning to converge.</p>
-</br>
+                <p class="text">This month's briefing examines where those systems are beginning to converge.</p>
+                </br>
                 
                <!-- Energy Section - Expanded -->
                 <div class="topic-section">
                     <div class="topic-header">
                         <div class="topic-icon" style="background:#1e3a2f;">⚡</div>
-                        <h3 class="topic-title">Energy: AI’s New Bottleneck</h3>
+                        <h3 class="topic-title">Energy: AI's New Bottleneck</h3>
                     </div>
-                    <img src="https://picsum.photos/id/1016/640/300" alt="Nuclear & Data Centers" style="margin-bottom:20px;">
                     <p class="text">For decades, energy demand growth was slow and predictable. AI changed that.</p>
                     <p class="text">Data centers are now competing with cities for electricity, forcing utilities, regulators, and governments to rethink how power is built. Nuclear and natural gas are emerging as the primary beneficiaries because they can provide reliable 24/7 generation at scale.</p>
                     <p class="text">The result is a global buildout of physical infrastructure that may define the next decade. Hyperscale data centers now demand always-on, high-density electricity that renewables alone cannot reliably deliver. Tech companies are signing massive power purchase agreements, while utilities and developers accelerate new reactor builds and restarts.</p>
                     
-                    <!-- Improved Chart with explicit values -->
+                    <!-- Fixed Chart with visible bars -->
                     <div class="chart-container">
-                        <p style="margin:0 0 16px 0; color:#94a3b8; font-size:14px; font-weight:600;">Projected U.S. Data Center Power Demand Growth</p>
-                        <div class="chart-bar">
-                            <div class="bar" style="height:38%;">
+                        <p style="margin:0 0 16px 0; color:#94a3b8; font-size:14px; font-weight:600;">Projected Additional U.S. Data Center Power (GW)</p>
+                        <div class="chart-grid">
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                            <div class="grid-line"></div>
+                        </div>
+                        <div class="bar-chart">
+                            <div class="bar-group">
                                 <div class="bar-value">~40 GW</div>
+                                <div class="bar" style="height:80px;"></div>
                                 <div class="bar-label">2025</div>
                             </div>
-                            <div class="bar" style="height:62%;">
+                            <div class="bar-group">
                                 <div class="bar-value">~65 GW</div>
+                                <div class="bar" style="height:130px;"></div>
                                 <div class="bar-label">2027</div>
                             </div>
-                            <div class="bar" style="height:92%;">
+                            <div class="bar-group">
                                 <div class="bar-value">~95 GW</div>
+                                <div class="bar" style="height:190px;"></div>
                                 <div class="bar-label">2030</div>
                             </div>
                         </div>
-                        <p style="text-align:center; margin-top:40px; font-size:13px; color:#64748b;">Estimated additional GW needed • Industry projections</p>
+                        <p style="text-align:center; margin-top:20px; font-size:13px; color:#64748b;">Estimated additional GW needed for U.S. data centers • Industry projections</p>
                     </div>
 
                     <div class="metric-grid">
@@ -248,16 +375,15 @@
                     </p>
                 </div>
 
-               !-- Company Spotlight: Zebec -->
+               <!-- Company Spotlight: Zebec -->
                 <div class="topic-section">
                     <div class="topic-header">
                         <div class="topic-icon" style="background:#2a1f1f;">💸</div>
                         <h3 class="topic-title">Company Spotlight: Zebec — Turning Payroll Into Infrastructure</h3>
                     </div>
-                    <img src="https://picsum.photos/id/201/640/300" alt="Continuous Payroll" style="margin-bottom:20px;">
                     <p class="text">For more than a century payroll has operated in batches. Employees work for two weeks. Companies process payroll. Funds settle days later.</p>
-                    <p class="text">Zebec is challenging that legacy model through streaming payments, allowing wages to move continuously rather than waiting for scheduled pay periods. The company’s partnership with <strong>Stellar</strong> enables global stablecoin payroll infrastructure purpose-built for real-world businesses. Integration with USD1 further strengthens settlement reliability and accessibility.</p>
-                    <p class="text">As of May 2026, approximately 65,000 workers were already receiving compensation through Zebec-powered systems. This represents more than just faster payments — it is the transformation of money from discrete events into continuous flows.</p>
+                    <p class="text">Zebec is challenging that legacy model through streaming payments, allowing wages to move continuously rather than waiting for scheduled pay periods. The company's partnership with <strong>Stellar</strong> enables global stablecoin payroll infrastructure purpose-built for real-world businesses. Integration with USD1 further strengthens settlement reliability and accessibility.</p>
+                    <p class="text">As of May 2026, approximately 65,000 workers were already receiving compensation through Zebec-powered systems. This represents more than faster payments — it is the transformation of money from discrete events into continuous flows.</p>
 
                     <div class="metric-grid">
                         <div class="metric-card"><div class="metric-value">65,000+</div><div class="metric-label">Workers on continuous payroll</div></div>
@@ -280,7 +406,7 @@
                         <h3 class="topic-title">Digital Assets: Regulation Moves From Debate To Framework</h3>
                     </div>
                     <p class="text">For years the industry navigated overlapping and often conflicting rules. The CLARITY Act (Digital Asset Market Clarity Act) is changing that by creating clearer distinctions between securities (SEC), commodities (CFTC), and payment assets.</p>
-                    <p class="text">This clarity is critically important because it ends the era of “regulation by enforcement.” Companies no longer face sudden lawsuits to discover their regulatory status. Instead, they gain predictable rules for registration, custody, trading, and innovation. The bill provides a pathway for tokens to transition from securities to commodities as networks decentralize, protects non-custodial DeFi developers, and brings institutional-grade compliance standards that unlock bank participation and large-scale capital.</p>
+                    <p class="text">This clarity is critically important because it ends the era of "regulation by enforcement." Companies no longer face sudden lawsuits to discover their regulatory status. Instead, they gain predictable rules for registration, custody, trading, and innovation. The bill provides a pathway for tokens to transition from securities to commodities as networks decentralize, protects non-custodial DeFi developers, and brings institutional-grade compliance standards that unlock bank participation and large-scale capital.</p>
                     <p class="text">The legislative deadline is equally vital. With the Senate needing 60 votes and a narrow window before the August recess and midterm election pressures, missing the 2026 timeline risks pushing comprehensive reform into 2027 or later. Prolonged uncertainty drives talent, companies, and innovation offshore, while delaying the integration of digital assets into traditional finance. Passing CLARITY this year would provide the durable foundation the market needs to scale responsibly in the United States.</p>
 
                     <div class="highlight-box">
@@ -289,30 +415,89 @@
 
                 </div>
 
-                <!-- Tokenization Section -->
+                <!-- Tokenization Section with ONDO and RWA players -->
                 <div class="topic-section">
                     <div class="topic-header">
                         <div class="topic-icon" style="background: #2a1f2a;">₿</div>
                         <h3 class="topic-title">Tokenization Moves Beyond Theory</h3>
                     </div>
                     <p class="text">Tokenization is increasingly moving from concept to implementation.</p>
-                    <p class="text">Tokenized Treasury products now represent one of the fastest-growing segments of digital finance.</p>
-                    <p class="text">Projects like ONDO are building the infrastructure needed to bring traditional assets onto blockchain networks while maintaining institutional standards.</p>
+                    <p class="text">Tokenized Treasury products now represent one of the fastest-growing segments of digital finance, with <strong>$25.7 billion in tokenized Treasuries alone</strong> as of late February 2026. ONDO is dominating this segment, offering institutional-grade U.S. government bonds on-chain.</p>
+                    <p class="text">The broader tokenized RWA market (excluding stablecoins) reached approximately <strong>$29 billion in Q1 2026</strong>, a 263% increase from 2024's $7.9 billion.</p>
                     
                     <div class="metric-grid">
                         <div class="metric-card">
                             <div class="metric-value">$29B</div>
-                            <div class="metric-label">Tokenized RWA market</div>
+                            <div class="metric-label">Tokenized RWA market (Q1 2026)</div>
                         </div>
                         <div class="metric-card">
                             <div class="metric-value">$25.7B</div>
-                            <div class="metric-label">Tokenized Treasuries</div>
+                            <div class="metric-label">Tokenized Treasuries (ONDO dominant)</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">263%</div>
+                            <div class="metric-label">Growth 2024-2026</div>
                         </div>
                     </div>
 
-                    <p style="text-align:center;">
-                        <a href="YOUR_TOKENIZATION_VIDEO_URL" class="btn-secondary">Watch: The Rise of Tokenized Markets →</a>
-                    </p>
+                    <p class="text" style="margin-top: 20px;"><strong>Key RWA Players and Their Models:</strong></p>
+                    
+                    <div class="company-grid">
+                        <div class="company-card">
+                            <div class="company-name">ONDO</div>
+                            <div class="company-focus">Tokenized Treasuries leader; institutional-grade U.S. government bonds on-chain</div>
+                        </div>
+                        <div class="company-card">
+                            <div class="company-name">Stellar (XLM)</div>
+                            <div class="company-focus">Network asset scale; regulatory clarity + institutional fund launches</div>
+                        </div>
+                        <div class="company-card">
+                            <div class="company-name">Zebec (ZBCN)</div>
+                            <div class="company-focus">Streaming payment protocol; PayFi as RWA lane; 65,000 workers on payroll</div>
+                        </div>
+                        <div class="company-card">
+                            <div class="company-name">Quant (QNT)</div>
+                            <div class="company-focus">Bank-grade software; infrastructure-layer integration for enterprises</div>
+                        </div>
+                        <div class="company-card">
+                            <div class="company-name">Hedera (HBAR)</div>
+                            <div class="company-focus">Private, permissioned networks for institutions; tokenization infrastructure</div>
+                        </div>
+                    </div>
+
+                    <p class="text" style="margin-top: 18px;">These represent the sector's models: <strong>tokenized traditional finance</strong> (ONDO with Treasuries), <strong>compliance-driven public chains</strong> (Stellar), <strong>protocol-level payment applications</strong> (Zebec), <strong>infrastructure integration</strong> (Quant), and <strong>institutional private networks</strong> (Hedera).</p>
+
+                    <div class="highlight-box">
+                        <p class="highlight-text">MetaMask recently launched tokenized RWAs via Ondo Global Markets, showing major wallet integration. This means retail users can now access tokenized Treasuries directly through their crypto wallets, bridging traditional finance and DeFi.</p>
+                    </div>
+                </div>
+
+                <!-- BRIS/VRL + Hedera Integrated Section -->
+                <div class="topic-section">
+                    <div class="topic-header">
+                        <div class="topic-icon" style="background: #1a2f3a;">🔗</div>
+                        <h3 class="topic-title">BRIS/VRL: The Infrastructure Layer for Electrical Tokenization</h3>
+                    </div>
+                    <p class="text">As tokenization moves beyond Treasuries into physical assets, a new infrastructure pattern is emerging. The challenge isn't just putting assets on-chain — it's establishing trust in the underlying reliability data without exposing sensitive operational information.</p>
+                    <p class="text">The New Financial World LLC is developing a three-layer architecture for this problem: BRIS (Baseline Reliability Intelligence Standard) for private reliability scoring, VRL (Verified Reliability Layer) for public anchoring, and Hedera Token Service for the final token layer. BRIS captures and attests asset reliability evidence in a methodology that utilities and regulators can trust. VRL then anchors selected evidence to Hedera's public consensus service, making it universally verifiable without exposing private data. The token lives on the same chain where truth is anchored.</p>
+                    
+                    <div class="highlight-box">
+                        <p class="highlight-text">BRIS builds the trust. VRL locks the truth. The token carries the value.</p>
+                    </div>
+
+                    <p class="text">This architecture mirrors what Hedera is already promoting for institutions: private, permissioned networks that can interoperate with public infrastructure while maintaining full control over participant access and data visibility. Hedera's HashSphere platform enables financial institutions to issue, manage, trade, and settle tokenized assets through integrated solutions. The BRIS/VRL approach applies the same logic to electrical infrastructure — where the assets being tokenized aren't financial instruments, but reliability attributes like renewable energy certificates, capacity headroom, and reactive power.</p>
+
+                    <p class="text">The key insight: we don't tokenize the physical transformer or generator (which are cost centers). Instead, we tokenize electrical attributes that have market value. A transformer isn't a revenue asset, but its capacity headroom and reactive power output can be. This is the same pattern institutions use for tokenization — abstracting the economic value from the physical asset while maintaining verifiable linkage to it.</p>
+
+                    <div class="highlight-box">
+                        <p class="highlight-text">The next decade will be built on systems that balance throughput, privacy, governance control, and interoperability simultaneously. BRIS/VRL and Hedera both point to the same conclusion: institutional blockchain infrastructure must solve all four.</p>
+                    </div>
+
+                    <p class="text">This is where the convergence becomes concrete. AI needs electricity. The electricity infrastructure needs reliability scoring that utilities trust. That scoring needs public anchoring that markets trust. And that anchored truth needs tokenization that capital can access. BRIS/VRL using Hedera is one implementation of this pattern — and it's happening in the same timeframe as CLARITY Act clarity, RWA tokenization scale, and the nuclear buildout for AI.</p>
+
+                    <div class="highlight-box">
+                        <p class="highlight-text">This work represents a methodology and reference design for electrical infrastructure tokenization — not a coin, exchange, or financial product. It's the infrastructure layer that tokenization and digital assets will eventually run on.</p>
+                    </div>
                 </div>
 
                 <div class="divider"></div>
@@ -334,10 +519,21 @@
             <td class="footer">
                 <p>© 2026 The New Financial World LLC</p>
                 <p>Following the convergence of energy, AI, payments, and capital markets.</p>
-                <p>
-                    <a href="YOUR_YOUTUBE_LINK">YouTube</a> • 
-                    <a href="YOUR_X_LINK">X</a> • 
+                
+                <div class="footer-links">
+                    <a href="YOUR_YOUTUBE_LINK">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="social-icon">
+                        YouTube
+                    </a> • 
+                    <a href="YOUR_X_LINK">
+                        <img src="https://www.newfinancialworld.com/x-logo.png" alt="X" class="social-icon">
+                        X
+                    </a> • 
                     <a href="YOUR_WEBSITE_LINK">Website</a>
+                </div>
+                
+                <p class="unsubscribe-link">
+                    <a href="mailto:unsubscribe@newfinancialworld.com">Unsubscribe</a>
                 </p>
             </td>
         </tr>
