@@ -124,6 +124,65 @@ section {
   max-width: 1100px;
   margin: 0 auto;
 }
+      <!--Mini Charts-->
+      .mini-bars {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 26px;
+  margin-top: 10px;
+}
+
+.mini-bars span {
+  width: 4px;
+  background: linear-gradient(180deg, #58a6ff, rgba(88,166,255,0.2));
+  border-radius: 2px;
+  opacity: 0.75;
+  animation: barPulse 1.8s infinite ease-in-out;
+}
+
+.mini-bars span:nth-child(2) { animation-delay: .15s; }
+.mini-bars span:nth-child(3) { animation-delay: .3s; }
+.mini-bars span:nth-child(4) { animation-delay: .45s; }
+.mini-bars span:nth-child(5) { animation-delay: .6s; }
+.mini-bars span:nth-child(6) { animation-delay: .75s; }
+
+@keyframes barPulse {
+  0%, 100% { height: 6px; opacity: 0.5; }
+  50% { height: 22px; opacity: 1; }
+}
+      <!--Mini Sparkline-->
+      .mini-spark {
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.mini-spark path {
+  stroke: #58a6ff;
+  stroke-width: 2;
+  fill: none;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 6px rgba(88,166,255,0.25));
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: drawLine 2.2s ease-out forwards;
+}
+
+/* Grid (slower, weaker infrastructure response) */
+.spark-grid {
+  stroke: rgba(255,255,255,0.35);
+  stroke-width: 1.5;
+  fill: none;
+  opacity: 0.8;
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: drawLine 2.6s ease-out forwards;
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
       /* ===================================== */ 
       .dashboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; } 
       @media (max-width: 1000px) { 
@@ -160,7 +219,52 @@ section {
                 <div class="data-value">Blockchain</div> 
                 <div class="data-label">Settlement layers move toward institutional adoption</div> 
               </div> 
-              <div class="glass-card"> <div class="data-value">Capital Systems</div> <div class="data-label">Tokenization reshapes financial infrastructure</div> </div> </div> </div> </section> <!-- ===================================== --> <!-- STORY #1 --> <!-- ===================================== --> <section id="story-1"> <div class="container"> <div class="two-column"> <!-- ================= LEFT: ARTICLE ================= --> <div> <div class="sidebar-title">Featured Intelligence</div> <h2 class="section-title"> AI’s Next Bottleneck Isn’t Chips </h2> <h3 style="margin-bottom:20px;">What Happened</h3> <p class="article-text"> For years the AI race was largely a race for semiconductors. Today a new constraint is emerging. Electricity. As hyperscale AI facilities expand, developers are discovering that securing power can be more difficult than securing hardware. Recent proposals for massive AI data centers have faced growing scrutiny over grid capacity, transmission upgrades, water consumption, and long-term energy requirements. One proposed 500-megawatt facility faced opposition from local residents and planning boards over concerns including grid strain, land use, water consumption, and long-term infrastructure load. The challenge is no longer simply building AI systems. It is powering them. </p> <div class="quote-box"> The AI race is evolving from a battle for chips into a battle for electricity. </div> <h3 style="margin-bottom:20px;">Why It Matters</h3> <p class="article-text"> Modern AI workloads require continuous power. Unlike many industrial operations, large AI clusters operate 24 hours per day, every day of the year. That demand is reshaping conversations around nuclear energy, transmission infrastructure, natural gas generation, and grid modernization. Utilities that once viewed technology firms as customers are increasingly viewing them as strategic partners. The companies controlling energy infrastructure may become just as important as the companies building AI models. </p> <h3 style="margin-bottom:20px;">Global Signal</h3> <p class="article-text"> China currently has more nuclear reactors under construction than any other nation and continues investing heavily in long-term power capacity. Meanwhile the United Kingdom, India, South Korea, and several European countries are re-evaluating nuclear energy as electricity demand rises. The global AI race may ultimately be constrained less by software innovation and more by energy availability. </p> <!-- NFW SIGNAL (CORRECT PLACE) --> <div class="glass-card" style="margin-top:28px;"> <div class="sidebar-title">NFW Signal</div> <div class="quote-box" style="margin:0; font-size:16px;"> The AI race is no longer defined by compute alone. It is defined by the infrastructure required to sustain it. </div> </div> </div> <!-- ================= RIGHT: SIDEBAR ================= --> <div class="sidebar-stack"> <div class="glass-card"> <div class="sidebar-title">Key Metrics</div> <div class="data-block"> <div class="data-value">500 MW</div> <div class="data-label">Single AI data center demand</div> </div> <div class="data-block"> <div class="data-value">70+ GW</div> <div class="data-label">Nuclear under construction globally</div> </div> <div class="data-block"> <div class="data-value">24/7</div> <div class="data-label">Continuous AI workload requirement</div> </div> </div> <div class="glass-card"> <div class="sidebar-title">Grid Pressure</div> <div class="data-block"> <div class="data-value">Rapid</div> <div class="data-label">Electricity demand growth curve</div> </div> <div class="data-block"> <div class="data-value">Years</div> <div class="data-label">To expand transmission capacity</div> </div> </div> <div class="glass-card"> <div class="sidebar-title">States To Watch</div> <ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;"> <li>Texas</li> <li>Virginia</li> <li>Wyoming</li> <li>Tennessee</li> <li>Florida</li> </ul> </div> </div> </div> </div> 
+              <div class="glass-card"> 
+                <div class="data-value">Capital Systems</div> 
+                <div class="data-label">Tokenization reshapes financial infrastructure</div> 
+              </div> 
+            </div> 
+          </div> 
+        </section> 
+        <!-- ===================================== --> <!-- STORY #1 --> <!-- ===================================== --> <section id="story-1"> <div class="container"> <div class="two-column"> <!-- ================= LEFT: ARTICLE ================= --> <div> <div class="sidebar-title">Featured Intelligence</div> <h2 class="section-title"> AI’s Next Bottleneck Isn’t Chips </h2> <h3 style="margin-bottom:20px;">What Happened</h3> <p class="article-text"> For years the AI race was largely a race for semiconductors. Today a new constraint is emerging. Electricity. As hyperscale AI facilities expand, developers are discovering that securing power can be more difficult than securing hardware. Recent proposals for massive AI data centers have faced growing scrutiny over grid capacity, transmission upgrades, water consumption, and long-term energy requirements. One proposed 500-megawatt facility faced opposition from local residents and planning boards over concerns including grid strain, land use, water consumption, and long-term infrastructure load. The challenge is no longer simply building AI systems. It is powering them. </p> <div class="quote-box"> The AI race is evolving from a battle for chips into a battle for electricity. </div> <h3 style="margin-bottom:20px;">Why It Matters</h3> <p class="article-text"> Modern AI workloads require continuous power. Unlike many industrial operations, large AI clusters operate 24 hours per day, every day of the year. That demand is reshaping conversations around nuclear energy, transmission infrastructure, natural gas generation, and grid modernization. Utilities that once viewed technology firms as customers are increasingly viewing them as strategic partners. The companies controlling energy infrastructure may become just as important as the companies building AI models. </p> <h3 style="margin-bottom:20px;">Global Signal</h3> <p class="article-text"> China currently has more nuclear reactors under construction than any other nation and continues investing heavily in long-term power capacity. Meanwhile the United Kingdom, India, South Korea, and several European countries are re-evaluating nuclear energy as electricity demand rises. The global AI race may ultimately be constrained less by software innovation and more by energy availability. </p> <!-- NFW SIGNAL (CORRECT PLACE) --> <div class="glass-card" style="margin-top:28px;"> <div class="sidebar-title">NFW Signal</div> <div class="quote-box" style="margin:0; font-size:16px;"> The AI race is no longer defined by compute alone. It is defined by the infrastructure required to sustain it. </div> </div> </div> <!-- ================= RIGHT: SIDEBAR ================= --> <div class="sidebar-stack"> <div class="glass-card"> <div class="sidebar-title">Key Metrics</div> <div class="data-block"> <div class="data-value">500 MW</div> <div class="data-label">Single AI data center demand</div> </div> <div class="data-block"> <div class="data-value">70+ GW</div> <div class="data-label">Nuclear under construction globally</div> </div> <div class="data-block"> <div class="data-value">24/7</div> <div class="data-label">Continuous AI workload requirement</div> </div> </div> <div class="glass-card"> 
+                <div class="sidebar-title">Grid Pressure</div> 
+          <div class="data-block"> 
+            <div class="data-value">Rapid</div> 
+            <div class="data-label">Electricity demand growth curve</div> 
+          </div> 
+          <div class="data-block"> 
+            <div class="data-value">Years</div> 
+            <div class="data-label">To expand transmission capacity</div> 
+          </div> 
+        </div> 
+
+          <!--Mini spark-->
+          <div class="spark-title">Energy Demand vs Grid Capacity</div>
+
+<svg class="mini-spark" viewBox="0 0 100 30">
+
+  <!-- Demand line (rising faster) -->
+  <path d="M0 24 L10 22 L20 21 L30 19 L40 16 L50 14 L60 11 L70 9 L80 7 L90 5 L100 3" 
+        class="spark-demand"/>
+
+  <!-- Grid capacity line (slower growth) -->
+  <path d="M0 24 L10 23 L20 23 L30 22 L40 21 L50 20 L60 19 L70 18 L80 17 L90 16 L100 15"
+        class="spark-grid"/>
+
+</svg>
+          <div class="glass-card"> 
+            <div class="sidebar-title">States To Watch</div> 
+            <ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;"> 
+              <li>Texas</li> 
+              <li>Virginia</li> 
+              <li>Wyoming</li> 
+              <li>Tennessee</li> 
+              <li>Florida</li> 
+            </ul> 
+          </div> 
+        </div> 
+        </div> 
+        </div> 
 </section>
   <!-- ===================================== -->
 <!-- EXECUTIVE SUMMARY -->
