@@ -34,30 +34,39 @@
   padding: 0 40px;
 }
 
-/* Instead of uniform padding everywhere */
+/* ===================================== */
+/* SECTION SPACING (CONTROLLED FLOW) */
+/* ===================================== */
+
 section {
-  padding: 60px 0 40px 0;
+  padding: 50px 0;
 }
 
-/* HERO — remove excess vertical forcing */
+/* ===================================== */
+/* HERO (NO FULL SCREEN LOCK ANYMORE) */
+/* ===================================== */
+
 .hero {
-  min-height: 88vh;   /* reduced from 100vh */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;         /* IMPORTANT: prevents double spacing */
-  margin: 0;
+  min-height: auto;      /* KEY FIX */
+  padding: 90px 0 40px;  /* gives structure without forcing height */
+  display: block;        /* remove flex centering entirely */
 }
 
-/* REMOVE spacing collapse between hero → dashboard */
+/* keep hero content centered visually only */
+.hero-content {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* tighten hero → dashboard transition */
 .hero + section {
-  padding-top: 20px;  /* tight handoff into dashboard */
+  padding-top: 20px;
 }
 
-/* Dashboard gets its own rhythm */
+/* dashboard specifically */
 #dashboard {
-  padding-top: 20px;
+  padding-top: 10px;
 }
       /* ===================================== */ /* TYPOGRAPHY */ /* ===================================== */ 
       .section-title { font-size: 42px; font-weight: 800; margin-bottom: 20px; } 
