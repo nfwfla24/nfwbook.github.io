@@ -347,6 +347,362 @@ line-height:1.6;
 </head>
 
 <body>
+<!--Hero Section-->
+
+  
+<!-- ===================================== -->
+
+<!-- HERO SECTION -->
+
+<!-- ===================================== -->
+
+<style>
+
+/* ===================================== */
+/* HERO */
+/* ===================================== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+position:relative;
+
+overflow:hidden;
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+top:-250px;
+right:-250px;
+
+width:800px;
+height:800px;
+
+background:
+radial-gradient(
+circle,
+rgba(88,166,255,.20),
+transparent 70%
+);
+
+filter:blur(100px);
+
+pointer-events:none;
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-300px;
+left:-300px;
+
+width:800px;
+height:800px;
+
+background:
+radial-gradient(
+circle,
+rgba(0,102,255,.15),
+transparent 70%
+);
+
+filter:blur(120px);
+
+pointer-events:none;
+}
+
+.hero-content{
+
+max-width:1100px;
+
+margin:auto;
+
+text-align:center;
+
+position:relative;
+
+z-index:2;
+}
+
+.hero-pill{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+padding:12px 20px;
+
+border-radius:999px;
+
+background:
+rgba(88,166,255,.08);
+
+border:
+1px solid rgba(88,166,255,.20);
+
+color:#58a6ff;
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+margin-bottom:35px;
+}
+
+.hero h1{
+
+font-size:
+clamp(60px,8vw,120px);
+
+font-weight:900;
+
+line-height:.95;
+
+letter-spacing:-4px;
+
+margin-bottom:35px;
+
+max-width:950px;
+
+margin-left:auto;
+margin-right:auto;
+}
+
+.hero-gradient{
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#d8e8ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-sub{
+
+font-size:24px;
+
+line-height:1.8;
+
+color:#c6d4e6;
+
+max-width:850px;
+
+margin:auto;
+}
+
+.hero-buttons{
+
+margin-top:55px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+}
+
+.hero-btn{
+
+padding:18px 34px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
+}
+
+.hero-btn-primary{
+
+background:#1f6fff;
+
+color:white;
+
+box-shadow:
+0 0 30px rgba(31,111,255,.35);
+}
+
+.hero-btn-primary:hover{
+
+transform:translateY(-4px);
+}
+
+.hero-btn-secondary{
+
+border:
+1px solid rgba(255,255,255,.10);
+
+background:
+rgba(255,255,255,.04);
+
+backdrop-filter:blur(20px);
+
+color:white;
+}
+
+.hero-btn-secondary:hover{
+
+transform:translateY(-4px);
+}
+
+.hero-metrics{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:90px;
+}
+
+.hero-card{
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.07),
+rgba(255,255,255,.03)
+);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+padding:35px;
+
+backdrop-filter:blur(24px);
+
+transition:.3s;
+}
+
+.hero-card:hover{
+
+transform:translateY(-6px);
+
+border-color:
+rgba(88,166,255,.35);
+}
+
+.hero-number{
+
+font-size:52px;
+
+font-weight:900;
+
+color:#58a6ff;
+
+margin-bottom:15px;
+}
+
+.hero-label{
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#b8c7dd;
+}
+
+/* ===================================== */
+/* SIGNAL BAR */
+/* ===================================== */
+
+.signal-bar{
+
+margin-top:80px;
+
+padding:18px 25px;
+
+border-radius:18px;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+font-size:14px;
+
+color:#d7e3f2;
+}
+
+.signal-item{
+
+color:#58a6ff;
+
+font-weight:700;
+}
+
+/* ===================================== */
+/* MOBILE */
+/* ===================================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:60px;
+
+letter-spacing:-2px;
+}
+
+.hero-sub{
+
+font-size:20px;
+}
+
+.hero-metrics{
+
+grid-template-columns:1fr;
+}
+
+.signal-bar{
+
+gap:15px;
+
+font-size:13px;
+}
+
+}
+
+</style>
 
 <section class="hero">
 
@@ -354,73 +710,136 @@ line-height:1.6;
 
 <div class="hero-content">
 
-<div class="eyebrow">
-The New Financial World LLC
+<div class="hero-pill">
+
+NFW Intelligence Brief | June 2026
+
 </div>
 
 <h1>
-Continuous Money.<br>
-Continuous Power.<br>
-Continuous AI.
+
+<span class="hero-gradient">
+
+The Infrastructure
+
+</span>
+
+<br>
+
+Behind The Future
+
 </h1>
 
 <p class="hero-sub">
 
-The systems shaping the next decade have one thing in common.
-Electricity never stops. Data never stops.
-Increasingly, money won't either.
+Artificial Intelligence.
+
+Energy.
+
+Digital Assets.
+
+Capital Markets.
+
+<br><br>
+
+The most important story of the next decade is not a
+single technology.
+
+It is the convergence of the systems powering them.
 
 </p>
 
 <div class="hero-buttons">
 
-<a href="#energy" class="btn btn-primary">
-Read Briefing
+<a href="#dashboard"
+class="hero-btn hero-btn-primary">
+
+Read This Month's Brief →
+
 </a>
 
-<a href="#" class="btn btn-secondary">
+<a href="#featured-media"
+class="hero-btn hero-btn-secondary">
+
 Watch Latest Episode
+
 </a>
 
 </div>
 
-<div class="metrics">
+<div class="hero-metrics">
 
-<div class="metric-card">
+<div class="hero-card">
 
-<div class="metric-number">
+<div class="hero-number">
+
 70+ GW
-</div>
-
-<div class="metric-label">
-Nuclear Capacity Under Construction
-</div>
 
 </div>
 
-<div class="metric-card">
+<div class="hero-label">
 
-<div class="metric-number">
-$29B
-</div>
+Nuclear capacity currently under construction globally
 
-<div class="metric-label">
-Tokenized Real-World Assets
 </div>
 
 </div>
 
-<div class="metric-card">
+<div class="hero-card">
 
-<div class="metric-number">
-65,000+
-</div>
+<div class="hero-number">
 
-<div class="metric-label">
-Workers Using Streaming Payroll
-</div>
+$29B+
 
 </div>
+
+<div class="hero-label">
+
+Tokenized real-world assets moving onto blockchain rails
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="hero-number">
+
+500 MW
+
+</div>
+
+<div class="hero-label">
+
+Power demand from a single next-generation AI data center
+
+</div>
+
+</div>
+
+</div>
+
+<div class="signal-bar">
+
+<span class="signal-item">
+⚡ AI Infrastructure
+</span>
+
+<span class="signal-item">
+🏛 Regulatory Clarity
+</span>
+
+<span class="signal-item">
+💸 Continuous Money
+</span>
+
+<span class="signal-item">
+📈 Tokenized Markets
+</span>
+
+<span class="signal-item">
+🔋 Nuclear Expansion
+</span>
 
 </div>
 
@@ -430,6 +849,75 @@ Workers Using Streaming Payroll
 
 </section>
 
+<!--Dashboard Section-->
+
+  <section id="dashboard">
+
+<div class="container">
+
+<div style="text-align:center; margin-bottom:60px;">
+
+<div class="eyebrow">
+Executive Dashboard
+</div>
+
+<h2 class="section-title">
+This Month In One Minute
+</h2>
+
+</div>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+">
+
+<div class="glass-card">
+
+<h3>⚡ Energy</h3>
+
+<p class="article-text">
+AI demand is transforming electricity into a strategic asset.
+</p>
+
+</div>
+
+<div class="glass-card">
+
+<h3>🏛 Regulation</h3>
+
+<p class="article-text">
+Digital asset policy is moving toward greater clarity.
+</p>
+
+</div>
+
+<div class="glass-card">
+
+<h3>💸 Payments</h3>
+
+<p class="article-text">
+Continuous settlement systems continue expanding.
+</p>
+
+</div>
+
+<div class="glass-card">
+
+<h3>📈 Markets</h3>
+
+<p class="article-text">
+Tokenized assets are gaining institutional traction.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
   <!-- ===================================== -->
 <!-- EXECUTIVE SUMMARY -->
