@@ -51,6 +51,18 @@ body::before {
   z-index: -1;
 }
 
+/* scanline overlay (FIXED LOCATION) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 100% 6px;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
 /* ===================================== */
 /* LAYOUT */
 /* ===================================== */
@@ -62,6 +74,7 @@ body::before {
   padding: 0 40px;
 }
 
+/* FIX: removed excessive vertical spacing causing “gap illusion” */
 section {
   padding: 60px 0;
 }
@@ -109,6 +122,7 @@ section {
   overflow: hidden;
 }
 
+/* glow layer */
 .glass-card::before {
   content: "";
   position: absolute;
@@ -118,7 +132,7 @@ section {
 }
 
 /* ===================================== */
-/* SIDEBAR SYSTEM (STICKY + HYBRID) */
+/* SIDEBAR SYSTEM */
 /* ===================================== */
 
 .two-column {
@@ -128,9 +142,11 @@ section {
   align-items: start;
 }
 
+/* CRITICAL FIX: sticky stability depends on no collapsing parents */
 .sidebar-stack {
   position: sticky;
   top: 90px;
+
   align-self: start;
 
   display: flex;
@@ -150,7 +166,7 @@ section {
 }
 
 /* ===================================== */
-/* DATA BLOCKS (INTELLIGENCE STYLE) */
+/* DATA SYSTEM */
 /* ===================================== */
 
 .data-block {
@@ -188,7 +204,7 @@ section {
 }
 
 /* ===================================== */
-/* QUOTE BOX */
+/* QUOTES */
 /* ===================================== */
 
 .quote-box {
@@ -201,7 +217,7 @@ section {
 }
 
 /* ===================================== */
-/* HERO (simplified hybrid version) */
+/* HERO */
 /* ===================================== */
 
 .hero {
@@ -217,121 +233,23 @@ section {
 }
 
 /* ===================================== */
+/* DASHBOARD */
+/* ===================================== */
+
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
-@media (max-width: 1000px) {
-  .dashboard-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* ===================================== */
 
-@media (max-width: 600px) {
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-}
-  /* ===================================== */
 </style>
 </head>
 
 <body>
-/* ===================================== */
-/* SCANLINE + GLOW OVERLAY (PREVIEW) */
-/* ===================================== */
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(
-      rgba(255,255,255,0.03) 1px,
-      transparent 1px
-    );
-  background-size: 100% 4px;
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-}
-
-/* soft global glow drift */
-@keyframes glowDrift {
-  0%   { transform: translateY(0px); opacity: 0.10; }
-  50%  { transform: translateY(-6px); opacity: 0.14; }
-  100% { transform: translateY(0px); opacity: 0.10; }
-}
-
-.glass-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at top left,
-    rgba(88,166,255,0.10),
-    transparent 60%
-  );
-  animation: glowDrift 6s ease-in-out infinite;
-  pointer-events: none;
-}
-
-  /* ===================================== */
-/* MINI DATA CHARTS */
-/* ===================================== */
-
-.mini-bars {
-  display: flex;
-  gap: 3px;
-  align-items: flex-end;
-  height: 28px;
-  margin-top: 10px;
-}
-
-.mini-bars span {
-  width: 4px;
-  background: #58a6ff;
-  opacity: 0.7;
-  border-radius: 2px;
-  animation: barPulse 1.8s infinite ease-in-out;
-}
-
-.mini-bars span:nth-child(2) { animation-delay: .2s; }
-.mini-bars span:nth-child(3) { animation-delay: .4s; }
-.mini-bars span:nth-child(4) { animation-delay: .6s; }
-.mini-bars span:nth-child(5) { animation-delay: .8s; }
-
-@keyframes barPulse {
-  0%,100% { height: 6px; opacity: 0.5; }
-  50%     { height: 26px; opacity: 1; }
-}
-
-  /* ===================================== */
-/* DATA TICK ANIMATION */
-/* ===================================== */
-
-@keyframes dataFlicker {
-  0%   { opacity: 1; }
-  50%  { opacity: 0.65; }
-  100% { opacity: 1; }
-}
-
-.data-value {
-  animation: dataFlicker 3.5s infinite;
-}
-
-  
-<!-- ===================================== -->
 <!-- HERO -->
-<!-- ===================================== -->
-
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -339,7 +257,7 @@ body::after {
       <h1>The Infrastructure Behind The Future</h1>
 
       <p class="hero-sub">
-        AI. Energy. Capital. Payments.  
+        AI. Energy. Capital. Payments.
         <br><br>
         The real story is convergence.
       </p>
@@ -348,10 +266,7 @@ body::after {
   </div>
 </section>
 
-<!-- ===================================== -->
 <!-- DASHBOARD -->
-<!-- ===================================== -->
-
 <section id="dashboard">
   <div class="container">
 
@@ -392,14 +307,15 @@ body::after {
 <!-- ===================================== -->
 
 <section id="story-1">
-  <div class="container">
 
-    <div class="two-column">
+<div class="container">
+
+<div class="two-column">
 
 <!-- ================= LEFT: ARTICLE ================= -->
 <div>
 
-        <div class="sidebar-title">Featured Intelligence</div>
+<div class="sidebar-title">Featured Intelligence</div>
 
 <h2 class="section-title">
 AI’s Next Bottleneck Isn’t Chips
@@ -474,8 +390,8 @@ software innovation and more by energy availability.
 
 </p>
 
-<!-- NFW SIGNAL (CORRECT PLACE) -->
-<div class="glass-card" style="margin-top:28px;">
+<!-- NFW SIGNAL  -->
+<div class="data-block" style="margin-top:28px;">
 
 <div class="sidebar-title">NFW Signal</div>
 
@@ -488,107 +404,62 @@ It is defined by the infrastructure required to sustain it.
 
 </div>
 
-        It is powering them.
-        </p>
+</div>
 
-        <div class="quote-box">
-          The AI race is evolving from a battle for chips into a battle for electricity.
-        </div>
+<!-- ================= RIGHT: SIDEBAR ================= -->
+<div class="sidebar-stack">
 
-        <h3 style="margin-bottom:20px;">Why It Matters</h3>
+<div class="glass-card">
+<div class="sidebar-title">Energy Reality</div>
 
-        <p class="article-text">
-        Modern AI workloads require continuous power.
+<div class="data-block">
+<div class="data-value">500 MW</div>
+<div class="data-label">Single AI data center load</div>
+</div>
 
-        Unlike many industrial operations, large AI clusters operate
-        24 hours per day, every day of the year.
+<div class="data-block">
+<div class="data-value">24/7</div>
+<div class="data-label">Continuous compute demand</div>
+</div>
+</div>
 
-        That demand is reshaping conversations around nuclear energy,
-        transmission infrastructure, natural gas generation,
-        and grid modernization.
+<div class="glass-card">
+<div class="sidebar-title">Grid Pressure</div>
 
-        Utilities that once viewed technology firms as customers
-        are increasingly viewing them as strategic partners.
+<div class="data-block">
+<div class="data-value">Rapid</div>
+<div class="data-label">Electricity demand growth curve</div>
+</div>
 
-        The companies controlling energy infrastructure may become
-        just as important as the companies building AI models.
-        </p>
+<div class="data-block">
+<div class="data-value">Years</div>
+<div class="data-label">To expand transmission capacity</div>
+</div>
+</div>
 
-        <h3 style="margin-bottom:20px;">Global Signal</h3>
+<div class="glass-card">
+<div class="sidebar-title">States To Watch</div>
 
-        <p class="article-text">
-        China currently has more nuclear reactors under construction
-        than any other nation and continues investing heavily in
-        long-term power capacity.
+<ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;">
+<li>Texas</li>
+<li>Virginia</li>
+<li>Wyoming</li>
+<li>Tennessee</li>
+<li>Florida</li>
+</ul>
 
-        Meanwhile the United Kingdom, India, South Korea,
-        and several European countries are re-evaluating nuclear
-        energy as electricity demand rises.
+</div>
 
-        The global AI race may ultimately be constrained less by
-        software innovation and more by energy availability.
-        </p>
+</div>
 
-      </div>
+</div>
 
-      <!-- SIDEBAR -->
-      <div class="sidebar-stack">
-
-        <div class="glass-card">
-          <div class="sidebar-title">Key Metrics</div>
-
-          <div class="data-block">
-            <div class="data-value">500 MW</div>
-            <div class="data-label">Single AI data center demand</div>
-          </div>
-
-          <div class="data-block">
-            <div class="data-value">70+ GW</div>
-            <div class="data-label">Nuclear under construction globally</div>
-          </div>
-
-          <div class="data-block">
-            <div class="data-value">24/7</div>
-            <div class="data-label">Continuous AI workload requirement</div>
-          </div>
-        </div>
-
-        <div class="glass-card">
-          <div class="sidebar-title">Grid Pressure</div>
-
-          <div class="data-block">
-            <div class="data-value">Rapid</div>
-            <div class="data-label">Electricity demand growth curve</div>
-          </div>
-
-          <div class="data-block">
-            <div class="data-value">Years</div>
-            <div class="data-label">To expand transmission capacity</div>
-          </div>
-        </div>
-
-        <div class="glass-card">
-          <div class="sidebar-title">States To Watch</div>
-
-          <ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;">
-            <li>Texas</li>
-            <li>Virginia</li>
-            <li>Wyoming</li>
-            <li>Tennessee</li>
-            <li>Florida</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+</div>
 
 </section>
 
+</body>
+</html>
   <!-- ===================================== -->
 <!-- EXECUTIVE SUMMARY -->
 <!-- ===================================== -->
