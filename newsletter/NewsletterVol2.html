@@ -203,14 +203,36 @@ section {
   align-items: start;
 }
 
-/* sidebar stack fix */
+/* ===================================== */
+/* STICKY SIDEBAR (CLEAN + RELIABLE) */
+/* ===================================== */
+
 .sidebar-stack {
+  position: sticky;
+  top: 90px; /* distance from top of viewport */
+  align-self: start;
+
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+
+  padding-right: 6px;
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-/* removes weird spacing from old cards */
+/* hide scrollbar (keeps UI clean) */
+.sidebar-stack::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Firefox scrollbar removal */
+.sidebar-stack {
+  scrollbar-width: none;
+}
+
+/* IMPORTANT: prevents layout spacing bugs */
 .two-column .glass-card {
   margin-top: 0 !important;
 }
@@ -390,29 +412,32 @@ purely environmental debate.
 <div class="sidebar-stack">
 
 <div class="glass-card">
-<div class="sidebar-title">Key Numbers</div>
+  <div class="sidebar-title">Key Metrics</div>
 
-<div class="signal">
-<strong>500 MW</strong><br>Single AI campus demand
+  <div class="data-block">
+    <div class="data-value">500 MW</div>
+    <div class="data-label">Single AI data center demand</div>
+  </div>
+
+  <div class="data-block">
+    <div class="data-value">70+ GW</div>
+    <div class="data-label">Nuclear capacity under construction</div>
+  </div>
+
+  <div class="data-block">
+    <div class="data-value">24/7</div>
+    <div class="data-label">AI workload requirement</div>
+  </div>
 </div>
 
-<div class="signal">
-<strong>70+ GW</strong><br>Nuclear under construction
-</div>
-
-<div class="signal">
-<strong>24/7</strong><br>AI energy requirement
-</div>
-</div>
-
-<div class="glass-card">
+<div class="data-block">
 <div class="sidebar-title">NFW Signal</div>
 <p class="article-text">
 AI is no longer a software race. It is an infrastructure race.
 </p>
 </div>
 
-<div class="glass-card">
+<div class="data-block">
 <div class="sidebar-title">Watchlist</div>
 <p class="article-text">
 SMRs, grid upgrades, nuclear policy, data center power deals
