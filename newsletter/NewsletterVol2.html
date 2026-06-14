@@ -1,465 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>NFW Intelligence Brief</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-/* ===================================== */
-/* GLOBAL RESET */
-/* ===================================== */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 14px;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  color: #ffffff;
-
-  background:
-    radial-gradient(circle at top right, rgba(0,153,255,.15), transparent 35%),
-    radial-gradient(circle at bottom left, rgba(0,102,255,.12), transparent 40%),
-    linear-gradient(180deg, #050b14 0%, #07111f 40%, #09182b 100%);
-
-  overflow-x: hidden;
-}
-
-/* grid overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* scanline overlay (FIXED LOCATION) */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 100% 6px;
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-}
-
-/* ===================================== */
-/* LAYOUT */
-/* ===================================== */
-
-.container {
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-  padding: 0 40px;
-}
-
-/* FIX: removed excessive vertical spacing causing “gap illusion” */
-section {
-  padding: 60px 0;
-}
-
-/* ===================================== */
-/* TYPOGRAPHY */
-/* ===================================== */
-
-.section-title {
-  font-size: 42px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.article-text {
-  font-size: 16px;
-  line-height: 1.85;
-  color: #d3dfef;
-  margin-bottom: 18px;
-}
-
-.hero h1 {
-  font-size: 64px;
-  font-weight: 900;
-  line-height: 1.05;
-}
-
-.hero-sub {
-  font-size: 20px;
-  line-height: 1.7;
-  color: #c4d3e7;
-}
-
-/* ===================================== */
-/* GLASS SYSTEM */
-/* ===================================== */
-
-.glass-card {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  backdrop-filter: blur(20px);
-  border-radius: 22px;
-  padding: 26px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* glow layer */
-.glass-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, rgba(88,166,255,0.08), transparent 65%);
-  pointer-events: none;
-}
-
-/* ===================================== */
-/* SIDEBAR SYSTEM */
-/* ===================================== */
-
-.two-column {
-  display: grid;
-  grid-template-columns: 2.2fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-/* CRITICAL FIX: sticky stability depends on no collapsing parents */
-.sidebar-stack {
-  position: sticky;
-  top: 90px;
-
-  align-self: start;
-
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-
-  padding-right: 6px;
-
-  scrollbar-width: none;
-}
-
-.sidebar-stack::-webkit-scrollbar {
-  width: 0;
-}
-
-/* ===================================== */
-/* DATA SYSTEM */
-/* ===================================== */
-
-.data-block {
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.data-block:last-child {
-  border-bottom: none;
-}
-
-.data-value {
-  font-size: 20px;
-  font-weight: 800;
-  color: #58a6ff;
-}
-
-.data-label {
-  font-size: 13px;
-  color: #a9b9cf;
-  margin-top: 3px;
-}
-
-/* ===================================== */
-/* TITLES */
-/* ===================================== */
-
-.sidebar-title {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  color: #cfe3ff;
-}
-
-/* ===================================== */
-/* QUOTES */
-/* ===================================== */
-
-.quote-box {
-  border-left: 4px solid #58a6ff;
-  padding-left: 18px;
-  margin: 26px 0;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-/* ===================================== */
-/* HERO */
-/* ===================================== */
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-content {
-  text-align: center;
-  max-width: 1100px;
-}
-
-/* ===================================== */
-/* DASHBOARD */
-/* ===================================== */
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-}
-
-/* ===================================== */
-
-</style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-
-      <h1>The Infrastructure Behind The Future</h1>
-
-      <p class="hero-sub">
-        AI. Energy. Capital. Payments.
-        <br><br>
-        The real story is convergence.
-      </p>
-
-    </div>
-  </div>
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>NFW Intelligence Brief</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <style> 
+      /* ===================================== */ /* GLOBAL RESET */ /* ===================================== */ * 
+      { margin: 0; padding: 0; box-sizing: border-box; } 
+      html { font-size: 14px; scroll-behavior: smooth; } 
+      body { font-family: 'Inter', sans-serif; color: #ffffff; background: 
+        radial-gradient(circle at top right, 
+        rgba(0,153,255,.15), transparent 35%), 
+        radial-gradient(circle at bottom left, 
+        rgba(0,102,255,.12), transparent 40%), 
+        linear-gradient(180deg, #050b14 0%, #07111f 40%, #09182b 100%); 
+            overflow-x: hidden; } 
+      /* grid overlay */ 
+      body::before { content: ""; position: fixed; inset: 0; 
+                    background-image: 
+                      linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); 
+                    background-size: 50px 50px; 
+                    pointer-events: none; z-index: -1; } 
+      /* ===================================== */ /* LAYOUT */ /* ===================================== */ 
+      .container 
+      { width: 100%; max-width: 1400px; margin: auto; padding: 0 40px; } 
+      section { padding: 90px 0; } 
+      /* ===================================== */ /* TYPOGRAPHY */ /* ===================================== */ 
+      .section-title { font-size: 42px; font-weight: 800; margin-bottom: 20px; } 
+      .article-text { font-size: 16px; line-height: 1.85; color: #d3dfef; margin-bottom: 18px; } 
+      .hero h1 { font-size: 64px; font-weight: 900; line-height: 1.05; } 
+      .hero-sub { font-size: 20px; line-height: 1.7; color: #c4d3e7; } 
+      /* ===================================== */ /* GLASS SYSTEM */ /* ===================================== */ 
+      .glass-card { background: rgba(255,255,255,.04); 
+                   border: 1px solid rgba(255,255,255,.08); 
+                   backdrop-filter: blur(20px); 
+                   border-radius: 22px; padding: 26px; } 
+      /* ===================================== */ /* SIDEBAR SYSTEM (STICKY + HYBRID) */ /* ===================================== */ 
+      .sidebar-stack { position: sticky; top: 90px; 
+                      align-self: start; max-height: 
+                        calc(100vh - 120px); 
+                      overflow-y: auto; 
+                      display: flex; flex-direction: column; gap: 18px; padding-right: 6px; scrollbar-width: none; } 
+      .sidebar-stack::-webkit-scrollbar { width: 0; } 
+      .two-column { display: grid; grid-template-columns: 2.2fr 1fr; gap: 40px; 
+                   align-items: start; } 
+      /* ===================================== */ /* DATA BLOCKS (INTELLIGENCE STYLE) */ /* ===================================== */ 
+      .data-block { padding: 14px 0; 
+                   border-bottom: 1px solid rgba(255,255,255,.08); } 
+      .data-block:last-child { border-bottom: none; } 
+      .data-value { font-size: 20px; font-weight: 800; color: #58a6ff; } 
+      .data-label { font-size: 13px; color: #a9b9cf; margin-top: 3px; } 
+      /* ===================================== */ /* SIDEBAR TITLE */ /* ===================================== */ 
+      .sidebar-title { font-size: 14px; font-weight: 700; 
+                      letter-spacing: 1px; text-transform: uppercase; 
+                      margin-bottom: 14px; color: #cfe3ff; } 
+      /* ===================================== */ /* QUOTE BOX */ /* ===================================== */ 
+      .quote-box { border-left: 4px solid #58a6ff; padding-left: 18px; 
+                  margin: 26px 0; 
+                  font-size: 18px; 
+                  font-weight: 600; 
+                  line-height: 1.5; } 
+      /* ===================================== */ /* HERO (simplified hybrid version) */ /* ===================================== */ 
+      .hero { min-height: 100vh; 
+             display: flex; 
+             align-items: center; 
+             justify-content: center; } 
+      .hero-content { text-align: center; max-width: 1100px; } 
+      /* ===================================== */ 
+      .dashboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; } 
+      @media (max-width: 1000px) { 
+        .dashboard-grid { grid-template-columns: repeat(2, 1fr); } } @media (max-width: 600px) { 
+        .dashboard-grid { grid-template-columns: 1fr; } } 
+      /* ===================================== */ </style> </head> <body> 
+        <!-- ===================================== --> <!-- HERO --> <!-- ===================================== --> 
+        <section class="hero"> 
+          <div class="container"> 
+            <div class="hero-content"> 
+              <h1> The Infrastructure Behind The Future </h1> 
+              <p class="hero-sub"> AI. Energy. Capital. Payments. <br><br> 
+                The real story is convergence. </p> 
+            </div> 
+          </div> 
+        </section> 
+        <!-- ===================================== --> <!-- DASHBOARD --> <!-- ===================================== --> 
+        <section id="dashboard"> 
+          <div class="container"> 
+            <div style="text-align:center; margin-bottom:40px;"> 
+              <div class="eyebrow">Executive Dashboard</div> 
+              <h2 class="section-title">This Month In One Minute</h2> 
+            </div> 
+            <div class="dashboard-grid"> 
+              <div class="glass-card"> 
+                <div class="data-value">Energy</div> 
+                <div class="data-label">Electricity is becoming AI’s core constraint</div> 
+              </div> 
+              <div class="glass-card"> 
+                <div class="data-value">AI Systems</div> 
+                <div class="data-label">Compute demand continues exponential expansion</div> 
+              </div> 
+              <div class="glass-card"> 
+                <div class="data-value">Blockchain</div> 
+                <div class="data-label">Settlement layers move toward institutional adoption</div> 
+              </div> 
+              <div class="glass-card"> <div class="data-value">Capital Systems</div> <div class="data-label">Tokenization reshapes financial infrastructure</div> </div> </div> </div> </section> <!-- ===================================== --> <!-- STORY #1 --> <!-- ===================================== --> <section id="story-1"> <div class="container"> <div class="two-column"> <!-- ================= LEFT: ARTICLE ================= --> <div> <div class="sidebar-title">Featured Intelligence</div> <h2 class="section-title"> AI’s Next Bottleneck Isn’t Chips </h2> <h3 style="margin-bottom:20px;">What Happened</h3> <p class="article-text"> For years the AI race was largely a race for semiconductors. Today a new constraint is emerging. Electricity. As hyperscale AI facilities expand, developers are discovering that securing power can be more difficult than securing hardware. Recent proposals for massive AI data centers have faced growing scrutiny over grid capacity, transmission upgrades, water consumption, and long-term energy requirements. One proposed 500-megawatt facility faced opposition from local residents and planning boards over concerns including grid strain, land use, water consumption, and long-term infrastructure load. The challenge is no longer simply building AI systems. It is powering them. </p> <div class="quote-box"> The AI race is evolving from a battle for chips into a battle for electricity. </div> <h3 style="margin-bottom:20px;">Why It Matters</h3> <p class="article-text"> Modern AI workloads require continuous power. Unlike many industrial operations, large AI clusters operate 24 hours per day, every day of the year. That demand is reshaping conversations around nuclear energy, transmission infrastructure, natural gas generation, and grid modernization. Utilities that once viewed technology firms as customers are increasingly viewing them as strategic partners. The companies controlling energy infrastructure may become just as important as the companies building AI models. </p> <h3 style="margin-bottom:20px;">Global Signal</h3> <p class="article-text"> China currently has more nuclear reactors under construction than any other nation and continues investing heavily in long-term power capacity. Meanwhile the United Kingdom, India, South Korea, and several European countries are re-evaluating nuclear energy as electricity demand rises. The global AI race may ultimately be constrained less by software innovation and more by energy availability. </p> <!-- NFW SIGNAL (CORRECT PLACE) --> <div class="glass-card" style="margin-top:28px;"> <div class="sidebar-title">NFW Signal</div> <div class="quote-box" style="margin:0; font-size:16px;"> The AI race is no longer defined by compute alone. It is defined by the infrastructure required to sustain it. </div> </div> </div> <!-- ================= RIGHT: SIDEBAR ================= --> <div class="sidebar-stack"> <div class="glass-card"> <div class="sidebar-title">Key Metrics</div> <div class="data-block"> <div class="data-value">500 MW</div> <div class="data-label">Single AI data center demand</div> </div> <div class="data-block"> <div class="data-value">70+ GW</div> <div class="data-label">Nuclear under construction globally</div> </div> <div class="data-block"> <div class="data-value">24/7</div> <div class="data-label">Continuous AI workload requirement</div> </div> </div> <div class="glass-card"> <div class="sidebar-title">Grid Pressure</div> <div class="data-block"> <div class="data-value">Rapid</div> <div class="data-label">Electricity demand growth curve</div> </div> <div class="data-block"> <div class="data-value">Years</div> <div class="data-label">To expand transmission capacity</div> </div> </div> <div class="glass-card"> <div class="sidebar-title">States To Watch</div> <ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;"> <li>Texas</li> <li>Virginia</li> <li>Wyoming</li> <li>Tennessee</li> <li>Florida</li> </ul> </div> </div> </div> </div> 
 </section>
-
-<!-- DASHBOARD -->
-<section id="dashboard">
-  <div class="container">
-
-    <div style="text-align:center; margin-bottom:30px;">
-      <div class="sidebar-title">Executive Dashboard</div>
-      <h2 class="section-title">This Month In One Minute</h2>
-    </div>
-
-    <div class="dashboard-grid">
-
-      <div class="glass-card">
-        <div class="data-value">Energy</div>
-        <div class="data-label">Electricity is becoming AI’s core constraint</div>
-      </div>
-
-      <div class="glass-card">
-        <div class="data-value">AI Systems</div>
-        <div class="data-label">Compute demand continues exponential expansion</div>
-      </div>
-
-      <div class="glass-card">
-        <div class="data-value">Blockchain</div>
-        <div class="data-label">Settlement layers move toward institutional adoption</div>
-      </div>
-
-      <div class="glass-card">
-        <div class="data-value">Capital Systems</div>
-        <div class="data-label">Tokenization reshapes financial infrastructure</div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- ===================================== -->
-<!-- STORY #1 -->
-<!-- ===================================== -->
-
-<section id="story-1">
-
-<div class="container">
-
-<div class="two-column">
-
-<!-- ================= LEFT: ARTICLE ================= -->
-<div>
-
-<div class="sidebar-title">Featured Intelligence</div>
-
-<h2 class="section-title">
-AI’s Next Bottleneck Isn’t Chips
-</h2>
-
-<h3 style="margin-bottom:20px;">What Happened</h3>
-
-<p class="article-text">
-
-For years the AI race was largely a race for semiconductors.
-
-Today a new constraint is emerging.
-
-Electricity.
-
-As hyperscale AI facilities expand, developers are discovering
-that securing power can be more difficult than securing hardware.
-
-Recent proposals for massive AI data centers have faced
-growing scrutiny over grid capacity, transmission upgrades,
-water consumption, and long-term energy requirements.
-
-One proposed 500-megawatt facility faced opposition from local residents and planning boards over concerns including grid strain, land use, water consumption, and long-term infrastructure load.
-
-The challenge is no longer simply building AI systems.
-
-It is powering them.
-
-</p>
-
-<div class="quote-box">
-
-The AI race is evolving from a battle for chips into a battle for electricity.
-
-</div>
-
-<h3 style="margin-bottom:20px;">Why It Matters</h3>
-
-<p class="article-text">
-
-Modern AI workloads require continuous power.
-
-Unlike many industrial operations, large AI clusters operate
-24 hours per day, every day of the year.
-
-That demand is reshaping conversations around nuclear energy,
-transmission infrastructure, natural gas generation,
-and grid modernization.
-
-Utilities that once viewed technology firms as customers
-are increasingly viewing them as strategic partners.
-
-The companies controlling energy infrastructure may become
-just as important as the companies building AI models.
-
-</p>
-
-<h3 style="margin-bottom:20px;">Global Signal</h3>
-
-<p class="article-text">
-
-China currently has more nuclear reactors under construction
-than any other nation and continues investing heavily in
-long-term power capacity.
-
-Meanwhile the United Kingdom, India, South Korea,
-and several European countries are re-evaluating nuclear
-energy as electricity demand rises.
-
-The global AI race may ultimately be constrained less by
-software innovation and more by energy availability.
-
-</p>
-
-<!-- NFW SIGNAL  -->
-<div class="data-block" style="margin-top:28px;">
-
-<div class="sidebar-title">NFW Signal</div>
-
-<div class="quote-box" style="margin:0; font-size:16px;">
-
-The AI race is no longer defined by compute alone.  
-It is defined by the infrastructure required to sustain it.
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ================= RIGHT: SIDEBAR ================= -->
-<div class="sidebar-stack">
-
-<div class="glass-card">
-<div class="sidebar-title">Energy Reality</div>
-
-<div class="data-block">
-<div class="data-value">500 MW</div>
-<div class="data-label">Single AI data center load</div>
-</div>
-
-<div class="data-block">
-<div class="data-value">24/7</div>
-<div class="data-label">Continuous compute demand</div>
-</div>
-</div>
-
-<div class="glass-card">
-<div class="sidebar-title">Grid Pressure</div>
-
-<div class="data-block">
-<div class="data-value">Rapid</div>
-<div class="data-label">Electricity demand growth curve</div>
-</div>
-
-<div class="data-block">
-<div class="data-value">Years</div>
-<div class="data-label">To expand transmission capacity</div>
-</div>
-</div>
-
-<div class="glass-card">
-<div class="sidebar-title">States To Watch</div>
-
-<ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;">
-<li>Texas</li>
-<li>Virginia</li>
-<li>Wyoming</li>
-<li>Tennessee</li>
-<li>Florida</li>
-</ul>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-</body>
-</html>
   <!-- ===================================== -->
 <!-- EXECUTIVE SUMMARY -->
 <!-- ===================================== -->
