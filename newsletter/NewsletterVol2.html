@@ -168,11 +168,35 @@ section {
   stroke-dashoffset: 120;
   animation: drawLine 2.2s ease-out forwards;
 }
+/* ===================================== */
+/* MINI SPARKLINE LABEL */
+/* ===================================== */
 
-/* Grid (slower, weaker infrastructure response) */
+.spark-title {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a9b9cf;
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+/* demand line (bright) */
+.spark-demand {
+  stroke: #58a6ff;
+  stroke-width: 2;
+  fill: none;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 6px rgba(88,166,255,0.25));
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: drawLine 2.2s ease-out forwards;
+}
+
+/* grid capacity line (muted) */
 .spark-grid {
   stroke: rgba(255,255,255,0.35);
-  stroke-width: 1.5;
+  stroke-width: 2;
   fill: none;
   opacity: 0.8;
   stroke-dasharray: 140;
@@ -183,6 +207,7 @@ section {
 @keyframes drawLine {
   to { stroke-dashoffset: 0; }
 }
+
       /* ===================================== */ 
       .dashboard-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; } 
       @media (max-width: 1000px) { 
@@ -238,20 +263,36 @@ section {
           </div> 
         </div> 
 
-          <!--Mini spark-->
-          <div class="spark-title">Energy Demand vs Grid Capacity</div>
+          <div class="glass-card">
 
-<svg class="mini-spark" viewBox="0 0 100 30">
+  <div class="sidebar-title">Grid Pressure</div>
 
-  <!-- Demand line (rising faster) -->
-  <path d="M0 24 L10 22 L20 21 L30 19 L40 16 L50 14 L60 11 L70 9 L80 7 L90 5 L100 3" 
-        class="spark-demand"/>
+  <div class="data-block">
+    <div class="data-value">Rapid</div>
+    <div class="data-label">Electricity demand growth curve</div>
+  </div>
 
-  <!-- Grid capacity line (slower growth) -->
-  <path d="M0 24 L10 23 L20 23 L30 22 L40 21 L50 20 L60 19 L70 18 L80 17 L90 16 L100 15"
-        class="spark-grid"/>
+  <div class="data-block">
+    <div class="data-value">Years</div>
+    <div class="data-label">To expand transmission capacity</div>
+  </div>
 
-</svg>
+  <!-- MINI CHART -->
+  <div class="spark-title">Energy Demand vs Grid Capacity</div>
+
+  <svg class="mini-spark" viewBox="0 0 100 30">
+
+    <!-- Demand (faster rise) -->
+    <path class="spark-demand"
+      d="M0 24 L10 22 L20 21 L30 19 L40 16 L50 14 L60 11 L70 9 L80 7 L90 5 L100 3" />
+
+    <!-- Grid capacity (lagging) -->
+    <path class="spark-grid"
+      d="M0 24 L10 23 L20 23 L30 22 L40 21 L50 20 L60 19 L70 18 L80 17 L90 16 L100 15" />
+
+  </svg>
+
+</div>
           <div class="glass-card"> 
             <div class="sidebar-title">States To Watch</div> 
             <ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;"> 
