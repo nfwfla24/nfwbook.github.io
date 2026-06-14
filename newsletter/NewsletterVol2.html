@@ -75,7 +75,7 @@ body::after {
 }
 
 section {
-  padding: 70px 0; /* FIXED GAP (was too large) */
+  padding: 60px 0;
 }
 
 /* ===================================== */
@@ -121,7 +121,6 @@ section {
   overflow: hidden;
 }
 
-/* glow */
 .glass-card::before {
   content: "";
   position: absolute;
@@ -134,28 +133,32 @@ section {
 /* SIDEBAR SYSTEM */
 /* ===================================== */
 
-.sidebar-stack {
-  position: sticky;
-  top: 90px;
-  align-self: start;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding-right: 6px;
-  scrollbar-width: none;
-}
-
-.sidebar-stack::-webkit-scrollbar {
-  width: 0;
-}
-
 .two-column {
   display: grid;
   grid-template-columns: 2.2fr 1fr;
   gap: 40px;
   align-items: start;
+}
+
+.sidebar-stack {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+
+  padding-right: 6px;
+
+  scrollbar-width: none;
+}
+
+.sidebar-stack::-webkit-scrollbar {
+  width: 0;
 }
 
 /* ===================================== */
@@ -175,7 +178,6 @@ section {
   font-size: 20px;
   font-weight: 800;
   color: #58a6ff;
-  animation: flicker 3.5s infinite;
 }
 
 .data-label {
@@ -184,13 +186,8 @@ section {
   margin-top: 3px;
 }
 
-@keyframes flicker {
-  0%,100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
 /* ===================================== */
-/* SIDEBAR TITLE */
+/* TITLES */
 /* ===================================== */
 
 .sidebar-title {
@@ -250,159 +247,187 @@ section {
 
 <!-- HERO -->
 <section class="hero">
-<div class="container">
-<div class="hero-content">
+  <div class="container">
+    <div class="hero-content">
 
-<h1>The Infrastructure Behind The Future</h1>
+      <h1>The Infrastructure Behind The Future</h1>
 
-<p class="hero-sub">
-AI. Energy. Capital. Payments.
-<br><br>
-The real story is convergence.
-</p>
+      <p class="hero-sub">
+        AI. Energy. Capital. Payments.  
+        <br><br>
+        The real story is convergence.
+      </p>
 
-</div>
-</div>
+    </div>
+  </div>
 </section>
 
 <!-- DASHBOARD -->
 <section id="dashboard">
-<div class="container">
+  <div class="container">
 
-<div style="text-align:center; margin-bottom:30px;">
-<div class="sidebar-title">Executive Dashboard</div>
-<h2 class="section-title">This Month In One Minute</h2>
-</div>
+    <div style="text-align:center; margin-bottom:30px;">
+      <div class="sidebar-title">Executive Dashboard</div>
+      <h2 class="section-title">This Month In One Minute</h2>
+    </div>
 
-<div class="dashboard-grid">
+    <div class="dashboard-grid">
 
-<div class="glass-card">
-<div class="data-value">Energy</div>
-<div class="data-label">Electricity is becoming AI’s core constraint</div>
-</div>
+      <div class="glass-card">
+        <div class="data-value">Energy</div>
+        <div class="data-label">Electricity is becoming AI’s core constraint</div>
+      </div>
 
-<div class="glass-card">
-<div class="data-value">AI Systems</div>
-<div class="data-label">Compute demand continues exponential expansion</div>
-</div>
+      <div class="glass-card">
+        <div class="data-value">AI Systems</div>
+        <div class="data-label">Compute demand continues exponential expansion</div>
+      </div>
 
-<div class="glass-card">
-<div class="data-value">Blockchain</div>
-<div class="data-label">Settlement layers move toward institutional adoption</div>
-</div>
+      <div class="glass-card">
+        <div class="data-value">Blockchain</div>
+        <div class="data-label">Settlement layers move toward institutional adoption</div>
+      </div>
 
-<div class="glass-card">
-<div class="data-value">Capital Systems</div>
-<div class="data-label">Tokenization reshapes financial infrastructure</div>
-</div>
+      <div class="glass-card">
+        <div class="data-value">Capital Systems</div>
+        <div class="data-label">Tokenization reshapes financial infrastructure</div>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <!-- STORY -->
 <section id="story-1">
-<div class="container">
+  <div class="container">
 
-<div class="two-column">
+    <div class="two-column">
 
-<!-- ARTICLE -->
-<div>
+      <!-- ARTICLE -->
+      <div>
 
-<div class="sidebar-title">Featured Intelligence</div>
+        <div class="sidebar-title">Featured Intelligence</div>
 
-<h2 class="section-title">AI’s Next Bottleneck Isn’t Chips</h2>
+        <h2 class="section-title">AI’s Next Bottleneck Isn’t Chips</h2>
 
-<h3>What Happened</h3>
+        <h3 style="margin-bottom:20px;">What Happened</h3>
 
-<p class="article-text">
-For years the AI race was largely a race for semiconductors...
-(UNCHANGED CONTENT KEPT)
-</p>
+        <p class="article-text">
+        For years the AI race was largely a race for semiconductors.
 
-<div class="quote-box">
-The AI race is evolving from a battle for chips into a battle for electricity.
-</div>
+        Today a new constraint is emerging.
 
-<h3>Why It Matters</h3>
+        Electricity.
 
-<p class="article-text">
-(UNCHANGED CONTENT KEPT)
-</p>
+        As hyperscale AI facilities expand, developers are discovering
+        that securing power can be more difficult than securing hardware.
 
-<h3>Global Signal</h3>
+        Recent proposals for massive AI data centers have faced
+        growing scrutiny over grid capacity, transmission upgrades,
+        water consumption, and long-term energy requirements.
 
-<p class="article-text">
-(UNCHANGED CONTENT KEPT)
-</p>
+        One proposed 500-megawatt facility faced opposition from local residents and planning boards over concerns including grid strain, land use, water consumption, and long-term infrastructure load.
 
-<!-- NFW SIGNAL -->
-<div class="glass-card" style="margin-top:28px;">
-<div class="sidebar-title">NFW Signal</div>
-<div class="quote-box" style="margin:0; font-size:16px;">
-The AI race is no longer defined by compute alone.  
-It is defined by the infrastructure required to sustain it.
-</div>
-</div>
+        The challenge is no longer simply building AI systems.
 
-</div>
+        It is powering them.
+        </p>
 
-<!-- SIDEBAR -->
-<div class="sidebar-stack">
+        <div class="quote-box">
+          The AI race is evolving from a battle for chips into a battle for electricity.
+        </div>
 
-<div class="glass-card">
-<div class="sidebar-title">Key Metrics</div>
+        <h3 style="margin-bottom:20px;">Why It Matters</h3>
 
-<div class="data-block">
-<div class="data-value">500 MW</div>
-<div class="data-label">Single AI data center demand</div>
-</div>
+        <p class="article-text">
+        Modern AI workloads require continuous power.
 
-<div class="data-block">
-<div class="data-value">70+ GW</div>
-<div class="data-label">Nuclear under construction globally</div>
-</div>
+        Unlike many industrial operations, large AI clusters operate
+        24 hours per day, every day of the year.
 
-<div class="data-block">
-<div class="data-value">24/7</div>
-<div class="data-label">Continuous AI workload requirement</div>
-</div>
+        That demand is reshaping conversations around nuclear energy,
+        transmission infrastructure, natural gas generation,
+        and grid modernization.
 
-</div>
+        Utilities that once viewed technology firms as customers
+        are increasingly viewing them as strategic partners.
 
-<div class="glass-card">
-<div class="sidebar-title">Grid Pressure</div>
+        The companies controlling energy infrastructure may become
+        just as important as the companies building AI models.
+        </p>
 
-<div class="data-block">
-<div class="data-value">Rapid</div>
-<div class="data-label">Electricity demand growth curve</div>
-</div>
+        <h3 style="margin-bottom:20px;">Global Signal</h3>
 
-<div class="data-block">
-<div class="data-value">Years</div>
-<div class="data-label">To expand transmission capacity</div>
-</div>
+        <p class="article-text">
+        China currently has more nuclear reactors under construction
+        than any other nation and continues investing heavily in
+        long-term power capacity.
 
-</div>
+        Meanwhile the United Kingdom, India, South Korea,
+        and several European countries are re-evaluating nuclear
+        energy as electricity demand rises.
 
-<div class="glass-card">
-<div class="sidebar-title">States To Watch</div>
+        The global AI race may ultimately be constrained less by
+        software innovation and more by energy availability.
+        </p>
 
-<ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;">
-<li>Texas</li>
-<li>Virginia</li>
-<li>Wyoming</li>
-<li>Tennessee</li>
-<li>Florida</li>
-</ul>
+      </div>
 
-</div>
+      <!-- SIDEBAR -->
+      <div class="sidebar-stack">
 
-</div>
+        <div class="glass-card">
+          <div class="sidebar-title">Key Metrics</div>
 
-</div>
-</div>
+          <div class="data-block">
+            <div class="data-value">500 MW</div>
+            <div class="data-label">Single AI data center demand</div>
+          </div>
+
+          <div class="data-block">
+            <div class="data-value">70+ GW</div>
+            <div class="data-label">Nuclear under construction globally</div>
+          </div>
+
+          <div class="data-block">
+            <div class="data-value">24/7</div>
+            <div class="data-label">Continuous AI workload requirement</div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="sidebar-title">Grid Pressure</div>
+
+          <div class="data-block">
+            <div class="data-value">Rapid</div>
+            <div class="data-label">Electricity demand growth curve</div>
+          </div>
+
+          <div class="data-block">
+            <div class="data-value">Years</div>
+            <div class="data-label">To expand transmission capacity</div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="sidebar-title">States To Watch</div>
+
+          <ul style="padding-left:18px; line-height:1.9; color:#cfe0f5;">
+            <li>Texas</li>
+            <li>Virginia</li>
+            <li>Wyoming</li>
+            <li>Tennessee</li>
+            <li>Florida</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 </body>
