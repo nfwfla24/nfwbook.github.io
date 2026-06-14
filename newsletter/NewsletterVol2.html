@@ -23,17 +23,41 @@
                       linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); 
                     background-size: 50px 50px; 
                     pointer-events: none; z-index: -1; } 
-      /* ===================================== */ /* LAYOUT */ /* ===================================== */ 
-      .container 
-      { width: 100%; max-width: 1400px; margin: auto; padding: 0 40px; } 
-      section {  padding: 30px 0;}
+      /* ===================================== */
+/* LAYOUT (FIXED SPACING SYSTEM) */
+/* ===================================== */
 
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 40px;
+}
+
+/* Instead of uniform padding everywhere */
+section {
+  padding: 60px 0 40px 0;
+}
+
+/* HERO — remove excess vertical forcing */
 .hero {
-  min-height: 92vh; /* was 100vh */
+  min-height: 88vh;   /* reduced from 100vh */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 20px; /* reduces bleed into next section */
+
+  padding: 0;         /* IMPORTANT: prevents double spacing */
+  margin: 0;
+}
+
+/* REMOVE spacing collapse between hero → dashboard */
+.hero + section {
+  padding-top: 20px;  /* tight handoff into dashboard */
+}
+
+/* Dashboard gets its own rhythm */
+#dashboard {
+  padding-top: 20px;
 }
       /* ===================================== */ /* TYPOGRAPHY */ /* ===================================== */ 
       .section-title { font-size: 42px; font-weight: 800; margin-bottom: 20px; } 
