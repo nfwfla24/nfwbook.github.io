@@ -51,18 +51,6 @@ body::before {
   z-index: -1;
 }
 
-/* scanline */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 100% 6px;
-  opacity: 0.04;
-  mix-blend-mode: overlay;
-}
-
 /* ===================================== */
 /* LAYOUT */
 /* ===================================== */
@@ -130,7 +118,7 @@ section {
 }
 
 /* ===================================== */
-/* SIDEBAR SYSTEM */
+/* SIDEBAR SYSTEM (STICKY + HYBRID) */
 /* ===================================== */
 
 .two-column {
@@ -162,7 +150,7 @@ section {
 }
 
 /* ===================================== */
-/* DATA SYSTEM */
+/* DATA BLOCKS (INTELLIGENCE STYLE) */
 /* ===================================== */
 
 .data-block {
@@ -213,7 +201,7 @@ section {
 }
 
 /* ===================================== */
-/* HERO */
+/* HERO (simplified hybrid version) */
 /* ===================================== */
 
 .hero {
@@ -229,23 +217,121 @@ section {
 }
 
 /* ===================================== */
-/* DASHBOARD */
-/* ===================================== */
-
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
-/* ===================================== */
+@media (max-width: 1000px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  /* ===================================== */
 </style>
 </head>
 
 <body>
+/* ===================================== */
+/* SCANLINE + GLOW OVERLAY (PREVIEW) */
+/* ===================================== */
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+  background-size: 100% 4px;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+/* soft global glow drift */
+@keyframes glowDrift {
+  0%   { transform: translateY(0px); opacity: 0.10; }
+  50%  { transform: translateY(-6px); opacity: 0.14; }
+  100% { transform: translateY(0px); opacity: 0.10; }
+}
+
+.glass-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(88,166,255,0.10),
+    transparent 60%
+  );
+  animation: glowDrift 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+  /* ===================================== */
+/* MINI DATA CHARTS */
+/* ===================================== */
+
+.mini-bars {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 28px;
+  margin-top: 10px;
+}
+
+.mini-bars span {
+  width: 4px;
+  background: #58a6ff;
+  opacity: 0.7;
+  border-radius: 2px;
+  animation: barPulse 1.8s infinite ease-in-out;
+}
+
+.mini-bars span:nth-child(2) { animation-delay: .2s; }
+.mini-bars span:nth-child(3) { animation-delay: .4s; }
+.mini-bars span:nth-child(4) { animation-delay: .6s; }
+.mini-bars span:nth-child(5) { animation-delay: .8s; }
+
+@keyframes barPulse {
+  0%,100% { height: 6px; opacity: 0.5; }
+  50%     { height: 26px; opacity: 1; }
+}
+
+  /* ===================================== */
+/* DATA TICK ANIMATION */
+/* ===================================== */
+
+@keyframes dataFlicker {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.65; }
+  100% { opacity: 1; }
+}
+
+.data-value {
+  animation: dataFlicker 3.5s infinite;
+}
+
+  
+<!-- ===================================== -->
 <!-- HERO -->
+<!-- ===================================== -->
+
 <section class="hero">
   <div class="container">
     <div class="hero-content">
@@ -262,7 +348,10 @@ section {
   </div>
 </section>
 
+<!-- ===================================== -->
 <!-- DASHBOARD -->
+<!-- ===================================== -->
+
 <section id="dashboard">
   <div class="container">
 
@@ -298,38 +387,106 @@ section {
   </div>
 </section>
 
-<!-- STORY -->
+<!-- ===================================== -->
+<!-- STORY #1 -->
+<!-- ===================================== -->
+
 <section id="story-1">
   <div class="container">
 
     <div class="two-column">
 
-      <!-- ARTICLE -->
-      <div>
+<!-- ================= LEFT: ARTICLE ================= -->
+<div>
 
         <div class="sidebar-title">Featured Intelligence</div>
 
-        <h2 class="section-title">AI’s Next Bottleneck Isn’t Chips</h2>
+<h2 class="section-title">
+AI’s Next Bottleneck Isn’t Chips
+</h2>
 
-        <h3 style="margin-bottom:20px;">What Happened</h3>
+<h3 style="margin-bottom:20px;">What Happened</h3>
 
-        <p class="article-text">
-        For years the AI race was largely a race for semiconductors.
+<p class="article-text">
 
-        Today a new constraint is emerging.
+For years the AI race was largely a race for semiconductors.
 
-        Electricity.
+Today a new constraint is emerging.
 
-        As hyperscale AI facilities expand, developers are discovering
-        that securing power can be more difficult than securing hardware.
+Electricity.
 
-        Recent proposals for massive AI data centers have faced
-        growing scrutiny over grid capacity, transmission upgrades,
-        water consumption, and long-term energy requirements.
+As hyperscale AI facilities expand, developers are discovering
+that securing power can be more difficult than securing hardware.
 
-        One proposed 500-megawatt facility faced opposition from local residents and planning boards over concerns including grid strain, land use, water consumption, and long-term infrastructure load.
+Recent proposals for massive AI data centers have faced
+growing scrutiny over grid capacity, transmission upgrades,
+water consumption, and long-term energy requirements.
 
-        The challenge is no longer simply building AI systems.
+One proposed 500-megawatt facility faced opposition from local residents and planning boards over concerns including grid strain, land use, water consumption, and long-term infrastructure load.
+
+The challenge is no longer simply building AI systems.
+
+It is powering them.
+
+</p>
+
+<div class="quote-box">
+
+The AI race is evolving from a battle for chips into a battle for electricity.
+
+</div>
+
+<h3 style="margin-bottom:20px;">Why It Matters</h3>
+
+<p class="article-text">
+
+Modern AI workloads require continuous power.
+
+Unlike many industrial operations, large AI clusters operate
+24 hours per day, every day of the year.
+
+That demand is reshaping conversations around nuclear energy,
+transmission infrastructure, natural gas generation,
+and grid modernization.
+
+Utilities that once viewed technology firms as customers
+are increasingly viewing them as strategic partners.
+
+The companies controlling energy infrastructure may become
+just as important as the companies building AI models.
+
+</p>
+
+<h3 style="margin-bottom:20px;">Global Signal</h3>
+
+<p class="article-text">
+
+China currently has more nuclear reactors under construction
+than any other nation and continues investing heavily in
+long-term power capacity.
+
+Meanwhile the United Kingdom, India, South Korea,
+and several European countries are re-evaluating nuclear
+energy as electricity demand rises.
+
+The global AI race may ultimately be constrained less by
+software innovation and more by energy availability.
+
+</p>
+
+<!-- NFW SIGNAL (CORRECT PLACE) -->
+<div class="glass-card" style="margin-top:28px;">
+
+<div class="sidebar-title">NFW Signal</div>
+
+<div class="quote-box" style="margin:0; font-size:16px;">
+
+The AI race is no longer defined by compute alone.  
+It is defined by the infrastructure required to sustain it.
+
+</div>
+
+</div>
 
         It is powering them.
         </p>
@@ -430,8 +587,7 @@ section {
   </div>
 </section>
 
-</body>
-</html>
+</section>
 
   <!-- ===================================== -->
 <!-- EXECUTIVE SUMMARY -->
