@@ -207,7 +207,24 @@ section {
 }
 
 /* ===================================== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
 
+@media (max-width: 1000px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+  /* ===================================== */
 </style>
 </head>
 
@@ -247,46 +264,34 @@ The real story is convergence.
 
 <div class="container">
 
-<div style="text-align:center; margin-bottom:50px;">
+<div style="text-align:center; margin-bottom:40px;">
 
-<div class="sidebar-title">Executive Dashboard</div>
+<div class="eyebrow">Executive Dashboard</div>
 
 <h2 class="section-title">This Month In One Minute</h2>
 
-<p class="article-text" style="max-width:900px; margin:auto;">
-AI, energy, capital markets, and settlement systems are increasingly converging into a unified infrastructure layer.
-</p>
-
 </div>
 
-<div class="two-column">
+<div class="dashboard-grid">
 
 <div class="glass-card">
-<div class="sidebar-title">⚡ Energy</div>
-<p class="article-text">
-Electricity demand from AI is accelerating faster than grid expansion cycles.
-</p>
+<div class="data-value">Energy</div>
+<div class="data-label">Electricity is becoming AI’s core constraint</div>
 </div>
 
 <div class="glass-card">
-<div class="sidebar-title">🏛 Regulation</div>
-<p class="article-text">
-Digital asset frameworks are shifting toward clearer institutional definitions.
-</p>
+<div class="data-value">AI Systems</div>
+<div class="data-label">Compute demand continues exponential expansion</div>
 </div>
 
 <div class="glass-card">
-<div class="sidebar-title">💸 Payments</div>
-<p class="article-text">
-Continuous settlement systems are moving from theory into production.
-</p>
+<div class="data-value">Blockchain</div>
+<div class="data-label">Settlement layers move toward institutional adoption</div>
 </div>
 
 <div class="glass-card">
-<div class="sidebar-title">📈 Markets</div>
-<p class="article-text">
-Tokenized real-world assets are gaining early institutional traction.
-</p>
+<div class="data-value">Capital Systems</div>
+<div class="data-label">Tokenization reshapes financial infrastructure</div>
 </div>
 
 </div>
@@ -331,8 +336,7 @@ Recent proposals for massive AI data centers have faced
 growing scrutiny over grid capacity, transmission upgrades,
 water consumption, and long-term energy requirements.
 
-One proposed 500-megawatt facility alone would consume
-electricity comparable to hundreds of thousands of homes.
+One proposed 500-megawatt facility faced opposition from local residents and planning boards over concerns including grid strain, land use, water consumption, and long-term infrastructure load.
 
 The challenge is no longer simply building AI systems.
 
@@ -386,6 +390,18 @@ software innovation and more by energy availability.
 
 </div>
 
+  <div class="glass-card" style="margin-top:28px;">
+
+<div class="sidebar-title">NFW Signal</div>
+
+<div class="quote-box" style="margin:0; font-size:16px;">
+
+The AI race is no longer defined by compute alone.  
+It is defined by the infrastructure required to sustain it.
+
+</div>
+
+</div>
 <!-- ================= RIGHT: SIDEBAR ================= -->
 <div class="sidebar-stack">
 
@@ -429,16 +445,6 @@ software innovation and more by energy availability.
 </ul>
 </div>
 
-<div class="glass-card">
-<div class="sidebar-title">NFW Signal</div>
-
-<div class="quote-box">
-AI is transitioning from a compute problem into an energy problem.
-</div>
-
-</div>
-
-</div>
 
 </div>
 
