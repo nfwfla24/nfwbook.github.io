@@ -22,7 +22,7 @@
 }
 
 html {
-  font-size: 14px; /* FIX: global scaling down */
+  font-size: 14px;
   scroll-behavior: smooth;
 }
 
@@ -38,7 +38,7 @@ body {
   overflow-x: hidden;
 }
 
-/* subtle grid overlay */
+/* grid overlay */
 body::before {
   content: "";
   position: fixed;
@@ -67,13 +67,20 @@ section {
 }
 
 /* ===================================== */
-/* TYPOGRAPHY FIXES */
+/* TYPOGRAPHY */
 /* ===================================== */
 
 .section-title {
   font-size: 42px;
   font-weight: 800;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+}
+
+.article-text {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #d3dfef;
+  margin-bottom: 18px;
 }
 
 .hero h1 {
@@ -88,15 +95,8 @@ section {
   color: #c4d3e7;
 }
 
-.article-text {
-  font-size: 16px;
-  line-height: 1.85;
-  color: #d3dfef;
-  margin-bottom: 20px;
-}
-
 /* ===================================== */
-/* SHARED UI */
+/* GLASS SYSTEM */
 /* ===================================== */
 
 .glass-card {
@@ -104,97 +104,33 @@ section {
   border: 1px solid rgba(255,255,255,.08);
   backdrop-filter: blur(20px);
   border-radius: 22px;
-  padding: 28px;
-}
-
-.eyebrow {
-  color: #58a6ff;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
+  padding: 26px;
 }
 
 /* ===================================== */
-/* HERO (your upgraded version preserved) */
+/* SIDEBAR SYSTEM (STICKY + HYBRID) */
 /* ===================================== */
 
-.hero {
-  min-height: 100vh;
+.sidebar-stack {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 18px;
+
+  padding-right: 6px;
+
+  scrollbar-width: none;
 }
 
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  filter: blur(120px);
-  pointer-events: none;
+.sidebar-stack::-webkit-scrollbar {
+  width: 0;
 }
-
-.hero::before {
-  top: -250px;
-  right: -250px;
-  background: rgba(88,166,255,.18);
-}
-
-.hero::after {
-  bottom: -250px;
-  left: -250px;
-  background: rgba(0,102,255,.15);
-}
-
-.hero-content {
-  max-width: 1100px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-pill {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 999px;
-  background: rgba(88,166,255,.08);
-  border: 1px solid rgba(88,166,255,.25);
-  color: #58a6ff;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-bottom: 25px;
-}
-
-/* ===================================== */
-/* BUTTONS */
-/* ===================================== */
-
-.btn {
-  padding: 14px 28px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.btn-primary {
-  background: #1f6fff;
-  color: white;
-}
-
-.btn-secondary {
-  border: 1px solid rgba(255,255,255,.15);
-  background: rgba(255,255,255,.05);
-  color: white;
-}
-
-/* ===================================== */
-/* TWO COLUMN FIX (IMPORTANT) */
-/* ===================================== */
 
 .two-column {
   display: grid;
@@ -204,68 +140,28 @@ section {
 }
 
 /* ===================================== */
-/* STICKY SIDEBAR (CLEAN + RELIABLE) */
+/* DATA BLOCKS (INTELLIGENCE STYLE) */
 /* ===================================== */
 
-.sidebar-stack {
-  position: sticky;
-  top: 90px; /* distance from top of viewport */
-  align-self: start;
-
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-
-  padding-right: 6px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+.data-block {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-/* hide scrollbar (keeps UI clean) */
-.sidebar-stack::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+.data-block:last-child {
+  border-bottom: none;
 }
 
-/* Firefox scrollbar removal */
-.sidebar-stack {
-  scrollbar-width: none;
-}
-
-/* IMPORTANT: prevents layout spacing bugs */
-.two-column .glass-card {
-  margin-top: 0 !important;
-}
-
-/* ===================================== */
-/* ARTICLE ELEMENTS */
-/* ===================================== */
-
-.quote-box {
-  border-left: 4px solid #58a6ff;
-  padding-left: 20px;
-  margin: 30px 0;
+.data-value {
   font-size: 20px;
-  font-weight: 600;
-  line-height: 1.6;
+  font-weight: 800;
+  color: #58a6ff;
 }
 
-/* ===================================== */
-/* HERO METRICS (cleaned) */
-/* ===================================== */
-
-.hero-metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  margin-top: 70px;
-}
-
-.hero-card {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 18px;
-  padding: 24px;
+.data-label {
+  font-size: 13px;
+  color: #a9b9cf;
+  margin-top: 3px;
 }
 
 /* ===================================== */
@@ -273,26 +169,43 @@ section {
 /* ===================================== */
 
 .sidebar-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
-  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  color: #cfe3ff;
 }
 
 /* ===================================== */
-/* SIGNAL LIST */
+/* QUOTE BOX */
 /* ===================================== */
 
-.signal {
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.signal:last-child {
-  border-bottom: none;
+.quote-box {
+  border-left: 4px solid #58a6ff;
+  padding-left: 18px;
+  margin: 26px 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 /* ===================================== */
-/* END CSS */
+/* HERO (simplified hybrid version) */
+/* ===================================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 1100px;
+}
+
 /* ===================================== */
 
 </style>
@@ -310,10 +223,6 @@ section {
 
 <div class="hero-content">
 
-<div class="hero-pill">
-NFW Intelligence Brief | June 2026
-</div>
-
 <h1>
 The Infrastructure Behind The Future
 </h1>
@@ -321,32 +230,8 @@ The Infrastructure Behind The Future
 <p class="hero-sub">
 AI. Energy. Capital. Payments.  
 <br><br>
-The real story is not any one system — but how they connect.
+The real story is convergence.
 </p>
-
-<div style="margin-top:35px;">
-<a href="#dashboard" class="btn btn-primary">Read Brief</a>
-<a href="#featured-media" class="btn btn-secondary">Watch</a>
-</div>
-
-<div class="hero-metrics">
-
-<div class="hero-card">
-<h2>70+ GW</h2>
-<p>Nuclear under construction</p>
-</div>
-
-<div class="hero-card">
-<h2>$29B+</h2>
-<p>Tokenized assets</p>
-</div>
-
-<div class="hero-card">
-<h2>500 MW</h2>
-<p>AI data center demand</p>
-</div>
-
-</div>
 
 </div>
 
@@ -355,7 +240,7 @@ The real story is not any one system — but how they connect.
 </section>
 
 <!-- ===================================== -->
-<!-- STORY #1 FIXED STRUCTURE -->
+<!-- STORY #1 + HYBRID SIDEBAR -->
 <!-- ===================================== -->
 
 <section>
@@ -364,84 +249,93 @@ The real story is not any one system — but how they connect.
 
 <div class="two-column">
 
-<!-- MAIN -->
+<!-- MAIN ARTICLE -->
 <div>
 
-<div class="eyebrow">Featured Story</div>
-
-<h2 class="section-title">
-AI’s Next Bottleneck Isn’t Chips. It’s Power
-</h2>
+<div class="section-title">
+AI’s Next Bottleneck Isn’t Chips — It’s Power
+</div>
 
 <p class="article-text">
-AI used to be constrained by chips. That era is ending.
-Power is becoming the limiting factor.
+Artificial intelligence scaling is no longer primarily a chip problem.
+It is becoming an energy infrastructure problem.
 </p>
 
 <p class="article-text">
-Large-scale AI data centers can demand hundreds of megawatts — 
-equivalent to powering entire cities. In parts of the U.S., 
-projects are already being delayed due to grid capacity, 
-transmission limits, and permitting friction.
+Modern AI data centers can require <strong>hundreds of megawatts</strong>,
+equivalent to powering entire cities continuously.
 </p>
 
 <div class="quote-box">
-The next constraint in AI is not computation — it is electricity.
+The limiting factor is shifting from computation to electricity.
 </div>
 
 <p class="article-text">
-This shift is pushing utilities, regulators, and states into a 
-new strategic role. Energy policy is becoming AI policy.
+Across the United States, grid constraints, permitting timelines,
+and transmission bottlenecks are increasingly delaying AI infrastructure buildouts.
 </p>
 
 <p class="article-text">
-States like Texas, Virginia, Tennessee, and Wyoming are moving 
-faster on nuclear permitting and grid expansion, positioning 
-themselves as early infrastructure hubs for AI growth.
-</p>
-
-<p class="article-text">
-Globally, China continues rapid nuclear expansion while Europe 
-reframes nuclear as an energy security tool rather than a 
-purely environmental debate.
+States such as Texas, Virginia, Tennessee, Wyoming, and Florida
+are accelerating nuclear and grid expansion policies to attract
+next-generation compute infrastructure.
 </p>
 
 </div>
 
-<!-- SIDEBAR -->
+<!-- SIDEBAR (HYBRID INTEL SYSTEM) -->
 <div class="sidebar-stack">
 
+<!-- TIER 1 -->
 <div class="glass-card">
-  <div class="sidebar-title">Key Metrics</div>
 
-  <div class="data-block">
-    <div class="data-value">500 MW</div>
-    <div class="data-label">Single AI data center demand</div>
-  </div>
+<div class="sidebar-title">Key Metrics</div>
 
-  <div class="data-block">
-    <div class="data-value">70+ GW</div>
-    <div class="data-label">Nuclear capacity under construction</div>
-  </div>
-
-  <div class="data-block">
-    <div class="data-value">24/7</div>
-    <div class="data-label">AI workload requirement</div>
-  </div>
+<div class="data-block">
+  <div class="data-value">500 MW</div>
+  <div class="data-label">Single AI data center campus</div>
 </div>
 
 <div class="data-block">
+  <div class="data-value">70+ GW</div>
+  <div class="data-label">Global nuclear buildout pipeline</div>
+</div>
+
+<div class="data-block">
+  <div class="data-value">24/7</div>
+  <div class="data-label">Continuous compute demand</div>
+</div>
+
+</div>
+
+<!-- TIER 2 -->
+<div class="glass-card">
+
 <div class="sidebar-title">NFW Signal</div>
+
 <p class="article-text">
-AI is no longer a software race. It is an infrastructure race.
+AI is transitioning from a software race into a power infrastructure race.
 </p>
+
+<div class="quote-box">
+Electricity is becoming the new compute constraint.
 </div>
 
-<div class="data-block">
+</div>
+
+<!-- TIER 3 -->
+<div class="glass-card">
+
 <div class="sidebar-title">Watchlist</div>
-<p class="article-text">
-SMRs, grid upgrades, nuclear policy, data center power deals
-</p>
+
+<div class="article-text">
+SMRs<br>
+Grid modernization<br>
+AI power contracts<br>
+Transmission expansion<br>
+State nuclear policy
+</div>
+
 </div>
 
 </div>
@@ -454,6 +348,11 @@ SMRs, grid upgrades, nuclear policy, data center power deals
 
 </body>
 </html>
+
+
+
+
+
   <!-- ===================================== -->
 <!-- EXECUTIVE SUMMARY -->
 <!-- ===================================== -->
