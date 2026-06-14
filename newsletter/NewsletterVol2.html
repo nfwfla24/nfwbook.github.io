@@ -26,7 +26,15 @@
       /* ===================================== */ /* LAYOUT */ /* ===================================== */ 
       .container 
       { width: 100%; max-width: 1400px; margin: auto; padding: 0 40px; } 
-      section { padding: 90px 0; } 
+      section {  padding: 60px 0;}
+
+.hero {
+  min-height: 92vh; /* was 100vh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40px; /* reduces bleed into next section */
+}
       /* ===================================== */ /* TYPOGRAPHY */ /* ===================================== */ 
       .section-title { font-size: 42px; font-weight: 800; margin-bottom: 20px; } 
       .article-text { font-size: 16px; line-height: 1.85; color: #d3dfef; margin-bottom: 18px; } 
