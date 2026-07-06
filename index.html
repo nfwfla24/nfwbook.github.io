@@ -1,473 +1,454 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The New Financial World LLC — Energy, Reliability & Verifiable Systems</title>
-  <meta name="description" content="Digital infrastructure advisory at the convergence of energy, reliability, and verifiable systems. Home of the BRIS and VRL methodologies." />
-  <meta property="og:title" content="The New Financial World LLC" />
-  <meta property="og:description" content="Advisory, research, and methodology at the intersection of energy infrastructure, reliability intelligence, and distributed attestation." />
-  <meta property="og:image" content="logov2.png" />
-  <link rel="icon" type="image/png" href="logov2.png" sizes="32x32" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <title>The New Financial World LLC</title>
+ <!--Favicon-->
+  <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32">
+<link rel="shortcut icon" type="image/png" href="/logov2.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    /* ── Homepage-specific styles ── */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 90% 70% at 105% -5%, color-mix(in oklab, var(--color-accent), transparent 82%) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 90% at -5% 105%, color-mix(in oklab, var(--color-teal), transparent 88%) 0%, transparent 55%),
-        var(--color-primary);
-      z-index: 0;
-    }
-    .hero__grid-overlay {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-      z-index: 1;
-    }
-    .hero__content {
-      position: relative;
-      z-index: 2;
-      padding-block: var(--space-24) var(--space-20);
-    }
-    .hero__eyebrow {
-      display: inline-flex; align-items: center; gap: var(--space-2);
-      padding: var(--space-1) var(--space-4);
-      border: 1px solid rgba(200,134,26,0.4);
-      border-radius: var(--radius-full);
-      font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--color-accent);
-      margin-bottom: var(--space-6);
-    }
-    .hero__title {
-      font-family: var(--font-display);
-      font-size: var(--text-hero);
-      font-weight: 400;
-      line-height: 1.05;
-      color: #fff;
-      max-width: 14ch;
-      margin-bottom: var(--space-6);
-    }
-    .hero__title em {
-      font-style: italic;
-      color: var(--color-accent);
-    }
-    .hero__body {
-      font-size: var(--text-lg);
-      color: rgba(255,255,255,0.72);
-      max-width: 52ch;
-      line-height: 1.7;
-      margin-bottom: var(--space-10);
-    }
-    .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
-    .hero__scroll {
-      position: absolute;
-      bottom: var(--space-8);
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 2;
-      display: flex; flex-direction: column; align-items: center; gap: var(--space-2);
-      color: rgba(255,255,255,0.4); font-size: var(--text-xs); letter-spacing: 0.1em;
-    }
-    .hero__scroll-line {
-      width: 1px; height: 40px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; transform: scaleY(1); }
-      50% { opacity: 0.8; transform: scaleY(1.15); }
-    }
-    .hero__stat-row {
-      display: flex; flex-wrap: wrap; gap: var(--space-8);
-      margin-top: var(--space-12);
-      padding-top: var(--space-10);
-      border-top: 1px solid rgba(255,255,255,0.12);
-    }
-    .hero__stat-item { color: rgba(255,255,255,0.9); }
-    .hero__stat-num { font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 700; color: #fff; line-height: 1; }
-    .hero__stat-label { font-size: var(--text-xs); color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.1em; margin-top: var(--space-1); }
-
-    /* Intro band */
-    .intro-band {
-      background: var(--color-surface);
-      border-bottom: 1px solid var(--color-border);
-      padding-block: var(--space-5);
-    }
-    .intro-band__inner {
-      display: flex; flex-wrap: wrap; gap: var(--space-8);
-      align-items: center; justify-content: space-between;
-    }
-    .intro-band__item {
-      display: flex; align-items: center; gap: var(--space-3);
-      font-size: var(--text-sm); color: var(--color-text-muted);
-    }
-    .intro-band__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); flex-shrink: 0; }
-
-    /* Pillar section */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-6);
-    }
-    @media (max-width: 800px) { .pillars-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 600px) { .hero__title { font-size: clamp(2.4rem, 10vw, 5rem); } }
-
-    .pillar-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-8) var(--space-6);
-      position: relative;
-      overflow: hidden;
-      transition: box-shadow var(--t-med), transform var(--t-med);
-    }
-    .pillar-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-    .pillar-card__num {
-      position: absolute; top: var(--space-4); right: var(--space-5);
-      font-family: var(--font-display); font-size: 4rem; font-weight: 700;
-      color: var(--color-divider); line-height: 1; user-select: none;
-    }
-    .pillar-card__icon {
-      width: 44px; height: 44px; border-radius: var(--radius-lg);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: var(--space-5);
-    }
-    .pillar-card__title { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-text); margin-bottom: var(--space-3); }
-    .pillar-card__body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
-    .pillar-card__link { display: inline-flex; align-items: center; gap: var(--space-1); margin-top: var(--space-4); font-size: var(--text-sm); font-weight: 600; color: var(--color-primary); text-decoration: none; transition: gap var(--t-fast); }
-    .pillar-card__link:hover { gap: var(--space-2); }
-
-    /* Architecture preview */
-    .arch-preview {
-      background: var(--color-primary);
-      border-radius: var(--radius-2xl);
-      padding: var(--space-10) var(--space-8);
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-    .arch-preview::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .arch-preview__content { position: relative; z-index: 1; }
-    .arch-preview__layers {
-      display: flex; flex-direction: column; gap: var(--space-3);
-      margin-block: var(--space-6);
-    }
-    .arch-layer-row {
-      display: flex; align-items: center; gap: var(--space-4);
-      padding: var(--space-4) var(--space-5);
-      border-radius: var(--radius-lg);
-      font-size: var(--text-sm); font-weight: 600;
-    }
-    .arch-layer-row__dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-    .arch-layer-row__tag { margin-left: auto; font-size: var(--text-xs); opacity: 0.7; font-weight: 400; }
-    .arch-connector-arrow {
-      display: flex; align-items: center; justify-content: center;
-      height: var(--space-6); color: rgba(255,255,255,0.3);
-    }
-
-    /* Audience section */
-    .audience-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-4);
-    }
-    @media (max-width: 640px) { .audience-grid { grid-template-columns: 1fr; } }
-    .audience-card {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: var(--space-5) var(--space-6);
-      transition: box-shadow var(--t-med);
-    }
-    .audience-card:hover { box-shadow: var(--shadow-sm); }
-    .audience-card__title { font-weight: 700; font-size: var(--text-base); color: var(--color-text); margin-bottom: var(--space-1); }
-    .audience-card__body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
-
-    /* CTA band */
-    .cta-band {
-      background: var(--color-primary);
-      border-radius: var(--radius-2xl);
-      padding: var(--space-12) var(--space-10);
-      display: flex; flex-wrap: wrap; gap: var(--space-8);
-      align-items: center; justify-content: space-between;
-      color: #fff;
-    }
-    .cta-band__text h2 { font-family: var(--font-display); font-size: var(--text-2xl); max-width: 18ch; line-height: 1.15; }
-    .cta-band__text p { margin-top: var(--space-3); color: rgba(255,255,255,0.65); font-size: var(--text-base); max-width: 44ch; }
-    .cta-band__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); flex-shrink: 0; }
-    .btn--light { background: #fff; color: var(--color-primary); }
-    .btn--light:hover { background: rgba(255,255,255,0.9); }
-    .btn--outline-light { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.35); }
-    .btn--outline-light:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.6); }
+    :root{--brand:#111827;--accent:#06b6d4}
+    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    html{font-size:17px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+    @media (min-width:1024px){html{font-size:18px}}
+    p,li{line-height:1.7}
+    .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
   </style>
+  <meta property="og:title" content="The New Financial World LLC"/>
+  <meta property="og:description" content="A plain‑English guide to cryptocurrency, blockchain technology, and the 5th Industrial Revolution."/>
+  <meta property="og:image" content="Book cover.png"/>
 </head>
-<body>
-  <div id="nav-placeholder"></div>
+<body class="relative text-slate-800">
+  <div class="fixed inset-0 -z-10 pointer-events-none">
+    <div class="absolute inset-0" style="background:
+      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
+      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
+      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
+      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
+    "></div>
+    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="0.8"/>
+        </filter>
+      </defs>
+      <g filter="url(#f)" font-family="Inter, system-ui, sans-serif" font-size="24" fill="white">
+        <text x="8%" y="18%">₿</text>
+        <text x="22%" y="35%">Ξ</text>
+        <text x="38%" y="12%">◎</text>
+        <text x="55%" y="28%">✕</text>
+        <text x="72%" y="18%">Ξ</text>
+        <text x="85%" y="40%">₿</text>
+        <text x="12%" y="70%">✕</text>
+        <text x="33%" y="82%">Ξ</text>
+        <text x="60%" y="75%">◎</text>
+        <text x="80%" y="66%">₿</text>
+      </g>
+    </svg>
+  </div>
 
-  <!-- ── HERO ── -->
-  <section class="hero" aria-label="Hero">
-    <div class="hero__grid-overlay" aria-hidden="true"></div>
-    <div class="hero__content container">
-      <div class="hero__eyebrow" aria-label="Category">
-        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
-        Energy · Reliability · Attestation
-      </div>
-      <h1 class="hero__title">Where <em>infrastructure</em> meets verifiable truth</h1>
-      <p class="hero__body">The New Financial World LLC develops methodology, advisory, and research at the convergence of energy reliability intelligence and distributed attestation systems.</p>
-      <div class="hero__actions">
-        <a href="technology.html" class="btn btn--accent btn--lg">Explore the Technology</a>
-        <a href="consulting.html" class="btn btn--outline-light btn--lg">Work With Us</a>
-      </div>
-      <div class="hero__stat-row">
-        <div class="hero__stat-item">
-          <div class="hero__stat-num">2</div>
-          <div class="hero__stat-label">Core Methodologies</div>
-        </div>
-        <div class="hero__stat-item">
-          <div class="hero__stat-num">BRIS</div>
-          <div class="hero__stat-label">Layer of Truth</div>
-        </div>
-        <div class="hero__stat-item">
-          <div class="hero__stat-num">VRL</div>
-          <div class="hero__stat-label">Trust Layer</div>
-        </div>
-        <div class="hero__stat-item">
-          <div class="hero__stat-num">2026</div>
-          <div class="hero__stat-label">Book Launch</div>
+ <!-- Top header -->
+<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
+  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+
+    <!-- Logo + Site Name -->
+    <a href="/" class="flex items-center gap-3">
+      <!-- Logo image -->
+      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
+
+      <!-- Site name -->
+      <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+      <a href="index.html" class="hover:text-slate-950">Home</a>
+      <a href="about.html" class="hover:text-slate-950">About</a>
+      <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
+      <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
+      <a href="homepage.html" class="hover:text-slate-950">Media</a>
+      <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
+      
+    </nav>
+
+    <!-- Mobile hamburger -->
+    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
+      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
+    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
+    <a href="about.html" class="block text-left hover:text-slate-950">About</a>
+    <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
+    <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
+    <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
+    <a href="contactus.html" class="block text-left hover:text-slate-950">Work With Us</a>
+    
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+     
+  </header>
+
+  
+<!-- Hero Section -->
+<section id="home" class="w-full bg-black flex flex-col items-center">
+  <!-- Video -->
+  <div class="w-full max-w-6xl">
+    <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg">
+      <source src="Logovideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  
+</section>
+
+<!-- Responsive Behavior -->
+<style>
+  .hero-video {
+    width: 100%;
+    height: auto;
+    max-height: 600px; /* desktop max height */
+    object-fit: contain;
+  }
+
+  /* Mobile portrait */
+  @media (max-width: 767px) and (orientation: portrait) {
+    .hero-video {
+      object-fit: contain;
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+  }
+
+  /* Mobile landscape */
+  @media (max-width: 767px) and (orientation: landscape) {
+    .hero-video {
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+      max-height: none;
+    }
+  }
+</style>
+
+  
+
+</section>
+
+  <!--Navigate the Future Section-->
+<div class="w-full flex flex-col justify-center items-center mt-6 px-4 text-center">
+  <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white text-center">Navigate the Future</h1>
+  <p class="text-2xl sm:text-2xl md:text-2xl font-semibold text-white/80 leading-tight mt-2">Learn. Adapt. Prosper.</p>
+</div>
+  
+ 
+
+  <br>
+  <br>
+  <br>
+  <!-- About Section -->
+<section id="about" class="relative mx-auto max-w-6xl px-4 py-16">
+  <div class="grid md:grid-cols-2 gap-8 items-center">
+    
+    <!-- Left: Text & Button -->
+    <div class="text-center md:text-left">
+      <h2 class="text-4xl md:text-5xl font-bold leading-tight text-white mb-4">
+        Digital Infrastructure Advisory for the New Financial System
+      </h2>
+     
+      <h2 class="text-sm uppercase tracking-[0.2em] text-cyan-300 font-semibold">
+        Advisory • Education • Media
+      </h2>
+      
+      <p class="mt-4 text-md text-slate-200 max-w-md">
+We help organizations understand where energy, blockchain, AI, and capital systems converge.
+
+      </p>
+      
+      
+      <div class="mt-6 flex flex-col sm:flex-row flex-wrap justify-center md:justify-start items-stretch gap-3">
+  <a href="consulting.html" class="inline-flex min-h-[64px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
+    Work With Us
+  </a>
+
+  <a href="book.html" class="inline-flex min-h-[64px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center leading-tight">
+    <span>
+      Explore the Book<br>
+      <span class="text-xs font-normal opacity-80">(Releasing 2026)</span>
+    </span>
+  </a>
+
+  <a href="homepage.html" class="inline-flex min-h-[64px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
+    Watch the Podcast
+  </a>
+</div>
+    </div>
+
+    <!-- Right: Video -->
+    <div class="flex justify-center md:justify-end">
+      <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg w-full max-w-lg">
+        <source src="worldvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+  </div>
+
+
+  
+<!-- Responsive Behavior -->
+<style>
+.hero-video {
+  width: 100%;
+  height: auto;
+  max-height: 500px; /* limit on desktop */
+  object-fit: contain;
+}
+
+/* Mobile portrait */
+@media (max-width: 767px) and (orientation: portrait) {
+  .hero-video {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 767px) and (orientation: landscape) {
+  .hero-video {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+</style>
+</section>
+
+ 
+  <!-- What We Do / Who We Work With -->
+<section class="relative mx-auto max-w-4xl px-4 pb-16 text-slate-100">
+  <div class="space-y-4">
+
+    <!-- What We Do -->
+    <div class="accordion-item rounded-2xl border border-white/20 p-5">
+      <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-white">
+        <span>What We Do</span>
+        <svg class="accordion-icon w-4 h-4 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
+        <div class="mt-4 space-y-3">
+          <p class="text-slate-200 flex items-start">
+            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
+            Executive briefings on digital infrastructure, energy, and financial system change
+          </p>
+          <p class="text-slate-200 flex items-start">
+            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
+            Strategic analysis of where AI, energy demand, and digital finance intersect
+          </p>
+          <p class="text-slate-200 flex items-start">
+            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
+            Advisory on blockchain infrastructure, market trends, and emerging standards
+          </p>
+          <p class="text-slate-200 flex items-start">
+            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
+            Research and education for organizations navigating digital transformation
+          </p>
         </div>
       </div>
     </div>
-    <div class="hero__scroll" aria-hidden="true">
-      <div class="hero__scroll-line"></div>
-      <span>Scroll</span>
-    </div>
-  </section>
 
-  <!-- ── INTRO BAND ── -->
-  <div class="intro-band" aria-hidden="true">
-    <div class="container">
-      <div class="intro-band__inner">
-        <div class="intro-band__item"><span class="intro-band__dot"></span>Energy Infrastructure</div>
-        <div class="intro-band__item"><span class="intro-band__dot"></span>Reliability Intelligence</div>
-        <div class="intro-band__item"><span class="intro-band__dot"></span>Distributed Attestation</div>
-        <div class="intro-band__item"><span class="intro-band__dot"></span>Blockchain Architecture</div>
-        <div class="intro-band__item"><span class="intro-band__dot"></span>Digital Systems Advisory</div>
-        <div class="intro-band__item"><span class="intro-band__dot"></span>Institutional Research</div>
+    <!-- Who We Work With -->
+    <div class="accordion-item rounded-2xl border border-white/20 p-5">
+      <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-white">
+        <span>Who We Work With</span>
+        <svg class="accordion-icon w-4 h-4 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
+        <div class="mt-4 space-y-3">
+          <p class="text-slate-200 flex items-start">
+            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
+            Energy and infrastructure professionals evaluating digital change
+          </p>
+          <p class="text-slate-200 flex items-start">
+            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
+            Executive teams assessing strategic exposure to AI, blockchain, and capital system shifts
+          </p>
+          <p class="text-slate-200 flex items-start">
+            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
+            Organizations navigating technological and regulatory convergence
+          </p>
+          <p class="text-slate-200 flex items-start">
+            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
+            Institutions and founders seeking clarity in the emerging digital infrastructure economy
+          </p>
+        </div>
       </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector('.accordion-icon');
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
+        document.querySelectorAll('.accordion-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+});
+</script>
+
+ 
+  
+
+
+
+<!-- Footer -->
+<footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
+  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
+    <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
+    <div class="flex items-center gap-4">
+      <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
+      <a href="terms.html" class="hover:text-slate-200">Terms</a>
     </div>
   </div>
 
-  <!-- ── THREE PILLARS ── -->
-  <section class="section" aria-labelledby="pillars-heading">
-    <div class="container">
-      <div style="margin-bottom:var(--space-12);">
-        <span class="eyebrow">What We Do</span>
-        <h2 id="pillars-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);max-width:20ch;">Three disciplines. One integrated view.</h2>
-        <p style="margin-top:var(--space-4);font-size:var(--text-lg);color:var(--color-text-muted);max-width:56ch;">NFW operates at the intersection of where energy assets produce data, how that data can be verified, and what that verification means for capital, compliance, and risk.</p>
-      </div>
-      <div class="pillars-grid">
-        <!-- Methodology -->
-        <div class="pillar-card fade-up">
-          <span class="pillar-card__num" aria-hidden="true">01</span>
-          <div class="pillar-card__icon" style="background:var(--color-primary-light);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3 class="pillar-card__title">Methodology & Research</h3>
-          <p class="pillar-card__body">The Baseline Reliability Intelligence System (BRIS) and Verified Reliability Layer (VRL) are two independently developed methodologies for energy asset reliability attestation — not software products, but operating logic that defines how reliability data is collected, scored, anchored, and verified.</p>
-          <a href="technology.html" class="pillar-card__link">View Methodologies <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-        <!-- Advisory -->
-        <div class="pillar-card fade-up" style="transition-delay:0.1s;">
-          <span class="pillar-card__num" aria-hidden="true">02</span>
-          <div class="pillar-card__icon" style="background:var(--color-accent-light);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <h3 class="pillar-card__title">Advisory & Education</h3>
-          <p class="pillar-card__body">Strategic guidance for utilities, engineering teams, regulatory stakeholders, and institutional audiences navigating the convergence of energy infrastructure, financial systems, and digital technology. We translate complex systems into usable insight.</p>
-          <a href="consulting.html" class="pillar-card__link">Explore Advisory <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-        <!-- Media -->
-        <div class="pillar-card fade-up" style="transition-delay:0.2s;">
-          <span class="pillar-card__num" aria-hidden="true">03</span>
-          <div class="pillar-card__icon" style="background:var(--color-teal-light);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-          </div>
-          <h3 class="pillar-card__title">Media & Publishing</h3>
-          <p class="pillar-card__body">From the forthcoming book <em>Introduction to The New Financial World</em> to podcast content, YouTube, and written research — NFW produces accessible, long-form material on blockchain infrastructure, digital finance, and energy market structure.</p>
-          <a href="media.html" class="pillar-card__link">Watch & Listen <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Social Media Links -->
+<div class="flex justify-center items-center mt-6 space-x-6">
 
-  <div class="divider-gradient"></div>
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/in/nfwfla"
+     target="_blank"
+     aria-label="LinkedIn"
+     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+    <svg xmlns="https://www.linkedin.com/in/the-new-financial-world-782039397/"
+         fill="#0A66C2"
+         viewBox="0 0 24 24"
+         class="w-5 h-5 block">
+      <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
+    </svg>
+  </a>
 
-  <!-- ── ARCHITECTURE PREVIEW ── -->
-  <section class="section--sm" aria-labelledby="arch-heading">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:center;">
-        <div class="fade-up">
-          <span class="eyebrow">Architecture Overview</span>
-          <h2 id="arch-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);max-width:18ch;">Two layers. One verifiable chain of custody.</h2>
-          <p style="margin-top:var(--space-4);font-size:var(--text-base);color:var(--color-text-muted);max-width:52ch;line-height:1.7;">BRIS operates as the private intelligence layer — scoring asset reliability from sensor and maintenance data, producing a canonical record. VRL operates above it as the public trust layer — taking only a hash and opaque reference from any upstream source and anchoring it to a public chain.</p>
-          <div style="margin-top:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);">
-            <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);">
-              <div style="width:12px;height:12px;border-radius:3px;background:var(--color-primary);flex-shrink:0;"></div>
-              <span style="color:var(--color-text);font-weight:600;">BRIS</span>
-              <span style="color:var(--color-text-muted);">— Private. Proprietary. The Layer of Truth.</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);">
-              <div style="width:12px;height:12px;border-radius:3px;background:var(--color-teal);flex-shrink:0;"></div>
-              <span style="color:var(--color-text);font-weight:600;">VRL</span>
-              <span style="color:var(--color-text-muted);">— Public anchor. Producer-agnostic. The Trust Layer.</span>
-            </div>
-          </div>
-          <a href="technology.html" class="btn btn--primary" style="margin-top:var(--space-8);">Read the Methodology</a>
-        </div>
-        <div class="arch-preview fade-up" style="transition-delay:0.15s;">
-          <div class="arch-preview__content">
-            <p style="font-size:var(--text-xs);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:var(--space-4);">System Architecture</p>
-            <div class="arch-preview__layers">
-              <!-- Public chain -->
-              <div class="arch-layer-row" style="background:rgba(12,110,118,0.35);border:1px solid rgba(12,110,118,0.5);">
-                <div class="arch-layer-row__dot" style="background:#2AA8B4;"></div>
-                <span>Public Chain (Hedera / L1)</span>
-                <span class="arch-layer-row__tag">External</span>
-              </div>
-              <div class="arch-connector-arrow">
-                <svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-              </div>
-              <!-- VRL -->
-              <div class="arch-layer-row" style="background:rgba(12,110,118,0.2);border:1px solid rgba(12,110,118,0.35);">
-                <div class="arch-layer-row__dot" style="background:#2AA8B4;"></div>
-                <span>VRL — Trust Layer</span>
-                <span class="arch-layer-row__tag">Public anchor · hash only</span>
-              </div>
-              <div class="arch-connector-arrow">
-                <svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-              </div>
-              <!-- BRIS -->
-              <div class="arch-layer-row" style="background:rgba(200,134,26,0.2);border:1px solid rgba(200,134,26,0.35);">
-                <div class="arch-layer-row__dot" style="background:var(--color-accent);"></div>
-                <span>BRIS — Layer of Truth</span>
-                <span class="arch-layer-row__tag">Private · IOU-internal</span>
-              </div>
-              <div class="arch-connector-arrow">
-                <svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-              </div>
-              <!-- Sensors -->
-              <div class="arch-layer-row" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);">
-                <div class="arch-layer-row__dot" style="background:rgba(255,255,255,0.4);"></div>
-                <span>Asset Sensors / CMMS / IoT</span>
-                <span class="arch-layer-row__tag">Data sources</span>
-              </div>
-            </div>
-            <a href="technology.html" style="color:var(--color-accent);font-size:var(--text-sm);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:var(--space-1);">Full methodology detail <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <style>
-      @media (max-width: 860px) {
-        .arch-two-col { grid-template-columns: 1fr !important; }
-      }
-    </style>
-  </section>
+  <!-- X -->
+  <a href="https://x.com/nfwfla"
+     target="_blank"
+     aria-label="X"
+     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+    <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
+  </a>
 
-  <div class="divider-gradient"></div>
+  <!-- Discord - Hidden for Now -->
+  <!--<a href="https://discord.gg/AqxQfa6d"
+     target="_blank"
+     aria-label="Discord"
+     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+    <img src="Discord-Symbol-Blurple.png"
+         alt="Discord"
+         class="w-6 h-6 object-contain block">
+  </a>-->
 
-  <!-- ── WHO WE SERVE ── -->
-  <section class="section" aria-labelledby="audience-heading">
-    <div class="container">
-      <div style="max-width:var(--content-narrow);margin-bottom:var(--space-10);">
-        <span class="eyebrow">Who We Work With</span>
-        <h2 id="audience-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);">Built for infrastructure stakeholders</h2>
-        <p style="margin-top:var(--space-4);font-size:var(--text-base);color:var(--color-text-muted);">Our work speaks to audiences across the reliability, regulatory, financial, and technology dimensions of the energy sector.</p>
-      </div>
-      <div class="audience-grid">
-        <div class="audience-card fade-up">
-          <h3 class="audience-card__title">Reliability & Engineering Teams</h3>
-          <p class="audience-card__body">Plant personnel and NERC analysts who need defensible, timestamped records of asset health decisions — evidence that withstands regulatory scrutiny and legal challenge.</p>
-        </div>
-        <div class="audience-card fade-up" style="transition-delay:0.08s;">
-          <h3 class="audience-card__title">Finance & Risk Leadership</h3>
-          <p class="audience-card__body">CFOs, insurance underwriters, and capital allocators who need verifiable reliability data to inform asset valuation, risk scoring, and coverage decisions.</p>
-        </div>
-        <div class="audience-card fade-up" style="transition-delay:0.12s;">
-          <h3 class="audience-card__title">IT & Compliance Leadership</h3>
-          <p class="audience-card__body">Technology and compliance teams evaluating distributed ledger infrastructure for NERC/CIP compliance, audit trails, and tamper-evident data provenance.</p>
-        </div>
-        <div class="audience-card fade-up" style="transition-delay:0.16s;">
-          <h3 class="audience-card__title">Regulators & Evidence Consumers</h3>
-          <p class="audience-card__body">MRC/NERC analysts, OEMs, and insurers who need verified read access to reliability attestations — without operational control or exposure of raw asset data.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- YouTube -->
+  <a href="https://www.youtube.com/@NFWFLA"
+     target="_blank"
+     aria-label="YouTube"
+     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         class="w-6 h-6 block">
+      <path fill="#FF0000"
+        d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
+      <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
+    </svg>
+  </a>
 
-  <!-- ── BOOK LAUNCH BANNER ── -->
-  <section class="section--sm">
-    <div class="container">
-      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-2xl);padding:var(--space-8) var(--space-8);display:flex;flex-wrap:wrap;gap:var(--space-8);align-items:center;justify-content:space-between;">
-        <div style="display:flex;align-items:center;gap:var(--space-5);">
-          <div style="width:60px;height:75px;background:var(--color-primary);border-radius:var(--radius-md);overflow:hidden;flex-shrink:0;box-shadow:var(--shadow-md);">
-            <img src="EyeBookCover.jpg" alt="Introduction to The New Financial World book cover" style="width:100%;height:100%;object-fit:cover;" />
-          </div>
-          <div>
-            <span style="display:inline-block;padding:2px 10px;background:var(--color-accent-light);color:var(--color-accent);font-size:var(--text-xs);font-weight:700;border-radius:var(--radius-full);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:var(--space-2);">Launching July 10, 2026</span>
-            <h3 style="font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-text);">Introduction to The New Financial World</h3>
-            <p style="font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-1);">A plain-English foundational text on cryptocurrency, blockchain, and the 5th Industrial Revolution.</p>
-          </div>
-        </div>
-        <a href="book.html" class="btn btn--accent btn--lg">Get the Book</a>
-      </div>
-    </div>
-  </section>
+<!-- Spotify -->
+<a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer"
+   target="_blank"
+   aria-label="Spotify"
+   class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24"
+       class="w-6 h-6 block">
 
-  <!-- ── CTA BAND ── -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-band fade-up">
-        <div class="cta-band__text">
-          <h2>Ready to start a conversation?</h2>
-          <p>Whether you are evaluating reliability attestation for your organization, seeking strategic education, or exploring grant and pilot opportunities — we want to hear from you.</p>
-        </div>
-        <div class="cta-band__actions">
-          <a href="contactus.html" class="btn btn--light btn--lg">Work With Us</a>
-          <a href="technology.html" class="btn btn--outline-light btn--lg">Learn the Methodology</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Green circle -->
+    <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
 
-  <div id="footer-placeholder"></div>
-  <script src="_partials.js"></script>
-  <script>
-    injectNav('index.html');
-    injectFooter();
-  </script>
+    <!-- White waves scaled down + optically centered -->
+    <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
+      <path fill="#FFFFFF"
+        d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
+      <path fill="#FFFFFF"
+        d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
+      <path fill="#FFFFFF"
+        d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
+    </g>
+
+  </svg>
+</a>
+
+
+</div>
+
+
+
+
+<p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
+    The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
+  </p>
+
+
+
+  <!-- Disclaimer -->
+  <!--<p class="mt-6 max-w-2xl mx-auto text-center text-xs text-slate-400 italic">
+    Disclaimer: This is not financial advice. All information provided is for educational purposes only. 
+    The goal of The New Financial World LLC is to demystify crypto and blockchain technology through knowledge and clarity.
+  </p>-->
+</footer>
+
+<script>
+  document.getElementById("tos-year").textContent = new Date().getFullYear();
+</script>
+  
+  
+  
 </body>
 </html>
