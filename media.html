@@ -1,538 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NFW Media</title>
-   <!--Favicon-->
-  <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32">
-<link rel="shortcut icon" type="image/png" href="/logov2.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Media — The New Financial World LLC</title>
+  <meta name="description" content="Podcast, YouTube, and written content from The New Financial World LLC — covering energy infrastructure, blockchain, digital finance, and the transformation of financial systems." />
+  <link rel="icon" type="image/png" href="logov2.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    :root{--brand:#111827;--accent:#06b6d4}
-    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    html{font-size:17px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
-    @media (min-width:1024px){html{font-size:18px}}
-    p,li{line-height:1.7}
-    .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
+    .page-hero { background: var(--color-primary); padding-block: var(--space-20) var(--space-16); position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E"); }
+    .page-hero__content { position: relative; z-index: 1; }
+    .page-hero h1 { font-family: var(--font-display); font-size: var(--text-3xl); color: #fff; max-width: 20ch; line-height: 1.1; }
+    .page-hero p { font-size: var(--text-lg); color: rgba(255,255,255,0.65); max-width: 58ch; margin-top: var(--space-5); line-height: 1.7; }
+
+    /* Channel cards */
+    .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
+    @media (max-width: 760px) { .channel-grid { grid-template-columns: 1fr; } }
+    .channel-card {
+      border-radius: var(--radius-xl);
+      padding: var(--space-7) var(--space-6);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex; flex-direction: column;
+      transition: box-shadow var(--t-med), transform var(--t-med);
+    }
+    .channel-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .channel-card__logo { width: 48px; height: 48px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-5); }
+    .channel-card__title { font-family: var(--font-display); font-size: var(--text-xl); color: var(--color-text); margin-bottom: var(--space-2); }
+    .channel-card__handle { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-4); }
+    .channel-card__body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; flex: 1; }
+    .channel-card__cta { margin-top: var(--space-6); }
+
+    /* Topic chips */
+    .topic-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-8); }
+    .topic-chip {
+      padding: var(--space-2) var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm); font-weight: 500; color: var(--color-text-muted);
+      cursor: default;
+    }
   </style>
 </head>
-<body class="relative text-slate-800">
-  <div class="fixed inset-0 -z-10 pointer-events-none">
-    <div class="absolute inset-0" style="background:
-      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
-      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
-      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
-      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
-    "></div>
-    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="0.8"/>
-        </filter>
-      </defs>
-      <g filter="url(#f)" font-family="Inter, system-ui, sans-serif" font-size="24" fill="white">
-        <text x="8%" y="18%">₿</text>
-        <text x="22%" y="35%">Ξ</text>
-        <text x="38%" y="12%">◎</text>
-        <text x="55%" y="28%">✕</text>
-        <text x="72%" y="18%">Ξ</text>
-        <text x="85%" y="40%">₿</text>
-        <text x="12%" y="70%">✕</text>
-        <text x="33%" y="82%">Ξ</text>
-        <text x="60%" y="75%">◎</text>
-        <text x="80%" y="66%">₿</text>
-      </g>
-    </svg>
-  </div>
+<body>
+  <div id="nav-placeholder"></div>
 
-  <header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
-    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
-        <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-        <a href="index.html" class="hover:text-slate-950">Home</a>
-        <a href="about.html" class="hover:text-slate-950">About</a>
-        <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
-        <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
-        <a href="homepage.html" class="hover:text-slate-950">Media</a>
-        <a href="insights.html" class="text-cyan-700">Insights</a>
-        <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
-      </nav>
-
-      <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600" aria-label="Open menu">
-        <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-        </svg>
-      </button>
+  <section class="page-hero">
+    <div class="container page-hero__content">
+      <span class="eyebrow" style="color:rgba(200,134,26,0.9);">Media</span>
+      <h1>Podcast, video, and written research</h1>
+      <p>NFW produces long-form media on blockchain infrastructure, digital finance, energy market structure, and the systemic shifts reshaping how capital, data, and energy interact. Available on YouTube, Spotify, and major podcast platforms.</p>
     </div>
+  </section>
 
-    <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
-      <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
-      <a href="about.html" class="block text-left hover:text-slate-950">About</a>
-      <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
-      <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
-      <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
-      <a href="media.html" class="block text-left text-cyan-700">Insights</a>
-      <a href="contactus.html" class="block text-left hover:text-slate-950">Work With Us</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="px-4 pt-16 pb-10">
-      <div class="mx-auto max-w-6xl text-center">
-        <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-4">The New Financial World LLC Insights</p>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-tight">
-          Where digital finance, energy, and infrastructure meet.
-        </h1>
-        <p class="mt-6 max-w-3xl mx-auto text-base md:text-lg text-slate-300">
-          Research, commentary, and weekly perspective from The New Financial World. <!--Use this page as your living archive for newsletter issues, podcast companion pieces, and core ideas.-->
-        </p>
-      </div>
-    </section>
-
-
-    <section class="px-4 pb-8">
-      <div class="mx-auto max-w-6xl grid gap-6 lg:grid-cols-[1.5fr_.9fr]">
-        <article class="rounded-3xl border border-slate-700/70 bg-slate-900/70 p-8 shadow-2xl shadow-black/20">
-          <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-3">Featured Newsletter</p>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">A structural shift in how money moves</h2>
-          <p class="text-slate-300 text-lg mb-6 max-w-3xl">
-            This week’s feature explores the mismatch between continuous infrastructure and batch-based finance. It ties together Ethereum’s emerging economic zone, streaming payments, and how platforms like Zebec are pushing money to move more like the systems it supports.
-          </p>
-          <div class="flex flex-wrap items-center gap-3 text-sm text-slate-400 mb-8">
-            <span>April 2026</span>
-            <span>•</span>
-            <span>Issue 01</span>
-            <span>•</span>
-            <span>Continuous Finance</span>
+  <!-- ── CHANNELS ── -->
+  <section class="section" aria-labelledby="channels-heading">
+    <div class="container">
+      <span class="eyebrow">Where to Find Us</span>
+      <h2 id="channels-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-10);">All channels</h2>
+      <div class="channel-grid">
+        <!-- YouTube -->
+        <div class="channel-card fade-up">
+          <div class="channel-card__logo" style="background:#FFF0F0;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </div>
-         <div class="flex items-end justify-between flex-wrap gap-3">
-  
-  <a href="https://www.newfinancialworld.com/newsletter/episode11ContinuousMoney.html"
-     class="inline-flex min-h-[64px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-    Read the Newsletter
-  </a>
-
-  <a href="https://www.newfinancialworld.com/newsletter"
-     class="text-cyan-300 text-sm font-semibold hover:underline whitespace-nowrap">
-    View All Newsletters (Under Construction) →
-  </a>
-
-</div>
-        </article>
-            
-   
-     <aside class="rounded-3xl border border-slate-700/70 bg-slate-900/60 p-8 shadow-2xl shadow-black/20"> <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-3"> Related Episode </p> 
-       <h3 class="text-2xl font-bold tracking-tight text-white mb-4"> Continuous Money Is Already Starting </h3> 
-       <p class="text-slate-300 mb-6"> In this episode, we break down the shift from batch-based finance to continuous systems. As infrastructure moves in real time, money is beginning to follow. 
-         From Ethereum’s evolving economic zone to streaming payments and platforms like Zebec, the next phase of financial systems is already taking shape. </p> 
-       <a href="https://youtu.be/8KdhApELy1I"
-   target="_blank"
-   class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-  Watch the Episode →
-</a> 
-       <!--<div class="flex flex-wrap gap-2"> <span class="rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1 text-xs text-slate-200">AI & Power</span> 
-       <span class="rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1 text-xs text-slate-200">Stablecoins</span> 
-       <span class="rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1 text-xs text-slate-200">Tokenization</span> 
-       <span class="rounded-full border border-slate-700 bg-slate-800/70 px-3 py-1 text-xs text-slate-200">Energy Markets</span> </div>--> </aside> </div>
-  <section class="px-4 py-8">
-  <div class="mx-auto max-w-6xl flex flex-wrap items-end justify-between gap-4 mb-6">
-    <div>
-      <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-2">
-        Watch Next
-      </p>
-      <h2 class="text-3xl font-bold tracking-tight text-white">
-        Continue exploring the system
-      </h2>
-    </div>
-   <!-- <p class="max-w-2xl text-slate-300">
-      Start with the latest newsletter feature, then move into the episodes that expand the broader story across AI, power, infrastructure, tokenization, and global systems.
-    </p>-->
-  </div>
-
-  <div class="mx-auto max-w-6xl grid gap-6 md:grid-cols-2 xl:grid-cols-3 auto-rows-fr">
-
-    <!-- 1 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/w6qFqdjF0Fg"
-          title="Storm Season Is Testing the Smart Grid: Electrons Meet Code & Why Trust Is Now Infrastructure"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Reliability & Infrastructure</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Storm Season Is Testing the Smart Grid: Electrons Meet Code & Why Trust Is Now Infrastructuree</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-         The grid is becoming a two-way system, under real pressure from extreme weather and rising reliability risks. But this isn’t just an energy story. Its also about safety!<div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Reliability × Regulatory</span>
-          <a href="https://youtu.be/djM31JE9QqM?si=t6RixG3oSpF7OzkB" class="text-cyan-300 font-semibold">Watch →</a>
+          <div class="channel-card__title">YouTube</div>
+          <div class="channel-card__handle">@NFWFLA</div>
+          <p class="channel-card__body">Video content covering blockchain technology, energy infrastructure, financial system transformation, and NFW's original research and methodology. Educational, long-form, no hype.</p>
+          <div class="channel-card__cta">
+            <a href="https://www.youtube.com/@NFWFLA" target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;justify-content:center;">Watch on YouTube</a>
+          </div>
         </div>
-      </div>
-    </article>
-    
-    
-    <!-- 1 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/R6fcEJyR9do"
-          title="Where Power Gets Built: FERC, NERC, and the Reliability Layer"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">AI Infrastructure</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Where Power Gets Built: FERC, NERC, and the Reliability Laye</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-         Mapping the hidden regulatory layer controlling where AI infrastructure gets built, breaks down the engineering discipline keeping the grid from collapsing, and connects blockchain to real-world NERC CIP compliance.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Energy × Regulatory</span>
-          <a href="https://youtu.be/djM31JE9QqM?si=t6RixG3oSpF7OzkB" class="text-cyan-300 font-semibold">Watch →</a>
+        <!-- Spotify -->
+        <div class="channel-card fade-up" style="transition-delay:0.08s;">
+          <div class="channel-card__logo" style="background:#F0FFF4;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          </div>
+          <div class="channel-card__title">Spotify</div>
+          <div class="channel-card__handle">The New Financial World Podcast</div>
+          <p class="channel-card__body">The NFW podcast — conversations and solo episodes on the infrastructure of the new financial system. Available on Spotify and all major podcast platforms where you listen.</p>
+          <div class="channel-card__cta">
+            <a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer" target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;justify-content:center;">Listen on Spotify</a>
+          </div>
         </div>
-      </div>
-    </article>
-    
-    <!-- 1 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/8KdhApELy1I"
-          title="The Rise of Money Streaming & Ethereum’s Economic Zone"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">DeFi & Finance</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">The Rise of Money Streaming & Ethereum’s Economic Zone</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-         A major shift is happening right now - the move from batch-based finance to continuous money.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Energy × Regulatory</span>
-          <a href="https://youtu.be/djM31JE9QqM?si=t6RixG3oSpF7OzkB" class="text-cyan-300 font-semibold">Watch →</a>
+        <!-- X -->
+        <div class="channel-card fade-up" style="transition-delay:0.16s;">
+          <div class="channel-card__logo" style="background:var(--color-surface-offset);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--color-text)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+          </div>
+          <div class="channel-card__title">X / Twitter</div>
+          <div class="channel-card__handle">@nfwfla</div>
+          <p class="channel-card__body">Real-time commentary on blockchain infrastructure developments, energy market shifts, digital finance regulation, and NFW research updates. Follow for ongoing context and analysis.</p>
+          <div class="channel-card__cta">
+            <a href="https://x.com/nfwfla" target="_blank" rel="noopener" class="btn btn--outline" style="width:100%;justify-content:center;">Follow on X</a>
+          </div>
         </div>
-      </div>
-    </article>
-    
-    <!-- 1 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/djM31JE9QqM"
-          title="Where AI Will Actually Live: Power, Nuclear Sites, and the Next Infrastructure Layer"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">AI & Infrastructure</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Where AI Will Actually Live</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          Where will AI actually live? Not in the cloud, but in physical infrastructure shaped by power constraints, grid access, and site readiness.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>AI × Energy</span>
-          <a href="https://youtu.be/djM31JE9QqM?si=t6RixG3oSpF7OzkB" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 2 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/wzMuW_80PEM"
-          title="AI Isn’t the Story. Infrastructure Sequencing Is"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">AI & Infrastructure</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">AI Isn’t the Story. Infrastructure Sequencing Is</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          A closer look at how AI is increasing electricity demand and exposing the coordination challenge between compute growth and energy infrastructure.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Grid Pressure</span>
-          <a href="https://youtu.be/wzMuW_80PEM?si=8UyPfVsgsQ7-WQtH" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 3 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/6HGOSCZd68o"
-          title="Why Your Power Bill Is Rising and Why Tech and Crypto Care"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Energy Systems</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Why Your Power Bill Is Rising</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          An inside look at why electricity demand is outpacing the grid and why energy is becoming mission-critical for digital systems.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Real World Impact</span>
-          <a href="https://www.youtube.com/watch?v=6HGOSCZd68o" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 4 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/hNVljQs--LA"
-          title="Tokenizing Power: Combined Cycle Gas Turbines, Renewables, and the New Credit Economy"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Tokenization</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Tokenizing Power and Infrastructure</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          This episode explores how energy reliability, infrastructure finance, and blockchain settlement rails are beginning to converge.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Energy × Finance</span>
-          <a href="https://www.youtube.com/watch?v=hNVljQs--LA" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 5 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/75hxhjuGm9c"
-          title="The Iran Signal: Sanctions, Bitcoin, and When Energy Becomes Money"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Macro Systems</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">The Iran Signal: When Energy Becomes Money</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          A look beneath the headlines as energy markets, Bitcoin mining, and digital networks are used to move value outside traditional rails.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Global Systems</span>
-          <a href="https://www.youtube.com/watch?v=75hxhjuGm9c" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 6 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/bYuoPWw2-a8"
-          title="Crypto Foundations Part 1: XRP, TradFi Mindset and the Physical Reality Behind Digital Finance"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Crypto Foundations</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Crypto Foundations Part 1</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          Crypto isn’t about price. It’s about infrastructure, network design, and the physical systems beneath digital finance.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Digital Rails</span>
-          <a href="https://www.youtube.com/watch?v=bYuoPWw2-a8" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 7 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/CEXy7Cv40eM"
-          title="Crypto Foundations Part 2: Stablecoins, Tokens, and the Power Behind the Rails"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Crypto Foundations</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Stablecoins, Tokens, and the Power Behind the Rails</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          An explanation of stablecoins, liquidity, yield, and the broader stack connecting energy, networks, and programmable finance.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Digital Rails</span>
-          <a href="https://www.youtube.com/watch?v=CEXy7Cv40eM" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 8 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/U1jhEgBjBH0"
-          title="Renewable Energy Credits Explained: The Hidden System Behind Clean Power"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Interview</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Renewable Energy Credits Explained</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          A breakdown of how Renewable Energy Credits track and verify clean electricity as power demand continues to grow.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Benjamin Smith</span>
-          <a href="https://youtu.be/U1jhEgBjBH0?si=hPeGGAKKhohnusw8" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 9 -->
-    <article class="h-full rounded-2xl border border-slate-700/70 bg-slate-900/60 overflow-hidden text-white transition hover:-translate-y-1 hover:border-cyan-500/40 flex flex-col">
-      <div class="aspect-video w-full shrink-0">
-        <iframe
-          src="https://www.youtube.com/embed/RccUYwmVvl0"
-          title="Engineering Reality: Power Systems, Solar Car, and the Limits of Hype"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="w-full h-full">
-        </iframe>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 mb-2">Interview</p>
-        <h3 class="text-2xl font-bold tracking-tight mb-3">Engineering Reality: Power Systems and the Limits of Hype</h3>
-        <p class="text-slate-300 mb-5 flex-1">
-          A real-world look at how power systems operate and why infrastructure adoption moves much slower than hype suggests.
-        </p>
-        <div class="flex items-center justify-between text-sm text-slate-400 mt-auto">
-          <span>Tom Blair</span>
-          <a href="https://youtu.be/RccUYwmVvl0?si=rGmTvNepkJdDGXnQ" class="text-cyan-300 font-semibold">Watch →</a>
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-    <section class="px-4 pt-6 pb-16">
-      <div class="mx-auto max-w-6xl rounded-3xl border border-slate-700/70 bg-slate-900/70 p-8 md:p-10 text-white shadow-2xl shadow-black/20">
-        <div class="max-w-3xl">
-          <p class="text-cyan-300 text-xs font-semibold tracking-[0.24em] uppercase mb-3">Subscribe</p>
-          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Get NFW insights in your inbox.</h2>
-          <p class="text-slate-300 text-lg mb-6">
-            Join the list for weekly perspective on digital finance, energy, and infrastructure. Connect the form action to your email platform when you're ready.
-          </p>
-        </div>
-
-        <form action="#" method="post" class="mt-6 flex flex-col md:flex-row gap-3 max-w-2xl">
-          <input type="email" name="email" placeholder="Enter your email" required class="w-full rounded-2xl border border-slate-700 bg-slate-950/70 px-4 py-3 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400">
-          <button type="submit" class="inline-flex min-h-[64px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center whitespace-nowrap">
-            Subscribe
-          </button>
-        </form>
-    </section>
-  </main>
-
-  <footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
-    <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
-      <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-      <div class="flex items-center gap-4">
-        <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
-        <a href="terms.html" class="hover:text-slate-200">Terms</a>
       </div>
     </div>
+  </section>
 
-    <div class="flex justify-center items-center mt-6 space-x-6">
-      <a href="https://www.linkedin.com/in/nfwfla" target="_blank" aria-label="LinkedIn" class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#0A66C2" viewBox="0 0 24 24" class="w-5 h-5 block">
-          <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
-        </svg>
-      </a>
+  <div class="divider-gradient"></div>
 
-      <a href="https://x.com/nfwfla" target="_blank" aria-label="X" class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-        <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
-      </a>
-
-      <a href="https://www.youtube.com/@NFWFLA" target="_blank" aria-label="YouTube" class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 block">
-          <path fill="#FF0000" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
-          <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
-        </svg>
-      </a>
-
-      <a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer" target="_blank" aria-label="Spotify" class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 block">
-          <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
-          <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
-            <path fill="#FFFFFF" d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
-            <path fill="#FFFFFF" d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
-            <path fill="#FFFFFF" d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
-          </g>
-        </svg>
-      </a>
+  <!-- ── TOPICS COVERED ── -->
+  <section class="section--sm" aria-labelledby="topics-heading">
+    <div class="container">
+      <span class="eyebrow">Content Areas</span>
+      <h2 id="topics-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-4);">What we cover</h2>
+      <p style="font-size:var(--text-base);color:var(--color-text-muted);max-width:60ch;line-height:1.7;">NFW's content focuses on the infrastructure layer — how systems work, why they matter, and what the structural shifts mean for people operating inside them. Not trading advice. Not hype.</p>
+      <div class="topic-chips">
+        <div class="topic-chip">Energy Infrastructure</div>
+        <div class="topic-chip">Reliability Attestation</div>
+        <div class="topic-chip">Blockchain Architecture</div>
+        <div class="topic-chip">Hyperledger Fabric</div>
+        <div class="topic-chip">Hedera Hashgraph</div>
+        <div class="topic-chip">Distributed Ledger Technology</div>
+        <div class="topic-chip">NERC/CIP Compliance</div>
+        <div class="topic-chip">Digital Finance</div>
+        <div class="topic-chip">ISO 20022</div>
+        <div class="topic-chip">DeFi Infrastructure</div>
+        <div class="topic-chip">Layer 0 / 1 / 2</div>
+        <div class="topic-chip">Tokenization</div>
+        <div class="topic-chip">RECs &amp; Carbon Credits</div>
+        <div class="topic-chip">Institutional Adoption</div>
+        <div class="topic-chip">5th Industrial Revolution</div>
+      </div>
     </div>
+  </section>
 
-    <p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
-      The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
-    </p>
-  </footer>
+  <!-- ── BOOK CALLOUT ── -->
+  <section class="section--sm">
+    <div class="container">
+      <div style="background:var(--color-primary);border-radius:var(--radius-2xl);padding:var(--space-10);display:flex;flex-wrap:wrap;gap:var(--space-8);align-items:center;justify-content:space-between;color:#fff;">
+        <div>
+          <span style="display:inline-block;padding:2px 10px;background:var(--color-accent);color:#fff;font-size:var(--text-xs);font-weight:700;border-radius:var(--radius-full);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:var(--space-3);">Book — July 10, 2026</span>
+          <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);max-width:18ch;line-height:1.15;">Introduction to The New Financial World</h2>
+          <p style="margin-top:var(--space-3);color:rgba(255,255,255,0.65);max-width:48ch;">The foundational text behind the media — plain-English coverage of cryptocurrency, blockchain, and the 5th Industrial Revolution infrastructure.</p>
+        </div>
+        <a href="book.html" class="btn" style="background:#fff;color:var(--color-primary);font-size:var(--text-base);padding:var(--space-4) var(--space-8);flex-shrink:0;">Get the Book</a>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    const btn = document.getElementById('mobile-menu-button');
-    const menu = document.getElementById('mobile-menu');
-    if (btn && menu) {
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-      });
-    }
-    document.getElementById('tos-year').textContent = new Date().getFullYear();
-  </script>
+  <div id="footer-placeholder"></div>
+  <script src="_partials.js"></script>
+  <script>injectNav('media.html'); injectFooter();</script>
 </body>
 </html>

@@ -1,561 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consulting & Education</title>
-   <!--Favicon-->
-  <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32">
-<link rel="shortcut icon" type="image/png" href="/logov2.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Advisory — The New Financial World LLC</title>
+  <meta name="description" content="Strategic guidance at the intersection of energy infrastructure, reliability intelligence, distributed systems, and the digital transformation of capital markets." />
+  <link rel="icon" type="image/png" href="logov2.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    :root{--brand:#111827;--accent:#06b6d4}
-    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    html{font-size:17px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
-    @media (min-width:1024px){html{font-size:18px}}
-    p,li{line-height:1.7}
-    .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
-    <!--Dropdown style-->
-      select:invalid {
-    color: #9ca3af; /* gray placeholder */
-  }
+    .page-hero {
+      background: var(--color-primary);
+      padding-block: var(--space-20) var(--space-16);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero__content { position: relative; z-index: 1; }
+    .page-hero h1 { font-family: var(--font-display); font-size: var(--text-3xl); color: #fff; max-width: 20ch; line-height: 1.1; }
+    .page-hero p { font-size: var(--text-lg); color: rgba(255,255,255,0.65); max-width: 60ch; margin-top: var(--space-5); line-height: 1.7; }
 
-  select:valid {
-    color: white;
-  }
+    /* Service cards */
+    .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+    @media (max-width: 680px) { .service-grid { grid-template-columns: 1fr; } }
+    .service-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-7) var(--space-6);
+      transition: box-shadow var(--t-med), transform var(--t-med);
+    }
+    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .service-card__icon { width: 44px; height: 44px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-4); }
+    .service-card__title { font-weight: 700; font-size: var(--text-base); color: var(--color-text); margin-bottom: var(--space-2); }
+    .service-card__body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
+    .service-card__tags { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+    .service-card__tag { font-size: var(--text-xs); font-weight: 600; padding: 2px 8px; border-radius: var(--radius-full); background: var(--color-surface-offset); color: var(--color-text-muted); }
 
-  select option {
-    color: black;
-    background-color: white;
-  }
+    /* Audience row */
+    .audience-row {
+      display: flex; gap: var(--space-5); align-items: flex-start;
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .audience-row:last-child { border-bottom: none; }
+    .audience-row__icon { width: 40px; height: 40px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .audience-row__title { font-weight: 700; font-size: var(--text-base); color: var(--color-text); }
+    .audience-row__body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; margin-top: var(--space-1); max-width: 60ch; }
+
+    /* Disclaimer */
+    .disclaimer {
+      background: var(--color-surface-offset);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-5) var(--space-6);
+      display: flex; gap: var(--space-4); align-items: flex-start;
+    }
+    .disclaimer__icon { flex-shrink: 0; color: var(--color-text-muted); margin-top: 2px; }
+    .disclaimer__text { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
   </style>
-  <meta property="og:title" content="Consulting & Education"/>
-  <meta property="og:description" content="A plain‑English guide to cryptocurrency, blockchain technology, and the 5th Industrial Revolution."/>
-  <meta property="og:image" content="Book cover.png"/>
 </head>
-<body class="relative text-slate-800">
-  <div class="fixed inset-0 -z-10 pointer-events-none">
-    <div class="absolute inset-0" style="background:
-      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
-      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
-      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
-      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
-    "></div>
-    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="0.8"/>
-        </filter>
-      </defs>
-      <g filter="url(#f)" font-family="Inter, system-ui, sans-serif" font-size="24" fill="white">
-        <text x="8%" y="18%">₿</text>
-        <text x="22%" y="35%">Ξ</text>
-        <text x="38%" y="12%">◎</text>
-        <text x="55%" y="28%">✕</text>
-        <text x="72%" y="18%">Ξ</text>
-        <text x="85%" y="40%">₿</text>
-        <text x="12%" y="70%">✕</text>
-        <text x="33%" y="82%">Ξ</text>
-        <text x="60%" y="75%">◎</text>
-        <text x="80%" y="66%">₿</text>
-      </g>
-    </svg>
-  </div>
+<body>
+  <div id="nav-placeholder"></div>
 
- <!-- Top header -->
-<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
-  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-
-    <!-- Logo + Site Name -->
-    <a href="/" class="flex items-center gap-3">
-      <!-- Logo image -->
-      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
-
-      <!-- Site name -->
-      <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
-    </a>
-
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-      <a href="index.html" class="hover:text-slate-950">Home</a>
-      <a href="about.html" class="hover:text-slate-950">About</a>
-      <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
-      <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
-      <a href="homepage.html" class="hover:text-slate-950">Media</a>
-      <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
-      
-    </nav>
-
-    <!-- Mobile hamburger -->
-    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
-      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile menu -->
-  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
-    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
-    <a href="about.html" class="block text-left hover:text-slate-950">About</a>
-    <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
-    <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
-    <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
-    <a href="contactus.html" class="block text-left hover:text-slate-950">Wrk With Us</a>
-    
-  </nav>
-</header>
-
-<script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-     
-  </header>
-
-  
-
-</section>
-  
-  
-<!--Consulting & Education Section-->
-  <!-- Consulting & Education Hero -->
-<section class="mx-auto max-w-6xl px-4 pt-14 pb-10 grid md:grid-cols-2 gap-10 items-center">
-  <div class="rounded-3xl border border-white/20 p-6 md:p-8 text-slate-100">
-    <p class="text-sm uppercase tracking-[0.2em] text-cyan-300 font-semibold">Advisory • Education • Strategy</p>
-    <h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-white">
-      Strategic Guidance at the Intersection of Energy, Blockchain, AI, and Capital Systems
-    </h1>
-    <p class="mt-5 text-lg text-slate-200 max-w-2xl">
-      The New Financial World LLC helps individuals, teams, and organizations better understand the infrastructure shifts shaping the next financial era. We translate complex systems into practical insight, strategic context, and actionable learning.
-    </p>
-    <p class="mt-4 text-base text-slate-300 max-w-2xl">
-      This is not speculative trading advice. Our focus is long-term infrastructure, digital transformation, market structure, and educational clarity.
-    </p>
-
-    <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
-      <a href="#consultation" class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-        Request an Advisory Conversation
-      </a>
-     <!-- <a href="#services" class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/30 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-        Explore Services
-      </a>-->
+  <!-- ── HERO ── -->
+  <section class="page-hero">
+    <div class="container page-hero__content">
+      <span class="eyebrow" style="color:rgba(200,134,26,0.9);">Advisory</span>
+      <h1>Strategic guidance at the intersection of energy, reliability, and digital infrastructure</h1>
+      <p>NFW provides advisory and education for utility stakeholders, engineering teams, regulators, and institutional audiences navigating the convergence of energy infrastructure and digital systems — including the BRIS and VRL methodologies.</p>
     </div>
-  </div>
+  </section>
 
-  <div class="flex justify-center md:justify-end">
-    <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg w-full max-w-lg">
-      <source src="consultingvideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</section>
-
-<!-- Services -->
-<section id="services" class="mx-auto max-w-6xl px-4 py-10">
-  <div class="text-center max-w-3xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold text-white">How We Work</h2>
-    <p class="mt-4 text-slate-200">
-      Engagements are designed to meet clients where they are, from foundational education to strategic advisory and custom research.
-    </p>
-  </div>
-
-  <div class="mt-10 grid md:grid-cols-3 gap-6">
-    <div class="rounded-2xl border border-white/20 p-6 text-slate-100">
-      <h3 class="text-xl font-semibold text-white">Strategy Sessions</h3>
-      <p class="mt-3 text-slate-300">
-        Focused conversations for individuals or teams seeking clarity on blockchain infrastructure, market developments, digital assets, or the broader shift in financial and energy systems.
-      </p>
-      <p class="mt-4 text-sm text-cyan-300 font-medium">Best for: focused questions, strategic context, early-stage exploration</p>
-    </div>
-
-    <div class="rounded-2xl border border-white/20 p-6 text-slate-100">
-      <h3 class="text-xl font-semibold text-white">Education & Briefings</h3>
-      <p class="mt-3 text-slate-300">
-        Plain-English workshops and executive briefings designed to help audiences understand cryptocurrency, blockchain, Web3, AI infrastructure, and the changing digital economy.
-      </p>
-      <p class="mt-4 text-sm text-cyan-300 font-medium">Best for: teams, leadership groups, associations, and learning programs</p>
-    </div>
-
-    <div class="rounded-2xl border border-white/20 p-6 text-slate-100">
-      <h3 class="text-xl font-semibold text-white">Custom Research & Advisory</h3>
-      <p class="mt-3 text-slate-300">
-        Tailored analysis for organizations evaluating digital transformation, infrastructure exposure, emerging market opportunities, and strategic positioning in a rapidly shifting landscape.
-      </p>
-      <p class="mt-4 text-sm text-cyan-300 font-medium">Best for: organizations needing a sharper view of risk, opportunity, and timing</p>
-    </div>
-  </div>
-</section>
-
-<!-- Who This Is For -->
-<section class="mx-auto max-w-6xl px-4 py-10">
-  <div class="grid md:grid-cols-2 gap-8 items-start">
-    <div class="rounded-2xl border border-white/20 p-6 text-slate-100">
-      <h2 class="text-2xl font-bold text-white">Who This Is For</h2>
-      <div class="mt-5 space-y-3">
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Energy and infrastructure professionals evaluating digital change
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Executive teams seeking strategic context on blockchain, AI, and capital system shifts
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Organizations navigating digital transformation and regulatory convergence
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Individuals and teams seeking grounded, credible education rather than hype
-        </p>
+  <!-- ── DISCLAIMER ── -->
+  <section class="section--sm" style="padding-bottom:0;">
+    <div class="container">
+      <div class="disclaimer">
+        <svg class="disclaimer__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <p class="disclaimer__text"><strong style="color:var(--color-text);">Not financial or investment advice.</strong> NFW's advisory work focuses on long-term infrastructure, digital transformation, market structure, and educational clarity — not speculative trading recommendations or investment strategies.</p>
       </div>
     </div>
+  </section>
 
-    <div class="rounded-2xl border border-white/20 p-6 text-slate-100">
-      <h2 class="text-2xl font-bold text-white">What You Can Expect</h2>
-      <div class="mt-5 space-y-3">
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Clear explanations without unnecessary jargon
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Strategic framing grounded in real infrastructure and market dynamics
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Education tailored to the audience, from foundational to advanced
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          A long-term perspective focused on relevance, risk, and opportunity
-        </p>
+  <!-- ── WHAT WE OFFER ── -->
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <span class="eyebrow">Services</span>
+      <h2 id="services-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-3);">What we offer</h2>
+      <p style="font-size:var(--text-base);color:var(--color-text-muted);max-width:60ch;margin-bottom:var(--space-10);">All advisory work is scoped to what we actually know: energy infrastructure, reliability intelligence, distributed attestation, and the transformation of financial systems. If a question falls outside that scope, we will say so.</p>
+      <div class="service-grid">
+        <div class="service-card fade-up">
+          <div class="service-card__icon" style="background:var(--color-accent-light);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="service-card__title">Executive Briefings</div>
+          <p class="service-card__body">Structured briefings on energy infrastructure reliability, distributed attestation systems, and the digital transformation of financial rails — for C-suite, board-level, and regulatory audiences. Plain-English context without oversimplification.</p>
+          <div class="service-card__tags">
+            <span class="service-card__tag">C-Suite</span>
+            <span class="service-card__tag">Regulatory</span>
+            <span class="service-card__tag">Board Level</span>
+          </div>
+        </div>
+        <div class="service-card fade-up" style="transition-delay:0.08s;">
+          <div class="service-card__icon" style="background:var(--color-teal-light);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="service-card__title">BRIS &amp; VRL Methodology Consulting</div>
+          <p class="service-card__body">Direct consulting on the BRIS and VRL methodologies — architecture review, schema design, deployment scoping, and integration strategy for utilities evaluating reliability attestation as an internal capability or pilot program.</p>
+          <div class="service-card__tags">
+            <span class="service-card__tag">Utilities</span>
+            <span class="service-card__tag">Pilot Scoping</span>
+            <span class="service-card__tag">Architecture</span>
+          </div>
+        </div>
+        <div class="service-card fade-up" style="transition-delay:0.12s;">
+          <div class="service-card__icon" style="background:var(--color-primary-light);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="service-card__title">Digital Infrastructure Education</div>
+          <p class="service-card__body">Team-level education on blockchain infrastructure, distributed ledger systems, tokenization, and the convergence of energy and financial systems — for engineering, compliance, IT, and finance teams who need working literacy rather than depth.</p>
+          <div class="service-card__tags">
+            <span class="service-card__tag">Engineering Teams</span>
+            <span class="service-card__tag">Compliance</span>
+            <span class="service-card__tag">IT Leadership</span>
+          </div>
+        </div>
+        <div class="service-card fade-up" style="transition-delay:0.16s;">
+          <div class="service-card__icon" style="background:var(--color-accent-light);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="service-card__title">Grant &amp; Research Advisory</div>
+          <p class="service-card__body">Advisory support for organizations evaluating grant applications related to VRL, open-protocol attestation infrastructure, or energy sector blockchain pilots — including scoping, narrative development, and phased deployment planning.</p>
+          <div class="service-card__tags">
+            <span class="service-card__tag">Grant Strategy</span>
+            <span class="service-card__tag">Research</span>
+            <span class="service-card__tag">Pilot Planning</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Process -->
-<section class="mx-auto max-w-6xl px-4 py-10">
-  <div class="rounded-3xl border border-white/20 p-6 md:p-8 text-slate-100">
-    <h2 class="text-3xl font-bold text-white text-center">How Engagements Begin</h2>
-    <div class="mt-8 grid md:grid-cols-3 gap-6">
-      <div>
-        <p class="text-cyan-300 font-semibold">01</p>
-        <h3 class="mt-2 text-xl font-semibold text-white">Initial Request</h3>
-        <p class="mt-2 text-slate-300">
-          Share your goals, questions, or the kind of support you are looking for.
-        </p>
+  <div class="divider-gradient"></div>
+
+  <!-- ── WHO WE WORK WITH ── -->
+  <section class="section" aria-labelledby="audience-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 2fr;gap:var(--space-16);">
+        <div class="fade-up">
+          <span class="eyebrow">Audiences</span>
+          <h2 id="audience-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-4);">Who this work is for</h2>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.7;">Our advisory is built for the people inside energy and financial institutions who are thinking seriously about verifiable data, reliability evidence, and the infrastructure shifts underway — not for retail audiences or speculative investors.</p>
+          <a href="contactus.html" class="btn btn--primary" style="margin-top:var(--space-8);">Start a Conversation</a>
+        </div>
+        <div class="fade-up" style="transition-delay:0.1s;">
+          <div class="audience-row">
+            <div class="audience-row__icon" style="background:var(--color-accent-light);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div>
+              <div class="audience-row__title">Reliability &amp; Engineering Teams</div>
+              <div class="audience-row__body">Plant engineers, NERC analysts, and operations leadership who need to understand how BRIS-style scoring and VRL anchoring could create defensible, timestamped evidence chains for their assets.</div>
+            </div>
+          </div>
+          <div class="audience-row">
+            <div class="audience-row__icon" style="background:var(--color-primary-light);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="audience-row__title">Regulatory &amp; Compliance Leadership</div>
+              <div class="audience-row__body">Compliance officers and regulatory affairs teams evaluating distributed ledger infrastructure for NERC/CIP compliance, audit trails, and the evidentiary requirements of grid reliability proceedings.</div>
+            </div>
+          </div>
+          <div class="audience-row">
+            <div class="audience-row__icon" style="background:var(--color-teal-light);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <div class="audience-row__title">Finance &amp; Risk Leadership</div>
+              <div class="audience-row__body">CFOs, insurance underwriters, and capital allocators who need verifiable reliability data to inform asset valuation, risk pricing, and coverage decisions for energy infrastructure.</div>
+            </div>
+          </div>
+          <div class="audience-row">
+            <div class="audience-row__icon" style="background:var(--color-accent-light);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div>
+              <div class="audience-row__title">IT Leadership</div>
+              <div class="audience-row__body">CTOs and IT directors evaluating blockchain infrastructure as a substrate for tamper-evident data systems — understanding what Hyperledger Fabric, Hedera, and similar platforms actually do in an enterprise context.</div>
+            </div>
+          </div>
+          <div class="audience-row">
+            <div class="audience-row__icon" style="background:var(--color-teal-light);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="audience-row__title">OEMs, Insurers &amp; Evidence Consumers</div>
+              <div class="audience-row__body">Third parties who need verified read access to reliability attestations without operational access to internal asset data — the external verification use case that VRL is specifically designed to serve.</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <p class="text-cyan-300 font-semibold">02</p>
-        <h3 class="mt-2 text-xl font-semibold text-white">Scope & Fit</h3>
-        <p class="mt-2 text-slate-300">
-          We determine the right format, such as strategy session, educational briefing, or custom advisory support.
-        </p>
+    </div>
+  </section>
+
+  <!-- ── REQUEST FORM ── -->
+  <section class="section" id="consultation" aria-labelledby="form-heading" style="background:var(--color-surface);border-top:1px solid var(--color-border);">
+    <div class="container">
+      <div style="max-width:var(--content-narrow);margin:0 auto;text-align:center;margin-bottom:var(--space-10);">
+        <span class="eyebrow">Get in Touch</span>
+        <h2 id="form-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);">Request an advisory conversation</h2>
+        <p style="font-size:var(--text-base);color:var(--color-text-muted);margin-top:var(--space-4);">Tell us about your organization, your question, and what you are trying to understand. We will follow up to schedule a conversation.</p>
       </div>
-      <div>
-        <p class="text-cyan-300 font-semibold">03</p>
-        <h3 class="mt-2 text-xl font-semibold text-white">Delivery</h3>
-        <p class="mt-2 text-slate-300">
-          Engagements are delivered with clarity, relevance, and a focus on practical understanding.
-        </p>
-      </div>
+      <form id="advisory-form" action="https://formspree.io/f/placeholder" method="POST" style="max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:var(--space-5);" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+          <div class="form-field">
+            <label class="form-label" for="adv-name">Name</label>
+            <input class="form-input" type="text" id="adv-name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="adv-email">Work Email</label>
+            <input class="form-input" type="email" id="adv-email" name="email" placeholder="your@org.com" required />
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="adv-org">Organization</label>
+          <input class="form-input" type="text" id="adv-org" name="organization" placeholder="Company or organization name" />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="adv-topic">Area of Interest</label>
+          <select class="form-input form-select" id="adv-topic" name="topic">
+            <option value="" disabled selected>Select a topic</option>
+            <option value="bris-vrl">BRIS / VRL Methodology</option>
+            <option value="executive-briefing">Executive Briefing</option>
+            <option value="team-education">Team Education</option>
+            <option value="grant-research">Grant / Research Advisory</option>
+            <option value="pilot-partnership">Pilot Partnership</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="adv-message">What are you trying to understand or accomplish?</label>
+          <textarea class="form-input form-textarea" id="adv-message" name="message" placeholder="Brief description of your question, challenge, or goal..." rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--lg" style="align-self:flex-start;">Send Request</button>
+        <p style="font-size:var(--text-xs);color:var(--color-text-muted);">We respond within 2-3 business days. Your information is never sold or shared.</p>
+      </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Consultation Request Form -->
-<section id="consultation" class="max-w-3xl mx-auto px-4 py-16 text-white">
-  <form id="consultation-form" class="space-y-6 border border-white/20 bg-white/10 p-8 rounded-2xl shadow-lg backdrop-blur">
-    <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-2">
-      Start the Conversation
-    </h2>
-    <p class="text-center text-slate-300 max-w-2xl mx-auto">
-      Tell us a bit about what you are exploring, and we will follow up with next steps.
-    </p>
-
-    <div>
-      <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
-      <input type="text" id="name" name="user_name" required
-        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
-        placeholder="Your name">
-    </div>
-
-    <div>
-      <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
-      <input type="email" id="email" name="user_email" required
-        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
-        placeholder="your@email.com">
-    </div>
-
-    <div>
-      <label for="phone" class="block text-sm font-semibold mb-2">Phone Number</label>
-      <input type="tel" id="phone" name="user_phone"
-        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
-        placeholder="(555) 123-4567">
-    </div>
-
-    <div>
-  <label for="consultationType" class="block text-sm font-semibold mb-2">Inquiry Type</label>
-
-  <div class="relative">
-    <select id="consultationType" name="consultation_type" required
-  class="w-full p-3 rounded-xl bg-white/5 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/50 appearance-none">
-      <option value="" disabled selected hidden>Make a Selection</option>
-      <option value="Strategy Session">Strategy Session</option>
-      <option value="Education or Workshop">Education or Workshop</option>
-      <option value="Custom Research or Advisory">Custom Research or Advisory</option>
-      <option value="Speaking Request">Speaking Request</option>
-      <option value="General Inquiry">General Inquiry</option>
-    </select>
-
-    <div class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2">
-      <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-        viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </div>
-  </div>
-</div>
-
-    <div>
-      <label for="message" class="block text-sm font-semibold mb-2">Message / Goals</label>
-      <textarea id="message" name="user_message" rows="5" required
-        class="w-full rounded-xl border border-white/30 bg-white/5 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white/50"
-        placeholder="Tell us what you would like to discuss..."></textarea>
-    </div>
-
-    <div class="text-center">
-      <button type="submit" class="bg-white text-black font-semibold px-8 py-3 rounded-2xl hover:bg-gray-200 transition">
-        Submit Request
-      </button>
-    </div>
-
-    <p class="text-center text-xs text-slate-400 italic">
-      The New Financial World does not provide financial, legal, or tax advice. Engagements are educational and strategic in nature.
-    </p>
-  </form>
-
-  <p id="form-success" class="hidden text-green-400 text-center mt-6 text-lg">✅ Thank you! Your message has been sent.</p>
-  <p id="form-error" class="hidden text-red-400 text-center mt-6">❌ Something went wrong. Please try again.</p>
-</section>
-
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  emailjs.init("Hz9mazCp4SU2MTcN6");
-
-  const form = document.getElementById('consultation-form');
-  const successMsg = document.getElementById('form-success');
-  const errorMsg = document.getElementById('form-error');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const formData = {
-      user_name: form.user_name.value,
-      user_email: form.user_email.value,
-      user_phone: form.user_phone.value,
-      consultation_type: form.consultation_type.value,
-      user_message: form.user_message.value
-    };
-
-    // Send email to admin
-    emailjs.send('service_jz3xwdv', 'template_l6bio7c', formData)
-      .then(() => {
-        // Send auto-reply to user
-        emailjs.send('service_jz3xwdv', 'template_cgrg12b', formData)
-          .then(() => {
-            successMsg.classList.remove('hidden');
-            errorMsg.classList.add('hidden');
-            form.reset();
-          })
-          .catch(err => {
-            console.error('Auto-reply error:', err);
-            successMsg.classList.add('hidden');
-            errorMsg.classList.remove('hidden');
-          });
-      })
-      .catch(err => {
-        console.error('EmailJS error:', err);
-        successMsg.classList.add('hidden');
-        errorMsg.classList.remove('hidden');
-      });
-  });
-});
-</script>
-
-
-
- <!--Embedded Calendly Section 
-<section id="schedule" class="mx-auto max-w-3xl px-4 py-16">
-  <div class="rounded-3xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 shadow-lg overflow-hidden">
-    <h2 class="text-3xl md:text-5xl font-extrabold text-center text-white mb-8">Ready to Get Started?</h2>
-    <p class="text-center text-slate-200 mb-6">
-      Choose a time that works best for you. All sessions are 30 minutes.
-    </p>-->
-
-    <!--Container for Calendly iframe
-    <div class="calendly-wrapper w-full" style="height:700px;">
-      <iframe 
-        src="https://calendly.com/nfwfla/30min?embed_domain=yourdomain.com&embed_type=Inline" 
-        title="Calendly Scheduling" 
-        width="100%" 
-        height="100%" 
-        frameborder="0" 
-        class="rounded-2xl overflow-hidden"
-      ></iframe>
-    </div>
-  </div>
-</section>-->
-  
-
-
-  
-  <!-- Mission & Core Values 
-  <section id="mission" class="mx-auto max-w-6xl px-4 py-12">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="md:col-span-2 rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-200">
-        <h2 class="text-2xl font-bold text-white">Our Mission</h2>
-        <p class="mt-3 text-base text-slate-200">
-          At <span class="font-semibold">New Financial World</span>, our mission is to
-          <span class="font-semibold">demystify digital finance</span> and
-          <span class="font-semibold">empower people everywhere</span> to participate in the evolving financial system
-          with <span class="font-semibold">confidence, clarity, and security</span>. Money should move at the speed of
-          the internet — and everyone deserves access to the opportunities of the 5th Industrial Revolution.
-        </p>
-      </div>
-
-      <aside class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-        <h3 class="text-2xl font-bold text-black">Core Values</h3>
-        <ul class="mt-3 space-y-2 text-base text-slate-700">
-          <li>• <span class="font-medium">Innovation</span> — Embrace cryptocurrency, blockchain, and Web3 to shape the future of money.</li>
-          <li>• <span class="font-medium">Education & Clarity</span> — Make complex ideas easy to understand.</li>
-          <li>• <span class="font-medium">Empowerment & Financial Freedom</span> — Put people in control of their wealth.</li>
-          <li>• <span class="font-medium">Reliability & Security</span> — Uphold global standards and best practices.</li>
-          <li>• <span class="font-medium">Community & Accessibility</span> — Open the door for everyone to thrive.</li>
-        </ul>
-      </aside>
-    </div>
-  </section>-->
-
-  
-<!-- Footer -->
-<footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
-  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
-    <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-    <div class="flex items-center gap-4">
-      <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
-      <a href="terms.html" class="hover:text-slate-200">Terms</a>
-    </div>
-  </div>
-
-<!-- Social Media Links -->
-<div class="flex justify-center items-center mt-6 space-x-6">
-
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/nfwfla"
-     target="_blank"
-     aria-label="LinkedIn"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="https://www.linkedin.com/in/the-new-financial-world-782039397/"
-         fill="#0A66C2"
-         viewBox="0 0 24 24"
-         class="w-5 h-5 block">
-      <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
-    </svg>
-  </a>
-
-  <!-- X -->
-  <a href="https://x.com/nfwfla"
-     target="_blank"
-     aria-label="X"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
-  </a>
-
-  <!-- Discord - Hidden for Now -->
-  <!--<a href="https://discord.gg/AqxQfa6d"
-     target="_blank"
-     aria-label="Discord"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="Discord-Symbol-Blurple.png"
-         alt="Discord"
-         class="w-6 h-6 object-contain block">
-  </a>-->
-
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@NFWFLA"
-     target="_blank"
-     aria-label="YouTube"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 24 24"
-         class="w-6 h-6 block">
-      <path fill="#FF0000"
-        d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
-      <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
-    </svg>
-  </a>
-
-<!-- Spotify -->
-<a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer"
-   target="_blank"
-   aria-label="Spotify"
-   class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-  <svg xmlns="http://www.w3.org/2000/svg"
-       viewBox="0 0 24 24"
-       class="w-6 h-6 block">
-
-    <!-- Green circle -->
-    <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
-
-    <!-- White waves scaled down + optically centered -->
-    <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
-      <path fill="#FFFFFF"
-        d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
-      <path fill="#FFFFFF"
-        d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
-      <path fill="#FFFFFF"
-        d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
-    </g>
-
-  </svg>
-</a>
-
-
-</div>
-
-
-
-
-<p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
-    The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
-  </p>
-
-
-
-  <!-- Disclaimer -->
-  <!--<p class="mt-6 max-w-2xl mx-auto text-center text-xs text-slate-400 italic">
-    Disclaimer: This is not financial advice. All information provided is for educational purposes only. 
-    The goal of The New Financial World LLC is to demystify crypto and blockchain technology through knowledge and clarity.
-  </p>-->
-</footer>
-
-<script>
-  document.getElementById("tos-year").textContent = new Date().getFullYear();
-</script>
-  
-  
-  
+  <div id="footer-placeholder"></div>
+  <script src="_partials.js"></script>
+  <script>injectNav('consulting.html'); injectFooter();</script>
 </body>
 </html>

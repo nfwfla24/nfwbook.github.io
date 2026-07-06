@@ -1,380 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About - The New Financial World LLC</title>
-   <!--Favicon-->
-  <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32">
-<link rel="shortcut icon" type="image/png" href="/logov2.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <meta property="og:title" content="About - The New Financial World LLC"/>
-  <meta property="og:description" content="We demystify cryptocurrency, blockchain, and Web3 with plain‑English education and consulting."/>
+  <title>About — The New Financial World LLC</title>
+  <meta name="description" content="The New Financial World LLC is a digital infrastructure advisory and research company at the convergence of energy, reliability intelligence, and verifiable systems. Founded by Zakir Sadiki." />
+  <link rel="icon" type="image/png" href="logov2.png" sizes="32x32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    :root{--brand:#111827;--accent:#06b6d4}
-    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    html{font-size:17px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
-    @media (min-width:1024px){html{font-size:18px}}
-    p,li{line-height:1.7}
-    .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
+    .page-hero {
+      background: var(--color-primary);
+      padding-block: var(--space-20) var(--space-16);
+      position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero__content { position: relative; z-index: 1; }
+    .page-hero h1 { font-family: var(--font-display); font-size: var(--text-3xl); color: #fff; max-width: 20ch; line-height: 1.1; }
+    .page-hero p { font-size: var(--text-lg); color: rgba(255,255,255,0.65); max-width: 60ch; margin-top: var(--space-5); line-height: 1.7; }
+
+    /* Value list */
+    .value-row {
+      display: flex; gap: var(--space-5); align-items: flex-start;
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .value-row:last-child { border-bottom: none; }
+    .value-num { font-family: var(--font-display); font-size: var(--text-xl); font-weight: 700; color: var(--color-border); line-height: 1; flex-shrink: 0; width: 48px; }
+    .value-title { font-weight: 700; font-size: var(--text-base); color: var(--color-text); }
+    .value-body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; margin-top: var(--space-1); max-width: 64ch; }
+
+    /* Credential chips */
+    .cred-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-3); }
+    .cred-chip {
+      display: flex; align-items: center; gap: var(--space-3);
+      padding: var(--space-4) var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+    }
+    .cred-chip__icon { width: 36px; height: 36px; border-radius: var(--radius-md); background: var(--color-accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cred-chip__label { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
+    .cred-chip__sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
+
+    /* Focus areas */
+    .focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+    @media (max-width: 700px) { .focus-grid { grid-template-columns: 1fr; } }
+    .focus-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+    }
+    .focus-card__icon { margin-bottom: var(--space-4); }
+    .focus-card__title { font-weight: 700; font-size: var(--text-base); color: var(--color-text); margin-bottom: var(--space-2); }
+    .focus-card__body { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
   </style>
 </head>
-<body class="relative text-slate-800">
-  <!-- Background -->
-  <div class="fixed inset-0 -z-10 pointer-events-none">
-    <div class="absolute inset-0" style="background:
-      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
-      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
-      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
-      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
-    "></div>
-    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="0.8"/>
-        </filter>
-      </defs>
-      <g filter="url(#f)" font-family="Inter, system-ui, sans-serif" font-size="24" fill="white">
-        <text x="8%" y="18%">₿</text>
-        <text x="22%" y="35%">Ξ</text>
-        <text x="38%" y="12%">◎</text>
-        <text x="55%" y="28%">✕</text>
-        <text x="72%" y="18%">Ξ</text>
-        <text x="85%" y="40%">₿</text>
-        <text x="12%" y="70%">✕</text>
-        <text x="33%" y="82%">Ξ</text>
-        <text x="60%" y="75%">◎</text>
-        <text x="80%" y="66%">₿</text>
-      </g>
-    </svg>
-  </div>
+<body>
+  <div id="nav-placeholder"></div>
 
- <!-- Top header -->
-<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
-  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
-
-    <!-- Logo + Site Name -->
-    <a href="/" class="flex items-center gap-3">
-      <!-- Logo image -->
-      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
-
-      <!-- Site name -->
-      <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
-    </a>
-
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-      <a href="index.html" class="hover:text-slate-950">Home</a>
-      <a href="about.html" class="hover:text-slate-950">About</a>
-      <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
-      <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
-      <a href="homepage.html" class="hover:text-slate-950">Media</a>
-      <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
-      
-    </nav>
-
-    <!-- Mobile hamburger -->
-    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
-      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile menu -->
-  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
-    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
-    <a href="about.html" class="block text-left hover:text-slate-950">About</a>
-    <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
-    <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
-    <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
-    <a href="contactus.html" class="block text-left hover:text-slate-950">Work With Us</a>
-    
-  </nav>
-</header>
-
-<script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-     
-  </header>
-
-  
-<!-- About Hero -->
-<section class="mx-auto max-w-6xl px-4 pt-14 pb-10">
-  <div class="max-w-4xl text-slate-100">
-    <p class="text-sm uppercase tracking-[0.2em] text-cyan-300 font-semibold">
-      The New Financial World LLC
-    </p>
-
-    <h1 class="mt-3 text-4xl md:text-5xl font-extrabold leading-tight text-white">
-      A digital infrastructure advisory and media company focused on the systems shaping the next financial era
-    </h1>
-
-    <p class="mt-5 text-lg text-slate-200 max-w-3xl">
-      The New Financial World LLC exists to help people and organizations understand the structural shifts reshaping modern markets. As finance becomes more dependent on power, networks, compute, and digital rails, the lines between infrastructure, capital, and technology are beginning to blur.
-    </p>
-
-    <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
-      <!--<a href="consulting.html" class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-        Explore Advisory
-      </a>-->
-       <!--<a href="book.html" class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/30 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-        Explore the Book
-      </a>-->
-      <!--<a href="homepage.html" class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/30 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-        Explore Media
-      </a>-->
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="container page-hero__content">
+      <span class="eyebrow" style="color:rgba(200,134,26,0.9);">About</span>
+      <h1>A research and advisory company at the edge of infrastructure and verifiable systems</h1>
+      <p>The New Financial World LLC develops methodology, advisory content, and research at the convergence of energy reliability intelligence, distributed attestation, and the transformation of financial infrastructure.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-<!-- Founder -->
-<section class="mx-auto max-w-6xl px-4 py-6">
-  <div class="rounded-3xl border border-white/20 p-6 md:p-8 text-slate-100">
-    <div class="flex items-center gap-4 mb-6">
-      <img src="logov2.png" alt="The New Financial World Logo" class="h-14 w-14 rounded-2xl object-cover">
-      <div>
-        <p class="text-sm uppercase tracking-[0.2em] text-cyan-300 font-semibold">Founder</p>
-        <h2 class="text-2xl font-bold text-white">Zakir Sadiki</h2>
+  <!-- ── COMPANY OVERVIEW ── -->
+  <section class="section" aria-labelledby="company-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:start;">
+        <div class="fade-up">
+          <span class="eyebrow">What NFW Is</span>
+          <h2 id="company-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-6);">Not a crypto company. An infrastructure intelligence company.</h2>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-bottom:var(--space-5);">The New Financial World LLC exists to help people and organizations understand the structural shifts reshaping modern infrastructure — and to develop the methodologies that make those systems more verifiable, defensible, and trustworthy.</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-bottom:var(--space-5);">As energy systems become more dependent on real-time intelligence, and as financial and regulatory systems demand higher-quality evidence from those systems, the boundaries between physical infrastructure, digital rails, and capital markets are converging.</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;">NFW works at that boundary — developing the methodologies (BRIS and VRL), advisory frameworks, and educational materials that translate that convergence into practical, institutional-grade insight.</p>
+        </div>
+        <div class="fade-up" style="transition-delay:0.1s;">
+          <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-2xl);padding:var(--space-8);">
+            <h3 style="font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-text);margin-bottom:var(--space-6);">What we focus on</h3>
+            <div class="value-row">
+              <div class="value-num">01</div>
+              <div><div class="value-title">Reliability Methodology</div><div class="value-body">Developing BRIS and VRL as reproducible, institutionally credible methodologies for energy asset reliability attestation.</div></div>
+            </div>
+            <div class="value-row">
+              <div class="value-num">02</div>
+              <div><div class="value-title">Advisory & Education</div><div class="value-body">Translating complex systems into strategic insight for engineers, regulators, financial teams, and institutional leadership.</div></div>
+            </div>
+            <div class="value-row">
+              <div class="value-num">03</div>
+              <div><div class="value-title">Infrastructure Research</div><div class="value-body">Producing written research, media, and educational content on the digital transformation of energy and financial infrastructure.</div></div>
+            </div>
+            <div class="value-row">
+              <div class="value-num">04</div>
+              <div><div class="value-title">Grant & Pilot Development</div><div class="value-body">Pursuing grant funding and pilot partnerships to move VRL from testnet to production-grade deployment within the energy sector.</div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <p class="text-slate-200 max-w-4xl">
-      Zakir Sadiki founded The New Financial World LLC to help bridge the gap between traditional infrastructure thinking and emerging digital systems. His work focuses on translating developments in blockchain, energy, and financial infrastructure into clear, usable insight for a broader audience.
-    </p>
+  <div class="divider-gradient"></div>
 
-    <p class="mt-4 text-slate-200 max-w-4xl">
-      Through research, writing, media, and advisory work, he helps others understand not just what is changing, but why it matters. The emphasis is on long-term shifts, real-world systems, and practical understanding rather than speculation.
-    </p>
-
-    <div class="mt-6">
-      <h3 class="text-lg font-semibold text-white">Credentials</h3>
-      <div class="mt-4 grid sm:grid-cols-2 gap-3 text-slate-200 max-w-4xl">
-        <p class="flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Cryptocurrency foundations
-        </p>
-        <p class="flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          DeFi and digital asset education
-        </p>
-        <p class="flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Ethereum ecosystem knowledge
-        </p>
-        <p class="flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          R3 Corda for Business Professionals
-        </p>
+  <!-- ── FOUNDER ── -->
+  <section class="section" id="founder" aria-labelledby="founder-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:2fr 3fr;gap:var(--space-16);align-items:start;">
+        <div class="fade-up">
+          <div style="background:var(--color-primary);border-radius:var(--radius-2xl);padding:var(--space-8);color:#fff;text-align:center;">
+            <!-- Avatar initials -->
+            <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:#fff;margin:0 auto var(--space-5);">ZS</div>
+            <h3 style="font-family:var(--font-display);font-size:var(--text-xl);color:#fff;margin-bottom:var(--space-1);">Zakir Sadiki</h3>
+            <p style="font-size:var(--text-sm);color:rgba(255,255,255,0.6);margin-bottom:var(--space-6);">Founder, The New Financial World LLC</p>
+            <div style="display:flex;flex-direction:column;gap:var(--space-2);">
+              <a href="https://www.linkedin.com/in/nfwfla" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:var(--space-2);padding:var(--space-3);background:rgba(255,255,255,0.1);border-radius:var(--radius-lg);color:rgba(255,255,255,0.8);text-decoration:none;font-size:var(--text-sm);font-weight:600;transition:background var(--t-fast);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://x.com/nfwfla" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:var(--space-2);padding:var(--space-3);background:rgba(255,255,255,0.1);border-radius:var(--radius-lg);color:rgba(255,255,255,0.8);text-decoration:none;font-size:var(--text-sm);font-weight:600;transition:background var(--t-fast);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+                X / Twitter
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="fade-up" style="transition-delay:0.1s;">
+          <span class="eyebrow">Founder</span>
+          <h2 id="founder-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-6);">Built on systems thinking from the inside out</h2>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-bottom:var(--space-5);">Zakir Sadiki founded The New Financial World LLC with a specific thesis: that energy infrastructure reliability can be made verifiable in a way that withstands legal, regulatory, and financial scrutiny — and that doing so requires building the right methodologies from the ground up, not adapting tools built for other industries.</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-bottom:var(--space-5);">Working from inside the energy sector — as an internal champion rather than an external vendor — he developed BRIS and VRL as distinct methodologies: one for scoring and storing private reliability intelligence, one for anchoring that intelligence publicly in a tamper-evident, chain-agnostic way.</p>
+          <p style="font-size:var(--text-base);color:var(--color-text-muted);line-height:1.75;margin-bottom:var(--space-8);">His approach to advisory, research, and media follows the same principle: translate complexity into precision, not simplification. The emphasis is always on long-term infrastructure shifts, real-world systems, and institutional-grade clarity.</p>
+          <h3 style="font-family:var(--font-display);font-size:var(--text-lg);color:var(--color-text);margin-bottom:var(--space-5);">Credentials & expertise</h3>
+          <div class="cred-grid">
+            <div class="cred-chip">
+              <div class="cred-chip__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+              <div><div class="cred-chip__label">R3 Corda for Business</div><div class="cred-chip__sub">Professionals Certificate</div></div>
+            </div>
+            <div class="cred-chip">
+              <div class="cred-chip__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg></div>
+              <div><div class="cred-chip__label">Certified Cryptocurrency Expert</div><div class="cred-chip__sub">Blockchain Council</div></div>
+            </div>
+            <div class="cred-chip">
+              <div class="cred-chip__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+              <div><div class="cred-chip__label">Full-Stack Blockchain Dev</div><div class="cred-chip__sub">Hyperledger Fabric · Hedera</div></div>
+            </div>
+            <div class="cred-chip">
+              <div class="cred-chip__icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+              <div><div class="cred-chip__label">Energy Sector IoT</div><div class="cred-chip__sub">CMMS · NERC/CIP · FEMA</div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <div class="divider-gradient"></div>
 
-  <!-- Mission -->
-<section class="mx-auto max-w-6xl px-4 py-10">
-  <div class="rounded-3xl border border-white/20 p-6 md:p-8 text-slate-100">
-    <h2 class="text-3xl font-bold text-white">Mission</h2>
-    <p class="mt-4 text-slate-200 max-w-3xl">
-      The New Financial World LLC was built to bring clarity to the convergence of digital capital, energy demand, and next-generation financial infrastructure. The goal is not to add noise, speculation, or hype, but to translate complex systems into insight that is practical, credible, and strategically useful.
-    </p>
-  </div>
-</section>
-
-  
-<!-- How We Think / What The New Financial World Stands For -->
-<section class="mx-auto max-w-6xl px-4 py-6">
-  <div class="grid md:grid-cols-2 gap-6 items-stretch">
-    
-    <div class="h-full rounded-2xl border border-white/20 p-6 md:p-8 text-slate-100">
-      <h2 class="text-2xl font-bold text-white mb-4">How We Think</h2>
-      <div class="space-y-3">
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Infrastructure over speculation
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Systems-level analysis over isolated headlines
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Research-driven insight over narratives
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Long-term relevance over short-term noise
-        </p>
+  <!-- ── FOCUS AREAS ── -->
+  <section class="section" aria-labelledby="focus-heading">
+    <div class="container">
+      <span class="eyebrow">Areas of Focus</span>
+      <h2 id="focus-heading" style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);margin-bottom:var(--space-10);">Where our work lives</h2>
+      <div class="focus-grid">
+        <div class="focus-card fade-up">
+          <div class="focus-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="focus-card__title">Energy Infrastructure</div>
+          <p class="focus-card__body">Understanding the physical and operational systems that underpin grid reliability — generators, turbines, transformers, substations — and how their health data flows into compliance and capital decisions.</p>
+        </div>
+        <div class="focus-card fade-up" style="transition-delay:0.08s;">
+          <div class="focus-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="focus-card__title">Distributed Attestation</div>
+          <p class="focus-card__body">Blockchain and distributed ledger technology as infrastructure for verifiable evidence — not speculation. How tamper-evident timestamps, hash anchors, and co-endorsement create a verifiable chain of custody.</p>
+        </div>
+        <div class="focus-card fade-up" style="transition-delay:0.16s;">
+          <div class="focus-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="focus-card__title">Regulatory Compliance</div>
+          <p class="focus-card__body">NERC/CIP standards, FEMA frameworks, and the evidentiary requirements of grid reliability proceedings — how verifiable data systems can make compliance less burdensome and more defensible.</p>
+        </div>
+        <div class="focus-card fade-up" style="transition-delay:0.08s;">
+          <div class="focus-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="focus-card__title">Financial Infrastructure</div>
+          <p class="focus-card__body">How energy reliability data intersects with capital markets — asset valuation, insurance underwriting, RECs and carbon credits, and the emerging role of verifiable on-chain evidence in risk pricing.</p>
+        </div>
+        <div class="focus-card fade-up" style="transition-delay:0.16s;">
+          <div class="focus-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <div class="focus-card__title">Digital Finance Education</div>
+          <p class="focus-card__body">Cryptocurrency, Web3, DeFi, and blockchain infrastructure explained for a non-speculative audience — the foundational text and media content that forms the public-facing educational arm of NFW.</p>
+        </div>
+        <div class="focus-card fade-up" style="transition-delay:0.24s;">
+          <div class="focus-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="focus-card__title">Institutional Adoption</div>
+          <p class="focus-card__body">The path from internal demo to institutional adoption — how a working testnet and clear methodology narrative becomes the basis for grant funding, pilot agreements, and multi-stakeholder buy-in.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="h-full rounded-2xl border border-white/20 p-6 md:p-8 text-slate-100">
-      <h2 class="text-2xl font-bold text-white mb-4">What The New Financial World Stands For</h2>
-      <div class="space-y-3">
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Strategic clarity in complex markets
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          Institutional integrity in how systems are explained
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          A grounded view of technology through physical and financial constraints
-        </p>
-        <p class="text-slate-200 flex items-start">
-          <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-          A commitment to helping others navigate change with perspective and confidence
-        </p>
+  <!-- ── CTA ── -->
+  <section class="section--sm">
+    <div class="container">
+      <div style="background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-2xl);padding:var(--space-10);text-align:center;">
+        <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);color:var(--color-text);max-width:20ch;margin:0 auto;">Want to learn more or explore working together?</h2>
+        <p style="font-size:var(--text-base);color:var(--color-text-muted);max-width:52ch;margin:var(--space-4) auto var(--space-8);">Whether you are a utility stakeholder, researcher, grant partner, or someone building in adjacent spaces — we welcome the conversation.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:center;">
+          <a href="contactus.html" class="btn btn--primary btn--lg">Get in Touch</a>
+          <a href="technology.html" class="btn btn--outline btn--lg">Explore the Methodology</a>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- Closing CTA -->
-<section class="mx-auto max-w-6xl px-4 py-16 text-center">
-  <div class="max-w-2xl mx-auto text-slate-100">
-    <h2 class="text-3xl font-bold text-white">Explore the platform or start a conversation</h2>
-    <p class="mt-4 text-slate-200">
-      The New Financial World LLC combines advisory, media, and educational work to help others understand the systems shaping the emerging digital infrastructure economy.
-    </p>
-
-    <div class="mt-8 flex flex-col sm:flex-row flex-wrap justify-center gap-3">
-      <a href="consulting.html" class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/50 text-white px-6 py-3 font-semibold hover:bg-white/10 text-center">
-        Advisory
-      </a>
-      <a href="book.html" class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/30 text-white px-6 py-3 font-semibold hover:bg-white/10 text-center">
-        Book
-      </a>
-      <a href="homepage.html" class="inline-flex min-h-[56px] items-center justify-center rounded-2xl border border-white/30 text-white px-6 py-3 font-semibold hover:bg-white/10 text-center">
-        Media
-      </a>
-      
-    </div>
-  </div>
-</section>
-
-  
-<!-- Footer -->
-<footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
-  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
-    <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-    <div class="flex items-center gap-4">
-      <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
-      <a href="terms.html" class="hover:text-slate-200">Terms</a>
-    </div>
-  </div>
-
-<!-- Social Media Links -->
-<div class="flex justify-center items-center mt-6 space-x-6">
-
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/nfwfla"
-     target="_blank"
-     aria-label="LinkedIn"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="https://www.linkedin.com/in/the-new-financial-world-782039397/"
-         fill="#0A66C2"
-         viewBox="0 0 24 24"
-         class="w-5 h-5 block">
-      <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
-    </svg>
-  </a>
-
-  <!-- X -->
-  <a href="https://x.com/nfwfla"
-     target="_blank"
-     aria-label="X"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
-  </a>
-
-  <!-- Discord - Hidden for Now -->
-  <!--<a href="https://discord.gg/AqxQfa6d"
-     target="_blank"
-     aria-label="Discord"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="Discord-Symbol-Blurple.png"
-         alt="Discord"
-         class="w-6 h-6 object-contain block">
-  </a>-->
-
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@NFWFLA"
-     target="_blank"
-     aria-label="YouTube"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 24 24"
-         class="w-6 h-6 block">
-      <path fill="#FF0000"
-        d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
-      <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
-    </svg>
-  </a>
-
-<!-- Spotify -->
-<a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer"
-   target="_blank"
-   aria-label="Spotify"
-   class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-  <svg xmlns="http://www.w3.org/2000/svg"
-       viewBox="0 0 24 24"
-       class="w-6 h-6 block">
-
-    <!-- Green circle -->
-    <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
-
-    <!-- White waves scaled down + optically centered -->
-    <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
-      <path fill="#FFFFFF"
-        d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
-      <path fill="#FFFFFF"
-        d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
-      <path fill="#FFFFFF"
-        d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
-    </g>
-
-  </svg>
-</a>
-
-
-</div>
-
-
-
-
-<p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
-    The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
-  </p>
-
-
-
-  <!-- Disclaimer -->
-  <!--<p class="mt-6 max-w-2xl mx-auto text-center text-xs text-slate-400 italic">
-    Disclaimer: This is not financial advice. All information provided is for educational purposes only. 
-    The goal of The New Financial World LLC is to demystify crypto and blockchain technology through knowledge and clarity.
-  </p>-->
-</footer>
-
-<script>
-  document.getElementById("tos-year").textContent = new Date().getFullYear();
-</script>
-  
-  
-  
+  <div id="footer-placeholder"></div>
+  <script src="_partials.js"></script>
+  <script>injectNav('about.html'); injectFooter();</script>
 </body>
 </html>
