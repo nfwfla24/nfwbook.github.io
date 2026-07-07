@@ -1,420 +1,639 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The New Financial World LLC</title>
- <!--Favicon-->
-  <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32">
-<link rel="shortcut icon" type="image/png" href="/logov2.png">
+
+  <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32" />
+  <link rel="shortcut icon" type="image/png" href="/logov2.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <meta property="og:title" content="The New Financial World LLC" />
+  <meta property="og:description" content="Reliability methodologies for the utilities, regulators, and institutions that run critical energy infrastructure." />
+  <meta property="og:image" content="logov2.png" />
+
   <style>
-    :root{--brand:#111827;--accent:#06b6d4}
-    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    html{font-size:17px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
-    @media (min-width:1024px){html{font-size:18px}}
-    p,li{line-height:1.7}
-    .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
-  </style>
-  <meta property="og:title" content="The New Financial World LLC"/>
-  <meta property="og:description" content="A plain‑English guide to cryptocurrency, blockchain technology, and the 5th Industrial Revolution."/>
-  <meta property="og:image" content="Book cover.png"/>
-</head>
-<body class="relative text-slate-800">
-  <div class="fixed inset-0 -z-10 pointer-events-none">
-    <div class="absolute inset-0" style="background:
-      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
-      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
-      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
-      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
-    "></div>
-    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="0.8"/>
-        </filter>
-      </defs>
-      <g filter="url(#f)" font-family="Inter, system-ui, sans-serif" font-size="24" fill="white">
-        <text x="8%" y="18%">₿</text>
-        <text x="22%" y="35%">Ξ</text>
-        <text x="38%" y="12%">◎</text>
-        <text x="55%" y="28%">✕</text>
-        <text x="72%" y="18%">Ξ</text>
-        <text x="85%" y="40%">₿</text>
-        <text x="12%" y="70%">✕</text>
-        <text x="33%" y="82%">Ξ</text>
-        <text x="60%" y="75%">◎</text>
-        <text x="80%" y="66%">₿</text>
-      </g>
-    </svg>
-  </div>
+    :root {
+      --nfw-charcoal: #12161C;
+      --nfw-charcoal-2: #182029;
+      --nfw-forest: #0D2918;
+      --nfw-forest-soft: #163824;
+      --nfw-amber: #C8941A;
+      --nfw-amber-soft: rgba(200, 148, 26, 0.14);
+      --nfw-silver: #C8D4CF;
+      --nfw-silver-soft: rgba(200, 212, 207, 0.72);
+      --nfw-border: rgba(200, 212, 207, 0.16);
+      --nfw-panel: rgba(255, 255, 255, 0.04);
+      --nfw-panel-strong: rgba(255, 255, 255, 0.06);
+      --nfw-ink: #0B0E12;
+    }
 
- <!-- Top header -->
-<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
-  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+    html,
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--nfw-charcoal);
+      color: var(--nfw-silver);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
 
-    <!-- Logo + Site Name -->
-    <a href="/" class="flex items-center gap-3">
-      <!-- Logo image -->
-      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(200, 148, 26, 0.05), transparent 22%),
+        linear-gradient(135deg, #10141A 0%, #12161C 46%, #0D2918 100%);
+    }
 
-      <!-- Site name -->
-      <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
-    </a>
+    p,
+    li {
+      line-height: 1.72;
+    }
 
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-      <a href="index.html" class="hover:text-slate-950">Home</a>
-      <a href="about.html" class="hover:text-slate-950">About</a>
-      <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
-      <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
-      <a href="homepage.html" class="hover:text-slate-950">Media</a>
-      <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
-      
-    </nav>
+    .site-shell {
+      position: relative;
+      overflow: hidden;
+    }
 
-    <!-- Mobile hamburger -->
-    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
-      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-      </svg>
-    </button>
-  </div>
+    .site-shell::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(200, 212, 207, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 212, 207, 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.08));
+    }
 
-  <!-- Mobile menu -->
-  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
-    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
-    <a href="about.html" class="block text-left hover:text-slate-950">About</a>
-    <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
-    <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
-    <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
-    <a href="contactus.html" class="block text-left hover:text-slate-950">Work With Us</a>
-    
-  </nav>
-</header>
+    .site-shell::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        radial-gradient(700px 380px at 0% 0%, rgba(13, 41, 24, 0.48), transparent 62%),
+        radial-gradient(500px 260px at 100% 0%, rgba(200, 148, 26, 0.07), transparent 58%),
+        radial-gradient(700px 380px at 50% 100%, rgba(22, 56, 36, 0.28), transparent 68%);
+    }
 
-<script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-     
-  </header>
+    .glass-header {
+      backdrop-filter: saturate(160%) blur(14px);
+      background: rgba(18, 22, 28, 0.78);
+      border-bottom: 1px solid rgba(200, 212, 207, 0.08);
+    }
 
-  
-<section class="hero-section">
-  <div class="hero-bg">
-    <div class="hero-grid"></div>
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
-    <div class="hero-accent-line"></div>
-  </div>
+    .nav-link {
+      color: var(--nfw-silver-soft);
+      transition: color 180ms ease;
+    }
 
-  <div class="hero-content">
-    <p class="eyebrow">Energy infrastructure reliability</p>
-    <h1>Where infrastructure meets verifiable truth.</h1>
-    <p class="hero-copy">
-      Reliability methodologies for the utilities, regulators, and institutions
-      that run critical energy infrastructure.
-    </p>
-    <a href="contactus.html" class="hero-btn">Work With Us</a>
-  </div>
-</section>
-  
- 
+    .nav-link:hover {
+      color: #F2F5F3;
+    }
 
-  <br>
-  <br>
-  <br>
-  <!-- About Section -->
-<section id="about" class="relative mx-auto max-w-6xl px-4 py-16">
-  <div class="grid md:grid-cols-2 gap-8 items-center">
-    
-    <!-- Left: Text & Button -->
-    <div class="text-center md:text-left">
-      <h2 class="text-4xl md:text-5xl font-bold leading-tight text-white mb-4">
-        Digital Infrastructure Advisory for the New Financial System
-      </h2>
-     
-      <h2 class="text-sm uppercase tracking-[0.2em] text-cyan-300 font-semibold">
-        Advisory • Education • Media
-      </h2>
-      
-      <p class="mt-4 text-md text-slate-200 max-w-md">
-We help organizations understand where energy, blockchain, AI, and capital systems converge.
+    .nav-cta {
+      background: var(--nfw-amber);
+      color: var(--nfw-ink);
+      transition: transform 180ms ease, background 180ms ease;
+    }
 
-      </p>
-      
-      
-      <div class="mt-6 flex flex-col sm:flex-row flex-wrap justify-center md:justify-start items-stretch gap-3">
-  <a href="consulting.html" class="inline-flex min-h-[64px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-    Work With Us
-  </a>
+    .nav-cta:hover {
+      background: #D9A32A;
+      transform: translateY(-1px);
+    }
 
-  <a href="book.html" class="inline-flex min-h-[64px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center leading-tight">
-    <span>
-      Explore the Book<br>
-      <span class="text-xs font-normal opacity-80">(Releasing 2026)</span>
-    </span>
-  </a>
+    .hero-section {
+      position: relative;
+      padding: 7rem 1rem 4rem;
+    }
 
-  <a href="homepage.html" class="inline-flex min-h-[64px] items-center justify-center rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10 text-center">
-    Watch the Podcast
-  </a>
-</div>
-    </div>
+    .hero-wrap {
+      position: relative;
+      max-width: 80rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+      align-items: center;
+    }
 
-    <!-- Right: Video -->
-    <div class="flex justify-center md:justify-end">
-      <video autoplay muted loop playsinline class="hero-video rounded-xl shadow-lg w-full max-w-lg">
-        <source src="worldvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-
-  </div>
-
-
-  
-<!-- Responsive Behavior -->
-<style>
-.hero-video {
-  width: 100%;
-  height: auto;
-  max-height: 500px; /* limit on desktop */
-  object-fit: contain;
-}
-
-/* Mobile portrait */
-@media (max-width: 767px) and (orientation: portrait) {
-  .hero-video {
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    max-height: none;
-  }
-}
-
-/* Mobile landscape */
-@media (max-width: 767px) and (orientation: landscape) {
-  .hero-video {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-    max-height: none;
-  }
-}
-</style>
-</section>
-
- 
-  <!-- What We Do / Who We Work With -->
-<section class="relative mx-auto max-w-4xl px-4 pb-16 text-slate-100">
-  <div class="space-y-4">
-
-    <!-- What We Do -->
-    <div class="accordion-item rounded-2xl border border-white/20 p-5">
-      <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-white">
-        <span>What We Do</span>
-        <svg class="accordion-icon w-4 h-4 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
-        <div class="mt-4 space-y-3">
-          <p class="text-slate-200 flex items-start">
-            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-            Executive briefings on digital infrastructure, energy, and financial system change
-          </p>
-          <p class="text-slate-200 flex items-start">
-            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-            Strategic analysis of where AI, energy demand, and digital finance intersect
-          </p>
-          <p class="text-slate-200 flex items-start">
-            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-            Advisory on blockchain infrastructure, market trends, and emerging standards
-          </p>
-          <p class="text-slate-200 flex items-start">
-            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-            Research and education for organizations navigating digital transformation
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Who We Work With -->
-    <div class="accordion-item rounded-2xl border border-white/20 p-5">
-      <button class="accordion-header w-full flex justify-between items-center text-left font-semibold text-white">
-        <span>Who We Work With</span>
-        <svg class="accordion-icon w-4 h-4 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div class="accordion-content max-h-0 overflow-hidden transition-[max-height] duration-500 ease-in-out">
-        <div class="mt-4 space-y-3">
-          <p class="text-slate-200 flex items-start">
-            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-            Energy and infrastructure professionals evaluating digital change
-          </p>
-          <p class="text-slate-200 flex items-start">
-            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-            Executive teams assessing strategic exposure to AI, blockchain, and capital system shifts
-          </p>
-          <p class="text-slate-200 flex items-start">
-            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-            Organizations navigating technological and regulatory convergence
-          </p>
-          <p class="text-slate-200 flex items-start">
-            <span class="w-2 h-2 mt-2 mr-3 bg-[#06b6d4] rounded-full flex-shrink-0"></span>
-            Institutions and founders seeking clarity in the emerging digital infrastructure economy
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
-  accordionHeaders.forEach(header => {
-    header.addEventListener('click', () => {
-      const content = header.nextElementSibling;
-      const icon = header.querySelector('.accordion-icon');
-
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-        icon.style.transform = 'rotate(0deg)';
-      } else {
-        document.querySelectorAll('.accordion-content').forEach(c => c.style.maxHeight = null);
-        document.querySelectorAll('.accordion-icon').forEach(i => i.style.transform = 'rotate(0deg)');
-
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.style.transform = 'rotate(180deg)';
+    @media (min-width: 1024px) {
+      .hero-wrap {
+        grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
       }
-    });
-  });
-});
-</script>
+    }
 
- 
-  
+    .hero-panel {
+      position: relative;
+      border: 1px solid var(--nfw-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+    }
 
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 12rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--nfw-amber), transparent);
+    }
 
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--nfw-amber);
+      font-weight: 700;
+    }
 
-<!-- Footer -->
-<footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
-  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
-    <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-    <div class="flex items-center gap-4">
-      <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
-      <a href="terms.html" class="hover:text-slate-200">Terms</a>
-    </div>
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4.9rem);
+      line-height: 1.04;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #F2F5F3;
+      max-width: 11ch;
+    }
+
+    .hero-copy {
+      margin-top: 1.25rem;
+      max-width: 60ch;
+      color: rgba(200, 212, 207, 0.92);
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.8rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.9rem 1.25rem;
+      border-radius: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .btn-primary {
+      background: var(--nfw-amber);
+      color: var(--nfw-ink);
+    }
+
+    .btn-primary:hover {
+      background: #D9A32A;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--nfw-border);
+      color: #F2F5F3;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(200, 212, 207, 0.24);
+      transform: translateY(-1px);
+    }
+
+    .hero-aside {
+      border: 1px solid var(--nfw-border);
+      background: linear-gradient(180deg, rgba(13, 41, 24, 0.44), rgba(18, 22, 28, 0.72));
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .stat-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(200, 148, 26, 0.65), rgba(200, 212, 207, 0.12));
+      margin: 1.15rem 0;
+    }
+
+    .section-wrap {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 1rem 1rem 4rem;
+    }
+
+    .section-kicker {
+      color: var(--nfw-amber);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-title {
+      color: #F2F5F3;
+      font-size: clamp(1.85rem, 3vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .section-copy {
+      margin-top: 1rem;
+      color: rgba(200, 212, 207, 0.88);
+      max-width: 62ch;
+    }
+
+    .method-card,
+    .audience-card,
+    .book-banner,
+    .footer-panel {
+      border: 1px solid var(--nfw-border);
+      background: var(--nfw-panel);
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
+    }
+
+    .method-card {
+      padding: 1.5rem;
+      height: 100%;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .method-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(200, 148, 26, 0.32);
+      background: var(--nfw-panel-strong);
+    }
+
+    .method-label {
+      color: var(--nfw-amber);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+    }
+
+    .method-title {
+      margin-top: 0.65rem;
+      color: #F2F5F3;
+      font-size: 1.45rem;
+      font-weight: 750;
+    }
+
+    .method-link {
+      color: var(--nfw-silver);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .method-link:hover {
+      color: #F2F5F3;
+    }
+
+    .audience-card {
+      padding: 1.35rem;
+      height: 100%;
+    }
+
+    .audience-dot {
+      width: 0.7rem;
+      height: 0.7rem;
+      border-radius: 9999px;
+      background: var(--nfw-amber);
+      margin-top: 0.4rem;
+      flex-shrink: 0;
+    }
+
+    .book-banner {
+      padding: 1.4rem 1.5rem;
+      background:
+        linear-gradient(90deg, rgba(200, 148, 26, 0.08), rgba(255,255,255,0.02)),
+        rgba(255,255,255,0.03);
+    }
+
+    .footer-panel {
+      background: rgba(10, 13, 17, 0.6);
+      padding: 2rem 1rem;
+    }
+
+    .social-link {
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-2px) scale(1.04);
+      opacity: 1;
+    }
+
+    .mobile-link {
+      display: block;
+      padding: 0.75rem 0;
+      color: var(--nfw-silver-soft);
+      border-top: 1px solid rgba(200, 212, 207, 0.08);
+    }
+
+    .mobile-link:hover {
+      color: #F2F5F3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-shell">
+
+    <header class="sticky top-0 z-40 glass-header">
+      <div class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-3 min-w-0">
+          <img src="logov2.png" alt="The New Financial World LLC logo" class="h-10 w-10 rounded-xl object-contain" />
+          <span class="font-semibold tracking-tight text-[#F2F5F3] truncate">The New Financial World LLC</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="technology.html" class="nav-link">Technology</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="book.html" class="nav-link">Book</a>
+          <a href="consulting.html" class="nav-link">Advisory</a>
+          <a href="media.html" class="nav-link">Media</a>
+          <a href="contactus.html" class="nav-cta rounded-xl px-4 py-2">Work With Us</a>
+        </nav>
+
+        <button
+          id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 px-3 py-2 text-[#F2F5F3]"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M3 5h14v2H3V5Zm0 4h14v2H3V9Zm0 4h14v2H3v-2Z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav id="mobile-menu" class="md:hidden hidden mx-auto max-w-7xl px-4 pb-4">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="technology.html" class="mobile-link">Technology</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="book.html" class="mobile-link">Book</a>
+        <a href="consulting.html" class="mobile-link">Advisory</a>
+        <a href="media.html" class="mobile-link">Media</a>
+        <a href="contactus.html" class="mobile-link text-[#D9A32A] font-semibold">Work With Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero-wrap">
+          <div class="hero-panel">
+            <p class="eyebrow">Energy infrastructure reliability</p>
+            <h1 class="hero-title">Where infrastructure meets verifiable truth.</h1>
+            <p class="hero-copy">
+              Reliability methodologies for the utilities, regulators, and institutions that run
+              critical energy infrastructure.
+            </p>
+
+            <div class="hero-actions">
+              <a href="contactus.html" class="btn-primary">Work With Us</a>
+              <a href="technology.html" class="btn-secondary">Explore the Methodologies</a>
+            </div>
+          </div>
+
+          <aside class="hero-aside">
+            <p class="text-sm uppercase tracking-[0.18em] text-[#C8941A] font-bold">Methodology overview</p>
+
+            <div class="mt-5">
+              <h2 class="text-2xl font-bold text-[#F2F5F3]">BRIS</h2>
+              <p class="mt-2 text-[#C8D4CF] font-medium">The Layer of Truth</p>
+              <p class="mt-3 text-sm text-[rgba(200,212,207,0.84)]">
+                A private, IOU-internal methodology for maintaining the canonical record of asset health.
+              </p>
+            </div>
+
+            <div class="stat-line"></div>
+
+            <div>
+              <h2 class="text-2xl font-bold text-[#F2F5F3]">VRL</h2>
+              <p class="mt-2 text-[#C8D4CF] font-medium">The Trust Layer</p>
+              <p class="mt-3 text-sm text-[rgba(200,212,207,0.84)]">
+                A public attestation layer that publishes a hash, timestamp, and opaque reference only.
+              </p>
+            </div>
+
+            <div class="mt-6">
+              <a href="technology.html" class="text-sm font-semibold text-[#F2F5F3] hover:text-[#D9A32A]">
+                View the Technology page →
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <p class="section-kicker">Core methodologies</p>
+        <h2 class="section-title">Two methodologies designed for truth and trust.</h2>
+        <p class="section-copy">
+          The homepage brief calls for BRIS and VRL to lead the narrative, with the book demoted to a secondary callout and the site positioned for utilities, regulators, and institutional audiences. [file:1]
+        </p>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-2">
+          <article class="method-card">
+            <p class="method-label">BRIS</p>
+            <h3 class="method-title">Baseline Reliability Intelligence System</h3>
+            <p class="mt-2 text-lg text-[#C8D4CF]">The Layer of Truth</p>
+            <p class="mt-4 text-[rgba(200,212,207,0.86)]">
+              A private methodology for the full canonical record of asset health inside an investor-owned utility.
+            </p>
+            <ul class="mt-5 space-y-2 text-sm text-[rgba(200,212,207,0.84)]">
+              <li>Private and IOU-internal.</li>
+              <li>Records the full asset-health record.</li>
+              <li>Reference implementation: Hyperledger Fabric.</li>
+            </ul>
+            <div class="mt-6">
+              <a href="technology.html" class="method-link">Read more about BRIS →</a>
+            </div>
+          </article>
+
+          <article class="method-card">
+            <p class="method-label">VRL</p>
+            <h3 class="method-title">Verified Reliability Layer</h3>
+            <p class="mt-2 text-lg text-[#C8D4CF]">The Trust Layer</p>
+            <p class="mt-4 text-[rgba(200,212,207,0.86)]">
+              A public reliability attestation method that anchors proof without exposing underlying utility data.
+            </p>
+            <ul class="mt-5 space-y-2 text-sm text-[rgba(200,212,207,0.84)]">
+              <li>Public anchor for attestation.</li>
+              <li>Publishes hash, timestamp, and opaque reference only.</li>
+              <li>Chain-agnostic, with Hedera live on testnet and others planned.</li>
+            </ul>
+            <div class="mt-6">
+              <a href="technology.html" class="method-link">Read more about VRL →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-wrap pt-0">
+        <p class="section-kicker">Who we serve</p>
+        <h2 class="section-title">Built for the institutions behind critical infrastructure.</h2>
+        <p class="section-copy">
+          The recommended homepage structure explicitly adds an audience section naming utility engineers, NERC CIP regulators, institutional finance, and grant bodies. [file:1]
+        </p>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <article class="audience-card">
+            <div class="flex items-start gap-3">
+              <span class="audience-dot"></span>
+              <div>
+                <h3 class="text-lg font-semibold text-[#F2F5F3]">Utility engineers</h3>
+                <p class="mt-2 text-sm text-[rgba(200,212,207,0.84)]">
+                  Teams responsible for asset health, reliability, and operational truth.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="audience-card">
+            <div class="flex items-start gap-3">
+              <span class="audience-dot"></span>
+              <div>
+                <h3 class="text-lg font-semibold text-[#F2F5F3]">NERC CIP regulators</h3>
+                <p class="mt-2 text-sm text-[rgba(200,212,207,0.84)]">
+                  Stakeholders evaluating credibility, controls, and verifiable infrastructure processes.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="audience-card">
+            <div class="flex items-start gap-3">
+              <span class="audience-dot"></span>
+              <div>
+                <h3 class="text-lg font-semibold text-[#F2F5F3]">Institutional finance</h3>
+                <p class="mt-2 text-sm text-[rgba(200,212,207,0.84)]">
+                  Capital teams seeking clearer attestation models for critical energy systems.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="audience-card">
+            <div class="flex items-start gap-3">
+              <span class="audience-dot"></span>
+              <div>
+                <h3 class="text-lg font-semibold text-[#F2F5F3]">Grant bodies</h3>
+                <p class="mt-2 text-sm text-[rgba(200,212,207,0.84)]">
+                  Ecosystem and innovation programs evaluating reliability-attestation initiatives.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-wrap pt-0">
+        <div class="book-banner flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="section-kicker mb-2">Book</p>
+            <h2 class="text-2xl font-bold text-[#F2F5F3]">Introduction to The New Financial World</h2>
+            <p class="mt-2 text-[rgba(200,212,207,0.86)] max-w-2xl">
+              The brief says the book should remain on the homepage as a slim secondary callout rather than the hero, and that the page should show a prominent “Launching July 10, 2026” badge with the book positioned after the methodology narrative. [file:1]
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <span class="inline-flex items-center justify-center rounded-xl border border-[rgba(200,148,26,0.35)] bg-[rgba(200,148,26,0.10)] px-4 py-3 text-sm font-semibold text-[#F4D28A]">
+              Launching July 10, 2026
+            </span>
+            <a href="book.html" class="btn-secondary">View the Book</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="px-4 pb-10">
+      <div class="footer-panel mx-auto max-w-7xl">
+        <div class="flex flex-col gap-6 border-t border-[rgba(200,212,207,0.10)] pt-6 md:flex-row md:items-start md:justify-between">
+          <div>
+            <p class="text-sm text-[rgba(200,212,207,0.68)]">
+              © <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.
+            </p>
+            <p class="mt-4 max-w-2xl text-sm text-[rgba(200,212,207,0.78)]">
+              The New Financial World LLC provides energy infrastructure reliability methodologies, BRIS and VRL, and related institutional advisory and educational services.
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4 text-sm">
+            <a href="privacy.html" class="nav-link">Privacy</a>
+            <a href="terms.html" class="nav-link">Terms</a>
+            <a href="media.html" class="nav-link">Media</a>
+          </div>
+        </div>
+
+        <div class="mt-6 flex justify-center items-center gap-6">
+          <a href="https://www.linkedin.com/in/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <path fill="#0A66C2" d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
+            </svg>
+          </a>
+
+          <a href="https://x.com/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="X" class="social-link">
+            <img src="x-logo.png" alt="X logo" class="w-6 h-6 object-contain" />
+          </a>
+
+          <a href="https://www.youtube.com/@NFWFLA" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-link">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <path fill="#FF0000" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
+              <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
+            </svg>
+          </a>
+
+          <a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer" target="_blank" rel="noopener noreferrer" aria-label="Spotify" class="social-link">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
+              <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
+                <path fill="#FFFFFF" d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
+                <path fill="#FFFFFF" d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
+                <path fill="#FFFFFF" d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
   </div>
 
-<!-- Social Media Links -->
-<div class="flex justify-center items-center mt-6 space-x-6">
+  <script>
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/nfwfla"
-     target="_blank"
-     aria-label="LinkedIn"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="https://www.linkedin.com/in/the-new-financial-world-782039397/"
-         fill="#0A66C2"
-         viewBox="0 0 24 24"
-         class="w-5 h-5 block">
-      <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
-    </svg>
-  </a>
+    mobileMenuButton.addEventListener("click", () => {
+      const expanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+      mobileMenuButton.setAttribute("aria-expanded", String(!expanded));
+      mobileMenu.classList.toggle("hidden");
+    });
 
-  <!-- X -->
-  <a href="https://x.com/nfwfla"
-     target="_blank"
-     aria-label="X"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
-  </a>
-
-  <!-- Discord - Hidden for Now -->
-  <!--<a href="https://discord.gg/AqxQfa6d"
-     target="_blank"
-     aria-label="Discord"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="Discord-Symbol-Blurple.png"
-         alt="Discord"
-         class="w-6 h-6 object-contain block">
-  </a>-->
-
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@NFWFLA"
-     target="_blank"
-     aria-label="YouTube"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 24 24"
-         class="w-6 h-6 block">
-      <path fill="#FF0000"
-        d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
-      <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
-    </svg>
-  </a>
-
-<!-- Spotify -->
-<a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer"
-   target="_blank"
-   aria-label="Spotify"
-   class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-  <svg xmlns="http://www.w3.org/2000/svg"
-       viewBox="0 0 24 24"
-       class="w-6 h-6 block">
-
-    <!-- Green circle -->
-    <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
-
-    <!-- White waves scaled down + optically centered -->
-    <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
-      <path fill="#FFFFFF"
-        d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
-      <path fill="#FFFFFF"
-        d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
-      <path fill="#FFFFFF"
-        d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
-    </g>
-
-  </svg>
-</a>
-
-
-</div>
-
-
-
-
-<p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
-    The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
-  </p>
-
-
-
-  <!-- Disclaimer -->
-  <!--<p class="mt-6 max-w-2xl mx-auto text-center text-xs text-slate-400 italic">
-    Disclaimer: This is not financial advice. All information provided is for educational purposes only. 
-    The goal of The New Financial World LLC is to demystify crypto and blockchain technology through knowledge and clarity.
-  </p>-->
-</footer>
-
-<script>
-  document.getElementById("tos-year").textContent = new Date().getFullYear();
-</script>
-  
-  
-  
+    document.getElementById("tos-year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
