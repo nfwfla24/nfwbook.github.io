@@ -159,56 +159,16 @@
       box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
     }
 
-    .hero-section {
-  position: relative;
-  overflow: hidden;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  padding: 7rem 1.5rem 5rem;
-  background:
-    linear-gradient(135deg, #10151B 0%, #12161C 45%, #0D2918 100%);
-  color: #C8D4CF;
-  isolation: isolate;
-}
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 12rem;
+      height: 2px;
+      background: linear-gradient(90deg, var(--nfw-amber), transparent);
+    }
 
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(200, 212, 207, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200, 212, 207, 0.035) 1px, transparent 1px);
-  background-size: 52px 52px;
-  opacity: 0.28;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.08));
-  pointer-events: none;
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      transparent 72%,
-      rgba(200, 148, 26, 0.16) 72.2%,
-      rgba(200, 148, 26, 0.16) 72.5%,
-      transparent 72.8%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 0%,
-      transparent 24%,
-      rgba(200, 212, 207, 0.08) 24.2%,
-      rgba(200, 212, 207, 0.08) 24.4%,
-      transparent 24.6%
-    );
-  pointer-events: none;
-}
-    
     .eyebrow {
       display: inline-block;
       margin-bottom: 1rem;
