@@ -376,6 +376,20 @@
     .mobile-link:hover {
       color: #F2F5F3;
     }
+
+    .eyebrow-dots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.eyebrow-dots span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
   </style>
 </head>
 
@@ -427,7 +441,11 @@
       <section class="hero-section">
         <div class="hero-wrap">
           <div class="hero-panel">
-            <p class="eyebrow">Energy infrastructure reliability</p>
+            <p class="eyebrow eyebrow-dots">
+            <span>Energy</span>
+            <span>Infrastructure</span>
+            <span>Reliability</span>
+            </p>
             <h1 class="hero-title">Where infrastructure meets verifiable truth.</h1>
             <p class="hero-copy">
               Reliability methodologies for the utilities, regulators, and institutions that run
