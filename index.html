@@ -375,6 +375,17 @@ footer.site-footer::before {
 .footer-inner {
   max-width: 80rem;
   margin: 0 auto;
+  text-align: left; /* footer text left */
+}
+
+.footer-social {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  text-align: center; /* prevent inherited left alignment */
 }
     
     .social-link {
