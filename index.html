@@ -437,6 +437,33 @@ footer.site-footer::before {
   background-color: #C8941A;
   flex-shrink: 0;
 }
+
+    .method-points {
+  margin-top: 1.25rem;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.method-points li {
+  position: relative;
+  padding-left: 0.9rem;
+  margin-bottom: 0.55rem;
+  color: rgba(200, 212, 207, 0.84);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.method-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62rem;
+  width: 0.36rem;
+  height: 0.36rem;
+  border-radius: 9999px;
+  background: #C8941A;
+  transform: translateY(-50%);
+}
   </style>
 </head>
 
@@ -544,7 +571,7 @@ footer.site-footer::before {
           the methodologies anchor reliability in verifiable, chain‑agnostic records while keeping implementation inside the utility’s boundary.
         </p>
 
-       <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
   <article class="method-card">
     <p class="method-label">BRIS</p>
     <h3 class="method-title">Baseline Reliability Intelligence System</h3>
@@ -552,7 +579,7 @@ footer.site-footer::before {
     <p class="mt-4 text-[rgba(200,212,207,0.86)]">
       BRIS is the private methodology an investor-owned utility uses to establish and maintain its canonical asset-health record inside the utility boundary.
     </p>
-    <ul class="mt-5 space-y-2 text-sm text-[rgba(200,212,207,0.84)]">
+    <ul class="method-points">
       <li>Private and IOU-internal by design.</li>
       <li>Structures the full canonical record of asset health.</li>
       <li>Uses Hyperledger Fabric as a reference implementation.</li>
@@ -569,10 +596,10 @@ footer.site-footer::before {
     <p class="mt-4 text-[rgba(200,212,207,0.86)]">
       VRL is the public methodology for reliability attestation, allowing utilities to publish proof of record without exposing the underlying asset data itself.
     </p>
-    <ul class="mt-5 space-y-2 text-sm text-[rgba(200,212,207,0.84)]">
+    <ul class="method-points">
       <li>Publishes hash, timestamp, and opaque reference only.</li>
       <li>Preserves privacy while enabling public attestation.</li>
-      <li>Chain-agnostic, with testnet integrations already established across Hedera, Stellar, Energy Web, Solana, Ethereum, XRP, and Sui.</li>
+      <li>Chain-agnostic, with multiple blockchain testnet integrations already in place.</li>
     </ul>
     <div class="mt-6">
       <a href="technology.html" class="method-link">Read more about VRL →</a>
