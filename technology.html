@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The New Financial World LLC</title>
+  <title>Technology | The New Financial World LLC</title>
 
   <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32" />
   <link rel="shortcut icon" type="image/png" href="/logov2.png" />
@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <meta property="og:title" content="The New Financial World LLC" />
-  <meta property="og:description" content="Reliability methodologies for the utilities, regulators, and institutions that run critical energy infrastructure." />
+  <meta property="og:title" content="Technology | The New Financial World LLC" />
+  <meta property="og:description" content="High-level methodology overview of BRIS and VRL at the convergence of institutional truth, trust, and infrastructure reliability." />
   <meta property="og:image" content="logov2.png" />
 
   <style>
@@ -87,29 +87,30 @@
     }
 
     .glass-header {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  backdrop-filter: saturate(160%) blur(14px);
-  background: rgba(18, 22, 28, 0.78);
-  border-bottom: 1px solid rgba(200, 212, 207, 0.08);
-}
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: saturate(160%) blur(14px);
+      background: rgba(18, 22, 28, 0.78);
+      border-bottom: 1px solid rgba(200, 212, 207, 0.08);
+    }
 
-.glass-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(200, 148, 26, 0.95) 0%,
-    rgba(200, 148, 26, 0.78) 55%,
-    rgba(200, 148, 26, 0.35) 82%,
-    rgba(200, 148, 26, 0) 100%
-  );
-}
+    .glass-header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        rgba(200, 148, 26, 0.95) 0%,
+        rgba(200, 148, 26, 0.78) 55%,
+        rgba(200, 148, 26, 0.35) 82%,
+        rgba(200, 148, 26, 0) 100%
+      );
+    }
+
     .nav-link {
       color: var(--nfw-silver-soft);
       transition: color 180ms ease;
@@ -132,7 +133,52 @@
 
     .hero-section {
       position: relative;
-      padding: 7rem 1rem 4rem;
+      overflow: hidden;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 1.5rem 5rem;
+      background:
+        linear-gradient(135deg, #10151B 0%, #12161C 45%, #0D2918 100%);
+      color: #C8D4CF;
+      isolation: isolate;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(200, 212, 207, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 212, 207, 0.035) 1px, transparent 1px);
+      background-size: 52px 52px;
+      opacity: 0.28;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.08));
+      pointer-events: none;
+    }
+
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          transparent 72%,
+          rgba(200, 148, 26, 0.16) 72.2%,
+          rgba(200, 148, 26, 0.16) 72.5%,
+          transparent 72.8%
+        ),
+        linear-gradient(
+          180deg,
+          transparent 0%,
+          transparent 24%,
+          rgba(200, 212, 207, 0.08) 24.2%,
+          rgba(200, 212, 207, 0.08) 24.4%,
+          transparent 24.6%
+        );
+      pointer-events: none;
     }
 
     .hero-wrap {
@@ -142,6 +188,7 @@
       display: grid;
       gap: 2rem;
       align-items: center;
+      width: 100%;
     }
 
     @media (min-width: 1024px) {
@@ -159,56 +206,6 @@
       box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
     }
 
-    .hero-section {
-  position: relative;
-  overflow: hidden;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  padding: 7rem 1.5rem 5rem;
-  background:
-    linear-gradient(135deg, #10151B 0%, #12161C 45%, #0D2918 100%);
-  color: #C8D4CF;
-  isolation: isolate;
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(200, 212, 207, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(200, 212, 207, 0.035) 1px, transparent 1px);
-  background-size: 52px 52px;
-  opacity: 0.28;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.08));
-  pointer-events: none;
-}
-
-.hero-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      transparent 72%,
-      rgba(200, 148, 26, 0.16) 72.2%,
-      rgba(200, 148, 26, 0.16) 72.5%,
-      transparent 72.8%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 0%,
-      transparent 24%,
-      rgba(200, 212, 207, 0.08) 24.2%,
-      rgba(200, 212, 207, 0.08) 24.4%,
-      transparent 24.6%
-    );
-  pointer-events: none;
-}
-    
     .eyebrow {
       display: inline-block;
       margin-bottom: 1rem;
@@ -225,7 +222,7 @@
       font-weight: 800;
       letter-spacing: -0.04em;
       color: #F2F5F3;
-      max-width: 11ch;
+      max-width: 12ch;
     }
 
     .hero-copy {
@@ -358,16 +355,6 @@
       font-weight: 750;
     }
 
-    .method-link {
-      color: var(--nfw-silver);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .method-link:hover {
-      color: #F2F5F3;
-    }
-
     .audience-card {
       padding: 1.35rem;
       height: 100%;
@@ -381,68 +368,77 @@
       margin-top: 0.4rem;
       flex-shrink: 0;
     }
-    
-.book-banner {
-  background:
-    linear-gradient(90deg, rgba(200, 148, 26, 0.08), rgba(255,255,255,0.02)),
-    rgba(255,255,255,0.03);
-  padding: 1.4rem 1.5rem;
-  border: 1px solid var(--nfw-border);
-  border-radius: 1.25rem;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
-}
 
-    .footer-panel {
-      background: rgba(10, 13, 17, 0.6);
-      padding: 2rem 1rem;
+    .book-banner {
+      background:
+        linear-gradient(90deg, rgba(200, 148, 26, 0.08), rgba(255,255,255,0.02)),
+        rgba(255,255,255,0.03);
+      padding: 1.4rem 1.5rem;
+      border: 1px solid var(--nfw-border);
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
     }
 
     footer.site-footer {
-  position: relative;
-  padding: 2.5rem 1rem 3rem;
-  background: transparent;
-}
-
-footer.site-footer::before {
-  content: "";
-  display: block;
-  width: min(100%, 80rem);
-  height: 2px;
-  margin: 0 auto 2rem;
-  background: #C8941A;
-}
-
-.footer-inner {
-  max-width: 80rem;
-  margin: 0 auto;
-  text-align: left; /* footer text left */
-}
-
-.footer-social {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.footer-copy {
-  margin-top: 1.25rem;
-  max-width: 75rem;
-  color: rgba(200, 212, 207, 0.78);
-  font-size: 0.9rem;
-  line-height: 1.75;
-}
-    
-    .social-link {
-      transition: transform 180ms ease, opacity 180ms ease;
+      position: relative;
+      padding: 2.5rem 1rem 3rem;
+      background: transparent;
     }
 
-    .social-link:hover {
-      transform: translateY(-2px) scale(1.04);
-      opacity: 1;
+    footer.site-footer::before {
+      content: "";
+      display: block;
+      width: min(100%, 80rem);
+      height: 2px;
+      margin: 0 auto 2rem;
+      background: #C8941A;
+    }
+
+    .footer-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: rgba(200, 212, 207, 0.78);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #F2F5F3;
+    }
+
+    .footer-social {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-copy {
+      margin-top: 1.25rem;
+      max-width: 75rem;
+      color: rgba(200, 212, 207, 0.78);
+      font-size: 0.9rem;
+      line-height: 1.75;
     }
 
     .mobile-link {
@@ -456,54 +452,54 @@ footer.site-footer::before {
       color: #F2F5F3;
     }
 
-   .eyebrow-dots {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-}
+    .eyebrow-dots {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
 
-.eyebrow-dots span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
+    .eyebrow-dots span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
 
-.amber-dot {
-  display: inline-block;
-  width: 0.2rem;
-  height: 0.2rem;
-  border-radius: 9999px;
-  background-color: #C8941A;
-  flex-shrink: 0;
-}
+    .amber-dot {
+      display: inline-block;
+      width: 0.2rem;
+      height: 0.2rem;
+      border-radius: 9999px;
+      background-color: #C8941A;
+      flex-shrink: 0;
+    }
 
     .method-points {
-  margin-top: 1.25rem;
-  padding-left: 1.25rem;
-  list-style: none;
-}
+      margin-top: 1.25rem;
+      padding-left: 1.25rem;
+      list-style: none;
+    }
 
-.method-points li {
-  position: relative;
-  padding-left: 0.9rem;
-  margin-bottom: 0.55rem;
-  color: rgba(200, 212, 207, 0.84);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+    .method-points li {
+      position: relative;
+      padding-left: 0.9rem;
+      margin-bottom: 0.55rem;
+      color: rgba(200, 212, 207, 0.84);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
-.method-points li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.62rem;
-  width: 0.36rem;
-  height: 0.36rem;
-  border-radius: 9999px;
-  background: #C8941A;
-  transform: translateY(-50%);
-}
+    .method-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62rem;
+      width: 0.36rem;
+      height: 0.36rem;
+      border-radius: 9999px;
+      background: #C8941A;
+      transform: translateY(-50%);
+    }
   </style>
 </head>
 
@@ -551,261 +547,258 @@ footer.site-footer::before {
       </nav>
     </header>
 
+    <main>
+      <section class="hero-section">
+        <div class="hero-wrap">
+          <div class="hero-panel">
+            <p class="eyebrow">Technology</p>
 
+            <h1 class="hero-title">
+              Where institutional truth and verifiable trust converge.
+            </h1>
 
-    
-<body>
-
-  <!-- Optional: reuse your site header/nav here -->
-
- <main>
-  <section class="hero-section">
-    <div class="hero-wrap">
-      <div class="hero-panel">
-        <p class="eyebrow">Technology</p>
-
-        <h1 class="hero-title">
-          Methodologies for truth, trust, and infrastructure reliability.
-        </h1>
-
-        <p class="hero-copy">
-          The New Financial World LLC develops BRIS and VRL as high-level methodologies
-          for structuring reliability records and verifiable attestation in critical
-          infrastructure environments. These are methodological frameworks designed to
-          support institutional confidence, not off-the-shelf software products.
-        </p>
-
-        <div class="hero-actions">
-          <a href="contactus.html" class="btn-primary">Work With Us</a>
-          <a href="about.html" class="btn-secondary">About NFW</a>
-        </div>
-      </div>
-
-      <aside class="hero-aside">
-        <p class="section-kicker">Methodology focus</p>
-        <h2 class="text-2xl font-extrabold tracking-tight text-[#F2F5F3]">
-          A public overview, intentionally high level.
-        </h2>
-
-        <p class="mt-4 text-[rgba(200,212,207,0.88)]">
-          This page is designed to explain the role of BRIS and VRL at a conceptual level.
-          It does not disclose proprietary implementation detail, operational design logic,
-          or internal methodology materials.
-        </p>
-
-        <div class="stat-line"></div>
-
-        <div class="eyebrow-dots text-sm text-[rgba(200,212,207,0.84)]">
-          <span><i class="amber-dot"></i>Institutional framing</span>
-          <span><i class="amber-dot"></i>Reliability methodology</span>
-          <span><i class="amber-dot"></i>Protected overview</span>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section-wrap">
-    <p class="section-kicker">BRIS</p>
-    <h2 class="section-title">BRIS is the internal layer of truth.</h2>
-    <p class="section-copy">
-      BRIS, the Baseline Reliability Intelligence System, is presented as the private
-      methodological layer for organizing reliability-related information within an
-      institutional boundary. It is the internal environment in which disciplined,
-      authoritative reliability records can be maintained and understood. [file:1]
-    </p>
-
-    <div class="mt-8 grid gap-6 lg:grid-cols-2">
-      <article class="method-card">
-        <p class="method-label">What it represents</p>
-        <h3 class="method-title">A private reliability methodology</h3>
-        <p class="mt-4 text-[rgba(200,212,207,0.88)]">
-          BRIS is intended for utilities and infrastructure institutions that require
-          stronger continuity, traceability, and confidence around reliability-related
-          records without making those records public.
-        </p>
-        <ul class="method-points">
-          <li>Internal layer of truth for institutional reliability context.</li>
-          <li>Supports disciplined record stewardship and continuity.</li>
-          <li>Designed to remain within the institution’s own boundary.</li>
-        </ul>
-      </article>
-
-      <article class="method-card">
-        <p class="method-label">Why it matters</p>
-        <h3 class="method-title">Confidence without public exposure</h3>
-        <p class="mt-4 text-[rgba(200,212,207,0.88)]">
-          BRIS frames how institutions can think about reliability information as a
-          governed internal asset. The public site discusses the role of this layer,
-          not the internal mechanics behind it.
-        </p>
-        <ul class="method-points">
-          <li>Supports institutional confidence in reliability records.</li>
-          <li>Preserves separation between internal records and external audiences.</li>
-          <li>Detailed implementation is reserved for formal conversations.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section-wrap">
-    <p class="section-kicker">VRL</p>
-    <h2 class="section-title">VRL is the external layer of trust.</h2>
-    <p class="section-copy">
-      VRL, the Verified Reliability Layer, is presented as the public-facing
-      methodological layer for verifiable attestation. It is designed to support trust
-      in reliability claims without exposing the institution’s underlying record
-      environment itself. [file:1]
-    </p>
-
-    <div class="mt-8 grid gap-6 lg:grid-cols-2">
-      <article class="method-card">
-        <p class="method-label">What it represents</p>
-        <h3 class="method-title">A trust-oriented public methodology</h3>
-        <p class="mt-4 text-[rgba(200,212,207,0.88)]">
-          VRL addresses the public side of institutional confidence. It allows
-          infrastructure organizations to think about verifiable attestation in a way
-          that complements private record stewardship rather than replacing it.
-        </p>
-        <ul class="method-points">
-          <li>Public-facing trust layer for reliability attestation.</li>
-          <li>Built around verification posture, not public data disclosure.</li>
-          <li>Complements BRIS while remaining distinct from it.</li>
-        </ul>
-      </article>
-
-      <article class="method-card">
-        <p class="method-label">Why it matters</p>
-        <h3 class="method-title">Trust without revealing the record</h3>
-        <p class="mt-4 text-[rgba(200,212,207,0.88)]">
-          VRL is useful in settings where outside stakeholders need confidence in
-          institutional reliability claims, but should not have direct access to
-          sensitive operational information or private record structures.
-        </p>
-        <ul class="method-points">
-          <li>Supports external trust while preserving institutional control.</li>
-          <li>Fits reliability, attestation, and governance conversations.</li>
-          <li>Detailed design discussion is reserved for advisory and pilot contexts.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section class="section-wrap">
-    <p class="section-kicker">Relationship</p>
-    <h2 class="section-title">Two layers within one methodology.</h2>
-    <p class="section-copy">
-      BRIS and VRL are designed to work together as two parts of a single methodology:
-      BRIS addresses the internal layer of truth, while VRL addresses the external
-      layer of trust. Together, they frame a way for institutions to strengthen
-      confidence around infrastructure reliability without collapsing the boundary
-      between private records and public verification. [file:1]
-    </p>
-
-    <div class="mt-8 grid gap-6 lg:grid-cols-2">
-      <article class="audience-card">
-        <div class="flex items-start gap-4">
-          <div class="audience-dot"></div>
-          <div>
-            <h3 class="text-xl font-bold text-[#F2F5F3]">Internal truth</h3>
-            <p class="mt-3 text-[rgba(200,212,207,0.86)]">
-              BRIS represents the private institutional environment where reliability
-              information is organized, governed, and understood.
+            <p class="hero-copy">
+              The New Financial World LLC develops BRIS and VRL as high-level methodologies
+              for structuring reliability records and verifiable attestation in critical
+              infrastructure environments. Together, they sit at the convergence of
+              internal truth and external trust — frameworks designed for institutional
+              confidence, not off-the-shelf software products.
             </p>
+
+            <div class="hero-actions">
+              <a href="contactus.html" class="btn-primary">Work With Us</a>
+              <a href="about.html" class="btn-secondary">About NFW</a>
+            </div>
+          </div>
+
+          <aside class="hero-aside">
+            <p class="section-kicker">Methodology focus</p>
+            <h2 class="text-2xl font-extrabold tracking-tight text-[#F2F5F3]">
+              A convergence framework, presented at a high level.
+            </h2>
+
+            <p class="mt-4 text-[rgba(200,212,207,0.88)]">
+              This page explains BRIS and VRL as conceptual methodologies at the
+              convergence of infrastructure reliability, institutional record stewardship,
+              and verifiable trust. It does not disclose proprietary implementation detail
+              or internal methodology materials.
+            </p>
+
+            <div class="stat-line"></div>
+
+            <div class="eyebrow-dots text-sm text-[rgba(200,212,207,0.84)]">
+              <span><i class="amber-dot"></i>Institutional framing</span>
+              <span><i class="amber-dot"></i>Convergence language</span>
+              <span><i class="amber-dot"></i>Protected overview</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <p class="section-kicker">BRIS</p>
+        <h2 class="section-title">BRIS anchors the internal side of the convergence.</h2>
+        <p class="section-copy">
+          BRIS, the Baseline Reliability Intelligence System, is presented as the private
+          methodological layer for organizing reliability-related information within an
+          institutional boundary. It represents the internal side of the convergence:
+          the layer of truth in which disciplined, authoritative reliability records are
+          maintained and understood. [file:1]
+        </p>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <article class="method-card">
+            <p class="method-label">What it represents</p>
+            <h3 class="method-title">A private methodology for institutional truth</h3>
+            <p class="mt-4 text-[rgba(200,212,207,0.88)]">
+              BRIS is intended for utilities and infrastructure institutions that require
+              stronger continuity, traceability, and confidence around reliability-related
+              records without making those records public.
+            </p>
+            <ul class="method-points">
+              <li>Internal layer of truth for institutional reliability context.</li>
+              <li>Supports disciplined record stewardship and continuity.</li>
+              <li>Designed to remain within the institution’s own boundary.</li>
+            </ul>
+          </article>
+
+          <article class="method-card">
+            <p class="method-label">Why it matters</p>
+            <h3 class="method-title">Confidence grounded in internal stewardship</h3>
+            <p class="mt-4 text-[rgba(200,212,207,0.88)]">
+              BRIS frames how institutions can think about reliability information as a
+              governed internal asset. The public site explains the role of this layer,
+              not the internal mechanics behind it.
+            </p>
+            <ul class="method-points">
+              <li>Supports institutional confidence in reliability records.</li>
+              <li>Preserves separation between internal records and external audiences.</li>
+              <li>Detailed implementation is reserved for formal conversations.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <p class="section-kicker">VRL</p>
+        <h2 class="section-title">VRL anchors the external side of the convergence.</h2>
+        <p class="section-copy">
+          VRL, the Verified Reliability Layer, is presented as the public-facing
+          methodological layer for verifiable attestation. It represents the external
+          side of the convergence: the layer of trust through which reliability
+          confidence can be established without exposing the institution’s underlying
+          record environment itself. [file:1]
+        </p>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <article class="method-card">
+            <p class="method-label">What it represents</p>
+            <h3 class="method-title">A public methodology for verifiable trust</h3>
+            <p class="mt-4 text-[rgba(200,212,207,0.88)]">
+              VRL addresses the public side of institutional confidence. It allows
+              infrastructure organizations to think about verifiable attestation in a way
+              that complements private record stewardship rather than replacing it.
+            </p>
+            <ul class="method-points">
+              <li>Public-facing trust layer for reliability attestation.</li>
+              <li>Built around verification posture, not public data disclosure.</li>
+              <li>Complements BRIS while remaining distinct from it.</li>
+            </ul>
+          </article>
+
+          <article class="method-card">
+            <p class="method-label">Why it matters</p>
+            <h3 class="method-title">Trust without revealing the record</h3>
+            <p class="mt-4 text-[rgba(200,212,207,0.88)]">
+              VRL is useful in settings where outside stakeholders need confidence in
+              institutional reliability claims, but should not have direct access to
+              sensitive operational information or private record structures.
+            </p>
+            <ul class="method-points">
+              <li>Supports external trust while preserving institutional control.</li>
+              <li>Fits reliability, attestation, and governance conversations.</li>
+              <li>Detailed design discussion is reserved for advisory and pilot contexts.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <p class="section-kicker">Convergence</p>
+        <h2 class="section-title">Two layers converging within one methodology.</h2>
+        <p class="section-copy">
+          BRIS and VRL are designed to work together as two parts of a single
+          methodology: BRIS addresses the internal layer of truth, while VRL addresses
+          the external layer of trust. Together, they frame a convergence model for
+          infrastructure reliability in which institutions can strengthen shared
+          confidence without collapsing the boundary between private records and public
+          verification. [file:1]
+        </p>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <article class="audience-card">
+            <div class="flex items-start gap-4">
+              <div class="audience-dot"></div>
+              <div>
+                <h3 class="text-xl font-bold text-[#F2F5F3]">Internal truth</h3>
+                <p class="mt-3 text-[rgba(200,212,207,0.86)]">
+                  BRIS represents the private institutional environment where reliability
+                  information is organized, governed, and understood.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="audience-card">
+            <div class="flex items-start gap-4">
+              <div class="audience-dot"></div>
+              <div>
+                <h3 class="text-xl font-bold text-[#F2F5F3]">External trust</h3>
+                <p class="mt-3 text-[rgba(200,212,207,0.86)]">
+                  VRL represents the public-facing trust environment through which
+                  reliability confidence can be communicated without revealing internal records.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-6 book-banner">
+          <p class="method-label">Attribution</p>
+          <p class="mt-3 text-[rgba(200,212,207,0.92)]">
+            Both BRIS and VRL were invented by Zakir Sadiki and are presented by The New
+            Financial World LLC as methodologies for institutional reliability,
+            attestation, and trust architecture. [file:1]
+          </p>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <p class="section-kicker">Institutional use</p>
+        <h2 class="section-title">Structured conversations at the convergence of reliability and trust.</h2>
+        <p class="section-copy">
+          NFW discusses BRIS and VRL with utilities, regulators, institutional finance
+          teams, and selected strategic partners through advisory, pilot, and methodology
+          conversations. The public overview on this page is intentionally limited;
+          deeper detail is reserved for formal engagement. [file:1]
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="contactus.html" class="btn-primary">Start a Conversation</a>
+          <a href="consulting.html" class="btn-secondary">View Advisory</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
+
+          <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="media.html">Media</a>
           </div>
         </div>
-      </article>
 
-      <article class="audience-card">
-        <div class="flex items-start gap-4">
-          <div class="audience-dot"></div>
-          <div>
-            <h3 class="text-xl font-bold text-[#F2F5F3]">External trust</h3>
-            <p class="mt-3 text-[rgba(200,212,207,0.86)]">
-              VRL represents the public-facing trust environment through which
-              reliability confidence can be communicated without revealing internal records.
-            </p>
-          </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <path fill="#0A66C2" d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
+            </svg>
+          </a>
+
+          <a href="https://x.com/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <img src="x-logo.png" alt="X logo" class="w-6 h-6 object-contain" />
+          </a>
+
+          <a href="https://www.youtube.com/@NFWFLA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <path fill="#FF0000" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
+              <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
+            </svg>
+          </a>
+
+          <a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
+              <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
+                <path fill="#FFFFFF" d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
+                <path fill="#FFFFFF" d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
+                <path fill="#FFFFFF" d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
+              </g>
+            </svg>
+          </a>
         </div>
-      </article>
-    </div>
 
-    <div class="mt-6 book-banner">
-      <p class="method-label">Attribution</p>
-      <p class="mt-3 text-[rgba(200,212,207,0.92)]">
-        Both BRIS and VRL were invented by Zakir Sadiki and are presented by The New
-        Financial World LLC as methodologies for institutional reliability, attestation,
-        and trust architecture. [file:1]
-      </p>
-    </div>
-  </section>
-
-  <section class="section-wrap">
-    <p class="section-kicker">Institutional use</p>
-    <h2 class="section-title">Structured conversations, not open technical disclosure.</h2>
-    <p class="section-copy">
-      NFW discusses BRIS and VRL with utilities, regulators, institutional finance
-      teams, and selected strategic partners through advisory, pilot, and methodology
-      conversations. The public overview on this page is intentionally limited; deeper
-      detail is reserved for formal engagement. [file:1]
-    </p>
-
-    <div class="mt-8 flex flex-wrap gap-4">
-      <a href="contactus.html" class="btn-primary">Start a Conversation</a>
-      <a href="consulting.html" class="btn-secondary">View Advisory</a>
-    </div>
-  </section>
-</main>
-
-  
-  <!-- Footer -->
- <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-
-      <div class="footer-links">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="media.html">Media</a>
+        <p class="footer-copy">
+          The New Financial World LLC provides energy infrastructure reliability methodologies, BRIS and VRL, and related institutional advisory and educational services. [file:1]
+        </p>
       </div>
-    </div>
+    </footer>
 
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/in/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
-          <path fill="#0A66C2" d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
-        </svg>
-      </a>
-
-      <a href="https://x.com/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="X">
-        <img src="x-logo.png" alt="X logo" class="w-6 h-6 object-contain" />
-      </a>
-
-      <a href="https://www.youtube.com/@NFWFLA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
-          <path fill="#FF0000" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
-          <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
-        </svg>
-      </a>
-
-      <a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
-        <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
-          <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
-          <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
-            <path fill="#FFFFFF" d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
-            <path fill="#FFFFFF" d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
-            <path fill="#FFFFFF" d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
-          </g>
-        </svg>
-      </a>
-    </div>
-
-    <p class="footer-copy">
-      The New Financial World LLC provides energy infrastructure reliability methodologies, BRIS and VRL, and related institutional advisory and educational services.
-    </p>
   </div>
-</footer>
- 
 
   <script>
     const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -819,6 +812,5 @@ footer.site-footer::before {
 
     document.getElementById("tos-year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
