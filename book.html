@@ -1,607 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Introduction to The New Financial World</title>
-   <!--Favicon-->
-  <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32">
-<link rel="shortcut icon" type="image/png" href="/logov2.png">
+  <title>Book | The New Financial World LLC</title>
+
+  <link rel="icon" type="image/png" href="logov2.png" sizes="32x32" />
+  <link rel="shortcut icon" type="image/png" href="logov2.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <meta property="og:title" content="Book | The New Financial World LLC" />
+  <meta property="og:description" content="Introduction to The New Financial World by Zakir Sadiki — a broader introduction to blockchain, its history, regulatory context, and future direction." />
+  <meta property="og:image" content="https://www.newfinancialworld.com/EyeBookCover.jpg" />
+  <meta property="og:url" content="https://www.newfinancialworld.com/book.html" />
+  <meta property="og:type" content="website" />
+
   <style>
-    :root{--brand:#111827;--accent:#06b6d4}
-    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    html{font-size:17px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
-    @media (min-width:1024px){html{font-size:18px}}
-    p,li{line-height:1.7}
-    .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
-  </style>
-  <meta property="og:title" content="Introduction to The New Financial World"/>
-  <meta property="og:description" content="A plain‑English guide to cryptocurrency, blockchain technology, and the 5th Industrial Revolution."/>
-  <meta property="og:image" content="Book cover.png"/>
-</head>
-<body class="relative text-slate-800">
-  <div class="fixed inset-0 -z-10 pointer-events-none">
-    <div class="absolute inset-0" style="background:
-      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
-      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
-      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
-      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
-    "></div>
-    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <defs>
-        <filter id="f" x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="0.8"/>
-        </filter>
-      </defs>
-      <g filter="url(#f)" font-family="Inter, system-ui, sans-serif" font-size="24" fill="white">
-        <text x="8%" y="18%">₿</text>
-        <text x="22%" y="35%">Ξ</text>
-        <text x="38%" y="12%">◎</text>
-        <text x="55%" y="28%">✕</text>
-        <text x="72%" y="18%">Ξ</text>
-        <text x="85%" y="40%">₿</text>
-        <text x="12%" y="70%">✕</text>
-        <text x="33%" y="82%">Ξ</text>
-        <text x="60%" y="75%">◎</text>
-        <text x="80%" y="66%">₿</text>
-      </g>
-    </svg>
-  </div>
+    :root {
+      --nfw-charcoal: #12161C;
+      --nfw-charcoal-2: #182029;
+      --nfw-forest: #0D2918;
+      --nfw-forest-soft: #163824;
+      --nfw-amber: #C8941A;
+      --nfw-amber-soft: rgba(200, 148, 26, 0.14);
+      --nfw-silver: #C8D4CF;
+      --nfw-silver-soft: rgba(200, 212, 207, 0.72);
+      --nfw-border: rgba(200, 212, 207, 0.16);
+      --nfw-panel: rgba(255, 255, 255, 0.04);
+      --nfw-panel-strong: rgba(255, 255, 255, 0.06);
+      --nfw-ink: #0B0E12;
+    }
 
-  
- <!-- Top header -->
-<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
-  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+    html,
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--nfw-charcoal);
+      color: var(--nfw-silver);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
 
-    <!-- Logo + Site Name -->
-    <a href="/" class="flex items-center gap-3">
-      <!-- Logo image -->
-      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(200, 148, 26, 0.05), transparent 22%),
+        linear-gradient(135deg, #10141A 0%, #12161C 52%, #0D2918 100%);
+    }
 
-      <!-- Site name -->
-      <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
-    </a>
+    p, li {
+      line-height: 1.72;
+    }
 
-     <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-      <a href="index.html" class="hover:text-slate-950">Home</a>
-      <a href="about.html" class="hover:text-slate-950">About</a>
-      <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
-      <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
-      <a href="homepage.html" class="hover:text-slate-950">Media</a>
-      <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
-      
-    </nav>
+    .site-shell {
+      position: relative;
+      overflow: hidden;
+    }
 
-    <!-- Mobile hamburger -->
-    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
-      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-      </svg>
-    </button>
-  </div>
+    .site-shell::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(200, 212, 207, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 212, 207, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.08));
+    }
 
-  <!-- Mobile menu -->
-  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
-    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
-    <a href="about.html" class="block text-left hover:text-slate-950">About</a>
-    <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
-    <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
-    <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
-    <a href="contactus.html" class="block text-left hover:text-slate-950">Work With Us</a>
-    
-  </nav>
-</header>
+    .site-shell::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        radial-gradient(720px 380px at 0% 0%, rgba(13, 41, 24, 0.46), transparent 62%),
+        radial-gradient(500px 260px at 100% 0%, rgba(200, 148, 26, 0.06), transparent 58%),
+        radial-gradient(720px 400px at 50% 100%, rgba(22, 56, 36, 0.24), transparent 68%);
+    }
 
-<script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-     
-  </header>
+    .glass-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: saturate(160%) blur(14px);
+      background: rgba(18, 22, 28, 0.78);
+      border-bottom: 1px solid rgba(200, 212, 207, 0.08);
+    }
 
-  
-<!-- Hero Section -->
-<section id="home" class="w-full bg-black flex flex-col items-center">
-  <!-- Video -->
-  <div class="w-full max-w-6xl">
-    <video autoplay muted playsinline class="hero-video rounded-xl shadow-lg">
-      <source src="Logovideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+    .glass-header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        rgba(200, 148, 26, 0.95) 0%,
+        rgba(200, 148, 26, 0.78) 55%,
+        rgba(200, 148, 26, 0.35) 82%,
+        rgba(200, 148, 26, 0) 100%
+      );
+    }
 
-  
-</section>
+    .nav-link {
+      color: var(--nfw-silver-soft);
+      transition: color 180ms ease;
+    }
 
-<!-- Responsive Behavior -->
-<style>
-  .hero-video {
-    width: 100%;
-    height: auto;
-    max-height: 600px; /* desktop max height */
-    object-fit: contain;
-  }
+    .nav-link:hover {
+      color: #F2F5F3;
+    }
 
-  /* Mobile portrait */
-  @media (max-width: 767px) and (orientation: portrait) {
-    .hero-video {
-      object-fit: contain;
+    .nav-cta {
+      background: var(--nfw-amber);
+      color: var(--nfw-ink);
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .nav-cta:hover {
+      background: #D9A32A;
+      transform: translateY(-1px);
+    }
+
+    .book-page {
+      position: relative;
+    }
+
+    .book-hero {
+      padding: 5.9rem 1.5rem 2.4rem;
+      border-bottom: 1px solid rgba(200, 212, 207, 0.10);
+      background:
+        linear-gradient(180deg, rgba(13, 41, 24, 0.30), rgba(18, 22, 28, 0.02));
+    }
+
+    .book-hero-inner {
+      max-width: 72rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    @media (min-width: 980px) {
+      .book-hero-inner {
+        grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.15fr);
+      }
+    }
+
+    .book-cover-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .book-cover-card {
+      width: min(100%, 320px);
+      border: 1px solid var(--nfw-border);
+      border-radius: 1.2rem;
+      background: rgba(255,255,255,0.04);
+      padding: 0.9rem;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+    }
+
+    .book-cover-card img {
       width: 100%;
       height: auto;
-      max-height: none;
+      display: block;
+      border-radius: 0.9rem;
+      background: rgba(255,255,255,0.03);
     }
-  }
 
-  /* Mobile landscape */
-  @media (max-width: 767px) and (orientation: landscape) {
-    .hero-video {
-      object-fit: cover;
-      width: 100%;
-      height: auto;
-      max-height: none;
+    .book-kicker,
+    .section-kicker {
+      color: var(--nfw-amber);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
     }
-  }
-</style>
-</section>
 
-  
-  <!--Book Coming Soon Section-->
-<div class="w-full flex flex-col justify-center items-center mt-6 px-4 text-center">
-  <h1 class="text-4xl sm:text-4xl md:text-5xl font-extrabold text-white text-center">Book Coming Soon!</h1>
-  <p class="text-2xl sm:text-2xl md:text-2xl font-semibold text-white/80 leading-tight mt-2">Releasing 2026</p>
-</div>
-  
- 
+    .book-title {
+      color: #F2F5F3;
+      font-size: clamp(2.15rem, 4vw, 3.4rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      max-width: 13ch;
+    }
 
-  <br>
-  <br>
-  <br>
-  <section class="mx-auto max-w-6xl px-4 pt-14 pb-10 grid md:grid-cols-2 gap-10 items-center">
-    <div class="rounded-3xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-100">
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-white">Introduction to The New Financial World</h1>
-      <p class="mt-4 text-lg text-slate-200">A foundational text on the emerging digital infrastructure economy and the rails that underpin it.
+    .book-subtitle {
+      margin-top: 0.5rem;
+      color: rgba(200, 212, 207, 0.84);
+      font-size: 1rem;
+      font-weight: 500;
+    }
 
-</p>
-      <div class="mt-6 flex flex-wrap items-center gap-3">
-        <a href="#buy" class="rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold shadow hover:shadow-lg">Buy now</a>
-        <a href="#preview" class="rounded-2xl border border-white/50 text-white px-5 py-3 font-semibold hover:bg-white/10">Read a sample</a>
-      </div>
-      <!--<div class="mt-6 flex items-center gap-6 text-sm text-slate-300">
-        <div class="flex items-center gap-2"><span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500"></span>Instant digital delivery</div>
-        <div class="hidden md:block">•</div>
-        <div>Free updates for life</div>-->
-      </div>
-    </div>
-    <div class="relative">
-      <div class="absolute -inset-4 -z-10 bg-gradient-to-tr from-cyan-200 to-sky-200 rounded-3xl blur-2xl"></div>
-      <div class="rounded-3xl bg-white p-5 shadow-xl ring-1 ring-slate-900/5">
-        <img src="EyeBookCover.jpg" alt="Book cover: Introduction to The New Financial world - The 5th Industrial Revolution" class="w-full h-auto rounded-2xl object-cover bg-slate-100" />
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="mx-auto max-w-6xl px-4 py-12">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="md:col-span-2 rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-200">
-        <h2 class="text-2xl font-bold text-white">What you will learn</h2>
-        <ul class="mt-4 grid gap-3 list-disc pl-5 text-slate-200">
-          <li>Plain‑English answers: What cryptocurrency is and how blockchain technology works</li>
-          <li>Web3: Why the next era makes money programmable</li>
-          <li>Foundational concepts: Wallets, keys, custody, security, & scams to avoid</li>
-          <li>Layers explained: Layer 0, Layer 1 (ETH, SOL, XRP…), Layer 2 rollups</li>
-          <li>DeFi basics: DEXs, staking, yields, liquidity pools, & risks</li>
-          <li>Standards & Compliance: ISO 20022, SOC 2, ISO 27001; How TradFi connects</li>
-        </ul>
-      </div>
-      <aside class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-        <h3 class="font-semibold">What is inside</h3>
-        <ul class="mt-3 space-y-1 text-base text-slate-700">
-          <li>• PDF & ePub (instant download)</li>
-          <li>• Table of Contents: Intro, History, Foundational Concepts, Web3, Layer 0/1/2, Blockchain Consensus Mechanism, Security, DeFi, Standards & Laws, Taxes, Case Studies, Careers</li>
-          <li>• Bonus: Quick‑reference crypto table + risk checklist</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-
-  <!-- Mission & Core Values 
-  <section id="mission" class="mx-auto max-w-6xl px-4 py-12">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="md:col-span-2 rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 text-slate-200">
-        <h2 class="text-2xl font-bold text-white">Our Mission</h2>
-        <p class="mt-3 text-base text-slate-200">
-          At <span class="font-semibold">The New Financial World</span>, our mission is to
-          <span class="font-semibold">demystify digital finance</span> and
-          <span class="font-semibold">empower people everywhere</span> to participate in the evolving financial system
-          with <span class="font-semibold">confidence, clarity, and security</span>. Money should move at the speed of
-          the internet — and everyone deserves access to the opportunities of the 5th Industrial Revolution.
-        </p>
-      </div>
-
-      <aside class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-        <h3 class="text-2xl font-bold text-black">Core Values</h3>
-        <ul class="mt-3 space-y-2 text-base text-slate-700">
-          <li>• <span class="font-medium">Innovation</span> — Embrace cryptocurrency, blockchain, and Web3 to shape the future of money.</li>
-          <li>• <span class="font-medium">Education & Clarity</span> — Make complex ideas easy to understand.</li>
-          <li>• <span class="font-medium">Empowerment & Financial Freedom</span> — Put people in control of their wealth.</li>
-          <li>• <span class="font-medium">Reliability & Security</span> — Uphold global standards and best practices.</li>
-          <li>• <span class="font-medium">Community & Accessibility</span> — Open the door for everyone to thrive.</li>
-        </ul>
-      </aside>
-    </div>
-  </section>-->
-
-
-  <section id="preview" class="mx-auto max-w-6xl px-4 py-12">
-    <div class="grid lg:grid-cols-2 gap-8 items-start">
-     <!-- <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-        <h3 class="font-semibold">Free sample (PDF)</h3>
-        <p class="mt-2 text-base text-slate-700">Let readers try before they buy.</p>
-        <a href="#" class="mt-4 inline-block rounded-xl bg-slate-900 px-4 py-2 text-white font-medium">Download sample</a>
-      </div> -->
-      <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-        <h3 class="font-semibold">Testimonials</h3>
-        <ul class="mt-4 space-y-3 text-sm text-slate-700">
-          <li>“Short, glowing testimonial.” — Happy Reader</li>
-          <li>“Another social proof nugget.” — Reviewer</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-
-
-<!--Buy Section-->
-  <section id="buy" class="mx-auto max-w-6xl px-4 py-12">
-    <div class="rounded-3xl bg-slate-900 text-white p-8 md:p-10 shadow-xl">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-3xl font-extrabold">Get the full book</h2>
-          <!--<p class="mt-2 text-slate-300">Instant access to all formats and bonus resources.</p>-->
-          <div class="mt-6 grid gap-4">
-            <div class="flex items-center gap-3">
-              <label for="qty" class="text-sm text-slate-300">Quantity</label>
-              <input id="qty" type="number" min="1" value="1" class="w-20 rounded-xl bg-white/10 border border-white/20 px-3 py-2" />
-            </div>
-            
-              <!--<p class="text-xs text-slate-300">e‑Book: Instant download. Paperback: We will follow up by email for shipping details. Signed copies add production & handling time.</p>
-            </fieldset>-->
-          </div>
-          <p class="mt-4 text-slate-200 text-sm">Total: <span id="total" class="font-semibold">$14.99</span> <span id="perUnit" class="text-slate-400">($14.99 per unit)</span></p>
-        </div>
-       <!-- <div class="space-y-3">
-          <button data-coin="eth" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with ETH</button>
-          <button data-coin="sol" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with SOL</button>
-          <button data-coin="btc" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with BTC</button>
-          <button data-coin="usdc" class="w-full rounded-2xl bg-white text-slate-900 px-5 py-3 font-semibold hover:bg-slate-100 flex items-center justify-center gap-2">Pay with USDC</button>
-          <div class="h-px bg-white/10 my-4"></div>-->
-        
-           <fieldset class="space-y-2">
-              <legend class="text-sm text-slate-300">Format</legend>
-              <div class="flex flex-wrap gap-3 text-slate-900">
-                <label class="inline-flex items-center gap-2 bg-white/90 rounded-xl px-3 py-2 cursor-pointer">
-                  <input type="radio" name="format" value="ebook" class="accent-slate-900" checked />
-                  <span class="text-sm font-medium">e‑Book (PDF & ePub)</span>
-                </label>
-                <label class="inline-flex items-center gap-2 bg-white/90 rounded-xl px-3 py-2 cursor-pointer">
-                  <input type="radio" name="format" value="paperback" class="accent-slate-900" />
-                  <span class="text-sm font-medium">Paperback</span>
-                </label>
-              </div>
-              <label class="mt-2 inline-flex items-center gap-2 text-sm">
-                <input id="signed" type="checkbox" class="accent-slate-900" disabled />
-                <!--<span>Signed copy <span class="opacity-80">(+ $40.00)</span></span>-->
-              </label>
-             
-          <button data-coin="Amazon" class="w-full rounded-2xl bg-[#FFC439] text-slate-900 px-5 py-3 font-semibold hover:opacity-90 flex items-center justify-center gap-2">Buy the Book</button>
-          <p class="text-center text-xs text-slate-300">Payments handled by your provider. Secure & instant. No card data is processed on this site.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modals (SOL, ETH, BTC, USDC) -->
-  <div id="solModal" class="fixed inset-0 z-50 hidden">
-    <div class="absolute inset-0 bg-black/60" data-close="sol"></div>
-    <div class="absolute inset-0 p-4 grid place-items-center">
-      <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/10">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="text-lg font-semibold">Pay with SOL</h3>
-          <button class="rounded-xl px-3 py-1 text-sm bg-slate-100 hover:bg-slate-200" data-close="sol">Close</button>
-        </div>
-        <p class="mt-2 text-sm text-slate-600">Scan the QR with your Solana wallet or copy the address.</p>
-        <div class="mt-4 grid grid-cols-2 gap-4 items-center">
-          <img id="solQR" alt="Solana Pay QR" class="w-full rounded-xl ring-1 ring-slate-200" />
-          <div>
-            <div class="text-xs text-slate-500">Wallet address</div>
-            <div class="mt-1 break-all font-mono text-sm" id="solAddr">BYPbKQrT3LhU7rVGPx4W5iGNGo6mtpAxgyZprFQ9Zhfo</div>
-            <button id="copySol" class="mt-3 inline-flex items-center gap-2 rounded-xl bg-slate-900 text-white px-3 py-2 text-sm hover:bg-slate-800">Copy address</button>
-            <a id="openSolLink" href="#" target="_blank" class="ml-2 align-middle text-sm underline">Open in wallet</a>
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-slate-500">Amount will reflect your selected format and options on the next screen (if supported by your wallet). If not, enter the USD equivalent manually.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="ethModal" class="fixed inset-0 z-50 hidden">
-    <div class="absolute inset-0 bg-black/60" data-close="eth"></div>
-    <div class="absolute inset-0 p-4 grid place-items-center">
-      <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/10">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="text-lg font-semibold">Pay with ETH</h3>
-          <button class="rounded-xl px-3 py-1 text-sm bg-slate-100 hover:bg-slate-200" data-close="eth">Close</button>
-        </div>
-        <p class="mt-2 text-sm text-slate-600">Scan the QR with your Ethereum wallet or copy the address.</p>
-        <div class="mt-4 grid grid-cols-2 gap-4 items-center">
-          <img id="ethQR" alt="Ethereum QR" class="w-full rounded-xl ring-1 ring-slate-200" />
-          <div>
-            <div class="text-xs text-slate-500">Wallet address</div>
-            <div class="mt-1 break-all font-mono text-sm" id="ethAddr">0x1c26f78543AAF80FF313AFa8d40ac1D95bc8aB74</div>
-            <button id="copyEth" class="mt-3 inline-flex items-center gap-2 rounded-xl bg-slate-900 text-white px-3 py-2 text-sm hover:bg-slate-800">Copy address</button>
-            <a id="openEthLink" href="#" target="_blank" class="ml-2 align-middle text-sm underline">Open in wallet</a>
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-slate-500">Enter the USD equivalent manually if your wallet does not support USD pricing. Memo: Include your email on checkout for delivery.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="btcModal" class="fixed inset-0 z-50 hidden">
-    <div class="absolute inset-0 bg-black/60" data-close="btc"></div>
-    <div class="absolute inset-0 p-4 grid place-items-center">
-      <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/10">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="text-lg font-semibold">Pay with BTC</h3>
-          <button class="rounded-xl px-3 py-1 text-sm bg-slate-100 hover:bg-slate-200" data-close="btc">Close</button>
-        </div>
-        <p class="mt-2 text-sm text-slate-600">Scan the QR with your Bitcoin wallet or copy the address.</p>
-        <div class="mt-4 grid grid-cols-2 gap-4 items-center">
-          <img id="btcQR" alt="Bitcoin QR" class="w-full rounded-xl ring-1 ring-slate-200" />
-          <div>
-            <div class="text-xs text-slate-500">Wallet address</div>
-            <div class="mt-1 break-all font-mono text-sm" id="btcAddr">bc1qw42j9z3dwvu0dcsz7rlwwx7qlxs9kecu72hzwv</div>
-            <button id="copyBtc" class="mt-3 inline-flex items-center gap-2 rounded-xl bg-slate-900 text-white px-3 py-2 text-sm hover:bg-slate-800">Copy address</button>
-            <a id="openBtcLink" href="#" target="_blank" class="ml-2 align-middle text-sm underline">Open in wallet</a>
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-slate-500">Most wallets let you enter the BTC amount manually. Include your email during checkout for delivery.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="usdcModal" class="fixed inset-0 z-50 hidden">
-    <div class="absolute inset-0 bg-black/60" data-close="usdc"></div>
-    <div class="absolute inset-0 p-4 grid place-items-center">
-      <div class="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl ring-1 ring-slate-900/10">
-        <div class="flex items-start justify-between gap-4">
-          <h3 class="text-lg font-semibold">Pay with USDC</h3>
-          <button class="rounded-xl px-3 py-1 text-sm bg-slate-100 hover:bg-slate-200" data-close="usdc">Close</button>
-        </div>
-        <p class="mt-2 text-sm text-slate-600">Choose the chain and send USDC to the address shown.</p>
-        <div class="mt-3 flex gap-2">
-          <button data-usdc-chain="eth" class="rounded-lg px-3 py-1.5 text-sm bg-slate-900 text-white">Ethereum</button>
-          <button data-usdc-chain="sol" class="rounded-lg px-3 py-1.5 text-sm bg-slate-100 hover:bg-slate-200">Solana</button>
-        </div>
-        <div class="mt-4 grid grid-cols-2 gap-4 items-center">
-          <img id="usdcQR" alt="USDC QR" class="w-full rounded-xl ring-1 ring-slate-200" />
-          <div>
-            <div class="text-xs text-slate-500">Wallet address</div>
-            <div class="mt-1 break-all font-mono text-sm" id="usdcAddr"></div>
-            <button id="copyUsdc" class="mt-3 inline-flex items-center gap-2 rounded-xl bg-slate-900 text-white px-3 py-2 text-sm hover:bg-slate-800">Copy address</button>
-            <a id="openUsdcLink" href="#" target="_blank" class="ml-2 align-middle text-sm underline">Open in wallet</a>
-          </div>
-        </div>
-        <p class="mt-4 text-xs text-slate-500">Send **USDC** on the selected chain (ERC-20 for Ethereum, SPL for Solana). Sending the wrong asset may result in loss of funds.</p>
-      </div>
-    </div>
-  </div>
-
-<!--Gallery-->
-  <section id="gallery" class="mx-auto max-w-6xl px-4 py-12">
-    <h2 class="text-2xl font-bold text-white">Gallery</h2>
-    <p class="mt-2 text-slate-200">Covers, concepts, and snapshots from the project.</p>
-
-    <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <figure class="group relative">
-        <button class="block w-full overflow-hidden bg-white border-4 border-white" data-image="EyeBookCover.jpg" data-caption="">
-          <img loading="lazy" src="EyeBookCover.jpg" alt="Book cover" class="aspect-square w-full object-cover transition-transform duration-200 group-hover:scale-[1.02] border-4 border-white-500" />
-          <span class="pointer-events-none absolute inset-0 bg-black/0 group-hover:bg-black/10 transition"></span>
-        </button>
-        <figcaption class="mt-2 text-sm text-slate-300">Book cover</figcaption>
-      </figure>
-    </div>
-  </section>
-
-
-  
-  <!--Sample Section-->
-  <!--<section id="sample" class="mx-auto max-w-6xl px-4 py-12">
-    <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-      <h3 class="font-semibold">Sample read: Web 1.0 / Web 2.0 / Web 3.0</h3>
-      <p class="mt-2 text-base text-slate-700">An excerpt focused strictly on Web3 from your manuscript.</p>
-      <div class="mt-4 space-y-4">
-        <details class="group rounded-xl border border-slate-200 p-4 bg-slate-50 open:bg-white">
-          <summary class="cursor-pointer select-none font-semibold text-slate-900">Web 1.0</summary>
-          <div class="mt-2 text-slate-700 text-sm" id="sample-web1">
-            <p>Loading Web 1.0 excerpt…</p>
-          </div>
-        </details>
-        <details class="group rounded-xl border border-slate-200 p-4 bg-slate-50 open:bg-white">
-          <summary class="cursor-pointer select-none font-semibold text-slate-900">Web 2.0</summary>
-          <div class="mt-2 text-slate-700 text-sm" id="sample-web2">
-            <p>Loading Web 2.0 excerpt…</p>
-          </div>
-        </details>
-        <details class="group rounded-xl border border-slate-200 p-4 bg-slate-50 open:bg-white">
-          <summary class="cursor-pointer select-none font-semibold text-slate-900">Web 3.0</summary>
-          <div class="mt-2 text-slate-700 text-sm" id="sample-web3">
-            <p>Loading Web 3.0 excerpt…</p>
-          </div>
-        </details>
-      </div>
-      <a id="downloadSample" href="#" class="mt-4 inline-block rounded-xl bg-slate-900 px-4 py-2 text-white font-medium">Download sample</a>
-      <p class="mt-2 text-xs text-slate-500">The sample includes the Web3 sections only.</p>
-    </div>
-  </section>-->
-
-  <section id="faq" class="mx-auto max-w-6xl px-4 py-16">
-    <h2 class="text-2xl font-bold text-white">FAQ</h2>
-    <div class="rounded-2xl bg-white/10 backdrop-blur ring-1 ring-white/10 p-6 mt-6 grid md:grid-cols-2 gap-6 text-slate-200">
-      <div>
-        <h3 class="font-semibold text-white">Is this financial advice?</h3>
-        <p class="mt-2 text-base text-slate-200">No. This book is for educational purposes only. Always do your own research and consult a licensed professional.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-white">How do I get my files?</h3>
-        <p class="mt-2 text-base text-slate-200">After a successful payment, you will be redirected to a confirmation page and receive a secure download link via email.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-white">What is covered?</h3>
-        <p class="mt-2 text-base text-slate-200">History of cryptocurrency, Web3, blockchain consensus mechanisms, security, wallets & custody, DeFi, standards & regulations (ISO 20022, MiCA, FIT21), taxes,  careers, and more.</p>
-      </div>
-      <div>
-        <h3 class="font-semibold text-white">Refunds?</h3>
-        <p class="mt-2 text-base text-slate-200">If you have any issues accessing your files, contact us within 14 days at <a href="mailto:Nfwfla@gmail.com" class="underline text-white">Nfwfla@gmail.com</a>.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="disclaimer" class="mx-auto max-w-6xl px-4 pb-6">
-    <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-      <h3 class="font-semibold">Disclaimer</h3>
-      <p class="mt-2 text-base text-slate-700">This is not financial advice; This is for educational purposes only.</p>
-    </div>
-  </section>
-
-  <section id="author" class="mx-auto max-w-6xl px-4 pb-10">
-    <div class="rounded-2xl bg-white p-6 shadow ring-1 ring-slate-900/5">
-      <div class="flex items-start gap-6">
-        <div class="h-14 w-14 shrink-0 rounded-2xl bg-slate-900 text-white grid place-items-center font-bold">ZS</div>
-        <div>
-          <h3 class="font-semibold">About the author</h3>
-          <p class="mt-2 text-base text-slate-700">Zakir Sadiki - R3 Corda for Business Professionals Certificate; Blockchain Council: Certified Cryptocurrency Expert.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- Footer -->
-<footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
-  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
-    <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-    <div class="flex items-center gap-4">
-      <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
-      <a href="terms.html" class="hover:text-slate-200">Terms</a>
-    </div>
-  </div>
-
-<!-- Social Media Links -->
-<div class="flex justify-center items-center mt-6 space-x-6">
-
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/nfwfla"
-     target="_blank"
-     aria-label="LinkedIn"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="https://www.linkedin.com/in/the-new-financial-world-782039397/"
-         fill="#0A66C2"
-         viewBox="0 0 24 24"
-         class="w-5 h-5 block">
-      <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
-    </svg>
-  </a>
-
-  <!-- X -->
-  <a href="https://x.com/nfwfla"
-     target="_blank"
-     aria-label="X"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
-  </a>
-
-  <!-- Discord - Hidden for Now -->
-  <!--<a href="https://discord.gg/AqxQfa6d"
-     target="_blank"
-     aria-label="Discord"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="Discord-Symbol-Blurple.png"
-         alt="Discord"
-         class="w-6 h-6 object-contain block">
-  </a>-->
-
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@NFWFLA"
-     target="_blank"
-     aria-label="YouTube"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 24 24"
-         class="w-6 h-6 block">
-      <path fill="#FF0000"
-        d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
-      <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
-    </svg>
-  </a>
-
-<!-- Spotify -->
-<a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer"
-   target="_blank"
-   aria-label="Spotify"
-   class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-  <svg xmlns="http://www.w3.org/2000/svg"
-       viewBox="0 0 24 24"
-       class="w-6 h-6 block">
-
-    <!-- Green circle -->
-    <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
-
-    <!-- White waves scaled down + optically centered -->
-    <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
-      <path fill="#FFFFFF"
-        d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
-      <path fill="#FFFFFF"
-        d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
-      <path fill="#FFFFFF"
-        d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
-    </g>
-
-  </svg>
-</a>
-
-
-</div>
-
-
-
-
-<p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
-    The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
-  </p>
-
-
-
-  <!-- Disclaimer -->
-  <!--<p class="mt-6 max-w-2xl mx-auto text-center text-xs text-slate-400 italic">
-    Disclaimer: This is not financial advice. All information provided is for educational purposes only. 
-    The goal of The New Financial World LLC is to demystify crypto and blockchain technology through knowledge and clarity.
-  </p>-->
-</footer>
-
-<script>
-  document.getElementById("tos-year").textContent = new Date().getFullYear();
-</script>
-  
-  
-  
-</body>
-</html>
+    .book-lead {
+      margin-top: 1rem;
+      max-width: 58rem;
+      color: rgba(200, 212, 207, 
