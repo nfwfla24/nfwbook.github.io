@@ -1,290 +1,601 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Terms of Service - The New Financial World LLC</title>
-   <!--Favicon-->
-  <link rel="icon" type="image/png" href="/logov2.png" sizes="32x32">
-<link rel="shortcut icon" type="image/png" href="/logov2.png">
+  <title>Terms of Service | The New Financial World LLC</title>
+
+  <link rel="icon" type="image/png" href="logov2.png" sizes="32x32" />
+  <link rel="shortcut icon" type="image/png" href="logov2.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-    :root{--brand:#111827;--accent:#06b6d4}
-    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    html{font-size:17px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
-    @media (min-width:1024px){html{font-size:18px}}
-    p,li{line-height:1.7}
-    .glass{backdrop-filter:saturate(180%) blur(12px); background:rgba(255,255,255,.6)}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <meta property="og:title" content="Terms of Service | The New Financial World LLC" />
+
+  <style>
+    :root {
+      --nfw-charcoal: #12161C;
+      --nfw-charcoal-2: #182029;
+      --nfw-forest: #0D2918;
+      --nfw-forest-soft: #163824;
+      --nfw-amber: #C8941A;
+      --nfw-silver: #C8D4CF;
+      --nfw-silver-soft: rgba(200, 212, 207, 0.72);
+      --nfw-border: rgba(200, 212, 207, 0.16);
+      --nfw-panel: rgba(255, 255, 255, 0.04);
+      --nfw-panel-strong: rgba(255, 255, 255, 0.06);
+      --nfw-ink: #0B0E12;
+    }
+
+    html,
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--nfw-charcoal);
+      color: var(--nfw-silver);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(200, 148, 26, 0.05), transparent 22%),
+        linear-gradient(135deg, #10141A 0%, #12161C 52%, #0D2918 100%);
+    }
+
+    p, li {
+      line-height: 1.72;
+    }
+
+    .site-shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-shell::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background:
+        linear-gradient(rgba(200, 212, 207, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 212, 207, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.42), rgba(0,0,0,0.08));
+    }
+
+    .site-shell::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        radial-gradient(720px 380px at 0% 0%, rgba(13, 41, 24, 0.46), transparent 62%),
+        radial-gradient(500px 260px at 100% 0%, rgba(200, 148, 26, 0.06), transparent 58%),
+        radial-gradient(720px 400px at 50% 100%, rgba(22, 56, 36, 0.24), transparent 68%);
+    }
+
+    .glass-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: saturate(160%) blur(14px);
+      background: rgba(18, 22, 28, 0.78);
+      border-bottom: 1px solid rgba(200, 212, 207, 0.08);
+    }
+
+    .glass-header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        rgba(200, 148, 26, 0.95) 0%,
+        rgba(200, 148, 26, 0.78) 55%,
+        rgba(200, 148, 26, 0.35) 82%,
+        rgba(200, 148, 26, 0) 100%
+      );
+    }
+
+    .nav-link {
+      color: var(--nfw-silver-soft);
+      transition: color 180ms ease;
+    }
+
+    .nav-link:hover {
+      color: #F2F5F3;
+    }
+
+    .nav-cta {
+      background: var(--nfw-amber);
+      color: var(--nfw-ink);
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .nav-cta:hover {
+      background: #D9A32A;
+      transform: translateY(-1px);
+    }
+
+    .mobile-link {
+      display: block;
+      padding: 0.75rem 0;
+      color: var(--nfw-silver-soft);
+      border-top: 1px solid rgba(200, 212, 207, 0.08);
+    }
+
+    .mobile-link:hover {
+      color: #F2F5F3;
+    }
+
+    .terms-hero {
+      padding: 2.25rem 1.5rem 1rem;
+    }
+
+    .terms-shell {
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      color: var(--nfw-amber);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+
+    .terms-title {
+      color: #F2F5F3;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      max-width: 12ch;
+    }
+
+    .terms-lead {
+      margin-top: 1rem;
+      max-width: 58rem;
+      color: rgba(200, 212, 207, 0.84);
+      font-size: 1rem;
+      line-height: 1.74;
+    }
+
+    .terms-main {
+      padding: 1rem 1.5rem 4.75rem;
+    }
+
+    .terms-card {
+      max-width: 72rem;
+      margin: 0 auto;
+      border: 1px solid var(--nfw-border);
+      border-radius: 1.25rem;
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+      padding: 1.5rem;
+    }
+
+    .terms-meta {
+      color: rgba(200, 212, 207, 0.68);
+      font-size: 0.92rem;
+      margin-top: 0.45rem;
+    }
+
+    .terms-content {
+      margin-top: 1.5rem;
+      color: rgba(200, 212, 207, 0.88);
+    }
+
+    .terms-content h2 {
+      color: #F2F5F3;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      font-weight: 750;
+      margin-top: 1.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .terms-content p {
+      margin-top: 0.8rem;
+    }
+
+    .terms-content ul {
+      margin-top: 0.8rem;
+      padding-left: 1.25rem;
+      list-style: disc;
+    }
+
+    .terms-content li + li {
+      margin-top: 0.55rem;
+    }
+
+    .terms-content a {
+      color: #e8c46a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .terms-content strong {
+      color: #F2F5F3;
+      font-weight: 700;
+    }
+
+    footer.site-footer {
+      position: relative;
+      padding: 2.5rem 1rem 3rem;
+      background: transparent;
+    }
+
+    footer.site-footer::before {
+      content: "";
+      display: block;
+      width: min(100%, 80rem);
+      height: 2px;
+      margin: 0 auto 2rem;
+      background: #C8941A;
+    }
+
+    .footer-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: rgba(200, 212, 207, 0.78);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #F2F5F3;
+    }
+
+    .footer-social {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-copy {
+      margin-top: 1.25rem;
+      max-width: 75rem;
+      color: rgba(200, 212, 207, 0.78);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 640px) {
+      .terms-hero {
+        padding: 1.5rem 1rem 0.75rem;
+      }
+
+      .terms-main {
+        padding: 0.75rem 1rem 4rem;
+      }
+
+      .terms-card {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
-<body class="relative text-slate-800">
-  <div class="fixed inset-0 -z-10 pointer-events-none">
-    <div class="absolute inset-0" style="background:
-      radial-gradient(1200px 600px at -10% -20%, rgba(20,184,166,.18), transparent 60%),
-      radial-gradient(800px 400px at 110% 0%, rgba(14,165,233,.18), transparent 60%),
-      radial-gradient(1000px 600px at 50% 120%, rgba(56,189,248,.12), transparent 60%),
-      linear-gradient(180deg, #0b1020 0%, #0f172a 40%, #0b1020 100%);
-    "></div>
-  </div>
 
- <!-- Top header -->
-<header class="sticky top-0 z-40 bg-white/70 border-b border-slate-200/60 glass">
-  <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
+<body>
+  <div class="site-shell">
+    <header class="sticky top-0 z-40 glass-header">
+      <div class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-3 min-w-0">
+          <img src="logov2.png" alt="The New Financial World LLC logo" class="h-10 w-10 rounded-xl object-contain" />
+          <span class="font-semibold tracking-tight text-[#F2F5F3] truncate">The New Financial World LLC</span>
+        </a>
 
-    <!-- Logo + Site Name -->
-    <a href="/" class="flex items-center gap-3">
-      <!-- Logo image -->
-      <img src="logov2.png" alt="New Financial World Logo" class="h-9 w-9 rounded-2xl object-cover">
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="technology.html" class="nav-link">Technology</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="book.html" class="nav-link">Book</a>
+          <a href="consulting.html" class="nav-link">Advisory</a>
+          <a href="media.html" class="nav-link">Media</a>
+          <a href="contactus.html" class="nav-cta rounded-xl px-4 py-2">Work With Us</a>
+        </nav>
 
-      <!-- Site name -->
-      <span class="font-semibold tracking-tight text-slate-900">The New Financial World LLC</span>
-    </a>
+        <button
+          id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 px-3 py-2 text-[#F2F5F3]"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M3 5h14v2H3V5Zm0 4h14v2H3V9Zm0 4h14v2H3v-2Z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
 
-     <!-- Desktop nav -->
-    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
-      <a href="index.html" class="hover:text-slate-950">Home</a>
-      <a href="about.html" class="hover:text-slate-950">About</a>
-      <a href="consulting.html" class="hover:text-slate-950">Advisory</a>
-      <a href="book.html" class="hover:text-slate-950">Book (Releasing Soon!)</a>
-      <a href="homepage.html" class="hover:text-slate-950">Media</a>
-      <a href="contactus.html" class="hover:text-slate-950">Work With Us</a>
-      
-    </nav>
+      <nav id="mobile-menu" class="md:hidden hidden mx-auto max-w-7xl px-4 pb-4">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="technology.html" class="mobile-link">Technology</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="book.html" class="mobile-link">Book</a>
+        <a href="consulting.html" class="mobile-link">Advisory</a>
+        <a href="media.html" class="mobile-link">Media</a>
+        <a href="contactus.html" class="mobile-link text-[#D9A32A] font-semibold">Work With Us</a>
+      </nav>
+    </header>
 
-    <!-- Mobile hamburger -->
-    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-gray-900 border-gray-600">
-      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile menu -->
-  <nav id="mobile-menu" class="md:hidden hidden w-full max-w-6xl mx-auto px-4 pb-4 space-y-2">
-    <a href="index.html" class="block text-left hover:text-slate-950">Home</a>
-    <a href="about.html" class="block text-left hover:text-slate-950">About</a>
-    <a href="consulting.html" class="block text-left hover:text-slate-950">Advisory</a>
-    <a href="book.html" class="block text-left hover:text-slate-950">Book (Releasing Soon!)</a>
-    <a href="homepage.html" class="block text-left hover:text-slate-950">Media</a>
-    <a href="contactus.html" class="block text-left hover:text-slate-950">Work With Us</a>
-    
-  </nav>
-</header>
-
-<script>
-  const btn = document.getElementById('mobile-menu-button');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-</script>
-     
-  </header>
-
-  
-<!-- Hero Section -->
-<section id="home" class="w-full bg-black flex flex-col items-center">
-  <!-- Video -->
-  <div class="w-full max-w-6xl">
-    <video autoplay muted playsinline class="hero-video rounded-xl shadow-lg">
-      <source src="Logovideo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  
-</section>
-
-<!-- Responsive Behavior -->
-<style>
-  .hero-video {
-    width: 100%;
-    height: auto;
-    max-height: 600px; /* desktop max height */
-    object-fit: contain;
-  }
-
-  /* Mobile portrait */
-  @media (max-width: 767px) and (orientation: portrait) {
-    .hero-video {
-      object-fit: contain;
-      width: 100%;
-      height: auto;
-      max-height: none;
-    }
-  }
-
-  /* Mobile landscape */
-  @media (max-width: 767px) and (orientation: landscape) {
-    .hero-video {
-      object-fit: cover;
-      width: 100%;
-      height: auto;
-      max-height: none;
-    }
-  }
-</style>
-</section>
-
-  
-  <main class="mx-auto max-w-4xl px-4 py-12">
-    <div class="rounded-3xl bg-white p-8 shadow-xl ring-1 ring-slate-900/10">
-      <h1 class="text-3xl font-extrabold">Terms of Service</h1>
-      <p class="mt-2 text-slate-600 text-sm">Last updated: <span id="tos-date">October 23, 2025</span></p>
-      <section class="mt-6 space-y-4 text-slate-700">
-        <h2 class="text-xl font-semibold">1. Agreement to Terms</h2>
-        <p>By accessing this website, purchasing resources, or engaging our consulting and educational services, you agree to these Terms.</p>
-        <h2 class="text-xl font-semibold">2. Educational Content; Not Financial Advice</h2>
-        <p>All content and services are for educational and informational purposes only. We do not provide financial, investment, legal, or tax advice.</p>
-        <h2 class="text-xl font-semibold">3. Accounts and Eligibility</h2>
-        <p>You represent that you are at least the age of majority in your jurisdiction and have the authority to enter into these Terms.</p>
-        <h2 class="text-xl font-semibold">4. Purchases; Third‑Party Payments</h2>
-        <p>Purchases may be processed by third‑party providers (e.g., Stripe, PayPal, Coinbase Commerce, or your crypto wallet). We do not collect or store payment card numbers or wallet private‑key information.</p>
-        <h2 class="text-xl font-semibold">5. Intellectual Property</h2>
-        <p>The website, book, resources, and other content are protected by intellectual property laws.</p>
-        <h2 class="text-xl font-semibold">6. License for Personal Use</h2>
-        <p>We grant you a limited, non‑exclusive, non‑transferable license to access and use the site and purchased resources for personal or internal business purposes.</p>
-        <h2 class="text-xl font-semibold">7. Prohibited Conduct</h2>
-        <ul class="list-disc pl-6 space-y-2">
-          <li>Interfering with site security or functionality;</li>
-          <li>Reverse engineering or scraping the site or content;</li>
-          <li>Using the services for unlawful purposes or to violate third‑party rights.</li>
-        </ul>
-        <h2 class="text-xl font-semibold">8. Disclaimers</h2>
-        <p>THE SITE AND SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE.”</p>
-        <h2 class="text-xl font-semibold">9. Limitation of Liability</h2>
-        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE WILL NOT BE LIABLE FOR INDIRECT OR CONSEQUENTIAL DAMAGES.</p>
-        <h2 class="text-xl font-semibold">10. Indemnification</h2>
-        <p>You agree to indemnify and hold harmless New Financial World and its principals from any claims arising from your use of the site or services.</p>
-        <h2 class="text-xl font-semibold">11. Termination</h2>
-        <p>We may suspend or terminate access to the site or services at any time.</p>
-        <h2 class="text-xl font-semibold">12. Governing Law; Dispute Resolution</h2>
-        <p>These Terms are governed by the laws of our principal place of business.</p>
-        <h2 class="text-xl font-semibold">13. Changes to Terms</h2>
-        <p>We may update these Terms from time to time.</p>
-        <h2 class="text-xl font-semibold">14. Users Under 18</h2>
-        <p>Our services are not directed to individuals under the age of 18. We do not knowingly collect personal information from anyone under 18 years old.</p>
-        <h2 class="text-xl font-semibold">15. Contact</h2>
-        <p>Questions? Email <a class="text-sky-700 underline" href="mailto:info@newfinancialworld.com">info@newfinancialworld.com</a> </p>
+    <main>
+      <section class="terms-hero">
+        <div class="terms-shell">
+          <p class="section-kicker">Legal</p>
+          <h1 class="terms-title">Terms of service.</h1>
+          <p class="terms-lead">
+            These Terms govern access to and use of the website, materials,
+            and services provided by The New Financial World LLC.
+          </p>
+        </div>
       </section>
-    </div>
-  </main>
 
- <!-- Footer -->
-<footer class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 bg-gray-900">
-  <div class="flex flex-wrap items-center justify-between gap-2 border-t border-slate-700 pt-6">
-    <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
-    <div class="flex items-center gap-4">
-      <a href="privacy.html" class="hover:text-slate-200">Privacy</a>
-      <a href="terms.html" class="hover:text-slate-200">Terms</a>
-    </div>
-  </div>
+      <section class="terms-main">
+        <div class="terms-card">
+          <h1 class="terms-title" style="font-size: clamp(1.9rem, 3vw, 2.4rem); max-width: none;">Terms of Service</h1>
+          <p class="terms-meta">Last updated: <span id="tos-date">October 23, 2025</span></p>
 
-<!-- Social Media Links -->
-<div class="flex justify-center items-center mt-6 space-x-6">
-
-  <!-- LinkedIn -->
-  <a href="https://www.linkedin.com/in/nfwfla"
-     target="_blank"
-     aria-label="LinkedIn"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="https://www.linkedin.com/in/the-new-financial-world-782039397/"
-         fill="#0A66C2"
-         viewBox="0 0 24 24"
-         class="w-5 h-5 block">
-      <path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
-    </svg>
-  </a>
-
-  <!-- X -->
-  <a href="https://x.com/nfwfla"
-     target="_blank"
-     aria-label="X"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="x-logo.png" alt="X Logo" class="w-6 h-6 object-contain block">
-  </a>
-
-  <!-- Discord - Hidden for Now -->
-  <!--<a href="https://discord.gg/AqxQfa6d"
-     target="_blank"
-     aria-label="Discord"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <img src="Discord-Symbol-Blurple.png"
-         alt="Discord"
-         class="w-6 h-6 object-contain block">
-  </a>-->
-
-  <!-- YouTube -->
-  <a href="https://www.youtube.com/@NFWFLA"
-     target="_blank"
-     aria-label="YouTube"
-     class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-    <svg xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 24 24"
-         class="w-6 h-6 block">
-      <path fill="#FF0000"
-        d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
-      <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
-    </svg>
-  </a>
-
-<!-- Spotify -->
-<a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer"
-   target="_blank"
-   aria-label="Spotify"
-   class="w-6 h-6 flex items-center justify-center transform transition-transform duration-300 hover:scale-125">
-  <svg xmlns="http://www.w3.org/2000/svg"
-       viewBox="0 0 24 24"
-       class="w-6 h-6 block">
-
-    <!-- Green circle -->
-    <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
-
-    <!-- White waves scaled down + optically centered -->
-    <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
-      <path fill="#FFFFFF"
-        d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
-      <path fill="#FFFFFF"
-        d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
-      <path fill="#FFFFFF"
-        d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
-    </g>
-
-  </svg>
-</a>
-
-
-</div>
-
-
-
-
-<p class="mt-6 max-w-2xl mx-auto text-center text-sm text-slate-400">
-    The New Financial World LLC is a digital infrastructure advisory and media company focused on the convergence of energy, blockchain, AI, and financial systems.
+         <section class="terms-content">
+  <h2>1. Agreement to Terms</h2>
+  <p>
+    By accessing this website, purchasing or downloading our book and digital
+    resources, or engaging our advisory and educational services, you agree to
+    be bound by these Terms of Service ("Terms").
   </p>
 
+  <h2>2. Services and Content</h2>
+  <p>
+    The New Financial World LLC provides educational content, digital
+    products (including the book and related materials), advisory and
+    consulting services, and media (including podcasts, videos, and articles)
+    focused on energy infrastructure, blockchain, AI, and financial systems.
+  </p>
 
+  <h2>3. Educational Content; No Financial Advice</h2>
+  <p>
+    All content and services are provided for educational and informational
+    purposes only. We do not provide personalized financial, investment,
+    trading, legal, accounting, or tax advice. You are solely responsible for
+    any decisions you make based on information from this site or our
+    services.
+  </p>
 
-  <!-- Disclaimer -->
-  <!--<p class="mt-6 max-w-2xl mx-auto text-center text-xs text-slate-400 italic">
-    Disclaimer: This is not financial advice. All information provided is for educational purposes only. 
-    The goal of The New Financial World LLC is to demystify crypto and blockchain technology through knowledge and clarity.
-  </p>-->
-</footer>
+  <h2>4. Accounts and Eligibility</h2>
+  <p>
+    You represent that you are at least the age of majority in your
+    jurisdiction and have the legal authority to enter into these Terms. You
+    are responsible for maintaining the confidentiality of any account
+    credentials and for all activity under your account.
+  </p>
 
-<script>
-  document.getElementById("tos-year").textContent = new Date().getFullYear();
-</script>
-  
-  
-  
+  <h2>5. Purchases; Third‑Party Payments</h2>
+  <p>
+    Purchases may be processed by third‑party providers such as Stripe,
+    PayPal, Coinbase Commerce, or your wallet provider. We do not collect or
+    store payment card numbers or wallet private‑key information on this site.
+    Your use of any third‑party processor is subject to that provider’s terms
+    and privacy policy.
+  </p>
+
+  <h2>6. Digital Products; Refunds</h2>
+  <p>
+    Unless stated otherwise on the specific product page, all sales of
+    digital products (including ebooks, downloadable resources, and recorded
+    content) are final once access has been delivered. Because digital
+    products are made available immediately, we generally do not offer
+    refunds, except where required by law or expressly noted in a separate
+    Refund Policy. If a product is materially defective or inaccessible,
+    contact us at <a href="mailto:info@newfinancialworld.com">info@newfinancialworld.com</a>
+    so we can review the issue.
+  </p>
+
+  <h2>7. Intellectual Property and License</h2>
+  <p>
+    The website, book, methodologies, frameworks, videos, audio content, and
+    other materials are owned by The New Financial World LLC or its
+    licensors and are protected by intellectual property laws. Subject to
+    these Terms, we grant you a limited, non‑exclusive, non‑transferable
+    license to access and use the site and purchased resources for your
+    personal or internal business use.
+  </p>
+  <p>
+    You may not reproduce, distribute, publicly display, resell, or create
+    derivative works from our content, except as expressly permitted in
+    writing. You may not share paid digital products outside your
+    organization, sublicense them, or use them as templates or course
+    content for your own commercial products without our prior written
+    consent.
+  </p>
+
+  <h2>8. Prohibited Conduct</h2>
+  <ul>
+    <li>Interfering with site security, availability, or functionality.</li>
+    <li>Reverse engineering, scraping, or extracting content from the site or services without authorization.</li>
+    <li>Using bots or automated tools to access or copy significant portions of the content.</li>
+    <li>Using the site or services for unlawful purposes or to violate third‑party rights.</li>
+  </ul>
+
+  <h2>9. Advisory and Consulting Services</h2>
+  <p>
+    Advisory and consulting services are provided under these Terms and any
+    separate written agreement we enter into with you. Our role is to provide
+    analysis, education, and strategic insight; you remain solely
+    responsible for implementation decisions, compliance obligations, and
+    operational risk.
+  </p>
+
+  <h2>10. Disclaimers</h2>
+  <p>
+    TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SITE, CONTENT, DIGITAL
+    PRODUCTS, AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT
+    WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY,
+    INCLUDING WARRANTIES OF ACCURACY, NON‑INFRINGEMENT, MERCHANTABILITY, OR
+    FITNESS FOR A PARTICULAR PURPOSE.
+  </p>
+
+  <h2>11. Limitation of Liability</h2>
+  <p>
+    TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE NEW FINANCIAL WORLD LLC AND
+    ITS PRINCIPALS, EMPLOYEES, AND CONTRACTORS WILL NOT BE LIABLE FOR ANY
+    INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES
+    (INCLUDING LOST PROFITS, LOST DATA, OR BUSINESS INTERRUPTION) ARISING
+    OUT OF OR RELATING TO YOUR USE OF THE SITE, CONTENT, DIGITAL PRODUCTS,
+    OR SERVICES.
+  </p>
+  <p>
+    To the extent liability cannot be excluded, our total aggregate liability
+    arising out of or relating to the site, content, digital products, or
+    services will be limited to the greater of (a) the amount you paid to us
+    for the specific product or service giving rise to the claim during the
+    twelve (12) months preceding the event, or (b) one hundred U.S. dollars
+    (US$100). Some jurisdictions do not allow certain limitations, so these
+    limits may not apply to you.
+  </p>
+
+  <h2>12. Indemnification</h2>
+  <p>
+    You agree to indemnify, defend, and hold harmless The New Financial World
+    LLC and its principals from any claims, damages, liabilities, costs, and
+    expenses arising out of your use of the site or services, your violation
+    of these Terms, or your violation of any rights of a third party.
+  </p>
+
+  <h2>13. Termination</h2>
+  <p>
+    We may suspend or terminate your access to the site, content, or
+    services at any time, with or without notice, including where we believe
+    you have violated these Terms or misused the services. Upon termination,
+    any licenses granted to you will cease, except for rights you may have
+    under applicable law.
+  </p>
+
+  <h2>14. Governing Law and Dispute Resolution</h2>
+  <p>
+    These Terms are governed by the laws of the jurisdiction of our principal
+    place of business, without regard to conflict‑of‑law principles. Any
+    dispute arising out of or relating to these Terms or the services will be
+    subject to the exclusive jurisdiction of the courts in that jurisdiction,
+    unless a different forum is required by law.
+  </p>
+
+  <h2>15. Changes to Terms</h2>
+  <p>
+    We may update these Terms from time to time. When we make material
+    changes, we will update the "Last updated" date above. Continued use of
+    the site or services after changes take effect constitutes your
+    acceptance of the updated Terms.
+  </p>
+
+  <h2>16. Users Under 18</h2>
+  <p>
+    Our services are not directed to individuals under the age of 18. We do
+    not knowingly collect personal information from anyone under 18 years
+    old, and you must not use the site or services if you are under 18.
+  </p>
+
+  <h2>17. Contact</h2>
+  <p>
+    Questions about these Terms may be sent to
+    <a href="mailto:info@newfinancialworld.com">info@newfinancialworld.com</a>.
+  </p>
+         </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
+
+          <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="media.html">Media</a>
+          </div>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <path fill="#0A66C2" d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
+            </svg>
+          </a>
+
+          <a href="https://x.com/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <img src="x-logo.png" alt="X logo" class="w-6 h-6 object-contain" />
+          </a>
+
+          <a href="https://www.youtube.com/@NFWFLA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <path fill="#FF0000" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
+              <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
+            </svg>
+          </a>
+
+          <a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
+              <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
+                <path fill="#FFFFFF" d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
+                <path fill="#FFFFFF" d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
+                <path fill="#FFFFFF" d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+
+        <p class="footer-copy">
+          The New Financial World LLC is a digital infrastructure advisory and media company
+          focused on the convergence of energy, blockchain, AI, and financial systems.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuButton.addEventListener("click", () => {
+      const expanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+      mobileMenuButton.setAttribute("aria-expanded", String(!expanded));
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    document.getElementById("tos-year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-
-
-
-
-
