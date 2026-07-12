@@ -208,4 +208,696 @@
     .book-lead {
       margin-top: 1rem;
       max-width: 58rem;
-      color: rgba(200, 212, 207, 
+      color: rgba(200, 212, 207, 0.88);
+      font-size: 1.03rem;
+      line-height: 1.76;
+    }
+
+    .book-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.25rem;
+    }
+
+    .book-badge {
+      border: 1px solid rgba(200, 148, 26, 0.35);
+      background: rgba(200, 148, 26, 0.08);
+      color: #F2F5F3;
+      border-radius: 999px;
+      padding: 0.48rem 0.85rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .book-cta {
+      margin-top: 1.45rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-amazon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.9rem 1.25rem;
+      border-radius: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .btn-primary {
+      background: var(--nfw-amber);
+      color: var(--nfw-ink);
+    }
+
+    .btn-primary:hover {
+      background: #D9A32A;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--nfw-border);
+      color: #F2F5F3;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(200, 212, 207, 0.24);
+      transform: translateY(-1px);
+    }
+
+    .btn-amazon {
+      background: #FFC439;
+      color: #111827;
+    }
+
+    .btn-amazon:hover {
+      background: #f4ba2e;
+      transform: translateY(-1px);
+    }
+
+    .book-meta {
+      margin-top: 1.35rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--nfw-border);
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.03);
+      padding: 1rem 1.2rem;
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.14);
+    }
+
+    .book-meta-item span {
+      display: block;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--nfw-amber);
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+    }
+
+    .book-meta-item strong {
+      display: block;
+      color: #F2F5F3;
+      font-size: 0.95rem;
+      font-weight: 650;
+      line-height: 1.45;
+    }
+
+    .book-body {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem 4.75rem;
+    }
+
+    .book-section {
+      padding: 2.2rem 0;
+      border-bottom: 1px solid rgba(200, 212, 207, 0.10);
+    }
+
+    .book-section:last-child {
+      border-bottom: none;
+    }
+
+    .book-section-header {
+      margin-bottom: 1rem;
+    }
+
+    .book-section-header h2 {
+      color: #F2F5F3;
+      font-size: clamp(1.45rem, 2.4vw, 2.15rem);
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      max-width: 18ch;
+    }
+
+    .book-intro {
+      max-width: 70ch;
+      color: rgba(200, 212, 207, 0.88);
+      font-size: 1rem;
+    }
+
+    .book-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.35rem;
+    }
+
+    @media (min-width: 920px) {
+      .book-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .book-card,
+    .book-band,
+    .book-disclaimer,
+    .book-aside {
+      border: 1px solid var(--nfw-border);
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .book-card {
+      padding: 1.25rem;
+    }
+
+    .book-card-label {
+      color: var(--nfw-amber);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .book-card h3,
+    .book-aside h3 {
+      color: #F2F5F3;
+      font-size: 1.05rem;
+      font-weight: 750;
+      margin-bottom: 0.75rem;
+    }
+
+    .book-card p,
+    .book-band p,
+    .book-disclaimer p,
+    .book-aside p,
+    .book-aside li {
+      color: rgba(200, 212, 207, 0.88);
+      font-size: 0.97rem;
+      line-height: 1.68;
+    }
+
+    .book-band {
+      margin-top: 1.35rem;
+      padding: 1rem 1.1rem;
+      background:
+        linear-gradient(90deg, rgba(200, 148, 26, 0.07), rgba(255,255,255,0.02)),
+        rgba(255,255,255,0.02);
+    }
+
+    .book-disclaimer {
+      margin-top: 1.35rem;
+      padding: 1rem 1.1rem;
+      background:
+        linear-gradient(90deg, rgba(13, 41, 24, 0.20), rgba(255,255,255,0.03));
+    }
+
+    .book-two-col {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.35rem;
+    }
+
+    @media (min-width: 980px) {
+      .book-two-col {
+        grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      }
+    }
+
+    .book-aside {
+      padding: 1.25rem;
+    }
+
+    .book-aside ul {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .book-aside li::before {
+      content: "• ";
+      color: var(--nfw-amber);
+    }
+
+    .author-card {
+      margin-top: 1.35rem;
+      border: 1px solid var(--nfw-border);
+      border-radius: 1rem;
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+      padding: 1.25rem;
+    }
+
+    .author-top {
+      display: flex;
+      align-items: center;
+      gap: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .author-mark {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.9rem;
+      background: rgba(200, 148, 26, 0.14);
+      border: 1px solid rgba(200, 148, 26, 0.22);
+      color: #F2F5F3;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .author-name {
+      color: #F2F5F3;
+      font-size: 1.06rem;
+      font-weight: 760;
+    }
+
+    .author-role {
+      color: rgba(200, 212, 207, 0.68);
+      font-size: 0.92rem;
+      margin-top: 0.15rem;
+    }
+
+    footer.site-footer {
+      position: relative;
+      padding: 2.5rem 1rem 3rem;
+      background: transparent;
+    }
+
+    footer.site-footer::before {
+      content: "";
+      display: block;
+      width: min(100%, 80rem);
+      height: 2px;
+      margin: 0 auto 2rem;
+      background: #C8941A;
+    }
+
+    .footer-inner {
+      max-width: 80rem;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      color: rgba(200, 212, 207, 0.78);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #F2F5F3;
+    }
+
+    .footer-social {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-copy {
+      margin-top: 1.25rem;
+      max-width: 75rem;
+      color: rgba(200, 212, 207, 0.78);
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+
+    .mobile-link {
+      display: block;
+      padding: 0.75rem 0;
+      color: var(--nfw-silver-soft);
+      border-top: 1px solid rgba(200, 212, 207, 0.08);
+    }
+
+    .mobile-link:hover {
+      color: #F2F5F3;
+    }
+
+    @media (max-width: 900px) {
+      .book-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .book-hero {
+        padding-top: 4.95rem;
+        padding-bottom: 1.8rem;
+      }
+
+      .book-body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .book-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-shell">
+
+    <header class="sticky top-0 z-40 glass-header">
+      <div class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between gap-4">
+        <a href="index.html" class="flex items-center gap-3 min-w-0">
+          <img src="logov2.png" alt="The New Financial World LLC logo" class="h-10 w-10 rounded-xl object-contain" />
+          <span class="font-semibold tracking-tight text-[#F2F5F3] truncate">The New Financial World LLC</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="technology.html" class="nav-link">Technology</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="book.html" class="nav-link text-[#F2F5F3]">Book</a>
+          <a href="consulting.html" class="nav-link">Advisory</a>
+          <a href="media.html" class="nav-link">Media</a>
+          <a href="contactus.html" class="nav-cta rounded-xl px-4 py-2">Work With Us</a>
+        </nav>
+
+        <button
+          id="mobile-menu-button"
+          class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 px-3 py-2 text-[#F2F5F3]"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M3 5h14v2H3V5Zm0 4h14v2H3V9Zm0 4h14v2H3v-2Z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav id="mobile-menu" class="md:hidden hidden mx-auto max-w-7xl px-4 pb-4">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="technology.html" class="mobile-link">Technology</a>
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="book.html" class="mobile-link text-[#F2F5F3]">Book</a>
+        <a href="consulting.html" class="mobile-link">Advisory</a>
+        <a href="media.html" class="mobile-link">Media</a>
+        <a href="contactus.html" class="mobile-link text-[#D9A32A] font-semibold">Work With Us</a>
+      </nav>
+    </header>
+
+    <main class="book-page">
+      <section class="book-hero">
+        <div class="book-hero-inner">
+          <div class="book-cover-wrap">
+            <div class="book-cover-card">
+              <img
+                src="EyeBookCover.jpg"
+                alt="Book cover for Introduction to The New Financial World"
+                width="900"
+                height="1400"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+          <div>
+            <p class="book-kicker">Book</p>
+            <h1 class="book-title">Introduction to The New Financial World</h1>
+            <p class="book-subtitle">By Zakir Sadiki</p>
+            <p class="book-lead">
+              A broader introduction to blockchain, its historical development,
+              regulatory context, and future direction — written as educational
+              context for readers seeking a clearer understanding of digital
+              systems, trust, and institutional change.
+            </p>
+
+            <div class="book-badges">
+              <span class="book-badge">$14.99 digital edition</span>
+              <span class="book-badge">Paperback available on Amazon</span>
+              <span class="book-badge">Educational purpose</span>
+            </div>
+
+            <div class="book-cta">
+              <a href="YOUR_DIGITAL_PURCHASE_LINK_HERE" class="btn-primary" target="_blank" rel="noopener noreferrer">Buy Digital Edition</a>
+              <a href="YOUR_AMAZON_BOOK_LINK_HERE" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+              <a href="#details" class="btn-secondary">Book details</a>
+            </div>
+
+            <div class="book-meta">
+              <div class="book-meta-item">
+                <span>Format</span>
+                <strong>PDF, ePub, paperback</strong>
+              </div>
+              <div class="book-meta-item">
+                <span>Primary focus</span>
+                <strong>Blockchain history, regulation, and future direction</strong>
+              </div>
+              <div class="book-meta-item">
+                <span>Author</span>
+                <strong>Zakir Sadiki</strong>
+              </div>
+              <div class="book-meta-item">
+                <span>Public role</span>
+                <strong>Educational complement to the broader platform</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="book-body">
+        <article class="book-section" id="details">
+          <div class="book-section-header">
+            <p class="section-kicker">Overview</p>
+            <h2>What this book covers.</h2>
+          </div>
+          <p class="book-intro">
+            This book is designed as a broad introduction to blockchain rather
+            than a narrow technical manual or trading guide. It is intended to
+            help readers understand where blockchain came from, how digital asset
+            systems evolved, how regulation shapes the space, and where these
+            systems may be heading next.
+          </p>
+        </article>
+
+        <article class="book-section">
+          <div class="book-section-header">
+            <p class="section-kicker">Contents</p>
+            <h2>The main themes addressed in the book.</h2>
+          </div>
+
+          <div class="book-grid">
+            <div class="book-card">
+              <p class="book-card-label">Theme one</p>
+              <h3>History and foundations</h3>
+              <p>
+                The book introduces blockchain through its origins, early
+                development, and the broader shift toward digital systems of
+                record, trust, and coordination.
+              </p>
+            </div>
+
+            <div class="book-card">
+              <p class="book-card-label">Theme two</p>
+              <h3>Regulatory context</h3>
+              <p>
+                It addresses how regulation influences blockchain and digital
+                asset systems, including the institutional questions that arise
+                when new technologies begin to intersect with public oversight.
+              </p>
+            </div>
+
+            <div class="book-card">
+              <p class="book-card-label">Theme three</p>
+              <h3>Future direction</h3>
+              <p>
+                The book looks ahead to how blockchain-related systems may
+                continue to evolve and how they may shape broader conversations
+                about digital trust, coordination, and long-term infrastructure
+                change.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <article class="book-section">
+          <div class="book-section-header">
+            <p class="section-kicker">Reader value</p>
+            <h2>What readers can expect to learn.</h2>
+          </div>
+
+          <div class="book-two-col">
+            <div class="book-card">
+              <p class="book-card-label">Learning areas</p>
+              <h3>Clear orientation for a complex category</h3>
+              <p>
+                Readers are introduced to foundational ideas surrounding
+                blockchain, digital systems, regulation, and long-horizon
+                technological change in a way intended to be accessible without
+                sacrificing seriousness.
+              </p>
+            </div>
+
+            <aside class="book-aside">
+              <h3>At a glance</h3>
+              <ul>
+                <li>Blockchain history and foundations</li>
+                <li>Digital asset and systems context</li>
+                <li>Regulation and institutional questions</li>
+                <li>Future direction of digital trust systems</li>
+              </ul>
+            </aside>
+          </div>
+        </article>
+
+        <article class="book-section">
+          <div class="book-section-header">
+            <p class="section-kicker">Platform context</p>
+            <h2>How the book fits within the broader platform.</h2>
+          </div>
+
+          <div class="book-band">
+            <p>
+              While the firm’s core public methodology work centers on BRIS and
+              VRL, this book provides broader educational context for readers
+              seeking to understand the digital, regulatory, and historical
+              backdrop against which questions of verification, trust, and
+              institutional system design are increasingly being asked.
+            </p>
+          </div>
+        </article>
+
+        <article class="book-section">
+          <div class="book-section-header">
+            <p class="section-kicker">Author</p>
+            <h2>Author background and credentials.</h2>
+          </div>
+
+          <div class="author-card">
+            <div class="author-top">
+              <div class="author-mark">ZS</div>
+              <div>
+                <div class="author-name">Zakir Sadiki</div>
+                <div class="author-role">Founder, The New Financial World LLC</div>
+              </div>
+            </div>
+            <p>
+              Zakir Sadiki is the founder of The New Financial World LLC. His
+              work spans energy infrastructure reliability, distributed-ledger
+              methodology, institutional systems, and public-facing educational
+              material related to digital trust and long-horizon change.
+            </p>
+            <p style="margin-top: 0.85rem;">
+              Credentials: R3 Corda for Business Professionals Certificate;
+              Certified Cryptocurrency Expert, Blockchain Council.
+            </p>
+          </div>
+        </article>
+
+        <article class="book-section">
+          <div class="book-section-header">
+            <p class="section-kicker">Disclaimer</p>
+            <h2>Educational material, not financial advice.</h2>
+          </div>
+
+          <div class="book-disclaimer">
+            <p>
+              This book is provided for educational and informational purposes
+              only. It does not constitute financial, investment, legal, or
+              regulatory advice, and should not be relied upon as a substitute
+              for professional advice tailored to a specific situation.
+            </p>
+          </div>
+
+          <div class="book-cta">
+            <a href="YOUR_DIGITAL_PURCHASE_LINK_HERE" class="btn-primary" target="_blank" rel="noopener noreferrer">Buy Digital Edition</a>
+            <a href="YOUR_AMAZON_BOOK_LINK_HERE" class="btn-amazon" target="_blank" rel="noopener noreferrer">Buy on Amazon</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <p>© <span id="tos-year"></span> The New Financial World LLC (#L25000469598). All rights reserved.</p>
+
+          <div class="footer-links">
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="media.html">Media</a>
+          </div>
+        </div>
+
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <path fill="#0A66C2" d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8.3 19H5.2V9h3.1v10zM6.7 7.7c-1 0-1.8-.8-1.8-1.8S5.7 4 6.7 4s1.8.8 1.8 1.8-.8 1.9-1.8 1.9zm12.3 11.3h-3.1v-5.3c0-1.3-.5-2.2-1.7-2.2-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.3h-3.1V9h3.1v1.4c.4-.6 1.3-1.4 2.9-1.4 2.1 0 3.8 1.4 3.8 4.4v5.6z"/>
+            </svg>
+          </a>
+
+          <a href="https://x.com/nfwfla" target="_blank" rel="noopener noreferrer" aria-label="X">
+            <img src="x-logo.png" alt="X logo" class="w-6 h-6 object-contain" />
+          </a>
+
+          <a href="https://www.youtube.com/@NFWFLA" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <path fill="#FF0000" d="M23.5 6.2s-.2-1.7-.9-2.4c-.9-.9-1.9-.9-2.4-1C16.9 2.5 12 2.5 12 2.5h0s-4.9 0-8.2.3c-.5.1-1.5.1-2.4 1-.7.7-.9 2.4-.9 2.4S.2 8.1.2 10v1.9c0 1.9.3 3.8.3 3.8s.2 1.7.9 2.4c.9.9 2.1.9 2.6 1 1.9.2 8 .3 8 .3s4.9 0 8.2-.3c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.4.9-2.4s.3-1.9.3-3.8V10c0-1.9-.3-3.8-.3-3.8z"/>
+              <path fill="#FFFFFF" d="M9.75 14.5v-5l4.5 2.5-4.5 2.5z"/>
+            </svg>
+          </a>
+
+          <a href="https://open.spotify.com/show/5wkVIeUkeCnNiXCYGZ0Mer" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+            <svg viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+              <circle cx="12" cy="12" r="10.4" fill="#1DB954"/>
+              <g transform="translate(12.48 12) scale(0.60) translate(-12 -12)">
+                <path fill="#FFFFFF" d="M17.28 17.23c-.27.44-.84.58-1.28.31-3.5-2.14-7.9-2.63-13.07-1.47-.5.12-1-.2-1.12-.7-.12-.5.2-1 .7-1.12 5.63-1.29 10.49-.74 14.39 1.65.44.27.58.84.31 1.28z"/>
+                <path fill="#FFFFFF" d="M19.11 13.14c-.34.55-1.06.72-1.61.38-4.01-2.46-10.13-3.17-14.88-1.73-.62.19-1.28-.16-1.47-.78-.19-.62.16-1.28.78-1.47 5.43-1.65 12.17-.85 16.79 1.99.55.34.72 1.06.38 1.61z"/>
+                <path fill="#FFFFFF" d="M19.27 8.85C14.63 6.11 7.54 5.88 3.47 7.14c-.74.22-1.52-.19-1.74-.93-.22-.74.19-1.52.93-1.74 4.67-1.4 12.43-1.13 17.45 1.86.67.4.88 1.27.48 1.94-.4.67-1.27.88-1.94.48z"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+
+        <p class="footer-copy">
+          The New Financial World LLC provides energy infrastructure reliability
+          methodologies and related institutional advisory and educational services.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuButton.addEventListener("click", () => {
+      const expanded = mobileMenuButton.getAttribute("aria-expanded") === "true";
+      mobileMenuButton.setAttribute("aria-expanded", String(!expanded));
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    document.getElementById("tos-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
