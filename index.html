@@ -395,7 +395,43 @@ footer.site-footer::before {
   font-size: 0.9rem;
   line-height: 1.75;
 }
-    
+
+    .footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.footer-links a {
+  color: rgba(200, 212, 207, 0.78);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #F2F5F3;
+}
+
+@media (max-width: 700px) {
+  .footer-top {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
     .social-link {
       transition: transform 180ms ease, opacity 180ms ease;
     }
@@ -504,7 +540,7 @@ footer.site-footer::before {
         <a href="technology.html" class="mobile-link">Technology</a>
         <a href="about.html" class="mobile-link">About</a>
         <a href="book.html" class="mobile-link">Book</a>
-        <a href="Insights.html" class="mobile-link">Insights</a>a>
+        <a href="Insights.html" class="mobile-link">Insights</a>
         <a href="contactus.html" class="mobile-link text-[#D9A32A] font-semibold">Work With Us</a>
       </nav>
     </header>
