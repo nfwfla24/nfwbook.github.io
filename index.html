@@ -511,33 +511,6 @@ footer.site-footer::before {
       margin-bottom: 0.85rem;
     }
 
-   .page-banner {
-  max-width: 80rem;
-  margin: 1rem auto 0;
-  padding: 0 1rem;
-}
-
-.page-banner-frame {
-  border: 1px solid var(--nfw-border);
-  border-radius: 1rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
-  overflow: hidden;
-  max-height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.page-banner-image {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  max-height: 140px;
-  height: auto;
-  object-fit: contain;
-}
-
     .hero-wrap {
   position: relative;
   max-width: 80rem;
@@ -548,34 +521,13 @@ footer.site-footer::before {
   isolation: isolate;
 }
 
-.hero-watermark {
-  position: absolute;
-  top: -1.25rem;
-  right: 2rem;
-  width: min(40vw, 420px);
-  height: auto;
-  opacity: 0.08;
-  pointer-events: none;
-  z-index: 0;
-  object-fit: contain;
-}
-
 .hero-panel,
 .hero-aside {
   position: relative;
   z-index: 1;
 }
 
-@media (max-width: 768px) {
-  .hero-watermark {
-    width: min(56vw, 260px);
-    right: 1rem;
-    top: 0.5rem;
-    opacity: 0.06;
-  }
-}
-
-    .hero-section {
+   .hero-section {
   position: relative;
   padding: 7rem 1rem 4rem;
   overflow: hidden;
@@ -595,6 +547,24 @@ footer.site-footer::before {
 }
 
 .hero-wrap {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  isolation: isolate;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .hero-wrap {
+    grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+  }
+}
+
+.hero-panel,
+.hero-aside {
   position: relative;
   z-index: 1;
 }
@@ -652,11 +622,6 @@ footer.site-footer::before {
       <section class="hero-section">
         <div class="hero-wrap">
                   <div class="hero-panel">
-            <img
-  src="LogoUpd.7.12.2026.png"
-  alt="The New Financial World LLC"
-  class="h-12 w-auto object-contain mb-5"
-/>
           <p class="section-kicker">Energy • Infrastructure • Reliability</p>
             <h1 class="hero-title">Where infrastructure meets verifiable truth.</h1>
             <p class="hero-copy">
