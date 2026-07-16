@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /homepage.html
+Disallow: /consulting.html
+
+Sitemap: https://www.newfinancialworld.com/sitemap.xml
