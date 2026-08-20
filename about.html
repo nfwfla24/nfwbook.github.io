@@ -392,6 +392,42 @@
       flex: 0 0 auto;
     }
 
+    .credential-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.15rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--nfw-border);
+    }
+
+    .credential-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.5rem 0.9rem 0.5rem 0.5rem;
+      background: var(--nfw-panel);
+      border: 1px solid var(--nfw-border);
+      border-radius: 0.9rem;
+    }
+
+    .credential-badge img {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 0.55rem;
+      object-fit: contain;
+      background: #fff;
+      padding: 0.18rem;
+      flex: 0 0 auto;
+    }
+
+    .credential-badge span {
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: rgba(200, 212, 207, 0.9);
+    }
+
     .book-card {
       margin-top: 1.4rem;
       padding: 1.25rem;
@@ -717,6 +753,18 @@
                 <li><span class="credential-dot"></span><span>His practical experience with critical equipment and 
                   infrastructure informs the development of the platform's methodology.</span></li>
               </ul>
+
+              <div class="credential-badges">
+                <div class="credential-badge">
+                  <img src="badge-iso-55001-foundation.jpg" alt="PECB ISO 55001 Foundation certificate badge" loading="lazy">
+                  <span>ISO 55001 Foundation<br>(PECB)</span>
+                </div>
+                <div class="credential-badge">
+                  <img src="badge-corda-certified-business-professional.jpg" alt="R3 Corda Certified Business Professional badge" loading="lazy">
+                  <span>Corda Certified<br>Business Professional (R3)</span>
+                </div>
+                <!-- Add future certification badges here as new .credential-badge blocks -->
+              </div>
             </aside>
           </div>
         </article>
